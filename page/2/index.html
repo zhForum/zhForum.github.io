@@ -256,6 +256,122 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://b-gg.com/2017/06/22/Mail-tools-for-Linux/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Bo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Saritai">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/22/Mail-tools-for-Linux/" itemprop="url">1</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-22T16:46:44+08:00">
+                2017-06-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="从Linux发送邮件说起"><a href="#从Linux发送邮件说起" class="headerlink" title="从Linux发送邮件说起"></a>从Linux发送邮件说起</h1><h2 id="运维之道"><a href="#运维之道" class="headerlink" title="运维之道"></a>运维之道</h2><p>没有绝对稳定的系统，能在第一时间发现故障并解决它，就是一个合格的运维工程师。<br>如何第一时间发现故障，甚至防患于未然，本文不做讨论。<br>今天要说的是，如何把故障消息迅速传送给一线的运维工程师。<br>发邮件、发短信、打电话，最基础的当然是发邮件。</p>
+<h2 id="Linux邮件之旅"><a href="#Linux邮件之旅" class="headerlink" title="Linux邮件之旅"></a>Linux邮件之旅</h2><p>最早的Linux老鸟，应该都熟悉mail/mailx;</p>
+<h3 id="mail-mailx-老牌的信使"><a href="#mail-mailx-老牌的信使" class="headerlink" title="mail/mailx 老牌的信使"></a>mail/mailx 老牌的信使</h3><p>mail／mailx这是Linux发行版标配的邮件客户端<br>mailx [-BDdEFintv~] [-s subject] [-a attachment ] [-c cc-addr] [-b bcc-addr] [-r from-addr] [-h hops] [-A account] [-S variable[=value]] to-addr . . .<br>eg：echo “Email text” | mail -s “Test Subject” user@example.com<br>-s后面注明主题<br>echo “Body with attachment “| mail -a foo.tar.gz -s “attached file” user@example.com<br>-a用来制定附件路径<br>mail -s “message send from file” user@example.com &lt; /path/to/file<br>也可以读取文件作为邮件内容。</p>
+<h3 id="Mutt-邮件利器"><a href="#Mutt-邮件利器" class="headerlink" title="Mutt 邮件利器"></a>Mutt 邮件利器</h3><p>mutt在Unix上历史悠久，Linux也是声名远扬。<br>相对mail/mailx来说，它甚至不依赖sendmail服务。<br>命令格式与mail基本相同<br>echo “This is the body” | mutt -s “Testing” user@example.com -a foo.tar.gz –a bar.tar.gz<br>mutt以来postfix,要求这个服务必须开启。</p>
+<h2 id="另外如果安装后，后来又修改了主机名hostname也是会出问题的。"><a href="#另外如果安装后，后来又修改了主机名hostname也是会出问题的。" class="headerlink" title="另外如果安装后，后来又修改了主机名hostname也是会出问题的。"></a>另外如果安装后，后来又修改了主机名hostname也是会出问题的。</h2><p>邮件传输系统设计之初用于传送7位编码（类似ASCII）的文本内容，对于8位的二进制内容（如程序文件或者图片）必须借助一个uuencode的工具完成。<br>eg：uuencode example.jpeg example.jpeg | mutt user@example.com</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://b-gg.com/2017/06/22/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -416,7 +532,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
