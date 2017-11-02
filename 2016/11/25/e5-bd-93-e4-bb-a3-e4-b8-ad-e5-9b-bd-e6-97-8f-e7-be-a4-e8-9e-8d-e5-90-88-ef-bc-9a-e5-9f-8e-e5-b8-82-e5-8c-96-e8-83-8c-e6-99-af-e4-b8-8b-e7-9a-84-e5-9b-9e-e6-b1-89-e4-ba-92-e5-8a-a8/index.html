@@ -1,34 +1,574 @@
-include mixins
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>当代中国族群融合：城市化背景下的回汉互动 | ZhengheForum.org</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="" />
+    
+    <meta name="description" content="当代中国族群融合：城市化背景下的回汉互动2016-11-24 张中复、黄南/采 郑和论坛本文转自新视角NPF 新视角按： 台湾政治大学民族学系主任张中复副教授在谈到中国族群融合的历史和现实时，认为随着近几年来大陆的都市发展和城市改建，穆斯林的流动增多，给当地带来新的影响，在其看来，这种影响比较正面。同时，张教授也表达了其比较关注“大陆作为一个崛起的大国角色——它如何对待自己文化族群的多样性，维持一">
+<meta property="og:type" content="article">
+<meta property="og:title" content="当代中国族群融合：城市化背景下的回汉互动">
+<meta property="og:url" content="http://zhengheforum.org/2016/11/25/e5-bd-93-e4-bb-a3-e4-b8-ad-e5-9b-bd-e6-97-8f-e7-be-a4-e8-9e-8d-e5-90-88-ef-bc-9a-e5-9f-8e-e5-b8-82-e5-8c-96-e8-83-8c-e6-99-af-e4-b8-8b-e7-9a-84-e5-9b-9e-e6-b1-89-e4-ba-92-e5-8a-a8/index.html">
+<meta property="og:site_name" content="ZhengheForum.org">
+<meta property="og:description" content="当代中国族群融合：城市化背景下的回汉互动2016-11-24 张中复、黄南/采 郑和论坛本文转自新视角NPF 新视角按： 台湾政治大学民族学系主任张中复副教授在谈到中国族群融合的历史和现实时，认为随着近几年来大陆的都市发展和城市改建，穆斯林的流动增多，给当地带来新的影响，在其看来，这种影响比较正面。同时，张教授也表达了其比较关注“大陆作为一个崛起的大国角色——它如何对待自己文化族群的多样性，维持一">
+<meta property="og:image" content="http://zhengheforum.org/wp-content/uploads/2016/10/tn-300x200.jpg">
+<meta property="og:updated_time" content="2017-11-02T05:19:39.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="当代中国族群融合：城市化背景下的回汉互动">
+<meta name="twitter:description" content="当代中国族群融合：城市化背景下的回汉互动2016-11-24 张中复、黄南/采 郑和论坛本文转自新视角NPF 新视角按： 台湾政治大学民族学系主任张中复副教授在谈到中国族群融合的历史和现实时，认为随着近几年来大陆的都市发展和城市改建，穆斯林的流动增多，给当地带来新的影响，在其看来，这种影响比较正面。同时，张教授也表达了其比较关注“大陆作为一个崛起的大国角色——它如何对待自己文化族群的多样性，维持一">
+<meta name="twitter:image" content="http://zhengheforum.org/wp-content/uploads/2016/10/tn-300x200.jpg">
+    
 
-extends partial/layout
+    
+        <link rel="alternate" href="/" title="ZhengheForum.org" type="application/atom+xml" />
+    
 
-block site_title
-    != page.title + " · " + config.title
+    
 
-block description
-    - var desc = page.desc || strip_html(page.content).replace(/^\s*/, '').replace(/\s*$/, '').substring(0, 150);
-    meta(name="description", content=desc)
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
 
-block content
-  .autopagerize_page_element: .content: .post-page
-    include mixins
-    +make_post(page, true)
-    .share
-      .evernote
-        a.fa.fa-bookmark(href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title);}})();", ref="nofollow", target="_blank")
-      .weibo
-        a.fa.fa-weibo(href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&title=',e(d.title),'&appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));")
-      .twitter
-        a.fa.fa-twitter(href=url_for("http://twitter.com/home?status="+","+config.url+"/"+page.path+","+config.title+","+page.title+",;"))
-    - var prev = page.prev ? page.prev.path : false;
-    - var next = page.next ? page.next.path : false;
-    .pagination
-      ul.clearfix
-        if prev
-          li.pre.pagbuttons
-            a.btn(role="navigation",href=url_for(prev), title=page.prev.title)!= __('prev_post')
-        if next
-          li.next.pagbuttons
-            a.btn(role="navigation",href=url_for(next), title=page.next.title)!= __('next_post')
-    if page.comments
-        include partial/comments
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Academic-Advisers-学术顾问/">Academic Advisers/学术顾问</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Academic-Advisers-学术顾问/ZIPF-Advisers-基金会顾问/">ZIPF Advisers/基金会顾问</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Academic-Research-学术研究-版权所有，违者必究/">Academic Research/学术研究 (版权所有，违者必究)</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Home-主页/">Home/主页</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/News-信息/">News/信息</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/ZIPF-Leadership-基金会负责人/">ZIPF Leadership/基金会负责人</a></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Academic-Research-学术研究-版权所有，违者必究/">Academic Research/学术研究 (版权所有，违者必究)</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-e5-bd-93-e4-bb-a3-e4-b8-ad-e5-9b-bd-e6-97-8f-e7-be-a4-e8-9e-8d-e5-90-88-ef-bc-9a-e5-9f-8e-e5-b8-82-e5-8c-96-e8-83-8c-e6-99-af-e4-b8-8b-e7-9a-84-e5-9b-9e-e6-b1-89-e4-ba-92-e5-8a-a8" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        当代中国族群融合：城市化背景下的回汉互动
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2016/11/25/e5-bd-93-e4-bb-a3-e4-b8-ad-e5-9b-bd-e6-97-8f-e7-be-a4-e8-9e-8d-e5-90-88-ef-bc-9a-e5-9f-8e-e5-b8-82-e5-8c-96-e8-83-8c-e6-99-af-e4-b8-8b-e7-9a-84-e5-9b-9e-e6-b1-89-e4-ba-92-e5-8a-a8/" class="article-date">
+            <time datetime="2016-11-24T21:28:28.000Z" itemprop="datePublished">2016-11-25</time>
+        </a>
+    </div>
+
+                
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p>当代中国族群融合：城市化背景下的回汉互动<br>2016-11-24 张中复、黄南/采 郑和论坛<br>本文转自新视角NPF</p>
+<p><img src="http://zhengheforum.org/wp-content/uploads/2016/10/tn-300x200.jpg" alt="tn"><br>新视角按：</p>
+<p>台湾政治大学民族学系主任张中复副教授在谈到中国族群融合的历史和现实时，认为随着近几年来大陆的都市发展和城市改建，穆斯林的流动增多，给当地带来新的影响，在其看来，这种影响比较正面。同时，张教授也表达了其比较关注“大陆作为一个崛起的大国角色——它如何对待自己文化族群的多样性，维持一种更符合文明化、或者一个大国所应该扮演的角色的包容力和多样性”。本文为中国族群融合访谈的当代部分，历史部分详见上一条微信：中国族群融合史：唐、元、清时期形成的共生互动模式。</p>
+<p>新视角（黄南）：您以前重点做中国西北的民族研究，现在做东南沿海地区的民族学研究，从您的研究经历谈谈中国的回族与主体民族汉族的互动关系？</p>
+<p>张中复（台湾政治大学民族学系主任）：我的本行是做民族学研究。回族跟大陆各地的汉族，有不同的互动模式，有的互动模式非常接近，但再怎么互动都要和伊斯兰教信仰、跟它所代表的生活、习惯结合。</p>
+<p>可能汉族毕竟是一个影响力比较大的群体，回民在中国要保持伊斯兰的信仰，但是在文化上又必须跟汉族有大量的接触。所以除了信仰之外，其他在语言、在相关社会性上来讲基本是采取汉人的文化模式。所以很容易造成像汪洋中的孤岛一样的状况，很容易受到大环境的影响。</p>
+<p>回民坚持信仰的三道防线<br>通常回民在坚持自己信仰过程中有三道防线——饮食、婚姻和丧葬。如果这三件事情都完全不与教规的规范做一个配合的话，他们的民族特色和信仰体系就会受很大影响。但是，用大陆的话来讲，散杂居地区的回族比较不容易在这三件事情上做到实际的坚持；而在民族聚居区——非散杂区，比如像甘肃、青海，他们就比较容易维持这种饮食。比如如果我是散杂居地区的，我的单位可能并无法提供清真食堂，我小孩读的学校是汉人为主的学校，所以饮食会受到很大制约。</p>
+<p>婚姻也是很大的影响，尤其以前回民大多因为自己本身的流动性低，他们互相嫁娶。现在女生受教育机会跟男生一样均等，甚至表现更好，所以在选择将来的配偶上来讲，就容易跟外族互动和影响。另外还有丧葬，我个人感觉丧葬还是比较坚持的。</p>
+<p>大陆和台湾最大的差别在于，台湾的穆斯林基本没有民族身份，大陆是民族识别，所以回族的民族身份反而有助于他信仰的坚持——在形式上或者政府配套优惠政策上，成为一种比较有帮助的景象。</p>
+<p>跟其他少数民族不一样的是，回族的分布仅次于汉族，大陆90%几的县都有回族分布，没有一个中国少数民族的分布像回族那么宽泛。所以从民族学角度来看，这种分布状况提供了很多不同的适应机制。</p>
+<p>我以前做西北问题，后来想做更全面的研究，所以现在换一个角度，来看看东南沿海或者江南地区的穆斯林在面对汉化的时候，所碰到的一些民族学比较关注的议题——怎么来看待一个汉化的概念和事实。</p>
+<p>城市化背景下的回民与汉族互动增多</p>
+<p>新视角：民族聚居区之外，当代回民在城市里的“散杂居”是如何形成的？</p>
+<p>张中复：和短时间内所形成的外来移民社群不一样，回民在中国大城市里面会形成“世居化”——不是那种外来打工者自然形成的一个聚落，我想这个现象从元朝开始就越来越明显。这些穆斯林——我们称为回民，大陆识别为回族人群——在大城市里都是世居少数民族，它的形成是散杂居式的一种适应状态，但是因为过去他是聚居，而且回民是靠聚居维持自己的信仰，所以这种功能会比较明显。</p>
+<p>这几年来，随着大陆的都市发展、城市改建，我们观察到，大城市中，回民社区的民族文化特色在不断流失。现在看起来，大陆大城市里还坚持保留一个比较有回民特色的社区的，大概只有西安了。其他几个大城市，像西北的兰州小西湖，北京的牛街、宣武区那一带，基本都因为城市的改建，都已经不像过去那么传统、集中，而且这种变化产生的时间也不过最近十几年。所以未来在这种“都会地区”，穆斯林在宗教和文化上所产生的适应机制值得关注。</p>
+<p>但另外一种现象，因为商业经济的发展、人口的流通，也让很多西北穆斯林或者叫做民族聚居区的穆斯林，往散杂居地区发展。这么多甘肃、青海的穆斯林在沿海地区开拉面馆，到义乌、到大城市发展，这是另外一种穆斯林的人群流动现象。</p>
+<p>这些穆斯林人群流动的现象，又给当地伊斯兰教、当地信仰群体和当地宗教文化发展带来新的影响。在我看来这种影响还是比较正面的。比如说某种意义上来讲，它可以振兴教门，可以带动当地伊斯兰教的发展态势，但是它也可能引起汉人重新对伊斯兰教进行认识和评价。</p>
+<p>&nbsp;</p>
+<p>崛起大国应有的包容力和多样性</p>
+<p>我现在比较关注的在于，大陆作为一个崛起的大国角色——它如何对待自己文化族群的多样性，维持一种更符合文明化、或者一个大国所应该扮演的角色的包容力和多样性。我个人很不乐见——我本身不是回民，但是我自己做回民研究，接触很多的人都是帮我很大忙的回民学者和朋友——我觉得对穆斯林来讲，他们最在乎的是，不要把伊斯兰教看成是一种有问题的宗教。我觉得信仰是一回事，信仰变成宗教后就会跟人类所有的现象产生结合，各种所谓的正面负面都会有。</p>
+<p>伊斯兰教在中国存在不是最近一两百年的事情，伊斯兰教在中国的存在已经将近1400年，这1400年当中有它的发展适应机制，如果这个宗教一开始就是比较有偏向的——如果它强调的就是杀人放火才能振兴宗教，或者有一些负面的发展才能成为的宗教——如果是这样，我觉得它没有办法在中国存在一千多年。</p>
+<p>虽然在这个存在过程中，也发生过一些我们认为比较负面的例子，比如清代的回民起义，但是我觉得大致来讲，伊斯兰教在中国、在华夏社会维持的还是一种理性、稳定的互动机制。只是现在这种理性、互动的机制，收到大流量的不同信息的出现——以前是我没有接触，我不说它的好坏，但现在是，我没有接触，我也跟着说好跟着说坏，甚至跟着说坏的比较多——这似乎不是我们期待一个大国崛起下该有的多元性和包容性。</p>
+<p>我觉得极端主义和恐怖主义都必须要制裁，但毕竟中国两千多万穆斯林，不是每个人都是信仰极端主义。比如少数新疆人在大城市里面做一些非法勾当，整个民族就被污名化，大陆这么多刑案的发生，汉族是不是要被污名化？所以民族这个标签不要被很多事情过度操弄。<br>新视角：台湾的穆斯林大致的来历以及现在在台湾的发展情况怎么样？</p>
+<p>张中复：台湾的穆斯林大致分两个阶段：首先是明清时期从泉州移民来的穆斯林后代，但这些人大部分都已经完全汉化了，融入到当地汉人社会里。台湾再次出现大量穆斯林是1949年，跟着国民党撤退来台湾的居民里面，有不少是各省份的穆斯林，比较多的是江苏、山东这些地方的穆斯林。所以那个时候才会有清真寺，包括抗战时候在武汉所成立的中国回教救国会，后来叫做中国回教协会，1949年以后也迁到台湾来。这几年因为还有一些新的案例。</p>
+<p>从上世纪80年代开始，缅甸、泰国的穆斯林——祖先是云南人，可能从清朝末年，做生意或是躲避战乱迁徙到泰国和缅甸了——这一群华裔穆斯林在上世纪八十年代也不少来到台湾定居。缅甸是因为当时比较封闭，而且台湾提出了一些优惠政策，把泰国和缅甸的华人穆斯林视为华侨，台湾那时候鼓励这些华侨回到台湾来就业、读书。因为台湾有一座清真寺，在桃园，还是以泰缅穆斯林为主体的，形成了哲马提(JAMAT)——他们自己的社群。这是台湾穆斯林目前的发展。</p>
+<p>台湾现在最大的问题在于，伊斯兰教毕竟必须要结合它的信仰和生活实践，老一辈的穆斯林在台湾凋零以后，他们的后代基本对这个教门所产生的依赖程度越来越弱化，跟大陆一些散杂居地区的穆斯林很像。出现一个现象就是——他是回族，但不是穆斯林，他父母是回族，也取得回族身份，但是他在宗教信仰上不去实践穆斯林的宗教工作——我说这是大陆的一个特色，虽然没有伊斯兰教信仰，但是在意识上来讲他还是回族。我碰到的一些例子是虽然他父母是回族，他现在也是回族，他不是一个穆斯林，但他还是有一些来自父母方面的文化留存，比如饮食还是会有一些禁忌，信仰上不是实践穆斯林，但是意识上来讲他觉得是回民。</p>
+<p>—结束—</p>
+<p>【本文为2016年6月在“郑和国际和平论坛”（ID：zhengheluntan）上的采访节选。】<br>郑和国际和平基金会：<br>网址：www.zhengheforum.org<br>微信公众号：郑和论坛<br>邮件：zhengheforum@gmail.com<br>尊敬的订阅用户，您可以把您的邮箱发送到我们的官方邮箱，我们会定期为您推荐最有价值的原创文章！</p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://zhengheforum.org/2016/11/25/e5-bd-93-e4-bb-a3-e4-b8-ad-e5-9b-bd-e6-97-8f-e7-be-a4-e8-9e-8d-e5-90-88-ef-bc-9a-e5-9f-8e-e5-b8-82-e5-8c-96-e8-83-8c-e6-99-af-e4-b8-8b-e7-9a-84-e5-9b-9e-e6-b1-89-e4-ba-92-e5-8a-a8/" data-id="cj9i2dt25000ukefyut7hebbm" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="/" target="_blank">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="/" target="_blank">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="google-plus" href="/" target="_blank">
+                        <i class="icon fa fa-google-plus"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/ppoffice/hexo-theme-hueman" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="/" target="_blank">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/" target="_blank">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2016/11/25/e7-83-ad-e7-83-88-e7-a5-9d-e8-b4-ba-e5-8d-b0-e5-b0-bc-e7-ac-ac-e5-8d-81-e5-ba-a7-e9-83-91-e5-92-8c-e6-b8-85-e7-9c-9f-e5-af-ba-e6-88-90-e7-ab-8b/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            热烈祝贺印尼第十座郑和清真寺成立
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2016/11/23/e4-b8-ad-e5-9b-bd-e7-9a-84-e6-97-8f-e7-be-a4-e8-9e-8d-e5-90-88-e4-b8-8e-e4-ba-92-e5-8a-a8-e5-85-b1-e7-94-9f/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">中国的族群融合与互动共生</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/01/25/e9-83-91-e5-92-8c-e5-9b-bd-e9-99-85-e5-92-8c-e5-b9-b3-e5-9f-ba-e9-87-91-e4-bc-9a-e5-85-ac-e5-bc-80-e5-a3-b0-e6-98-8e/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://zhengheforum.org/wp-content/uploads/2017/01/IMG_8599-169x300.png)" alt="郑和国际和平基金会公开声明" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/News-信息/">News/信息</a></p>
+                            <p class="item-title"><a href="/2017/01/25/e9-83-91-e5-92-8c-e5-9b-bd-e9-99-85-e5-92-8c-e5-b9-b3-e5-9f-ba-e9-87-91-e4-bc-9a-e5-85-ac-e5-bc-80-e5-a3-b0-e6-98-8e/" class="title">郑和国际和平基金会公开声明</a></p>
+                            <p class="item-date"><time datetime="2017-01-24T18:59:54.000Z" itemprop="datePublished">2017-01-25</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/01/24/e7-ac-ac-e4-b8-89-e5-b1-8a-e9-83-91-e5-92-8c-e8-ae-ba-e5-9d-9b-e5-9b-bd-e9-99-85-e4-bc-9a-e8-ae-ae-e5-b0-86-e4-ba-8e2017-e5-b9-b48-e6-9c-88-e5-9c-a8-e5-93-88-e8-90-a8-e5-85-8b/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://zhengheforum.org/wp-content/uploads/2017/01/IMG_8112-225x300.jpg)" alt="第三届“郑和论坛”国际会议将于2017年8月在哈萨克斯坦召开" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/News-信息/">News/信息</a></p>
+                            <p class="item-title"><a href="/2017/01/24/e7-ac-ac-e4-b8-89-e5-b1-8a-e9-83-91-e5-92-8c-e8-ae-ba-e5-9d-9b-e5-9b-bd-e9-99-85-e4-bc-9a-e8-ae-ae-e5-b0-86-e4-ba-8e2017-e5-b9-b48-e6-9c-88-e5-9c-a8-e5-93-88-e8-90-a8-e5-85-8b/" class="title">第三届“郑和论坛”国际会议将于2017年8月在哈萨克斯坦召开</a></p>
+                            <p class="item-date"><time datetime="2017-01-24T09:49:52.000Z" itemprop="datePublished">2017-01-24</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/11/26/e7-ac-ac-e4-b8-89-e5-b1-8a-e9-83-91-e5-92-8c-e8-ae-ba-e5-9d-9b-e5-be-81-e6-96-87/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://zhengheforum.org/wp-content/uploads/2016/09/image-23-300x300.jpeg)" alt="第三届“郑和论坛”征文（哈萨克斯坦）" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/News-信息/">News/信息</a></p>
+                            <p class="item-title"><a href="/2016/11/26/e7-ac-ac-e4-b8-89-e5-b1-8a-e9-83-91-e5-92-8c-e8-ae-ba-e5-9d-9b-e5-be-81-e6-96-87/" class="title">第三届“郑和论坛”征文（哈萨克斯坦）</a></p>
+                            <p class="item-date"><time datetime="2016-11-26T06:42:47.000Z" itemprop="datePublished">2016-11-26</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/11/25/e7-83-ad-e7-83-88-e7-a5-9d-e8-b4-ba-e5-8d-b0-e5-b0-bc-e7-ac-ac-e5-8d-81-e5-ba-a7-e9-83-91-e5-92-8c-e6-b8-85-e7-9c-9f-e5-af-ba-e6-88-90-e7-ab-8b/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://zhengheforum.org/wp-content/uploads/2016/11/IMG_6589-169x300.jpg)" alt="热烈祝贺印尼第十座郑和清真寺成立" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/News-信息/">News/信息</a></p>
+                            <p class="item-title"><a href="/2016/11/25/e7-83-ad-e7-83-88-e7-a5-9d-e8-b4-ba-e5-8d-b0-e5-b0-bc-e7-ac-ac-e5-8d-81-e5-ba-a7-e9-83-91-e5-92-8c-e6-b8-85-e7-9c-9f-e5-af-ba-e6-88-90-e7-ab-8b/" class="title">热烈祝贺印尼第十座郑和清真寺成立</a></p>
+                            <p class="item-date"><time datetime="2016-11-25T01:17:43.000Z" itemprop="datePublished">2016-11-25</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/11/25/e5-bd-93-e4-bb-a3-e4-b8-ad-e5-9b-bd-e6-97-8f-e7-be-a4-e8-9e-8d-e5-90-88-ef-bc-9a-e5-9f-8e-e5-b8-82-e5-8c-96-e8-83-8c-e6-99-af-e4-b8-8b-e7-9a-84-e5-9b-9e-e6-b1-89-e4-ba-92-e5-8a-a8/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://zhengheforum.org/wp-content/uploads/2016/10/tn-300x200.jpg)" alt="当代中国族群融合：城市化背景下的回汉互动" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Academic-Research-学术研究-版权所有，违者必究/">Academic Research/学术研究 (版权所有，违者必究)</a></p>
+                            <p class="item-title"><a href="/2016/11/25/e5-bd-93-e4-bb-a3-e4-b8-ad-e5-9b-bd-e6-97-8f-e7-be-a4-e8-9e-8d-e5-90-88-ef-bc-9a-e5-9f-8e-e5-b8-82-e5-8c-96-e8-83-8c-e6-99-af-e4-b8-8b-e7-9a-84-e5-9b-9e-e6-b1-89-e4-ba-92-e5-8a-a8/" class="title">当代中国族群融合：城市化背景下的回汉互动</a></p>
+                            <p class="item-date"><time datetime="2016-11-24T21:28:28.000Z" itemprop="datePublished">2016-11-25</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Academic-Advisers-学术顾问/">Academic Advisers/学术顾问</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Academic-Advisers-学术顾问/ZIPF-Advisers-基金会顾问/">ZIPF Advisers/基金会顾问</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Academic-Research-学术研究-版权所有，违者必究/">Academic Research/学术研究 (版权所有，违者必究)</a><span class="category-list-count">18</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Home-主页/">Home/主页</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/News-信息/">News/信息</a><span class="category-list-count">23</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ZIPF-Leadership-基金会负责人/">ZIPF Leadership/基金会负责人</a><span class="category-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">31</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+
+            
+                
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2017 Haiyun</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'http://zhengheforum.org/2016/11/25/e5-bd-93-e4-bb-a3-e4-b8-ad-e5-9b-bd-e6-97-8f-e7-be-a4-e8-9e-8d-e5-90-88-ef-bc-9a-e5-9f-8e-e5-b8-82-e5-8c-96-e8-83-8c-e6-99-af-e4-b8-8b-e7-9a-84-e5-9b-9e-e6-b1-89-e4-ba-92-e5-8a-a8/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

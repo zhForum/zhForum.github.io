@@ -1,34 +1,601 @@
-include mixins
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>中国与中亚的交流使者：安胡塞 | ZhengheForum.org</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="" />
+    
+    <meta name="description" content="东干人：中国与中亚的交流使者——专访哈萨克斯坦东干协会会长安胡塞 采访人：黄南；本文来源：钝角网（ID：idunjiao） 【钝角网按】在中亚的哈萨克斯坦、吉尔吉斯斯坦、乌兹别克斯坦以及俄罗斯西南部，生活着一个被称为“东干人”的民族，他们的长相和中国人无异。他们的民族语言为一百多年前的中国陕西方言。 2016年6月5日“钝角” （ID：idunjiao）在迪拜召开的“郑和国际和平论坛”（www.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="中国与中亚的交流使者：安胡塞">
+<meta property="og:url" content="http://zhengheforum.org/2016/10/26/e4-b8-ad-e5-9b-bd-e4-b8-8e-e4-b8-ad-e4-ba-9a-e7-9a-84-e4-ba-a4-e6-b5-81-e4-bd-bf-e8-80-85-ef-bc-9a-e5-ae-89-e8-83-a1-e5-a1-9e/index.html">
+<meta property="og:site_name" content="ZhengheForum.org">
+<meta property="og:description" content="东干人：中国与中亚的交流使者——专访哈萨克斯坦东干协会会长安胡塞 采访人：黄南；本文来源：钝角网（ID：idunjiao） 【钝角网按】在中亚的哈萨克斯坦、吉尔吉斯斯坦、乌兹别克斯坦以及俄罗斯西南部，生活着一个被称为“东干人”的民族，他们的长相和中国人无异。他们的民族语言为一百多年前的中国陕西方言。 2016年6月5日“钝角” （ID：idunjiao）在迪拜召开的“郑和国际和平论坛”（www.">
+<meta property="og:image" content="http://zhengheforum.org/wp-content/uploads/2016/10/IMG_9671-300x225.jpg">
+<meta property="og:updated_time" content="2017-11-02T05:19:39.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="中国与中亚的交流使者：安胡塞">
+<meta name="twitter:description" content="东干人：中国与中亚的交流使者——专访哈萨克斯坦东干协会会长安胡塞 采访人：黄南；本文来源：钝角网（ID：idunjiao） 【钝角网按】在中亚的哈萨克斯坦、吉尔吉斯斯坦、乌兹别克斯坦以及俄罗斯西南部，生活着一个被称为“东干人”的民族，他们的长相和中国人无异。他们的民族语言为一百多年前的中国陕西方言。 2016年6月5日“钝角” （ID：idunjiao）在迪拜召开的“郑和国际和平论坛”（www.">
+<meta name="twitter:image" content="http://zhengheforum.org/wp-content/uploads/2016/10/IMG_9671-300x225.jpg">
+    
 
-extends partial/layout
+    
+        <link rel="alternate" href="/" title="ZhengheForum.org" type="application/atom+xml" />
+    
 
-block site_title
-    != page.title + " · " + config.title
+    
 
-block description
-    - var desc = page.desc || strip_html(page.content).replace(/^\s*/, '').replace(/\s*$/, '').substring(0, 150);
-    meta(name="description", content=desc)
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
 
-block content
-  .autopagerize_page_element: .content: .post-page
-    include mixins
-    +make_post(page, true)
-    .share
-      .evernote
-        a.fa.fa-bookmark(href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title);}})();", ref="nofollow", target="_blank")
-      .weibo
-        a.fa.fa-weibo(href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&title=',e(d.title),'&appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));")
-      .twitter
-        a.fa.fa-twitter(href=url_for("http://twitter.com/home?status="+","+config.url+"/"+page.path+","+config.title+","+page.title+",;"))
-    - var prev = page.prev ? page.prev.path : false;
-    - var next = page.next ? page.next.path : false;
-    .pagination
-      ul.clearfix
-        if prev
-          li.pre.pagbuttons
-            a.btn(role="navigation",href=url_for(prev), title=page.prev.title)!= __('prev_post')
-        if next
-          li.next.pagbuttons
-            a.btn(role="navigation",href=url_for(next), title=page.next.title)!= __('next_post')
-    if page.comments
-        include partial/comments
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Academic-Advisers-学术顾问/">Academic Advisers/学术顾问</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Academic-Advisers-学术顾问/ZIPF-Advisers-基金会顾问/">ZIPF Advisers/基金会顾问</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Academic-Research-学术研究-版权所有，违者必究/">Academic Research/学术研究 (版权所有，违者必究)</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Home-主页/">Home/主页</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/News-信息/">News/信息</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/ZIPF-Leadership-基金会负责人/">ZIPF Leadership/基金会负责人</a></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/News-信息/">News/信息</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-e4-b8-ad-e5-9b-bd-e4-b8-8e-e4-b8-ad-e4-ba-9a-e7-9a-84-e4-ba-a4-e6-b5-81-e4-bd-bf-e8-80-85-ef-bc-9a-e5-ae-89-e8-83-a1-e5-a1-9e" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        中国与中亚的交流使者：安胡塞
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2016/10/26/e4-b8-ad-e5-9b-bd-e4-b8-8e-e4-b8-ad-e4-ba-9a-e7-9a-84-e4-ba-a4-e6-b5-81-e4-bd-bf-e8-80-85-ef-bc-9a-e5-ae-89-e8-83-a1-e5-a1-9e/" class="article-date">
+            <time datetime="2016-10-26T15:22:01.000Z" itemprop="datePublished">2016-10-26</time>
+        </a>
+    </div>
+
+                
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p><img src="http://zhengheforum.org/wp-content/uploads/2016/10/IMG_9671-300x225.jpg" alt="IMG_9671"></p>
+<p>东干人：中国与中亚的交流使者<br>——专访哈萨克斯坦东干协会会长安胡塞</p>
+<p>采访人：黄南；<br>本文来源：钝角网（ID：idunjiao）</p>
+<p>【钝角网按】在中亚的哈萨克斯坦、吉尔吉斯斯坦、乌兹别克斯坦以及俄罗斯西南部，生活着一个被称为“东干人”的民族，他们的长相和中国人无异。他们的民族语言为一百多年前的中国陕西方言。</p>
+<p>2016年6月5日“钝角” （ID：idunjiao）在迪拜召开的“郑和国际和平论坛”（www.zhengheforum.org）上采访到哈萨克斯坦国家民族委员会委员、哈萨克斯坦东干协会会长安胡塞先生。安胡塞出生于哈萨克斯坦江布尔州库尔达依县，祖籍陕西西安，其曾祖父安兴皇、安兴虎随东干之父白彦虎到中亚。</p>
+<p>从苏联解体哈萨克斯坦独立后，安胡塞频繁往来于中哈之间，为中哈友谊牵线搭桥。2004年原陕西省委书记李建国接见了包括胡塞在内的哈萨克苏滩民族委员会代表团，在李书记督促下，陕西省与江布尔州签订了友好省州协议，促进了东干人与老家更紧密地联系。从2000年开始，针对12万多东干人只会说不会写汉字的情况，“村长”安胡塞经多方面联系，公派了一批特殊的“陕西娃”回老家陕西学习汉语。这些学习汉语的东干族少年回国后为汉语在东干族人民中的传承和发展做了很大贡献。</p>
+<p>采访人：黄南。</p>
+<p>钝角：我们知道东干人是指迁移到中亚的中国甘肃及陕西回族后裔。“东干”这个词如何理解？</p>
+<p>安胡塞：一百多年前我们的祖辈迁入中亚时，被问到你们从哪里来，陕西话说是从东边来的，于是就取名叫东干。</p>
+<p>钝角：150年前从西安过去的？</p>
+<p>安胡塞：对，已经154年了，离开西安是1862年,那时候回民起义，一直往西退，到哈萨克斯坦边界了。后来没办法了，就过到那边去了。1877年过了边界线，当时有三万人，过边界的时候是腊月，天气很冷，雪很厚，山里有2米、3米的雪。光翻过这个雪山，三万人里面就只剩下3314个人。</p>
+<p>东干人过去以后，把菜种子都带了过去，带给了俄罗斯。原来那块还不属于哈萨克斯坦，属于俄国管。哈族人对咱们很好，那年的冬天很冷，把很多人都冻死了，哈族人杀了很多牲畜来救中国人的命。俄罗斯族、哈族、吉尔吉斯族、乌兹别克族等中亚人民，都救济帮助了我们东干兄弟。</p>
+<p>这些历史都是一辈一辈传下来的，我们不能忘了我们是中国人，是陕西人，不能忘了我们的文化和语言，所以把这个传统就保护得很好。</p>
+<p>钝角：东干人现在有多少？</p>
+<p>安胡塞：现在东干人在哈萨克斯坦有7万人，全中亚加上俄罗斯，现在有14万到15万人。东干人还是说的陕西话，吃的陕西面、馍馍、手撕面。还说一些古老的话，把政府还叫衙门，把警察叫衙役，把总统叫皇上，店铺老板叫掌柜，学校叫学堂等等。东干人的传统服饰和清朝时期是一样的，新娘子还穿清朝的长袍子。部落的文化、风俗、习惯都保留下来了。你看这个陕西银条子都是手工绣的，这个披肩，每一个花都有自己的讲究，都是手工绣花，包括这个银元头，有的文化学者把这个研究了。东干文化是清朝陕西文化的活化石。<br>（图：东干新娘子的服饰）</p>
+<p>钝角：哈萨克斯坦东干人与其他中亚国家的东干人的联系怎么样？</p>
+<p>安胡塞：所有中亚的、俄罗斯的东干人都有关系，有一个国际东干协会，我也是那个国际东干协会的会长。原来苏联的时候，东干人没有办法回中国，没有办法回老家。现在东干人很幸福，能回老家，能学母语。东干协会从1994年开始就可以回陕西老家交流了。这20年，我们送了2000多东干孩子回老家学母语，现在东干孩子已经会汉字了——原来不会汉字，因为没有人教汉字，毕竟已经过了150多年了——但是现在的东干孩子学汉字、学汉语非常方便。培养的2000多个孩子，在东干与中亚及俄罗斯的合作中，起了很重要的作用。</p>
+<p>钝角：您如何看待当前哈萨克斯坦和中国的关系？</p>
+<p>安胡塞：哈萨克斯坦和中国的关系现在是最好的一段时间。</p>
+<p>钝角：为什么这么说呢？</p>
+<p>安胡塞：苏联的时候没有交流。那时候是苏联管哈萨克斯坦，边界都封闭着。2013年习主席去了哈萨克斯坦以后，哈萨克斯坦同中国的关系就变好了，开始了更多的合作。现在哈萨克斯坦到中国有4个天然气管道、6个石油管道，有2个铁路，有25个边界口岸。现在的关系在历史上最好的一段时间，合作规模也很大。</p>
+<p>钝角：“一带一路”倡议与哈萨克斯坦关系密切， “一带一路”倡议对哈萨克斯坦的影响？</p>
+<p>安胡塞：“一带一路”倡议是习主席在哈萨克斯坦提出来的。刚好现在通过哈萨克斯坦修的高速公路和铁路到俄罗斯，是直接到欧洲最近的一条路。</p>
+<p>另外，2014年 12月25日李克强总理跟马西莫夫总理签协议，把60个大工厂迁到哈萨克斯坦去，现在已经有20多个迁过去了。马西莫夫还是哈萨克斯坦新丝绸之路文化经济国际科学院的院长。哈萨克斯坦原来同中国的贸易都是石油、矿产、天然气，现在主要是投资高科技、农业，现在中国在哈萨克斯坦发展高科技农业、有机农业，两岸三地的合作非常大。纳扎尔巴耶夫总统还提出了“光明之路”发展计划，把这两个合在一起发展。</p>
+<p>哈萨克斯坦总统和习主席每年都要见几次面，今年是6月23日在乌兹别克斯坦的上海合作组织大会上见，他们经常见。还有外交部部长王毅到哈萨克斯坦去，已经确定6月17日习主席要访哈萨克斯坦。哈萨克斯坦与中国有1700公里的共同边界线，现在有很大规模的合作，这对东干人是一个很好的机遇，“一带一路”对东干人也是一个很好的机遇。东干人会俄语，会汉语，会哈萨克斯坦语，对中国很了解，这就使得东干人在东亚，在俄罗斯和中国之间是一个桥梁，一个平台。</p>
+<p>钝角：东干人是不是都信仰伊斯兰教？</p>
+<p>安胡塞：都是信仰伊斯兰教，实际上它是丝路民族。原来阿拉伯人、波斯人都到中国来，这些人已经被中国文化同化了，但是信仰的是伊斯兰教。从丝绸之路来的阿拉伯人、波斯人到中国之后，就成立了回族。没有丝绸之路，也就没有这个民族了。</p>
+<p>钝角：哈萨克斯坦的其他民族也是信仰伊斯兰教么？</p>
+<p>安胡塞：哈萨克斯坦70%的人信仰伊斯兰教，130多个民族大部分都是伊斯兰教，也还有基督教、东正教。</p>
+<p>钝角：现在中哈之间的民间交流怎么样？东干协会在中国有没有民间对接组织？</p>
+<p>安胡塞：有，2002年东干协会就在中国西安注册了一个办事处。我们有很多的交流，有很多省长、州长都来做友谊、文化交流，相当不错。包括马西莫夫是陕西省的经济顾问。通过民间的接触，两国的合作规模也是非常大的。</p>
+<p>习主席2014年在北京召开的世界华人大会上接见华人华裔，世界华人大会每两年一次。2014年是6月1号、2号开会，6月2号李克强总理接见，6月1号是习主席专门接见。他们都说了：不管在国外住多久，不管你会不会汉语，不管你的信仰，我们都是中华民族的后裔，都是中华民族的孩子。</p>
+<p>习主席说：你现在必须要干好，你代表的是中华民族，代表中华人的哲学。你在哈萨克斯坦一定要干好，要给人感觉咱们不一样。必须对现在的祖国有很大的贡献，要做两国的平台和桥梁。包括哈萨克斯坦的总统——因为我也是哈萨克斯坦民族大会的理事，他（纳扎尔巴耶夫总统）也让我回去跟中国的同志说：把你们高科技的技术都带过来，把投资也带过来，我会大力地支持。所以，现在两国的交流合作搞得非常不错，现在我们已经有三、四个项目正在建设。</p>
+<p>钝角：去年有一个新闻，好像哈萨克斯坦爆发过反华事件，因为在那里搞建设的中国人不尊重当地信仰。</p>
+<p>安胡塞：有一些是反对派，他们反对总统，他们说总统把农业土地卖给中国了。其实没有卖，是让中国帮助发展农业。这些反对派反对现在的政府，他们都跟国外有关系，因为现在哈萨克斯坦跟中国的关系太好了，他们就在外国炒作，想在哈萨克斯坦搞出一个“颜色革命”来，但是哈萨克斯坦人的社会福利很好，生活水平很好。</p>
+<p>钝角：具体是怎样好呢？</p>
+<p>安胡塞：它仍保留原来苏联的福利系统。教育上，从小学到高中全部都是免费的，大学30%也是免费的，谁考分考得高都是免费的。医疗上，老人、孩子的医疗都是免费的。社会福利很好，对老百姓的福利很好，老百姓都很支持总统。西方搞的两次颜色革命，像乌克兰都混乱了。原来一个乌克兰是哈萨克斯坦GDP的四倍。现在一个哈萨克斯坦是乌克兰GDP的两倍，你看“颜色革命”都搞坏了。所以民众都欢迎总统和中国合作。</p>
+<p>钝角：现在哈萨克斯坦跟俄罗斯的关系怎么样？</p>
+<p>安胡塞：也很好，包括俄罗斯、哈萨克斯坦和中国都是上海合作组织成员国。习主席2013年到哈萨克斯坦去也接见过，习主席说了一句话，他说哈萨克斯坦是中国最好的合作伙伴。习主席和总统的关系也很好，就像弟兄一样，两个国家领导人的关系对两个国家的关系非常重要。</p>
+<p>钝角：中国发起的上海合作组织把中亚国家以及俄罗斯都连接了起来，您如何看待上海合作组织？</p>
+<p>安胡塞：上海合作组织把几个国家团结在一起，对全世界的影响力很大。上合组织今年6月23日至24日在乌兹别克斯坦举行15周年峰会。2015年的峰会上合组织决定扩员，明年可能巴基斯坦等一些国家要加入上海合作组织。上海合作组织会把大家都团结起来。</p>
+<p>钝角：中亚所面临的最严重的恐怖主义威胁是什么呢？</p>
+<p>安胡塞：现在最大的危险还是伊斯兰国。伊斯兰国在阿富汗很厉害，像叙利亚、伊拉克打击控制很严格。可这些是人为的，现在最危险的就是伊斯兰国。中亚这几个“斯坦”，有两国的生活水平还是不太高——塔吉克斯坦和吉尔吉斯斯坦人民的生活水平不高，伊斯兰国就会到这里面来，所以有这个风险。但是有了上海合作组织，俄罗斯、中国会帮助它们防止一些恐怖组织的威胁。</p>
+<p>钝角：我还看过一篇文章，内容是俄罗斯的知识分子说俄罗斯的野心，他们认为哈萨克斯坦是俄罗斯的一部分，俄罗斯有没有这种想法？</p>
+<p>安胡塞：有这种说法。哈萨克斯坦跟俄罗斯的关系是最近的关系，最好的关系，但有一些反对派，经常做这个事，觉得俄罗斯和哈萨克斯坦关系不好，实际上没有这回事。哈萨克斯坦有20%的俄罗斯人，俄罗斯也有很多哈萨克斯坦人。两国的经济一体化的量也很大，现在又是欧亚经济联盟里面的，所以并不存在层级。哈萨克斯坦和俄罗斯早就把边界全部都迁完了。哈萨克斯坦的总统纳扎尔巴耶夫很厉害，是很强大的一个人，能够跟中国把关系搞这么好，跟俄罗斯关系也好，跟美国关系也好。</p>
+<p>钝角：我看过哈萨克斯坦总统纳扎尔巴耶夫的讲话视频，真的很有魅力很坚定有力，据说他已经当了很多年的总统了。</p>
+<p>安胡塞：他当了25年的总统了，他的管理（能力）很强，很厉害。</p>
+<p>—结束—</p>
+<p>钝角网</p>
+<p>（ID：idunjiao）</p>
+<p>晓世界，知天下</p>
+<p>关注“钝角”就够了</p>
+<p>联系方式：dunjiao2016@163.com</p>
+<p>政治学与国际关系论坛<br>ID：sinozhuge</p>
+<p>长按二维码关注<br>万里常安研究院旗下中国最大的政治学与国际关系社区，投稿或课题研究合作请联系邮箱：sinozhuge@126.com，另外欢迎关注“海外利益研究”（haiwailiyi）微信公众平台，期待您的加入。<br>责任编辑：沈越<br>阅读 2163 投诉<br>写留言</p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://zhengheforum.org/2016/10/26/e4-b8-ad-e5-9b-bd-e4-b8-8e-e4-b8-ad-e4-ba-9a-e7-9a-84-e4-ba-a4-e6-b5-81-e4-bd-bf-e8-80-85-ef-bc-9a-e5-ae-89-e8-83-a1-e5-a1-9e/" data-id="cj9i2dt1q000dkefy7gtnw7xd" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="/" target="_blank">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="/" target="_blank">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="google-plus" href="/" target="_blank">
+                        <i class="icon fa fa-google-plus"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/ppoffice/hexo-theme-hueman" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="/" target="_blank">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/" target="_blank">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2016/10/29/e9-83-91-e5-92-8c-e5-9b-bd-e9-99-85-e5-92-8c-e5-b9-b3-e5-9f-ba-e9-87-91-e4-bc-9a-e8-8d-a3-e5-b9-b8-e8-81-98-e8-af-b7-e6-9c-b1-e5-a8-81-e7-83-88-e6-95-99-e6-8e-88-e4-b8-ba-e5-ad-a6-e6-9c-af-e9-a1-be/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            郑和国际和平基金会荣幸聘请朱威烈教授为学术顾问
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2016/10/26/e4-bb-8e-e5-8f-a4-e6-b3-a2-e6-96-af-e5-8f-b2-e8-af-97kushuameh-e7-9c-8b-e8-90-a8-e7-8f-8a-e6-b3-a2-e6-96-af-e5-94-90-e6-9c-9d-e6-96-b0-e7-bd-97-e4-b9-8b-e5-85-b3-e7-b3-bb/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">从古波斯史诗Kushnameh看萨珊波斯-唐朝-新罗之关系</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/01/25/e9-83-91-e5-92-8c-e5-9b-bd-e9-99-85-e5-92-8c-e5-b9-b3-e5-9f-ba-e9-87-91-e4-bc-9a-e5-85-ac-e5-bc-80-e5-a3-b0-e6-98-8e/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://zhengheforum.org/wp-content/uploads/2017/01/IMG_8599-169x300.png)" alt="郑和国际和平基金会公开声明" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/News-信息/">News/信息</a></p>
+                            <p class="item-title"><a href="/2017/01/25/e9-83-91-e5-92-8c-e5-9b-bd-e9-99-85-e5-92-8c-e5-b9-b3-e5-9f-ba-e9-87-91-e4-bc-9a-e5-85-ac-e5-bc-80-e5-a3-b0-e6-98-8e/" class="title">郑和国际和平基金会公开声明</a></p>
+                            <p class="item-date"><time datetime="2017-01-24T18:59:54.000Z" itemprop="datePublished">2017-01-25</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/01/24/e7-ac-ac-e4-b8-89-e5-b1-8a-e9-83-91-e5-92-8c-e8-ae-ba-e5-9d-9b-e5-9b-bd-e9-99-85-e4-bc-9a-e8-ae-ae-e5-b0-86-e4-ba-8e2017-e5-b9-b48-e6-9c-88-e5-9c-a8-e5-93-88-e8-90-a8-e5-85-8b/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://zhengheforum.org/wp-content/uploads/2017/01/IMG_8112-225x300.jpg)" alt="第三届“郑和论坛”国际会议将于2017年8月在哈萨克斯坦召开" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/News-信息/">News/信息</a></p>
+                            <p class="item-title"><a href="/2017/01/24/e7-ac-ac-e4-b8-89-e5-b1-8a-e9-83-91-e5-92-8c-e8-ae-ba-e5-9d-9b-e5-9b-bd-e9-99-85-e4-bc-9a-e8-ae-ae-e5-b0-86-e4-ba-8e2017-e5-b9-b48-e6-9c-88-e5-9c-a8-e5-93-88-e8-90-a8-e5-85-8b/" class="title">第三届“郑和论坛”国际会议将于2017年8月在哈萨克斯坦召开</a></p>
+                            <p class="item-date"><time datetime="2017-01-24T09:49:52.000Z" itemprop="datePublished">2017-01-24</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/11/26/e7-ac-ac-e4-b8-89-e5-b1-8a-e9-83-91-e5-92-8c-e8-ae-ba-e5-9d-9b-e5-be-81-e6-96-87/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://zhengheforum.org/wp-content/uploads/2016/09/image-23-300x300.jpeg)" alt="第三届“郑和论坛”征文（哈萨克斯坦）" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/News-信息/">News/信息</a></p>
+                            <p class="item-title"><a href="/2016/11/26/e7-ac-ac-e4-b8-89-e5-b1-8a-e9-83-91-e5-92-8c-e8-ae-ba-e5-9d-9b-e5-be-81-e6-96-87/" class="title">第三届“郑和论坛”征文（哈萨克斯坦）</a></p>
+                            <p class="item-date"><time datetime="2016-11-26T06:42:47.000Z" itemprop="datePublished">2016-11-26</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/11/25/e7-83-ad-e7-83-88-e7-a5-9d-e8-b4-ba-e5-8d-b0-e5-b0-bc-e7-ac-ac-e5-8d-81-e5-ba-a7-e9-83-91-e5-92-8c-e6-b8-85-e7-9c-9f-e5-af-ba-e6-88-90-e7-ab-8b/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://zhengheforum.org/wp-content/uploads/2016/11/IMG_6589-169x300.jpg)" alt="热烈祝贺印尼第十座郑和清真寺成立" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/News-信息/">News/信息</a></p>
+                            <p class="item-title"><a href="/2016/11/25/e7-83-ad-e7-83-88-e7-a5-9d-e8-b4-ba-e5-8d-b0-e5-b0-bc-e7-ac-ac-e5-8d-81-e5-ba-a7-e9-83-91-e5-92-8c-e6-b8-85-e7-9c-9f-e5-af-ba-e6-88-90-e7-ab-8b/" class="title">热烈祝贺印尼第十座郑和清真寺成立</a></p>
+                            <p class="item-date"><time datetime="2016-11-25T01:17:43.000Z" itemprop="datePublished">2016-11-25</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/11/25/e5-bd-93-e4-bb-a3-e4-b8-ad-e5-9b-bd-e6-97-8f-e7-be-a4-e8-9e-8d-e5-90-88-ef-bc-9a-e5-9f-8e-e5-b8-82-e5-8c-96-e8-83-8c-e6-99-af-e4-b8-8b-e7-9a-84-e5-9b-9e-e6-b1-89-e4-ba-92-e5-8a-a8/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://zhengheforum.org/wp-content/uploads/2016/10/tn-300x200.jpg)" alt="当代中国族群融合：城市化背景下的回汉互动" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Academic-Research-学术研究-版权所有，违者必究/">Academic Research/学术研究 (版权所有，违者必究)</a></p>
+                            <p class="item-title"><a href="/2016/11/25/e5-bd-93-e4-bb-a3-e4-b8-ad-e5-9b-bd-e6-97-8f-e7-be-a4-e8-9e-8d-e5-90-88-ef-bc-9a-e5-9f-8e-e5-b8-82-e5-8c-96-e8-83-8c-e6-99-af-e4-b8-8b-e7-9a-84-e5-9b-9e-e6-b1-89-e4-ba-92-e5-8a-a8/" class="title">当代中国族群融合：城市化背景下的回汉互动</a></p>
+                            <p class="item-date"><time datetime="2016-11-24T21:28:28.000Z" itemprop="datePublished">2016-11-25</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Academic-Advisers-学术顾问/">Academic Advisers/学术顾问</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Academic-Advisers-学术顾问/ZIPF-Advisers-基金会顾问/">ZIPF Advisers/基金会顾问</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Academic-Research-学术研究-版权所有，违者必究/">Academic Research/学术研究 (版权所有，违者必究)</a><span class="category-list-count">18</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Home-主页/">Home/主页</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/News-信息/">News/信息</a><span class="category-list-count">23</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ZIPF-Leadership-基金会负责人/">ZIPF Leadership/基金会负责人</a><span class="category-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">31</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+
+            
+                
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2017 Haiyun</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'http://zhengheforum.org/2016/10/26/e4-b8-ad-e5-9b-bd-e4-b8-8e-e4-b8-ad-e4-ba-9a-e7-9a-84-e4-ba-a4-e6-b5-81-e4-bd-bf-e8-80-85-ef-bc-9a-e5-ae-89-e8-83-a1-e5-a1-9e/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

@@ -1,34 +1,668 @@
-include mixins
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>中国与马来西亚关系：郑和与伊斯兰教的联系 | ZhengheForum.org</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="" />
+    
+    <meta name="description" content="中国与马来**西亚关系：郑和与伊斯兰教的联系[1]** Dr.LEE Kam Hing 李康兴博士 马来亚大学，中国研究院高级研究员； Dr. NGEOW Chow Bing 尼格欧·周兵博士 马来亚大学，中国研究院副院长 “伴随着国际形势的改变，马来西亚与中国的政治关系正在发生改变，这些都促进两国关系提升。然而，这种关系的提升需要双方之间以新的视野和角度来加以看待和稳固。因此，这是一种再次对两">
+<meta property="og:type" content="article">
+<meta property="og:title" content="中国与马来西亚关系：郑和与伊斯兰教的联系">
+<meta property="og:url" content="http://zhengheforum.org/2016/09/28/e4-b8-ad-e5-9b-bd-e4-b8-8e-e9-a9-ac-e6-9d-a5-e8-a5-bf-e4-ba-9a-e5-85-b3-e7-b3-bb-ef-bc-9a-e9-83-91-e5-92-8c-e4-b8-8e-e4-bc-8a-e6-96-af-e5-85-b0-e6-95-99-e7-9a-84-e8-81-94-e7-b3-bb/index.html">
+<meta property="og:site_name" content="ZhengheForum.org">
+<meta property="og:description" content="中国与马来**西亚关系：郑和与伊斯兰教的联系[1]** Dr.LEE Kam Hing 李康兴博士 马来亚大学，中国研究院高级研究员； Dr. NGEOW Chow Bing 尼格欧·周兵博士 马来亚大学，中国研究院副院长 “伴随着国际形势的改变，马来西亚与中国的政治关系正在发生改变，这些都促进两国关系提升。然而，这种关系的提升需要双方之间以新的视野和角度来加以看待和稳固。因此，这是一种再次对两">
+<meta property="og:image" content="http://zhengheforum.org/wp-content/uploads/2016/09/ngeowcb-227x300.jpg">
+<meta property="og:updated_time" content="2017-11-02T05:19:39.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="中国与马来西亚关系：郑和与伊斯兰教的联系">
+<meta name="twitter:description" content="中国与马来**西亚关系：郑和与伊斯兰教的联系[1]** Dr.LEE Kam Hing 李康兴博士 马来亚大学，中国研究院高级研究员； Dr. NGEOW Chow Bing 尼格欧·周兵博士 马来亚大学，中国研究院副院长 “伴随着国际形势的改变，马来西亚与中国的政治关系正在发生改变，这些都促进两国关系提升。然而，这种关系的提升需要双方之间以新的视野和角度来加以看待和稳固。因此，这是一种再次对两">
+<meta name="twitter:image" content="http://zhengheforum.org/wp-content/uploads/2016/09/ngeowcb-227x300.jpg">
+    
 
-extends partial/layout
+    
+        <link rel="alternate" href="/" title="ZhengheForum.org" type="application/atom+xml" />
+    
 
-block site_title
-    != page.title + " · " + config.title
+    
 
-block description
-    - var desc = page.desc || strip_html(page.content).replace(/^\s*/, '').replace(/\s*$/, '').substring(0, 150);
-    meta(name="description", content=desc)
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
 
-block content
-  .autopagerize_page_element: .content: .post-page
-    include mixins
-    +make_post(page, true)
-    .share
-      .evernote
-        a.fa.fa-bookmark(href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title);}})();", ref="nofollow", target="_blank")
-      .weibo
-        a.fa.fa-weibo(href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&title=',e(d.title),'&appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));")
-      .twitter
-        a.fa.fa-twitter(href=url_for("http://twitter.com/home?status="+","+config.url+"/"+page.path+","+config.title+","+page.title+",;"))
-    - var prev = page.prev ? page.prev.path : false;
-    - var next = page.next ? page.next.path : false;
-    .pagination
-      ul.clearfix
-        if prev
-          li.pre.pagbuttons
-            a.btn(role="navigation",href=url_for(prev), title=page.prev.title)!= __('prev_post')
-        if next
-          li.next.pagbuttons
-            a.btn(role="navigation",href=url_for(next), title=page.next.title)!= __('next_post')
-    if page.comments
-        include partial/comments
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Academic-Advisers-学术顾问/">Academic Advisers/学术顾问</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Academic-Advisers-学术顾问/ZIPF-Advisers-基金会顾问/">ZIPF Advisers/基金会顾问</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Academic-Research-学术研究-版权所有，违者必究/">Academic Research/学术研究 (版权所有，违者必究)</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Home-主页/">Home/主页</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/News-信息/">News/信息</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/ZIPF-Leadership-基金会负责人/">ZIPF Leadership/基金会负责人</a></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Academic-Research-学术研究-版权所有，违者必究/">Academic Research/学术研究 (版权所有，违者必究)</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-e4-b8-ad-e5-9b-bd-e4-b8-8e-e9-a9-ac-e6-9d-a5-e8-a5-bf-e4-ba-9a-e5-85-b3-e7-b3-bb-ef-bc-9a-e9-83-91-e5-92-8c-e4-b8-8e-e4-bc-8a-e6-96-af-e5-85-b0-e6-95-99-e7-9a-84-e8-81-94-e7-b3-bb" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        中国与马来西亚关系：郑和与伊斯兰教的联系
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2016/09/28/e4-b8-ad-e5-9b-bd-e4-b8-8e-e9-a9-ac-e6-9d-a5-e8-a5-bf-e4-ba-9a-e5-85-b3-e7-b3-bb-ef-bc-9a-e9-83-91-e5-92-8c-e4-b8-8e-e4-bc-8a-e6-96-af-e5-85-b0-e6-95-99-e7-9a-84-e8-81-94-e7-b3-bb/" class="article-date">
+            <time datetime="2016-09-28T02:59:25.000Z" itemprop="datePublished">2016-09-28</time>
+        </a>
+    </div>
+
+                
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p><img src="http://zhengheforum.org/wp-content/uploads/2016/09/ngeowcb-227x300.jpg" alt="ngeowcb"></p>
+<p><strong>中国与马来**</strong>西亚关系：郑和与伊斯兰教的联系<strong>[</strong><u><a href="http://zhengheforum.org/wp-admin/post-new.php#_ftn1">1]</a></u>**</p>
+<p><strong>Dr.LEE Kam Hing</strong></p>
+<p><strong>李康兴博士</strong></p>
+<p><strong>马来亚大学，中国研究院高级研究员；</strong></p>
+<p><strong>Dr. NGEOW Chow Bing</strong></p>
+<p><strong>尼格欧·周兵博士</strong></p>
+<p><strong>马来亚大学，中国研究院副院长</strong></p>
+<p><em>“伴随着国际形势的改变，马来西亚与中国的政治关系正在发生改变，这些都促进两国关系提升。然而，这种关系的提升需要双方之间以新的视野和角度来加以看待和稳固。因此，这是一种再次对两国历史相遇的体验，有着伊斯兰教背景的郑和将军的到访，以伊斯兰教作为纽带推动双方关系开启新篇章。这种伊斯兰教象征尤其重要，因为当中国被视为“异类”、“充满威胁”的国家时，凭借伊斯兰教的背景历史话语将会提供一种共有的文化价值和和平观念。这也是中国之所以在穆斯林国家受欢迎的原因，而中国形象的提升，改善同这些国家的关系，将有助于推动国家间更多的交往和国际贸易的增加。”</em></p>
+<p><strong>简介</strong></p>
+<p>2013年，美国皮尤研究中心进行了一项关于世界各国如何看待美国和中国的研究。该研究显示出,同中国相比，大部分国家更偏向于美国。然而值得关注的是，一些国家对中国的好感高于美国，更让人吃惊地是，这些偏向于中国的国家很多是穆斯林国家或穆斯林为主体的国家。包括马来西亚，另外还有印度尼西亚、巴基斯坦、突尼斯、约旦、埃及、巴勒斯坦国和尼日利亚。在马来西亚，偏向中国的比例为81%，而偏向于美国的比例为66%。</p>
+<p>美国之所以在穆斯林国家获得好感程度较低的原因有多种，包括美国支持以色列。然而本文所针对的是马来西亚，主要研究过去或当前伊斯兰教是否是在马来西亚与中国关系中扮演一定的角色。</p>
+<p>也许可以说中国受到欢迎并不奇怪，因为中国与中东、穆斯林世界有着悠久的历史关系。来自中东的商人很久之前就在中国进行贸易，有波斯人，景教徒（Nestorians）,随后是阿拉伯人。据称阿拉伯商人在10世纪就到了中国南方的港口，这些商人将中国商品从海路和路上的丝绸之路运输到地中海。中国商人也进行了长途旅行，他们从中国南方港口出发，通过马六甲海峡到西亚和东南亚，其中包括政府支持的商人以及私人贸易者。中国商人到访的一个重要港口是印度西岸的卡利卡特（Calicut），他们在此地与来自中东的商人进行货物交换。除此之外，中国商人也在东南亚的各个港口进行贸易，淡马锡（Tumasek）即今天的新加坡，也是中国人频繁出入的一个重要港口。著名的中国旅行家之一的汪大渊在1349年递交了一份他所到达和观察过的多个东南亚地方的记录。<a href="http://zhengheforum.org/wp-admin/post-new.php#_ftn2"><u>[2]</u></a>因此中国在西亚和东南亚的贸易使他们接触到了居住在港口区域的穆斯林和商人。据称当明朝舰队在15世纪初从中国出发时，其时间比欧洲人到亚洲早100多年，当时中国人已经有航海地图以及关于不同地方的信息。在这次贸易的过程中，阿拉伯人将伊斯兰教带到中国，而很多中国的穆斯林社区和清真寺的建立都早于东南亚。</p>
+<p>明朝皇帝于1405年送出航海远征队时，第一任舰队领导郑和（Cheng Ho）将军是一位穆斯林，其队伍中也有多位穆斯林，如记录者马欢，这意味着穆斯林在中国作为官员的影响。<a href="http://zhengheforum.org/wp-admin/post-new.php#_ftn3"><u>[3]</u></a>郑和将军及明朝舰队在亚洲历史上是重大事件，历史学家认为，在15世纪，明朝舰队的到达马六甲苏丹并帮助其进行早期的领土扩张。中国授予马六甲以认可并对其进行保护，警告暹罗（Siam）和爪哇（Java）不准进攻新的苏丹领土，清查马六甲海峡的海盗活动，因此巩固了该地区的贸易。出了马六甲之后，郑和的舰队继续向西亚和非洲东岸前进，郑和将军一共领导了七次穿越马六甲海峡的航海远征，当时也很可能有其他中国舰队从此地航行过。</p>
+<hr>
+<p><strong>郑和在马来西亚历史中</strong></p>
+<p>然而，伊斯兰教教与中国的联系以及15世纪明朝舰队的出使很快便被淹没在历史潮流中，成为该地区的不再新鲜的历史。因为明朝皇帝不再派出其航海远征队伍并实施了闭关锁国政策。紧接着西方人到达该地，首先是葡萄牙人和西班牙人在16世纪到来，随后是荷兰人、英国人和法国人，他们在之后的历史当中统治该地区。正如马来西亚第四任总理马哈蒂尔曾经说的，克里斯托弗哥伦布和瓦斯科·达·伽马的名字和开拓历史比郑和将军更有名。</p>
+<hr>
+<hr>
+<hr>
+<hr>
+<p><strong>马来西亚历史</strong></p>
+<p>但导致早期郑和和中国穆斯林的联系被遗忘的原因并不仅仅是西方的历史，这种遗忘也在马来西亚的历史编纂中表现出来。《马来纪年》是马来西亚最古老的历史存稿之一，包括了马来西亚历史中的马六甲苏丹领土部分，然而其中并没有提到郑和将军或伊斯兰教出现在中国。《马来纪年》中有三个地方提到中国。<a href="http://zhengheforum.org/wp-admin/post-new.php#_ftn4"><u>[4]</u></a>其中的两个地方与1465至1477年统治马六甲的苏丹曼苏尔沙（Mansur Syah）有关，当中以大量篇幅讲述了明朝公主刘航（Hang Liu）(更常用的是汉丽宝)与苏丹曼苏尔沙的婚姻。在该叙述中，《马来纪年》试图将马六甲苏丹描述成与中国皇帝实力相符并与中国在同一阵线的，这或许解释了为何在《马来纪年》中并没有提到郑和将军及其舰队的到来。</p>
+<p>由于东南亚对早期中国的记录并没有提到郑和或中国的任何伊斯兰教特征，因此对于郑和或明朝航海资料的缺乏或许不仅仅是一个殖民地历史编纂的问题。如何呈现早期与中国交往的历史或有关中国的历史，很有可能是由该地区自身的世界观和它本身的历史记忆所决定《马来纪年》的编纂者并没有听说过郑和或其穆斯林背景，假使他听说过，或许在他工作所受的指导观念中，郑和的故事不值一提。或许编纂者已经厌倦于商队的到来或来自印度洋和中东的伊斯兰教。</p>
+<hr>
+<p><strong>少数民族中国人的历史记忆</strong></p>
+<p>在马来西亚的中国人中，有对郑和将军的回忆，但是这些历史回忆掺杂着神话和传奇色彩，直到最近也很少有人知道他是穆斯林。除了叶亚来（Yap Ah Loy）<a href="http://zhengheforum.org/wp-admin/post-new.php#_ftn5"><u>[5]</u></a>之外，郑和或许是马来西亚中国人当中最出名的历史人物，从某些方面来说，郑和或许是一个很久远的历史人物，因其被认为是拥有特点和令人敬佩的领导才能的。然而，将郑和塑造成当地社区中的主要人物还存在困难，因为他是中国明朝的一位使臣，是一位外国将军。在马来西亚中国人当中，郑和更多地被称为“三保”，并被赋予神性而崇拜着，在东南亚的很多地方有一些专门崇拜三保的庙宇。<a href="http://zhengheforum.org/wp-admin/post-new.php#_ftn6"><u>[6]</u></a>很可能是那些中国商人和移民在跨越危险的海域时视郑和为保佑者。乔夫·韦德（Geoff Wade）指出，关于崇拜三保的最早证据出现在1618年的明朝学者张谢的文章《东西洋考》中，乔夫·韦德（Geoff Wade）认为，崇拜三保的现象显示出过去对军事作用以及整个的使节团所提供的保护的理解。<a href="http://zhengheforum.org/wp-admin/post-new.php#_ftn7"><u>[7]</u></a>在东南亚的所有地方中，与郑和有特殊联系的是马六甲，在马六甲有一座中国山经常被称作三保山，因此很可能与郑和有联系。根据马来西亚传统，中国山在15世纪的时候被给予中国，在丁加奴（Terengganu）,槟城和霹雳州也有三保庙。</p>
+<hr>
+<p><strong>20世纪的政治环境与西方学问</strong></p>
+<p>除了早期中国与中东和东南亚穆斯林的联系逐渐被淡忘之外，很长时间内，中国都被一些负面的国际形象所困扰，被塑造成一个好战的扩张大国。当中国共产党在1949年获得权力之后，其宣传口号要求继续革命，并宣称中国共产党支持世界范围内的革命和解放运动。在马来西亚，英国殖民当局正与马来西亚共产党进行丛林战争，而中国则对该早饭运动提供兄弟友谊支持。除此之外，当时中国卷入了朝鲜战争，平叛西藏叛乱，与印度发生边界冲突，因此中国被看作或被描述为有扩张意图的国家。另外，中国政府通过承认所有祖父是中国人的外国人为中国人（中国政府通过承认所有祖籍为中国的侨民都是中国人），而表现出鼓励海外华人将中国当成祖国，因此国际社会担心中国海外华人将会成为中国政府利益的第五纵队，这使得各个东南亚国家的本地社区中引发了不安和猜疑的心态。</p>
+<p>在国内，中国在20世纪60年代爆发的文化大革命攻击其文化和宗教机构，这不仅为中国带来糟糕的国际形象，而且被很多国家看作是具有威胁和攻击性的国家。中国国家的塑造发生在反殖民主义和民族主义的的冷战背景之下。战后中国的国家形象塑造反映在中国和东南亚的一些历史教科书中，在这些书籍当中，发现了明朝的航海资料，但是其中的细节和呈现方式有所不同。郑和航海的故事大多是在马六甲建立的背景之下进行讲述。理查德·温斯泰德（Richard Winstedt）在其书中讲述道：“在1411年，著名的郑和将军或山姆婆（Ong Sam Po），即今天马六甲华人敬拜的一位小神仙（minor deity），在马六甲调用一支拥有巨大帆船的舰队收复了拜里米苏拉（Parameswara）。其同伴和追随者共450人前往中国，在这里，马来西亚王子被中国皇帝亲自接待……”<a href="http://zhengheforum.org/wp-admin/post-new.php#_ftn8"><u>[8]</u></a>然而，郑和的穆斯林背景并未在温斯泰德（Winstedt）的作品或之后的其他书籍中有所提及。霍尔（G.G.E Hall）、达特福德（Dartford）和谭丁（Tan Ding Eing）都简短的提到了郑和，但却未指出他的伊斯兰教背景，很显然，虽然他们是在马六甲建立以及伊斯兰教到来的背景下进行的研究，但还是忽视了该重要事实。直到特里格宁（Tregonning）的作品（1964:23-24）中，郑和才第一次被描述为穆斯林：“一支强大的舰队被召集起来，郑和将军是总指挥官。郑和，穆斯林人，在1403年出发到岛国去索要献给皇帝的贡物。”<a href="http://zhengheforum.org/wp-admin/post-new.php#_ftn9"><u>[9]</u></a></p>
+<p>值得一提的是，早期西方的作品中一般将中国在15世纪早期的航海活动描述为中国帝国主义野心的展现。据他们所说，派遣舰队的原因是展示中国的海军实力并索要贡物。霍尔（Hall）说道“明朝政策致力维护中国在东南亚国家的控制力。从中国港口派遣的使者到其他国家港口，为了表明中国的政策，而其后追随的战舰是为了在必要的时候实行强力。1403年在马六甲出现的代表团是由明朝第三任皇帝永乐皇帝（Cheng-tsu）所派遣。该使团到了爪哇（Java）发现两个国家。郑和所领导的一系列航海行动有战舰护卫，从1405年开始。”<a href="http://zhengheforum.org/wp-admin/post-new.php#_ftn10"><u>[10]</u></a>哈里森（Harrison）写明朝在中国获得权力时说：“中国所发生的政治变化很快便投射到东南亚。明朝陆军南下至印度支那半岛征服了越南。随后在15世纪头30年之间，又派遣七次航海探险活动，到南中国海，并进入印度洋，以宣示中国的宗主权，而这种宗主权的认可则是通过向南京或北京派遣使臣并献上贡品，这些国家来自遥远的亚丁（Aden）,东非港口多克索（Magadoxo）.”<a href="http://zhengheforum.org/wp-admin/post-new.php#_ftn11"><u>[11]</u></a>然而该书虽然有一章讲到伊斯兰教的到来，却并未提及郑和。特里格宁（Tregonning）认为，“15世纪中，影响东南亚的外部力量是明朝中国。该王朝于1368年建立，到1400年它已经充分准备以一种史无前例的规模进入南海，以获得他国对帝国的承认和贡物。”<a href="http://zhengheforum.org/wp-admin/post-new.php#_ftn12"><u>[12]</u></a>以上作品对中国明朝的帝国主义野心的解读，正是处于冷战气氛之下，很可能是为了加强共产主义中国对其临近国家的威胁和扩张印象。</p>
+<p><strong>   </strong>中国形象转变，马来西亚对郑和的新话语以及马来西亚与中国伊斯兰教联系的加强。</p>
+<p>马来西亚对中国及其伊斯兰教的赞赏态度是何时，通过何种方式而建立的呢？或许有人认为马来西亚对中国形象的改变是随着1974年5月在拿督斯里屯·阿卜杜拉·拉扎克(Tun Abdul Razak)任总理期间，马来西亚与中国外交关系的建立而形成。该形象的转变还依赖于邓小平统治下中国的转变，尤其是中国的改革开放政策的实施，中国领导人放弃意识形态为主的政策，引进了市场经济改革政策，放松了对人民生活的控制，包括信仰方面的问题，并对其在世界上的位置有了更实际的定位。</p>
+<p>在马来西亚，马来共产党对国家不再是威胁力量，同时，由于世界范围内的伊斯兰教复兴，伊斯兰教在马来西亚社会和国家政治中获得了稳定的重要地位。在这一背景之下，马来西亚与中国在伊斯兰教方面的关系开始建立。1982年，由马来西亚政府所支持的非政府组织<a href="http://www.sogou.com/link?url=DOb0bgH2eKjRiy6S-EyBciCDFRTZxEJgjJ8X3U062ZRVy6JvJfJZBvCJC-1zdrX65rmI7h7Hvyslz0Tsua-kp5uHcAMIKCTSez6-OEztP33_tjQEipxckrA6UIBhyjp-Qxg3RekY7nD0BIOP4FjVxNXKE9DNMxaEOPdy1UWgCoFh8gleqcBJOIxkGskefwxRTPGvxizlYm_nrpRupg1hKuiJJQMyTQ1T2FIzON8pWTk.&amp;query=%E5%8D%97%E6%B4%8B%E5%9C%B0%E5%8C%BA%E4%BC%8A%E6%96%AF%E5%85%B0%E5%8F%AC%E5%94%A4%E7%90%86%E4%BA%8B%E4%BC%9A" target="_blank" rel="external"><u>南太平洋地区伊斯兰教宣教理事会</u></a>（Regional Islamic Da’wah Council of Southeast Asia(RISEAP)）派出一个代表团到中国，受到中国伊斯兰教协会的热情接待，该代表团的带领者是<a href="http://www.sogou.com/link?url=DOb0bgH2eKjRiy6S-EyBciCDFRTZxEJg2LOMU6js5SiuCsIPhglAilvjT4ZB9u6kpOwwVyvbd3OPPGbOL9MSUxM1vuOwoeRZfWVKX4KL2OUe06yrpseMkH5nkFYselm_QA56jd4s-shUkRIfiqhnn7ykAFLMbIn4GeTBWgpcJFSzWv8lfzrHAQ..&amp;query=%E4%B8%9C%E5%8F%A4%E6%8B%89%E8%B5%AB%E6%9B%BC" target="_blank" rel="external"><u>东古·阿卜杜·拉赫曼</u></a>（Tunku Abdul Rahman），马来西亚的前第一任首相，离职后成为<a href="http://www.sogou.com/link?url=DOb0bgH2eKjRiy6S-EyBciCDFRTZxEJgjJ8X3U062ZRVy6JvJfJZBvCJC-1zdrX65rmI7h7Hvyslz0Tsua-kp5uHcAMIKCTSez6-OEztP33_tjQEipxckrA6UIBhyjp-Qxg3RekY7nD0BIOP4FjVxNXKE9DNMxaEOPdy1UWgCoFh8gleqcBJOIxkGskefwxRTPGvxizlYm_nrpRupg1hKuiJJQMyTQ1T2FIzON8pWTk.&amp;query=%E5%8D%97%E6%B4%8B%E5%9C%B0%E5%8C%BA%E4%BC%8A%E6%96%AF%E5%85%B0%E5%8F%AC%E5%94%A4%E7%90%86%E4%BA%8B%E4%BC%9A" target="_blank" rel="external"><u>南太平洋地区伊斯兰教宣教理事会</u></a>（RISEAP）主席。据报道该代表团的访问十分成功，8位团员访问了中国的4个城市（北京、上海、杭州和广州），并受到中国政府的接待，包括当时的总理赵紫阳。<a href="http://zhengheforum.org/wp-admin/post-new.php#_ftn13"><u>[13]</u></a>1988年7月，<a href="http://www.sogou.com/link?url=DOb0bgH2eKjRiy6S-EyBciCDFRTZxEJgjJ8X3U062ZRVy6JvJfJZBvCJC-1zdrX65rmI7h7Hvyslz0Tsua-kp5uHcAMIKCTSez6-OEztP33_tjQEipxckrA6UIBhyjp-Qxg3RekY7nD0BIOP4FjVxNXKE9DNMxaEOPdy1UWgCoFh8gleqcBJOIxkGskefwxRTPGvxizlYm_nrpRupg1hKuiJJQMyTQ1T2FIzON8pWTk.&amp;query=%E5%8D%97%E6%B4%8B%E5%9C%B0%E5%8C%BA%E4%BC%8A%E6%96%AF%E5%85%B0%E5%8F%AC%E5%94%A4%E7%90%86%E4%BA%8B%E4%BC%9A" target="_blank" rel="external"><u>南太平洋地区伊斯兰教宣教理事会</u></a>（RISEAP）组织了另一次中国之行，其主要目的是与中国在教育上的合作，尤其是中国派遣穆斯林学生到马来西亚学习。<a href="http://zhengheforum.org/wp-admin/post-new.php#_ftn14"><u>[14]</u></a></p>
+<p>1995年9月至10月，<a href="http://www.sogou.com/link?url=DOb0bgH2eKjRiy6S-EyBciCDFRTZxEJgjJ8X3U062ZRVy6JvJfJZBvCJC-1zdrX65rmI7h7Hvyslz0Tsua-kp5uHcAMIKCTSez6-OEztP33_tjQEipxckrA6UIBhyjp-Qxg3RekY7nD0BIOP4FjVxNXKE9DNMxaEOPdy1UWgCoFh8gleqcBJOIxkGskefwxRTPGvxizlYm_nrpRupg1hKuiJJQMyTQ1T2FIzON8pWTk.&amp;query=%E5%8D%97%E6%B4%8B%E5%9C%B0%E5%8C%BA%E4%BC%8A%E6%96%AF%E5%85%B0%E5%8F%AC%E5%94%A4%E7%90%86%E4%BA%8B%E4%BC%9A" target="_blank" rel="external"><u>南太平洋地区伊斯兰教宣教理事会</u></a>（RISEAP）再次派遣了一支代表团对中国进行了为期2周的访问，在此期间，代表团在中国伊斯兰教协会主要负责人的陪同下访问了北京、西安、兰州、临夏和广州，其行程包括访问大学和学术机构，如北京伊斯兰教经学院、中央民族大学以及西北民族大学。在北京，他们还礼节性地拜访了国务院的国家宗教事务局。此次访问的报道评论说“该访问使得<a href="http://www.sogou.com/link?url=DOb0bgH2eKjRiy6S-EyBciCDFRTZxEJgjJ8X3U062ZRVy6JvJfJZBvCJC-1zdrX65rmI7h7Hvyslz0Tsua-kp5uHcAMIKCTSez6-OEztP33_tjQEipxckrA6UIBhyjp-Qxg3RekY7nD0BIOP4FjVxNXKE9DNMxaEOPdy1UWgCoFh8gleqcBJOIxkGskefwxRTPGvxizlYm_nrpRupg1hKuiJJQMyTQ1T2FIzON8pWTk.&amp;query=%E5%8D%97%E6%B4%8B%E5%9C%B0%E5%8C%BA%E4%BC%8A%E6%96%AF%E5%85%B0%E5%8F%AC%E5%94%A4%E7%90%86%E4%BA%8B%E4%BC%9A" target="_blank" rel="external"><u>南太平洋地区伊斯兰教宣教理事会</u></a>（RISEAP）代表团与所到过的中国城市中的穆斯林领导建立联系，并交换观点……<a href="http://www.sogou.com/link?url=DOb0bgH2eKjRiy6S-EyBciCDFRTZxEJgjJ8X3U062ZRVy6JvJfJZBvCJC-1zdrX65rmI7h7Hvyslz0Tsua-kp5uHcAMIKCTSez6-OEztP33_tjQEipxckrA6UIBhyjp-Qxg3RekY7nD0BIOP4FjVxNXKE9DNMxaEOPdy1UWgCoFh8gleqcBJOIxkGskefwxRTPGvxizlYm_nrpRupg1hKuiJJQMyTQ1T2FIzON8pWTk.&amp;query=%E5%8D%97%E6%B4%8B%E5%9C%B0%E5%8C%BA%E4%BC%8A%E6%96%AF%E5%85%B0%E5%8F%AC%E5%94%A4%E7%90%86%E4%BA%8B%E4%BC%9A" target="_blank" rel="external"><u>南太平洋地区伊斯兰教宣教理事会</u></a>（RISEAP）会在短时期之内在马来西亚高等教育机构中寻找更多机构，以期满足该国不断增长的教育机会需求。”<a href="http://zhengheforum.org/wp-admin/post-new.php#_ftn15"><u>[15]</u></a></p>
+<p><a href="http://www.sogou.com/link?url=DOb0bgH2eKjRiy6S-EyBciCDFRTZxEJgjJ8X3U062ZRVy6JvJfJZBvCJC-1zdrX65rmI7h7Hvyslz0Tsua-kp5uHcAMIKCTSez6-OEztP33_tjQEipxckrA6UIBhyjp-Qxg3RekY7nD0BIOP4FjVxNXKE9DNMxaEOPdy1UWgCoFh8gleqcBJOIxkGskefwxRTPGvxizlYm_nrpRupg1hKuiJJQMyTQ1T2FIzON8pWTk.&amp;query=%E5%8D%97%E6%B4%8B%E5%9C%B0%E5%8C%BA%E4%BC%8A%E6%96%AF%E5%85%B0%E5%8F%AC%E5%94%A4%E7%90%86%E4%BA%8B%E4%BC%9A" target="_blank" rel="external"><u>南太平洋地区伊斯兰教宣教理事会</u></a>（RISEAP）从此之后与马来西亚的一个专门处理伊斯兰教事务的总理政府部门机构，伊斯兰教发展局（Bureau of Islamic Advancement）与马来西亚伊斯兰教医药保健品局（Jabatan Kemajuan Islam Malaysia, 缩写为 JAKIM））进行合作，并得到JAKIM当时部长（之后他在21世纪初成为马来西亚第五任总理 阿布杜拉·巴达维（Abdullah Badawi）管理期间的的伊斯兰教事务顾问）的支持，因此而开设了一个奖学金计划，可以让36个中国穆斯林到马来西亚登嘉楼（Terengganu）州苏丹再那阿比丁伊斯兰教大学（Sultan Zainal Abidin Islamic College） (Kolej Ugama Sultan Zainal Abidin, 缩写为KUSZA;这个学院后来升级为大学, 现在称为 UNISZA)学校进行三年的学习。<a href="http://zhengheforum.org/wp-admin/post-new.php#_ftn16"><u>[16]</u></a>当然这不包括1995年已经在马来西亚UIA或KUSZA学习的60个穆斯林学生，由“伊斯兰教自省计划<strong>（</strong>Islamic awareness programme<strong>）</strong>”的报告中所提供的，该报告来源于RISEAP出版物。<a href="http://zhengheforum.org/wp-admin/post-new.php#_ftn17"><u>[17]</u></a>RISEAP-JAKIM项目由于1997年的亚洲金融危急中马来西亚政府所遭受的资金紧张，以及JAKIM内部关于该项目的效率的质疑而在1998年停止。</p>
+<p>在马来西亚与中国的关系不断改善走向友好的过程中，中国在马来西亚的形象也得到了重塑。对于马来西亚来说，形象的重塑体现出关系的更新，而伊斯兰教与马来民族主义是其中的重要因素，这也是长久以来中国和马来西亚获取资源的来源。为此，早期中国与马来西亚关系中被忽视的《马来纪年》以及明朝记录中的故事又得到了重视，与该故事一同被关注的，还有过去一直被遗忘的伊斯兰教到来的描述。这一历史回顾围绕的是早期马六甲的统治者以及600多年前明朝海军舰队的到来，而当时中国与马来都是该地区处于统治巅峰的政治强国，双方进行了友好交流和交换。两国在该时期的交流提供了有力的证据来塑造一个更加积极的，值得接受的中国形象。对于中国政府来说，这些明朝舰队代表了中国的海上实力以及中国与邻邦的和平相处。对于马来西亚来说，明朝舰队的到来提醒他们马六甲曾经是独立的统治力量，并与中国发展了友好的关系。现代马来西亚将其看作是一个地区角色，也是为其提供外交支持的友国。</p>
+<p>对明帝国的航海解读发生了巨大变化，舰海队的出航成为推进与他国和平与友谊的象征，与新的国际秩序和国家关系相符合。最近马来西亚对郑和的研究兴趣不断增长。首先，在马来西亚国内和国外都有新的出版物，集中于研究明朝航海将军。2001年，《时代》杂志刊登了一篇对郑和的特殊的描述，其余的出版物有路易斯·<a href="http://www.sogou.com/link?url=6YUuC6e6hWZGWh5sy2fbp3LDXoGeCqeR2RAhFGWxYuDPCnCZCrbWiQ..&amp;query=Louise+Levathes+%E4%BA%BA%E5%90%8D" target="_blank" rel="external"><u>李露晔</u></a>（Louise Levathes）的《中国统治的余波》When China Rules the Waves（1994年出版）。最近还有加文·麦肯齐（Gavin Menzie）所著的关于郑和将军的大受欢迎的新书，但其所认为的中国发现了美国的观点备受争议（在专业历史学家圈子内并不受欢迎）。在2003年10月，麦肯齐（Menzies）在马六甲、吉隆坡和槟榔屿拥挤的观众中的发表演讲，通过声称郑和到达美国和欧洲而吸引了大批观众。这些英文出版物的读者大多数是来自能阅读英语的城市人口，更重要的是，在马来语出版物中，也出现了专门描写郑和的作品。到目前为止，共有5本以马来语出版的关于郑和的书籍（见表1）。</p>
+<p><strong>表**</strong>1：关于郑和的马来语书籍**</p>
+<p><table></table></p>
+<p><tbody></tbody></p>
+<p><tr></tr></p>
+<p><td width="21"></td></p>
+<p><td width="305">书名</td></p>
+<p><td width="122">作者</td></p>
+<p><td width="161">出版单位与出版年份</td><br></p>
+<p><tr></tr></p>
+<p><td width="21">1</td></p>
+<p><td width="305">《光辉的历史篇章——15世纪马六甲王朝与明朝的关系》</td></p>
+<p>Lembaran sejarah gemilang: hubungan Empayar Melaka-Dinasti Ming abad ke-15</p>
+<p>(A Page in Glorious History: Relations between the Malacca Kingdom and the Ming Dynasty in the 15th Century)</p>
+<p><td width="122">梁立基</td></p>
+<p><td width="161">[Bangi]:Penerbit Universiti Kebangsaan Malaysia, 1996</td><br></p>
+<p><tr></tr></p>
+<p><td width="21">2</td></p>
+<p><td width="305">《郑和下西洋与马来国家》</td></p>
+<p>Pelayaran Zheng He dan alam Melayu</p>
+<p>(Zheng He’s Voyages in the Malay World)</p>
+<p><td width="122">孔远志</td></p>
+<p><td width="161">[Bangi] : Penerbit Universiti Kebangsaan Malaysia, 2010</td><br></p>
+<p><tr></tr></p>
+<p><td width="21">3</td></p>
+<p><td width="305">《马六甲历史中的郑和将军及其与中国明朝的外交关系》</td></p>
+<p>Laksamana Cheng Ho dalam sejarah Melaka dan hubungan diplomatik dengan dinasti Ming di China</p>
+<p>(Admiral Zheng He in the History of Malacca and Diplomatic Ties with China’s Ming Dynasty)</p>
+<p><td width="122">Haji Mohd Jamil Mukmin</td></p>
+<p><td width="161">[Melaka] : IKSEP, 2011</td><br></p>
+<p><tr></tr></p>
+<p><td width="21">4</td></p>
+<p><td width="305">《哈吉·穆罕默德·郑和将军》Laksamana Haji Muhammad Cheng Ho</td></p>
+<p>(Admiral Haji Muhammad Zheng He)</p>
+<p><td width="122">Edited by Ann Wan Seng</td></p>
+<p>&nbsp;</p>
+<p><td width="161">Persatuan Cina Muslim Malaysia, 2011</td><br></p>
+<p><tr></tr></p>
+<p><td width="21">5</td></p>
+<p><td width="305">《郑和航海》</td></p>
+<p>Pelayaran Cheng Ho</p>
+<p>(Voyages of Zheng He)</p>
+<p><td width="122">Ann Wan Seng</td></p>
+<p>&nbsp;</p>
+<p><td width="161">PERKIM Cawangan Putra, 2012</td><br><br><br><br>&nbsp;</p>
+<p>正如图表中所显示的，5本书当中的2本是由来自中国的学者（梁立基（Liang Liji）和孔远志（Kong Yuanzhi））所著，由马来西亚的一个著名大学出版社所出版。其余三本书由2位马来西亚作者所作，其中一个是中国的少数民族皈依了伊斯兰教。梁立基（Liang Liji）和孔远志（Kong Yuanzhi）2位作者都是来自北京的历史学家，都能流利地使用马来语（和印度尼西亚语）进行阅读和写作。在有关明朝与马六甲的关系，或郑和航海的书籍中他们提出了一个重要的论点，即中国与马来西亚关系从当时起就有了伊斯兰教的因素。例如，在孔远志（Kong Yuanzhi）的另一篇论文中提到，马六甲与中国的关系与当时伊斯兰教在该地区的传播有一定联系（Kong,2000）<a href="http://zhengheforum.org/wp-admin/post-new.php#_ftn18"><u>[18]</u></a>这些来自北京的学者在其历史分析中谈及伊斯兰教，而马来西亚作者的书籍则更加注重强调郑和航海的伊斯兰教因素以及郑和的穆斯林背景，虽然这些国内作家的作品并不是确凿的学术作品，但这些作者无疑向外展示了中国的积极形象，使其成为一片有着冒险精神和英雄穆斯林人物的土地。因此，对郑和研究兴趣的增加及其研究的话语成功地塑造了马来公众的认识，即中国有悠久的伊斯兰教传统及其相关的光荣历史。由于伊斯兰教信仰对于马来民众的重要性，因此重新发现中国的穆斯林历史为马来西亚人提供了这个国家更容易接受的一面。<a href="http://zhengheforum.org/wp-admin/post-new.php#_ftn19"><u>[19]</u></a></p>
+<p>其次，马来西亚领导人对于郑和全新正面的解读也做出了极大的贡献。1994年，时任马来西亚副总理安瓦尔·易卜拉欣（Anwar Ibrahim）（现在是马来西亚反对党的被拘禁的领导）在一次对中国的官方访问中专门拜访了郑和墓。<a href="http://zhengheforum.org/wp-admin/post-new.php#_ftn20"><u>[20]</u></a>安瓦尔是马来西亚有影响力的伊斯兰教青年组织，马来西亚回教青年运动（ABIM）的创始人，是一位很有魅力的伊斯兰教领导，马来西亚报纸因此而大力宣传他拜访郑和墓地的事迹。安瓦尔此举通过向历史迈出重要的一步而促进了跨文明之间的对话，并使他的此行成为两个国家之间强大的历史联系的重要一刻。<a href="http://zhengheforum.org/wp-admin/post-new.php#_ftn21"><u>[21]</u></a></p>
+<p>另一位提高了郑和在公共话语中积极形象的马来西亚领导人是马哈蒂尔。马哈蒂尔所认为的改变的世界秩序这一观点成为双边关系演变的重要因素。马哈蒂尔对西方保持批判的态度，尤其是关于贸易政策、国际金融体系、联合国和对人权和民主保持不同观念，并为发展中国家辩护，马来西亚对这些问题问题所采取的态度，与中国的态度有一定的相似性。</p>
+<p>马哈蒂尔对马来西亚与中国历史关系有着清晰而独特的认识。1999年，他在北京参加由马来西亚-中国友好协会与中国-马来西亚友好协会共同举办的<strong>马</strong>来西亚与中国建交25周年的宴会时，强调两国关系始于600多年前，并说道：“对我们马来西亚人来说，吟清（Yin Ching）,郑和将军以及汉丽波公主这些人名是与马六甲帝国的历史紧紧相连的。”马哈蒂尔还说，两国之间的亲密关系由于西方大国在两国之间的影响力增加而被削弱了。<a href="http://zhengheforum.org/wp-admin/post-new.php#_ftn22"><u>[22]</u></a>最近，他建议在马来西亚建立一个协会以纪念郑和航海传奇历史中所携带的友谊的精神。<a href="http://zhengheforum.org/wp-admin/post-new.php#_ftn23"><u>[23]</u></a></p>
+<p>马哈蒂尔和安瓦尔对郑和与明朝中国的重视改变了马来西亚人的态度，形成一种全新正面的中国形象，以及一种植根于马来历史和伊斯兰教的中国形象起着必不可少的作用。1996年，马来西亚语言文学研究所（Language and Literary Institute） (国家语文出版局，Dewan Bahasa dan Pustaka)）在北京组织召开了一次关于马来研究的会议，其第二次会议于2002年10月在北京召开，聚集了300多位进行马来研究的学者。<a href="http://zhengheforum.org/wp-admin/post-new.php#_ftn24"><u>[24]</u></a>该会议强调两国合作的利益所在，尤其是来自马来西亚的学者，不仅试图对马来和中国文学进行对比，更重要的是，通过学习马六甲苏丹王国与明朝中国的联系而重新发掘早期马来历史。</p>
+<p>马来西亚与中国的伊斯兰教文化联系在2014年得到了更重要的强化，在举行的马来西亚与中国建立外交关系40年纪念中，中国伊斯兰教协会在马来西亚组织了“中国-马来西亚伊斯兰教文化交流会议以及中国伊斯兰教文化展览”活动。中国伊斯兰教教协会主席陈广元以及国务院宗教事务局的领导张乐斌参加了该活动，而马方的参与者有马来西亚伊斯兰教事务部长，加米尔·基尔·巴哈隆（Jamil Khir Baharom）以及中国驻马来西亚大使黄惠康。该活动有中国穆斯林学者发表了关于中国伊斯兰教发展的讲话，阿拉伯语书法艺术战争，中国式的清真小吃，中国伊斯兰教文化遗产，以及中国穆斯林所翻译的较为完整的《古兰经》。马来西亚部长加米尔（Jamil）在参加该活动后建议在马来西亚建一座中国式的清真寺。<a href="http://zhengheforum.org/wp-admin/post-new.php#_ftn25"><u>[25]</u></a></p>
+<hr>
+<p><strong>结论</strong></p>
+<p>伴随着国际形势的改变，马来西亚与中国的政治关系正在发生改变，这些都促进两国关系提升。然而，这种关系的提升需要双方之间以新的视野和角度来加以看待和稳固。因此，这是一种再次对两国历史相遇的体验，有着伊斯兰教背景的郑和将军的到访，以伊斯兰教作为纽带推动双方关系开启新篇章。</p>
+<p>这种伊斯兰教象征尤其重要，因为当中国被视为“异类”、“充满威胁”的国家时，凭借伊斯兰教的背景历史话语将会提供一种共有的文化价值和和平观念。这也是中国之所以在穆斯林国家受欢迎的原因，而中国形象的提升，改善同这些国家的关系，将有助于推动国家间更多的交往和国际贸易的增加。</p>
+<p>在双边经济关系中，伊斯兰教因素显得尤为重要。中国和马来西亚希望就清真产业加强合作。例如，马来西亚计划向中国市场出口4000多种清真产品，一位马来西亚农业部长表示“中国穆斯林社区……对于马来西亚的清真产品的需求量较大，因此马来西亚清真产品在未来的中国市场将有较大的可为空间。”<a href="http://zhengheforum.org/wp-admin/post-new.php#_ftn26"><u>[26]</u></a>中国与马来西亚在经济方面的另一个伊斯兰教联系是伊斯兰教金融。马来西亚在伊斯兰教金融方面具有专业优势，马来西亚穆玛拉特（Muamalat）伊斯兰银行于2012年在中国宁夏的一个支行首次尝试提供回教的贷款和存款（syariah-compliant loans and deposits）服务业务，然而该计划并没有成功。兴业资产管理（RHB Asset Management）在2014年也试图通过香港而提供回教兼容服务（syariah-compliant services），有意发展双方潜在的伊斯兰教金融服务业。<a href="http://zhengheforum.org/wp-admin/post-new.php#_ftn27"><u>[27]</u></a>中国也是马来西亚游客的旅游目的地，马来西亚人对中国的伊斯兰教地区尤为感兴趣。而马六甲海峡则成为备受中国游客喜欢的目的地，他们更愿意去参观曾经明朝舰队到达的地方。</p>
+<p>马来西亚成功地恢复了长久以来被忽视的，与中国在历史上的联系，并扮演着塑造中国最初的伊斯兰教特征的角色，她将把中国与穆斯林世界重新连接起来。</p>
+<p><a href="http://zhengheforum.org/wp-admin/post-new.php#_ftnref1"><u>[1]</u></a> Portions of this paper were previously published in Lee Kam Hing, “Admiral Zheng He and Contemporary Malaysia,” Journal of Malaysian Chinese Studies 8 (2005): 99-112.</p>
+<p><a href="http://zhengheforum.org/wp-admin/post-new.php#_ftnref2"><u>[2]</u></a> Derek Heng, <em>Sino-Malay Trade and Diplomacy: From the Tenth through the Fourteenth Century </em>(Singapore: Institute of Southeast Asian Studies, 2012).</p>
+<p><a href="http://zhengheforum.org/wp-admin/post-new.php#_ftnref3"><u>[3]</u></a> See, for example, the interesting discussion made in Haji Yusuf Chang, “The Ming Empire: Patron of Islam in Southeast-West Asia,” <em>Journal of the Malaysian Branch of the Royal Asiatic Society</em> 61, 2 (1988): 1-44.</p>
+<p><a href="http://zhengheforum.org/wp-admin/post-new.php#_ftnref4"><u>[4]</u></a> C. C. Brown, trans., <em>The Malay Annals: An Annotated Translation </em>(Kuala Lumpur and Singapore: Oxford University Press, 1970).</p>
+<p><a href="http://zhengheforum.org/wp-admin/post-new.php#_ftnref5"><u>[5]</u></a> 叶亚来被认为是马来西亚当前最大城市吉隆坡的建立者。</p>
+<p><a href="http://zhengheforum.org/wp-admin/post-new.php#_ftnref6"><u>[6]</u></a> Claudine Salmon, “Cults Peculiar to the Chinese of Java,” in <em>Chinese Beliefs and Practices in Southeast Asia</em>, ed. Cheu Hock Tong (Petaling Jaya: Pelanduk Publications, 1993), 279-305.</p>
+<p><a href="http://zhengheforum.org/wp-admin/post-new.php#_ftnref7"><u>[7]</u></a> Geoff Wade, “The Zheng He Revival: Commemorating, Celebrating, and Appropriating the Eunuch’s Voyages,” undated and unpublished paper.</p>
+<p><a href="http://zhengheforum.org/wp-admin/post-new.php#_ftnref8"><u>[8]</u></a> R. Winstedt, <em>Malaya and Its History</em> (London: Hutchinsons University Library, 1948), 39.</p>
+<p><a href="http://zhengheforum.org/wp-admin/post-new.php#_ftnref9"><u>[9]</u></a> K. G. Tregonning, <em>A History of Modern Malaya</em> (Kuala Lumpur: Eastern Universities Press, 1964), 23-24.</p>
+<p><a href="http://zhengheforum.org/wp-admin/post-new.php#_ftnref10"><u>[10]</u></a> D. G. E. Hall, <em>A History of South-East Asia</em>, 3<sup>rd</sup> Ed. (Basingstoke: MacMillan, 1968), 209.</p>
+<p><a href="http://zhengheforum.org/wp-admin/post-new.php#_ftnref11"><u>[11]</u></a> Brian Harrison, <em>South-East Asia: A Short History</em> (London: MacMillan, 1967), 57-58.</p>
+<p><a href="http://zhengheforum.org/wp-admin/post-new.php#_ftnref12"><u>[12]</u></a> K. G. Tregonning, <em>World History for Malayans from Earliest Times to 1511</em> (London: London University Press, 1957), 23.</p>
+<p><a href="http://zhengheforum.org/wp-admin/post-new.php#_ftnref13"><u>[13]</u></a> RISEAP, “Tunku Leads Delegation to Visit Muslims in China,” <em>Al-Nahdah: A Quarterly Journal of the Regional Islamic Da’wah Council of Southeast Asia and the Pacific</em> 2, 1 (1982), 42.</p>
+<p><a href="http://zhengheforum.org/wp-admin/post-new.php#_ftnref14"><u>[14]</u></a> RISEAP. “RISEAP’s Officials Meet Muslim Leaders in China,” <em>Al-Nahdah: A Quarterly Journal of the Regional Islamic Da’wah Council of Southeast Asia and the Pacific</em> 8, 3-4 (1988), 64.</p>
+<p><a href="http://zhengheforum.org/wp-admin/post-new.php#_ftnref15"><u>[15]</u></a> RISEAP, “RISEAP Delegation Visits China,” Al-Nahdah: A Quarterly Journal of the Regional Islamic Da’wah Council of Southeast Asia and the Pacific 15, 3-4 (1995), 36-37.</p>
+<p><a href="http://zhengheforum.org/wp-admin/post-new.php#_ftnref16"><u>[16]</u></a>刘宝军, 《海外回族和华人穆斯林概况》，北京：民族出版社，2004年，第29-30页。</p>
+<p><a href="http://zhengheforum.org/wp-admin/post-new.php#_ftnref17"><u>[17]</u></a> RISEAP. “Islamic Awareness Programme Held in Kuala Terengganu,” Al-Nahdah: A Quarterly Journal of the Regional Islamic Da’wah Council of Southeast Asia and the Pacific, vol. 15, no. 3-4 (1995), pp. 37-38.</p>
+<p><a href="http://zhengheforum.org/wp-admin/post-new.php#_ftnref18"><u>[18]</u></a> Kong Yuanzhi, “Cerita Hang Li Po: Ode Persahabatan Kedua-dua Bangsa China-Malaysia,” <em>Sari: Jurnal Antarabangsa Alam dan Tamadun Melayu</em> 19 (2001): 179-187.</p>
+<p><a href="http://zhengheforum.org/wp-admin/post-new.php#_ftnref19"><u>[19]</u></a> Darren Zook, “Making Space for Islam: Religion, Science, and Politics in Contemporary Malaysia,”_ The Journal of Asian Studies _69, 4 (November 2010): 1143-1166.</p>
+<p><a href="http://zhengheforum.org/wp-admin/post-new.php#_ftnref20"><u>[20]</u></a> [20] “Anwar Arrives in Nanjing,” _The Business Times, _August 20, 1994, 3; “Malaysia and China to Forge Special Ties: Anwar,” _The Straits Times, _August 29, 1994, 17.</p>
+<p><a href="http://zhengheforum.org/wp-admin/post-new.php#_ftnref21"><u>[21]</u></a> It was reported that during the visit the chairman of Federal Auto, Ahmad Saad, who was a member of the delegation led by Anwar, read a small prayer at the grave site of the Chinese admiral. Anwar, then using a Chinese brush, wrote “In appreciation of the great Cheng Ho for a lasting Malaysia-China friendship - signed Anwar Ibrahim” on a piece of paper. See “Anwar Lawat Pusara Cheng Ho di Nanjing,” <em>Berita Harian</em>, August 31, 1994, 3.</p>
+<p><a href="http://zhengheforum.org/wp-admin/post-new.php#_ftnref22"><u>[22]</u></a> Mahathir bin Mohamad, “Speech Made in the Dinner Reception Marking 25th Anniversary of the Establishment of Diplomatic Relations between Malaysia and China,” China World Hotel, Beijing, China, August 19, 1999, available at Koleksi Arkib Uchapan Ketua Eksekutif, Prime Minister’s Office, Kuala Lumpur.</p>
+<p><a href="http://zhengheforum.org/wp-admin/post-new.php#_ftnref23"><u>[23]</u></a>  “Dr Mahathir Proposes Association in Memory of Admiral Cheng Ho,” <em>Borneo Post</em>, October 6, 2013.</p>
+<p><a href="http://zhengheforum.org/wp-admin/post-new.php#_ftnref24"><u>[24]</u></a> “Persidangan Pengajian Melayu di Beijing,” <em>Berita Harian</em>, October 18, 2002.</p>
+<p><a href="http://zhengheforum.org/wp-admin/post-new.php#_ftnref25"><u>[25]</u></a> 中国回教协会民办展览，《巨型&lt;可兰经&gt;促进交流》，载《南洋商报》 2014年7月2日，A8版；《隆拟建中国风清真寺》 (Kuala Lumpur Plans to Build a Chinese-Style Mosque)载《星洲日报》2014年7月4日，第16页。</p>
+<p><a href="http://zhengheforum.org/wp-admin/post-new.php#_ftnref26"><u>[26]</u></a> 《4000清真产品打入神州》，载《南洋商报》，2014年6月9日，A4版。</p>
+<p><a href="http://zhengheforum.org/wp-admin/post-new.php#_ftnref27"><u>[27]</u></a>  “RHB Plans Islamic Funds in China,” <em>The Edge Financial Daily </em>, July 2, 2014, 6.</p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://zhengheforum.org/2016/09/28/e4-b8-ad-e5-9b-bd-e4-b8-8e-e9-a9-ac-e6-9d-a5-e8-a5-bf-e4-ba-9a-e5-85-b3-e7-b3-bb-ef-bc-9a-e9-83-91-e5-92-8c-e4-b8-8e-e4-bc-8a-e6-96-af-e5-85-b0-e6-95-99-e7-9a-84-e8-81-94-e7-b3-bb/" data-id="cj9i2dt1v000kkefycakqj1am" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="/" target="_blank">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="/" target="_blank">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="google-plus" href="/" target="_blank">
+                        <i class="icon fa fa-google-plus"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/ppoffice/hexo-theme-hueman" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="/" target="_blank">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/" target="_blank">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2016/09/29/islam-china-and-the-indian-ocean-historic-connections-and-world-historical-contexts/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            Islam, China, and the Indian Ocean: Historic Connections and World Historical Contexts
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2016/09/27/121/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">2015年“郑和论坛”（吉隆坡）英文论文已出版</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/01/25/e9-83-91-e5-92-8c-e5-9b-bd-e9-99-85-e5-92-8c-e5-b9-b3-e5-9f-ba-e9-87-91-e4-bc-9a-e5-85-ac-e5-bc-80-e5-a3-b0-e6-98-8e/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://zhengheforum.org/wp-content/uploads/2017/01/IMG_8599-169x300.png)" alt="郑和国际和平基金会公开声明" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/News-信息/">News/信息</a></p>
+                            <p class="item-title"><a href="/2017/01/25/e9-83-91-e5-92-8c-e5-9b-bd-e9-99-85-e5-92-8c-e5-b9-b3-e5-9f-ba-e9-87-91-e4-bc-9a-e5-85-ac-e5-bc-80-e5-a3-b0-e6-98-8e/" class="title">郑和国际和平基金会公开声明</a></p>
+                            <p class="item-date"><time datetime="2017-01-24T18:59:54.000Z" itemprop="datePublished">2017-01-25</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/01/24/e7-ac-ac-e4-b8-89-e5-b1-8a-e9-83-91-e5-92-8c-e8-ae-ba-e5-9d-9b-e5-9b-bd-e9-99-85-e4-bc-9a-e8-ae-ae-e5-b0-86-e4-ba-8e2017-e5-b9-b48-e6-9c-88-e5-9c-a8-e5-93-88-e8-90-a8-e5-85-8b/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://zhengheforum.org/wp-content/uploads/2017/01/IMG_8112-225x300.jpg)" alt="第三届“郑和论坛”国际会议将于2017年8月在哈萨克斯坦召开" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/News-信息/">News/信息</a></p>
+                            <p class="item-title"><a href="/2017/01/24/e7-ac-ac-e4-b8-89-e5-b1-8a-e9-83-91-e5-92-8c-e8-ae-ba-e5-9d-9b-e5-9b-bd-e9-99-85-e4-bc-9a-e8-ae-ae-e5-b0-86-e4-ba-8e2017-e5-b9-b48-e6-9c-88-e5-9c-a8-e5-93-88-e8-90-a8-e5-85-8b/" class="title">第三届“郑和论坛”国际会议将于2017年8月在哈萨克斯坦召开</a></p>
+                            <p class="item-date"><time datetime="2017-01-24T09:49:52.000Z" itemprop="datePublished">2017-01-24</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/11/26/e7-ac-ac-e4-b8-89-e5-b1-8a-e9-83-91-e5-92-8c-e8-ae-ba-e5-9d-9b-e5-be-81-e6-96-87/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://zhengheforum.org/wp-content/uploads/2016/09/image-23-300x300.jpeg)" alt="第三届“郑和论坛”征文（哈萨克斯坦）" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/News-信息/">News/信息</a></p>
+                            <p class="item-title"><a href="/2016/11/26/e7-ac-ac-e4-b8-89-e5-b1-8a-e9-83-91-e5-92-8c-e8-ae-ba-e5-9d-9b-e5-be-81-e6-96-87/" class="title">第三届“郑和论坛”征文（哈萨克斯坦）</a></p>
+                            <p class="item-date"><time datetime="2016-11-26T06:42:47.000Z" itemprop="datePublished">2016-11-26</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/11/25/e7-83-ad-e7-83-88-e7-a5-9d-e8-b4-ba-e5-8d-b0-e5-b0-bc-e7-ac-ac-e5-8d-81-e5-ba-a7-e9-83-91-e5-92-8c-e6-b8-85-e7-9c-9f-e5-af-ba-e6-88-90-e7-ab-8b/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://zhengheforum.org/wp-content/uploads/2016/11/IMG_6589-169x300.jpg)" alt="热烈祝贺印尼第十座郑和清真寺成立" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/News-信息/">News/信息</a></p>
+                            <p class="item-title"><a href="/2016/11/25/e7-83-ad-e7-83-88-e7-a5-9d-e8-b4-ba-e5-8d-b0-e5-b0-bc-e7-ac-ac-e5-8d-81-e5-ba-a7-e9-83-91-e5-92-8c-e6-b8-85-e7-9c-9f-e5-af-ba-e6-88-90-e7-ab-8b/" class="title">热烈祝贺印尼第十座郑和清真寺成立</a></p>
+                            <p class="item-date"><time datetime="2016-11-25T01:17:43.000Z" itemprop="datePublished">2016-11-25</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/11/25/e5-bd-93-e4-bb-a3-e4-b8-ad-e5-9b-bd-e6-97-8f-e7-be-a4-e8-9e-8d-e5-90-88-ef-bc-9a-e5-9f-8e-e5-b8-82-e5-8c-96-e8-83-8c-e6-99-af-e4-b8-8b-e7-9a-84-e5-9b-9e-e6-b1-89-e4-ba-92-e5-8a-a8/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://zhengheforum.org/wp-content/uploads/2016/10/tn-300x200.jpg)" alt="当代中国族群融合：城市化背景下的回汉互动" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Academic-Research-学术研究-版权所有，违者必究/">Academic Research/学术研究 (版权所有，违者必究)</a></p>
+                            <p class="item-title"><a href="/2016/11/25/e5-bd-93-e4-bb-a3-e4-b8-ad-e5-9b-bd-e6-97-8f-e7-be-a4-e8-9e-8d-e5-90-88-ef-bc-9a-e5-9f-8e-e5-b8-82-e5-8c-96-e8-83-8c-e6-99-af-e4-b8-8b-e7-9a-84-e5-9b-9e-e6-b1-89-e4-ba-92-e5-8a-a8/" class="title">当代中国族群融合：城市化背景下的回汉互动</a></p>
+                            <p class="item-date"><time datetime="2016-11-24T21:28:28.000Z" itemprop="datePublished">2016-11-25</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Academic-Advisers-学术顾问/">Academic Advisers/学术顾问</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Academic-Advisers-学术顾问/ZIPF-Advisers-基金会顾问/">ZIPF Advisers/基金会顾问</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Academic-Research-学术研究-版权所有，违者必究/">Academic Research/学术研究 (版权所有，违者必究)</a><span class="category-list-count">18</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Home-主页/">Home/主页</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/News-信息/">News/信息</a><span class="category-list-count">23</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ZIPF-Leadership-基金会负责人/">ZIPF Leadership/基金会负责人</a><span class="category-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">31</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+
+            
+                
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2017 Haiyun</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'http://zhengheforum.org/2016/09/28/e4-b8-ad-e5-9b-bd-e4-b8-8e-e9-a9-ac-e6-9d-a5-e8-a5-bf-e4-ba-9a-e5-85-b3-e7-b3-bb-ef-bc-9a-e9-83-91-e5-92-8c-e4-b8-8e-e4-bc-8a-e6-96-af-e5-85-b0-e6-95-99-e7-9a-84-e8-81-94-e7-b3-bb/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
