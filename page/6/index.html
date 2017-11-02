@@ -1,9 +1,848 @@
-extends partial/layout
-block content
-	.autopagerize_page_element: .content
-		- page.posts.each(function (item) {
-			include mixins
-			+make_post(item, false)
-		- })
-		include mixins
-		+make_pager(__('prev'), __('next'))
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="B-gg,mysql,php,golang,laravel" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="Welcome to Zhenghe!">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ZhengheForum.org">
+<meta property="og:url" content="http://zhengheforum.org/page/6/index.html">
+<meta property="og:site_name" content="ZhengheForum.org">
+<meta property="og:description" content="Welcome to Zhenghe!">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ZhengheForum.org">
+<meta name="twitter:description" content="Welcome to Zhenghe!">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://zhengheforum.org/page/6/"/>
+
+
+
+
+
+  <title>ZhengheForum.org</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+   page-home 
+ ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ZhengheForum.org</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://zhengheforum.org/2016/07/22/e9-97-be-e4-b8-98-e9-9c-b2-e8-96-87-ef-bc-9a-e4-b8-ad-e5-9b-bd-e6-96-b0-e9-97-bb-e5-aa-92-e4-bd-93-e5-92-8c-e7-a4-be-e4-ba-a4-e5-aa-92-e4-bd-93-e4-b8-8a-e7-9a-84-e5-8f-8d-e7-a9-86-e6-96-af-e6-9e-97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Haiyun">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZhengheForum.org">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/07/22/e9-97-be-e4-b8-98-e9-9c-b2-e8-96-87-ef-bc-9a-e4-b8-ad-e5-9b-bd-e6-96-b0-e9-97-bb-e5-aa-92-e4-bd-93-e5-92-8c-e7-a4-be-e4-ba-a4-e5-aa-92-e4-bd-93-e4-b8-8a-e7-9a-84-e5-8f-8d-e7-a9-86-e6-96-af-e6-9e-97/" itemprop="url">闾丘露薇：中国新闻媒体和社交媒体上的反穆斯林情绪研究</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-07-22T08:45:04+08:00">
+                2016-07-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Academic-Research-学术研究-版权所有，违者必究/" itemprop="url" rel="index">
+                    <span itemprop="name">Academic Research/学术研究 (版权所有，违者必究)</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><section class="">1<strong>编者按</strong></section> <strong>    近日，共识网就“中国新闻媒体和社交媒体上的反穆斯林情绪”这一研究主题采访到了美国宾夕法尼亚州立大学在读博士闾丘露薇女士。闾丘露薇，曾担任凤凰卫视全球新闻总监，是著名的记者、资深媒体人，因2003年在伊拉克战争时作为在巴格达地区唯一的华人女记者进行现场报道，被誉为“战地玫瑰”。著作有《我已出发》《行走中的玫瑰》《不分东西》《利比亚战地日记》等。</strong></p>
+<p><strong>　访谈人</strong>：共识网国际频道黄南。</p>
+<p>共识网：闾丘老师您好，昨天我们听了您在郑和和平论坛关于“中国新闻媒体和社交媒体上的反穆斯林情绪”的演讲，请问这种现象是如何引起您的关注和研究兴趣的?</p>
+<p><strong>　　中文媒体对仇视性语言没有控制</strong></p>
+<p><strong>　　闾丘露薇</strong>：我有这个感觉想做这个研究是去年的时候，关于叙利亚难民的事情在网络上特别活跃，讨论特别多。我记得当时有中文媒体——应该是海外的，有人写过文章，讨论中文网络上的歧视性语言、仇视语言。文章指出，虽然在国外这种仇视语言也很多，但仇视语言通常会被网站管理员删除甚至可能要承担法律后果，尤其是宗教方面的仇恨言论，是有后果的，但在中文网络上，反而对这些没有什么太多控制，所以一眼看上去很多。我因为接受了博士训练，所以虽然有这种感觉，在中文网络上仇视穆斯林的言论很多，但是最终只是一种假设，需要去论证。因为很多时候你看到的，未必真的那么严重，所以我和我的同事才会做这个研究。</p>
+<p>共识网：您看这种反穆情绪是长期以来就存在的，还是近年才出现的?</p>
+<p><strong>　　闾丘露薇</strong>：我觉得可能去年特别多。在微博上我们去搜之前的相关帖子，大家谈论穆斯林或者谈论伊斯兰的人不多，只不过那段时间关于叙利亚难民的新闻一多，一下子数量就上来了，从学术角度来说有这是有一个priming强化效果。这个研究是我和我同学一起做的，我们更多的是看主流媒体——就是新闻媒体，因为社交媒体出现得稍晚。新闻媒体是看它有没有长期积累的对穆斯林的印象形成负面影响，所以我们看了2005-2015这十年关于伊斯兰的相关新闻报道，最后的统计结果证实了我们的假设：它是比较偏负面的。</p>
+<p>但是新闻媒体里不可能看到粗话和仇视性语言，这些都是没有的，其实我们是按照新闻报道内容的分类，比如说跟恐怖主义有关、跟反恐有关，要么就是犯罪、要么就是混乱等等这么来分它是正面的还是负面的。学术界有一些针对美国和英国主流媒体的相类似研究。我们的统计发现在媒体上，这十年的CCTV和新华社这样的官方媒体——其实也只有官方媒体一个渠道，很多地方媒体是不能做这方面的采访的，它们没有采访权和报道权，只能用国社的这些文章——那你会发现他们偏向于这一类负面的新闻报道比较多，大概有50%多。</p>
+<p><strong>　　大篇幅引用西方国际新闻对伊斯兰形象的负面影响</strong></p>
+<p>我想，这里很大原因是2001年9·11事件之后，国际新闻报道放开了，内地国际新闻里面引用的大多数是西方通讯社的来源，西方媒体本身的研究已经证明他们就是偏负面的，讲到伊斯兰和中东就是反恐，而你用的又是他们的信息来源，内地的国际新闻本身的相对空间(相比国内新闻)又比较大一点，所以篇幅会多一点，所以这样的结果我觉得又是意料之中。但是觉得有点遗憾的是，比方说即便是国内的——我这次论文里面没有写，可能以后会继续研究分析——即便是国内的(伊斯兰相关报道)，涉及到文化、民生、宗教的比例非常少。比方说和宗教活动有关的，几乎每年只会有一条新闻：宁夏穆斯林坐包机去麦加。比方说关于新疆有很多报道，因为新疆也是我的关键词之一，来搜索相关新闻。关于新疆，一说到文化全是考古、风化的石头等等，很少跟它的宗教或者民族生活是有直接关联的。要不就是天灾人祸，比如新疆又雪灾了，自然灾害了，地震了，就会有一些援助。民生的东西也不多，但遇到正好是庆祝新疆自治区周年的时候，那段时间新闻就会比较多一些，当地民众的生活就会有一些，平时这些东西非常少。</p>
+<p><strong>　　社交媒体关于伊斯兰的内容稍多元</strong></p>
+<p>我们在微博上看priming强化的效果，就发现小难民艾兰·库迪海滩遇难的前后各十天，相关的帖子确实增加了800%的数量，谈论的人多了。细分的话你就会发现，社交媒体有它好的地方，它是多元化的，虽然依旧偏负面，但是负面的比例本身反而比主流媒体要少，尽管把粗口谩骂仇恨语言都已经算进去了，还是相对要少。另外在文化、日常生活、包括宗教方面，因为微博上有很多人其实是信徒，他们甚至每天都会跟你分享经文，有很多不同内容，所以你就会发现它更加多元化。</p>
+<p>不单单穆斯林的社交平台，基督教徒也有的，但是他们都是很小的群体，没有什么人关注到，淹没在网络里面，但这反而安全，我相信如果它的影响太大的话，在目前的状态下能不能允许用这个方法去传播宗教信仰是个问题。</p>
+<p><strong>　　难民危机的舆论转变：从同理心到反对</strong></p>
+<p>共识网：去年欧洲难民危机的时候，我们收到很多欧洲华人发来的文章，刚开始多是褒奖德国对难民的大爱之类的，文章转发非常广，阅读点击量一天之内有上百万，但没几天风向就转了，感觉欧洲华人开始声势浩大地反难民、反穆斯林。</p>
+<p><strong>　闾丘露薇：</strong>对，他们写了很多文章，在微博上也转得很多，我觉得当时海外几个华人论坛尤其德国的，反难民或者反穆斯林的情绪是非常激烈的。</p>
+<p>共识网：从国外华人传过来的，国内其实并不了解。</p>
+<p><strong>　闾丘露薇</strong>：一开始国内可能觉得跟我也没关系，对难民可能还会比较同情，但是有当地华人这么一写的话，很多人会觉得，我们都是同族，所以就比较倾向于站到华人那边。而且我觉得，关键其实在主流媒体上也没有什么讨论这个问题的，几乎就是看到难民又来了很混乱，网络上也会有比较多的假消息，都是蛮负面的。</p>
+<p>共识网：前一阵子很多微信群里在传广州非洲人，大量传这个东西的人他们恰恰在非洲生活了很多年，就跟欧洲华人的状况有点像。</p>
+<p><strong>　　闾丘露薇</strong>：关于中国民众歧视外国人的心态或者偏见的研究，有不少是针对中国人对非洲人，尤其是生活在中国的非洲人的态度的，所以我们的研究里面引用的文献，很多都是从90年代开始，甚至更早一些，针对在中国生活的非洲人——因为非洲人可能是群体最大的——可以有一些这样的研究，但那些研究的结果你会看到，确实中国人对于非洲人有歧视，至少存在偏见，但是这种学术结果上的歧视和偏见可能在中国人看来有点放大了，因为就是骂骂他们“黑鬼”，对于很多中国人来说，这算不上是歧视，习以为常了。</p>
+<p><strong>　　公共政策对媒体的限制导致偏见</strong></p>
+<p>但是从学术上的界定来说，这些语言和态度是属于有偏见的或者有歧视的。我们的研究只是用“偏见”来定义，还没到歧视那么严重。我有个朋友，在微信上说闾丘研究的是如何黑穆斯林的，我倒觉得很多人不是是故意黑穆斯林，但是这些人有这种倾向。我们在这篇论文里面的还有一个研究是心理测试，我们的心理测试就是要看一个人有没有潜在的、自己无法意识到的、不自觉的偏见。结果显示，参加测试的一千多名非穆斯林，平均值是高于平均数的，有潜在偏见的存在。我们还针对中国的穆斯林做了一个民调，问他们生活当中有没有遇到真实的歧视的个案。因为我们需要论证，这些潜在的偏见是否影响中国的穆斯林的日常生活。最后的结果，他们(穆斯林)觉得最令他们觉得受歧视的是公共机构、陌生人。</p>
+<p>我觉得这个又是可以理解和预期之中的，因为公共机构就跟官方主流媒体的报道一样，是政策造成的，如果你的政策对媒体没有那么多限制的话，媒体就会有很多多元声音，穆斯林感觉在公共机构受到歧视同样又是政策的问题。</p>
+<p>至于陌生人，我觉得这个也是公共政策导致媒体、导致的大环境、导致的这些陌生人会对自己不熟悉的人有一些不友好的态度。</p>
+<p><strong>　　社交媒体是让穆汉增进了解的沟通渠道</strong></p>
+<p>共识网：记得中山大学的社会学系一个老师在小北区那边做问卷，他们做出来的是“歧视”或者对非洲人的“偏见”最严重的是在天河城、珠江新城工作的白领或者说远离那个人群的陌生人。做生意的、跟他们日常每天接触的那些人并没有什么，觉得这就是一个生意伙伴，相处很正常的。</p>
+<p><strong>　　闾丘露薇</strong>：对，小北区的那些(中国)人跟他们(非洲人)还不错。</p>
+<p>在微博上也会看到有很多汉族人写的帖子，会说我某个同学是个回族，人挺好的，他带我去吃什么什么东西等等，蛮好的。所以只要有真实接触的话，我觉得就会比较好，比较让人看到希望，其实所谓矛盾，每个人只要多一些信息，多一些沟通，是完全可以解决的事情。</p>
+<p>只不过现在的问题是媒体有很大限制，没有机会提供更多的讨论。倒是在网络上骂，在网上骂“穆黑”或者“黑穆”，大家互相之间骂，我倒觉得不是那么糟糕的事情。因为你在互相骂的时候是有沟通的作用，就怕骂的时候是不平等的，一方骂的声音很快会被消除掉，只剩下另外一方骂的声音。那不是更糟糕了吗?所以从目前来看，我觉得很多时候相对来说骂穆斯林的帖子删得慢，而穆斯林为自己辩解，批评一下政策，有的时候确实跟政策有关，马上就被删掉了，他就没有办法表达自己的委屈是怎么来的。这样一来的话，就很难嘛，当然相对主流媒体来说，社交媒体，我们的研究结论是，它已经是唯一一个可以让大家增进了解，或者说让穆斯林的声音或者说弱势群体的声音有更多发声的渠道。[page]</p>
+<p>共识网：我们曾经转过一篇文章是穆斯林写的，写她作为一个穆斯林女性不能嫁给汉人，受到家庭的百般阻挠。（编注：后来有不少质疑认为是假帖。）</p>
+<p><strong>　　闾丘露薇</strong>：这个又是主流媒体里面报道的穆斯林，女性受歧视也是媒体非常喜欢报的，第一，安全，第二，有点击率，但是又是真实存在的，报这个东西以后又没有后续的或者围绕它的解释，你看完之后，对这个宗教的印象就是毫无选择。</p>
+<p>共识网：解释应该是从哪儿来呢?</p>
+<p><strong>　　闾丘露薇</strong>：至少你要让大家知道不是每个穆斯林都会是这样去看待它对女性或者对婚姻的态度，他们有不同的派别，有温和的、有激进的，有极端的，里面的区别是什么，为什么会有这样的区别，如何改进，如何才是进步，所有这些其实都是值得探讨的一个问题。</p>
+<p><strong>　　国际比国内报道空间大、报道别国之乱不敏感</strong></p>
+<p>所以我觉得，在国外网络上骂穆斯林的也是很多的，也有很多研究，我们跟进了那些研究，按照它的分类，他们的研究也是很负面的，都是反恐等等，但至少它关于穆斯林、关于伊斯兰这个宗教的很多探讨的东西是有的，不会说你不可以报道，相对来说比较多元一些。我觉得在中国为了保持民族和谐的状态，反而让你少了很多声音。</p>
+<p>昨天的一位教授提出，可能是教育问题，而我为什么觉得媒体比较重要?反恐之前——我没看具体数据——但是我相信反恐之前关于穆斯林、伊斯兰的新闻报道其实是很少的，也是不公平，但是至少没有被放在公众眼球或者焦点面前，但反恐之后，尤其这些年，它就不断被拿出来，因为它跟世界潮流是相通的，全球都在讨论反恐，全球都在讨论极端主义、冲突，在中国的话，因为你已经是开放的，国际新闻相对来说又比较有空间，这方面的报道相对来说又不是那么敏感，你在报道别的国家乱，大家自然而然会想到我们身边的这些人。</p>
+<p>还有一个很大的原因，是以前新疆出任何事情很少出现在媒体上，现在因为反恐的需要，新疆每次有事情都会出现在媒体上，而且只有一种声音，就一条或者两条，没有任何跟进，也没有讨论。就会给人越来越重复的印象就是新疆一堆恐怖分子，恐怖分子都是穆斯林，这个印象就会越来越深。这也是其中另外一个原因，就算是没有叙利亚的话，之前又有昆明火车站的事情，这些在网络上都有报道。</p>
+<p>我看了一下，官方媒体最早出现相对较多关于新疆分离主义的报道是2008年奥运会的时候，因为2008年奥运会的时候反恐形势比较严峻，而且我觉得应该是在报道上已经改变了以前的方式，以前是几乎不提，可能一年就一条甚至一条都没有，不公开，根据我们搜索的相关官方新闻，2008年开始公开，然后就越来越多。你会发现它很短，很小，但是它的数量在增加。</p>
+<p>共识网：多不应该是更好么?</p>
+<p><strong>　　闾丘露薇：</strong>它只是告诉你发生了这个事情而已，被判刑了，我们哪里又开始进行反恐演习了，这些人又怎么样了，但没有任何其他的东西。在这样一个情形之下，你得到的唯一的印象就是越来越乱了，人越来越极端了，这些极端的人都在新疆，慢慢你就会觉得都是穆斯林，就会一看到新疆人，我在微博上就看到有这样的帖子，说自己坐公交，或者在哪个场合看到有新疆人觉得很害怕，这一点就跟上飞机看到你旁边坐了一个穿袍子的中东人，有人会害怕的情况类似，这种害怕是怎么来的?就是因为天天报又是炸弹又是什么的，积累的偏见印象。</p>
+<p>共识网：是应该更多地报道还是更少地报道?</p>
+<p><strong>　　闾丘露薇：</strong>我觉得报无所谓，但是要多一些到底是怎么回事。</p>
+<p>共识网：中国和国外的报道的区别在哪里?</p>
+<p><strong>　　闾丘露薇：</strong>其实国外总体来讲还是偏负面，还要看是哪个国家，如果在美国的话，报中东本身对他来说只是报道，因为跟他没有太多关系，美国人不关心国际政治。问题是对于想要关心的人来说，他也可以找到更多的资讯帮助了解，但对于中国民众来说，你想要去了解另外的声音或者补充的声音是没有的，所以这是很大的区别。而且我会觉得中国因为有新疆问题有穆斯林民众，更应该去探讨或者说更应该去花大篇幅，因为它是发生在我们身边的，但是结果却没有。拿美国来说的话，毕竟在中东，也没有一群人在美国的某一个地方让你会觉得有问题，这是没有的。</p>
+<p>共识网：关于恐怖主义，中东那些国家是怎么报道的，和中国国内报道有什么区别?</p>
+<p><strong>　　中国的海外记者缺乏对宗教的深入了解</strong></p>
+<p><strong>　　闾丘露薇</strong>：我不懂阿语，所以我没有办法告诉你他们的篇幅是多少。我研究中所说的例子只是西方媒体，所谓西方媒体就是英国和美国而已，我相信你去看德语媒体可能又很不一样，因为英国和美国尤其是美国对新闻的选择，对国际新闻本来就不关心，所以就很不一样。其实中国在某种程度上跟美国媒体在某种程度上是蛮接近的，很大原因是国际新闻你必须要用路透、美联的内容，就是买他们的东西翻译过来的。</p>
+<p>新华社会有一些自己的记者在当地采访，但是真的不多，我们统计了一下，比例太小，既然有自己的记者在那里，完全是可以多一些民生、文化、宗教类的，他们会有一些，但没有那么深入，一般就是手记或见闻，但是你让他更深入地讲述一些跟宗教、习俗有关的，没有，要不是能力，要不就是你根本没有这个关心点，当然也有可能是报道限制。不过因为让绝大多数中国的记者从小没有宗教方面的教育，对宗教问题缺乏意识和了解，我都有点怀疑很多记者是否分得清楚各个教派，这是很大的问题。</p>
+<p>如果你在主流媒体上报道反恐的事情，大家可以对这个历史事件有一个大讨论，绝对是好事情，但是你就会发现没有，事件背景的复杂性被剥夺掉了，在网络上又只有一种声音，当然好的地方是可能会有一些跟它对抗的声音，但是那些对抗的声音，我不知道能传多远，但我觉得至少比媒体好一些，至少还有这些讨论。</p>
+<p><strong>　　区分宗教本身与被政治利用的宗教</strong></p>
+<p>共识网：翻阅网民的留言时经常看到，很多网民眼中的伊斯兰教形象，是极权、封闭、没有个人自由、甚至是暴力的、认为伊斯兰教国家大多都在战乱，认为是伊斯兰教会导致战争。</p>
+<p><strong>　　闾丘露薇：</strong>这是基本常识和知识积累还是不够，比如你对整个伊斯兰文明了解有多少。我曾经不关心，但是因为我要去中东，另外我自己去旅行。我去西班牙，发现原来西班牙靠近非洲的那个地方整个都是伊斯兰文明的体现。只要保持开放的心态，就会有意识的去看很多书，就会知道在一千多年前整个文明世界是伊斯兰文明的世界，然后就会重新思考很多问题。你多去几个中东国家，就会发现你来迪拜、卡塔尔跟你去沙特是完全不一样的感觉，你就会明白区别在哪里，你就会思考这个区别是它的体制设计的原因，或是它的皇室的原因，或者说它自己选择的政治体制的原因，还是伊斯兰的原因、宗教的原因。当然，执行这个体制的人需要用宗教来为自己作为一个理由，这个理由是不是能够把它作为理由，你接不接受，这是另外一回事情。同样是伊斯兰的地方，这里(迪拜)女性就能开车。</p>
+<p><strong>　　纠正偏见是一个系统性的问题</strong></p>
+<p><strong>　　闾丘露薇：</strong>纠正一些认知是一个系统性问题，因为媒体或者是公共舆论只是里面的一部分而已，还有教育体制，你对历史的认知，每一个人的研究只是里面一个很小的一部分而已。[page]</p>
+<p>共识网：媒体在报道伊斯兰教的时候面临哪些困扰?</p>
+<p><strong>　　闾丘露薇：</strong>媒体现在是能不碰就不碰的，能不给自己惹麻烦就不惹麻烦，这里的麻烦来自几种，一种是踩禁令了;第二种是我不想万一碰到一些特别极端的人因为我的报道跟我过不去;第三是确实有很极端的人，万一你写了一些他觉得自己被冒犯了，那不就是惹麻烦吗?所以这个时候就不碰可能是最好的。</p>
+<p>如果你的法律体系是不完整的话，一个媒体在报道中遇到这些麻烦之后怎么保护自己呢?或者一个网民遇到这种事情以后怎么保护自己呢?你发现这个事情就是这个样子，你也没办法保护自己，最好的方法就是我们不谈这些，这一点在一个比较法治、比较开明的地方，你不用担心，最多大家上法院，你要给我寄子弹我就报警，你肯定会有后果的，所以这又不一样。比如在新加坡其实早就有这样的法律。</p>
+<p>这里有中国的大背景在那里，如果是在一个宽松的地方的话，完全可以靠民间社会的各界力量去做一些事情，但是现在你又没办法做一些事情让它变得更好一些，因为你一旦做些事情别人会质疑你，觉得你是不稳定因素，所以你就根本没办法去做。</p>
+<p>最后还是看人，人变坏了就会更糟糕，人变好了，这个世界就会变得好一些。所以我还是觉得在中国，社交媒体是一个希望，除非以后在社交媒体上不能谈任何宗教，但是至少现在还能谈一些。因为社交媒体是一个让大家有一个接触的机会，接触总归是好于不了解或者把你拒之门外。</p>
+<p>现实生活就是这样，你不了解，很害怕、歧视某一个团体，如果你们天天在一起生活，就像非洲人在小北区，人家都娶妻生子了，都融进去了，就是因为有日常接触，大家觉得我们都差不多，你也没什么很特别，我们都是一样的，所以这一点是很重要的。有的时候还是因为缺乏信息，有讨论当然是最好的，如果在媒体上允许有这样的讨论空间，至少能够再多元一些。从2015年开始，正如我昨天讲的，我们看到中国媒体的一点点变化，2015年中央电视台就报了肉孜节，以前是没有的，现在我们还看到主流媒体会报道和介绍一些宗教习惯和民族风俗，会多一些这样的角度，我觉得这是很好的事情。</p>
+<p>—注：本文为2016年6月4日，在迪拜举行的由郑和国际和平基金会主办的第二届“郑和国际和平论坛”上的采访；转载自共识网。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://zhengheforum.org/2016/07/22/e9-83-91-e5-92-8c-e5-9b-bd-e9-99-85-e5-92-8c-e5-b9-b3-e5-a5-96-e6-8f-ad-e6-99-93-e4-bf-83-e8-bf-9b-e7-a9-86-e6-96-af-e6-9e-97-e4-b8-8e-e5-8d-8e-e4-ba-ba-e5-92-8c-e8-b0-90-e5-85-b1-e7-94-9f/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Haiyun">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZhengheForum.org">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/07/22/e9-83-91-e5-92-8c-e5-9b-bd-e9-99-85-e5-92-8c-e5-b9-b3-e5-a5-96-e6-8f-ad-e6-99-93-e4-bf-83-e8-bf-9b-e7-a9-86-e6-96-af-e6-9e-97-e4-b8-8e-e5-8d-8e-e4-ba-ba-e5-92-8c-e8-b0-90-e5-85-b1-e7-94-9f/" itemprop="url">郑和国际和平奖揭晓 促进穆斯林与华人和谐共生</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-07-22T07:57:42+08:00">
+                2016-07-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/News-信息/" itemprop="url" rel="index">
+                    <span itemprop="name">News/信息</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <div class="original-tit">原标题：致力于促进穆斯林世界和华人世界关系更友好的郑和国际和平奖揭晓</div><br><div class="original-tit"><a href="http://wap.21ccom.net/index.php?&amp;a=show&amp;catid=37&amp;typeid=14&amp;id=3548&amp;from=timeline&amp;isappinstalled=0" target="_blank" rel="external">http://wap.21ccom.net/index.php?&amp;a=show&amp;catid=37&amp;typeid=14&amp;id=3548&amp;from=timeline&amp;isappinstalled=0</a></div><br><div id="contentText" class="text clear"><br><div><br><br>　　文/马岩岩<br><br>【共识网按】郑和国际和平基金会是由美国、中国、马来西亚和阿联酋研究中国和伊斯兰世界的学者创立的促进华人世界和穆斯林世界之间持久的交流和了解的基金会。2016年6月，郑和国际和平会议将在迪拜举行第二届全球大会，共识传媒集团作为协办单位将出席会议。为鼓励华人(汉族)和穆斯林之间的互助友爱，增进民间交流和民心相通，郑和国际和平基金会将于本届大会开始设立“郑和国际和平奖，”以感谢和鼓励在各行各业为华人和穆斯林友好事业做出突出贡献的个人或团体。2016年的郑和国际和平奖评选情况如下：<br><br>为了促进华人世界和穆斯林世界之间持久的和平与友谊，郑和国际和平基金会(Zhenghe International Peace Foundation, ZIPF)致力于建立一个郑和论坛。介于2015年在马来西亚成功举办首届郑和和平会议的基础上，郑和国际和平基金会又创建了郑和国际和平奖 (Zhenghe International Peace Award)，来表彰那些为促进穆斯林世界和华人世界友好关系做出重大贡献的民间团体或个人。<br><br>&nbsp;<br><div class="text-pic"><br><table class="tableImg" border="0" cellspacing="0" cellpadding="0" align="center"><br><tbody><br><tr><br><td><img src="http://photocdn.sohu.com/20160422/Img445501212.jpg" alt=""></td><br></tr><br><tr><br><td class="text-pic-tt"></td><br></tr><br></tbody><br></table><br></div><br>值此郑和国际和平会议召开之际，郑和国际和平基金会从被推荐候选人名单中选出了以下四人，再进一步综合评估，选出一人，作为2016年郑和国际和平奖的获得者。这四人包括：哈萨克斯坦现任总理的父亲马希洛夫、马来西亚华人穆斯林协会会长拿督哈只穆斯塔法马、中国民间伊玛目李云飞、印度尼西亚华裔商界领袖柳民源。<br><br>根据基金会所秉承的郑和和平精神，以及以经贸交流促进民族团结社会和谐的理念，郑和国际和平奖委员会(郑和国际和平基金会主席马海云博士、阿联酋文化部高级研究院柴绍锦博士、马来西亚前驻华大使马吉德先生、北京股权研究院执行院长李志勇先生)于2016年4月22日对上述四位候选人进行不记名投票表决，最终全票通过，决定将2016年郑和国际和平奖授予印度尼西亚华裔柳民源先生(印度尼西亚名字: Bambang Sujanto)<br><br>柳民源先生简介<br><div class="text-pic"><br><table class="tableImg" border="0" cellspacing="0" cellpadding="0" align="center"><br><tbody><br><tr><br><td><img src="http://photocdn.sohu.com/20160422/Img445501213.jpg" alt=""></td><br></tr><br><tr><br><td class="text-pic-tt"></td><br></tr><br></tbody><br></table><br></div><br>柳民源先生于1947年出生于印度尼西亚东爪洼茉莉芬市(Madiun)巴可担县(Pagtotan)附近的农村，年幼的柳民源从6岁起就开始帮忙父母看管店铺生意，18岁时就为华人企业打工并逐渐发展出自己的搪瓷产业以及其他商业。在事业蒸蒸日上的同时，柳民源先生便开始致力于促进印尼不同民族和文化之间的沟通与交流，尤其是华人和印尼人之间的共生与沟通。<br><br>当看到东爪洼华人穆斯林因为人数较少而没有华人清真寺的情况下，柳民源先生积极奔走、先后联合140多位华人华商，于2002年在泗水建立郑和清真寺及其相关文化服务设施，并将这一极富中国特色的清真寺模式推广到印尼多个地区，促进了华人之间以及华人和印尼穆斯林之间的关系融和。<br><br>另外，作为海外华人，柳先生一直心系祖国发展，并时刻关注中国和印尼两国的关系，鉴于此，他时常奔走于中印两国之间，积极为双方的交流牵线搭桥，为中印交流与友谊做出了贡献。作为一名华人，柳先生一直秉持的信念是【把两个国家的政府、人民拉在一起，这是我们每位海外华人的责任，我想能起一个桥梁的作用，促进印中友好，让两国人民和平相处，使得印尼和中国建设的更好】。<br><br>郑和基金会决定将本年度的郑和国际和平奖授予柳民源，主要基于如下考虑：<br><br>1. 在印度尼西亚族群冲突时有发生的历史背景下，柳民源先生对华裔和印尼关系的理解和处置并没有采取简单地宗教化。他将印尼社会的政治、经济、社会等问题与冲突根源和世界性的伊斯兰文明做了深刻的思索和鲜明的切割。相反，华人和印尼人的社会冲突反而使他拥抱伊斯兰的核心价值观如和平、公平、正义，并以这些人类的基本价值来保护华人、维护华人利益。这对那些面临民族矛盾和冲突的国际社会极具启发意义，尤其对东南亚华人和所在国主体民族的关系发展提供了成功的经验。<br><br>2. 柳民源先生以兼具中华文化和伊斯兰文化身份的郑和作为纽带，慷概捐助建立郑和清真寺，来促进印尼社会华人与华人以及华人与穆斯林之间的融合。柳先生建立的郑和清真寺不仅仅是穆斯林的宗教场所，而且也是穆斯林和非穆斯林教育、体育、文艺、社交的中心。在印尼的特定场景下，柳民源所建的郑和清真寺为所有的华人提供了一个安全庇护所，这在根本上诠释了清真寺的真谛，即清真寺首先是实践和平的地方，是人们的安全庇护所。<br><br>3. 柳先生及海外华人对郑和文化和郑和精神的执着追求和实践不但历史性地链接了中华文化和穆斯林国家的交往纽带，而且实践性地传播和发扬了郑和精神，甚至将郑和精神转化为一种有效的和解模式，来处理华人和穆斯林群体之间产生的矛盾，这种模式不但成功输出和强化了早已熟知的郑和及其代表的中国文化，而且也为当代中国与一带一路穆斯林国家的文化关系发展塑造了成功模式。<br><br>鉴于以上原因，郑和国际和平基金会认为，柳民源先生继承和实践了郑和的伟大和平精神，并通过商业互惠和文化互通提升了华人的社会地位，促进了华人和印尼人的友谊。不但如此，柳先生的经济、社会、文化实践不但保存和发扬了中华文化、语言，而且对于促进中印两国关系以及输出中华文化软实力做出了杰出的贡献。郑和国际和平基金会向柳民源先生表示诚挚祝贺，并邀请柳先生夫妇及印尼代表团赴迪拜参加6月4-5日的郑和国际和平会议。届时，伊斯兰合作组织第九任秘书长Ekmeleddin Ihsanoglu先生将在郑和国际和平会议开幕式上为柳民源先生颁奖。<br><br>马岩岩(驻马来西亚资深媒体人)<br><br></div><br></div>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Haiyun" />
+          <p class="site-author-name" itemprop="name">Haiyun</p>
+           
+              <p class="site-description motion-element" itemprop="description">Welcome to Zhenghe!</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">52</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Haiyun</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

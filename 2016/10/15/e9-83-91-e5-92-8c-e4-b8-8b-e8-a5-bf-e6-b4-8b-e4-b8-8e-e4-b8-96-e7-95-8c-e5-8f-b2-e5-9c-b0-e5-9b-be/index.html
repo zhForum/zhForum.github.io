@@ -1,34 +1,690 @@
-include mixins
+<!doctype html>
 
-extends partial/layout
 
-block site_title
-    != page.title + " · " + config.title
 
-block description
-    - var desc = page.desc || strip_html(page.content).replace(/^\s*/, '').replace(/\s*$/, '').substring(0, 150);
-    meta(name="description", content=desc)
+  
 
-block content
-  .autopagerize_page_element: .content: .post-page
-    include mixins
-    +make_post(page, true)
-    .share
-      .evernote
-        a.fa.fa-bookmark(href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title);}})();", ref="nofollow", target="_blank")
-      .weibo
-        a.fa.fa-weibo(href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&title=',e(d.title),'&appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));")
-      .twitter
-        a.fa.fa-twitter(href=url_for("http://twitter.com/home?status="+","+config.url+"/"+page.path+","+config.title+","+page.title+",;"))
-    - var prev = page.prev ? page.prev.path : false;
-    - var next = page.next ? page.next.path : false;
-    .pagination
-      ul.clearfix
-        if prev
-          li.pre.pagbuttons
-            a.btn(role="navigation",href=url_for(prev), title=page.prev.title)!= __('prev_post')
-        if next
-          li.next.pagbuttons
-            a.btn(role="navigation",href=url_for(next), title=page.next.title)!= __('next_post')
-    if page.comments
-        include partial/comments
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="B-gg,mysql,php,golang,laravel" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="长期以来，西方认为欧洲地图的发展带动了“地理大发现”！但是事实并非如此！在2016年迪拜“郑和论坛”上，美国华裔学者、美洲郑和学会会长李兆良教授通过展示美国各种中国文化遗存，以及通过东西方地图及其地理术语的历时比较，揭示出欧洲的早期世界地图实为明代郑和下西洋所用！这一发现已经引起中国测绘界关注！ 2016年10月7日，李教授再次在俄亥俄州立大学中国研究院、全国东亚语文资源中心进行专题演讲！李教授对">
+<meta property="og:type" content="article">
+<meta property="og:title" content="郑和下西洋与世界史地图">
+<meta property="og:url" content="http://zhengheforum.org/2016/10/15/e9-83-91-e5-92-8c-e4-b8-8b-e8-a5-bf-e6-b4-8b-e4-b8-8e-e4-b8-96-e7-95-8c-e5-8f-b2-e5-9c-b0-e5-9b-be/index.html">
+<meta property="og:site_name" content="ZhengheForum.org">
+<meta property="og:description" content="长期以来，西方认为欧洲地图的发展带动了“地理大发现”！但是事实并非如此！在2016年迪拜“郑和论坛”上，美国华裔学者、美洲郑和学会会长李兆良教授通过展示美国各种中国文化遗存，以及通过东西方地图及其地理术语的历时比较，揭示出欧洲的早期世界地图实为明代郑和下西洋所用！这一发现已经引起中国测绘界关注！ 2016年10月7日，李教授再次在俄亥俄州立大学中国研究院、全国东亚语文资源中心进行专题演讲！李教授对">
+<meta property="og:image" content="http://zhengheforum.org/wp-content/uploads/2016/10/IMG_9942-300x225.jpg">
+<meta property="og:image" content="http://zhengheforum.org/wp-content/uploads/2016/10/IMG_5275-300x226.jpg">
+<meta property="og:updated_time" content="2017-11-02T05:19:39.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="郑和下西洋与世界史地图">
+<meta name="twitter:description" content="长期以来，西方认为欧洲地图的发展带动了“地理大发现”！但是事实并非如此！在2016年迪拜“郑和论坛”上，美国华裔学者、美洲郑和学会会长李兆良教授通过展示美国各种中国文化遗存，以及通过东西方地图及其地理术语的历时比较，揭示出欧洲的早期世界地图实为明代郑和下西洋所用！这一发现已经引起中国测绘界关注！ 2016年10月7日，李教授再次在俄亥俄州立大学中国研究院、全国东亚语文资源中心进行专题演讲！李教授对">
+<meta name="twitter:image" content="http://zhengheforum.org/wp-content/uploads/2016/10/IMG_9942-300x225.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://zhengheforum.org/2016/10/15/e9-83-91-e5-92-8c-e4-b8-8b-e8-a5-bf-e6-b4-8b-e4-b8-8e-e4-b8-96-e7-95-8c-e5-8f-b2-e5-9c-b0-e5-9b-be/"/>
+
+
+
+
+
+  <title>郑和下西洋与世界史地图 | ZhengheForum.org</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ZhengheForum.org</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://zhengheforum.org/2016/10/15/e9-83-91-e5-92-8c-e4-b8-8b-e8-a5-bf-e6-b4-8b-e4-b8-8e-e4-b8-96-e7-95-8c-e5-8f-b2-e5-9c-b0-e5-9b-be/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Haiyun">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZhengheForum.org">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">郑和下西洋与世界史地图</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-15T09:23:55+08:00">
+                2016-10-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/News-信息/" itemprop="url" rel="index">
+                    <span itemprop="name">News/信息</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>长期以来，西方认为欧洲地图的发展带动了“地理大发现”！但是事实并非如此！在2016年迪拜“郑和论坛”上，美国华裔学者、美洲郑和学会会长李兆良教授通过展示美国各种中国文化遗存，以及通过东西方地图及其地理术语的历时比较，揭示出欧洲的早期世界地图实为明代郑和下西洋所用！这一发现已经引起中国测绘界关注！</p>
+<p>2016年10月7日，李教授再次在俄亥俄州立大学中国研究院、全国东亚语文资源中心进行专题演讲！李教授对东西方世界地图的比较研究揭示出郑和下西洋的世界史意义！我们期待更多地图学的发现，重新思考郑和七下西洋之于当代中国的意义！</p>
+<p>2016年10月7日，题为“翻转世界史的地图”由李兆良讲演，由俄亥俄州立大学中国研究所，美国国家东亚语言资源中心合办，是俄亥俄州美国华人专业协会赞助基金的创始演讲（InauguralLecture）。</p>
+<p>李兆良首先点明，这不是关于谁发现美洲的问题，也不是哪一个种族优秀的问题，是谁开创地理大发现，谁测绘了第一份世界地图，是科学论证。讲者层层剥开论据，从古地图的制作与如何分析开始，李兆良用多幅主要的西方地图比较坤輿万国全图，推论西方不能测绘该地图。坤輿万国全图没有欧洲人当时认为最重要的地名，却标示欧洲人两百年以后才到达的地理，是不可能的，因此称之为“不可能的黑郁金香”。全图是中文标注，没有一个拉丁字符，唯一可能是中国人测绘。地名的历史，也显示成图年代不是1602年，是1430年，即郑和下西洋的年代。在美国“哥伦布日”之前几天举办这讲座是巧合，反映出积非成是的书本历史，并不可靠。</p>
+<p>李兆良自2006年开始，因为好奇心，要了解一枚宣德金牌为什么在被卡罗莱纳州的山区里被发现，开始追寻答案，谁料一发不可收拾，一做就是十年。最开始，开车一千里到北卡罗莱纳州发现金牌处了解当地的历史。当年1776年美国独立后欧洲移民与原住民冲突，翻出了一段血泪史。接着，利用互联网的古籍，古地图，图片，视频，并亲自到实地去考察，比较了七八百份古地图，结果掀出了越来越多的证据。根据分析，一直被认为是意大利传教士利玛窦带来的世界地图《坤輿万国全图》根本不可能是欧洲人测绘的，是中国人自己测绘的地图，成图时间在1430年左右，因此推翻了六百年郑和船队只到达非洲东岸的说法，推翻了哥伦布发现新大陆，也推翻了利玛窦带来西方世界地理的说法。整个六百年的中西交通史被翻转。</p>
+<p>明代中国人通过郑和的大航海活动，环球测绘，制作了坤輿万国全图，发展了现代地图学。后来，利玛窦在原来的地图上加上一些欧洲人命名的地名，引起错觉，以为地图来自西方。地图学其实是中国传到欧洲。除了地图证据，还有中国文化遗存在美洲的证据，例如，从华盛顿州到加拿大育空（Yukon）地区都有他们留下的永乐铜钱，后来原住民按习惯沿用清代铜钱作头饰，盔甲。不过时间所限，这次讲演只能讲述地图方面的证据。</p>
+<p>为了搜集文物与文献证据，李兆良在过去十年内，跑了九万英里，到过英国伦敦，哈里福德（Hereford），西班牙巴塞罗那，意大利罗马，梵蒂冈，佛罗伦萨，威尼斯；亚洲方面有马六甲，泉州，南京，北京；美洲方面，他曾到欧洲人最早的殖民地 - 东岸的英国殖民地詹姆斯敦（Jamestown）, 法国人据点（Jacksonville），西班牙人登陆佛罗里达州的西海岸。此外涉猎Cherokee，Catawba，Hopi，Navajo原住民居留地，到过全美各地主要的博物馆。今年，为了证实《坤輿万国全图》上的三处地名地理，李兆良特别走了12000公里，到加拿大，阿拉斯加，还冒着山火危险去探寻地理特点。正如原来预期的结果，明代中国人必定到过今天阿拉斯加的Anchorage，看到TurnagainArm的水潮和Denali高峰，才命名水潮峰，因为天气季节关系，这两个景点都不是经常看到，他们能命名，肯定待了一段时间。</p>
+<p>讲演结束，李兆良特别將他的兩本著作《坤輿万国全图解密-明代测绘世界》，《宣德金牌启示录-明代开拓美洲》贈予俄亥俄州立大学，由吴伟克教授，陳潔雯教授接收。李兆良的两部书由台北联经出版社出版后，受到热烈欢迎。因为大陆不习惯繁体字，而且购买困难，一直有人建议在大陆出版简体字版，现在，刚刚接到消息，台陆双方的协议已经谈妥，明年初，简体版即可在大陆面世。</p>
+<p>李兆良这项研究，已经得到中国测绘科学院的认可，在今年7月号的官方学刊发布了李兆良的论文，同意利玛窦并非坤輿万国全图的作者。李兆良把中美最早接触的历史重现，打破了华人一直被认为是后来者，享受欧洲人开垦成果的误解。没有明代大航海的世界性测绘，也许没有哥伦布，起码要等很久才知道新大陆。而且有充分证据，美洲的稻米农业是中国人开始的。此外，李兆良认为，过去中国人学美洲史，一直沿用西方教科翻译本，有许多歪曲不确，缺乏验证，人云亦云，造成中国人认为自己国家没有科学的自卑，应该从新严格审视东西方文化碰撞初期的文献，发扬科学推理精神，纠正错误，使世界华人对先人的贡献感到自豪。1882年美国通过历史上首次种族歧视的排华法案，联邦政府至今没有道歉，只有加州道歉，美国华人继续为歧视的对象。美国华人应该认识这段历史，了解误会、改写、歪曲的过程，向其他人阐明这段更正的历史，为所有美国华人争一口气。</p>
+<p> <img src="http://zhengheforum.org/wp-content/uploads/2016/10/IMG_9942-300x225.jpg" alt="IMG_9942"> <img src="http://zhengheforum.org/wp-content/uploads/2016/10/IMG_5275-300x226.jpg" alt="IMG_5275"></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/15/e9-83-91-e5-92-8c-e8-ae-ba-e5-9d-9b-e5-b0-86-e6-b7-b1-e5-8c-96-e4-b8-8e-e6-ac-a7-e6-b4-b2-e5-ad-a6-e8-80-85-e7-9a-84-e5-90-88-e4-bd-9c/" rel="next" title="“郑和论坛” 将深化与欧洲学者的合作">
+                <i class="fa fa-chevron-left"></i> “郑和论坛” 将深化与欧洲学者的合作
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/10/15/zipf-e9-83-91-e5-92-8c-e5-9b-bd-e9-99-85-e5-92-8c-e5-b9-b3-e5-9f-ba-e9-87-91-e4-bc-9a-e9-93-b6-e8-a1-8c-e8-b4-a6-e5-8f-b7/" rel="prev" title="ZIPF/郑和国际和平基金会银行账号">
+                ZIPF/郑和国际和平基金会银行账号 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Haiyun" />
+          <p class="site-author-name" itemprop="name">Haiyun</p>
+           
+              <p class="site-description motion-element" itemprop="description">Welcome to Zhenghe!</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">52</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Haiyun</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

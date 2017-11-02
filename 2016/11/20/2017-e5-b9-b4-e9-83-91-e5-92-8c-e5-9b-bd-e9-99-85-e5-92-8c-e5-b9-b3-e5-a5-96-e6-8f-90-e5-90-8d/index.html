@@ -1,34 +1,701 @@
-include mixins
+<!doctype html>
 
-extends partial/layout
 
-block site_title
-    != page.title + " · " + config.title
 
-block description
-    - var desc = page.desc || strip_html(page.content).replace(/^\s*/, '').replace(/\s*$/, '').substring(0, 150);
-    meta(name="description", content=desc)
+  
 
-block content
-  .autopagerize_page_element: .content: .post-page
-    include mixins
-    +make_post(page, true)
-    .share
-      .evernote
-        a.fa.fa-bookmark(href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title);}})();", ref="nofollow", target="_blank")
-      .weibo
-        a.fa.fa-weibo(href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&title=',e(d.title),'&appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));")
-      .twitter
-        a.fa.fa-twitter(href=url_for("http://twitter.com/home?status="+","+config.url+"/"+page.path+","+config.title+","+page.title+",;"))
-    - var prev = page.prev ? page.prev.path : false;
-    - var next = page.next ? page.next.path : false;
-    .pagination
-      ul.clearfix
-        if prev
-          li.pre.pagbuttons
-            a.btn(role="navigation",href=url_for(prev), title=page.prev.title)!= __('prev_post')
-        if next
-          li.next.pagbuttons
-            a.btn(role="navigation",href=url_for(next), title=page.next.title)!= __('next_post')
-    if page.comments
-        include partial/comments
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="B-gg,mysql,php,golang,laravel" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="郑和国际和平基金会由美国、中国、马来西亚和阿联酋研究中国和穆斯林世界关系的学者创立，其宗旨是通过挖掘和分享伊斯兰文化的仁慈（Rahman）价值和儒家文化中的“仁和”思想，来促进华人世界和穆斯林世界之间的持久交流、了解、友谊与和平。两个文明载体的明代伟大航海家郑和 （原名马和），其名（郑“和“）突显了伊斯兰文明及儒家文明 “仁和”之精神，其行践行了两种和平文明的深刻内涵。正是在这种人心相通、文明相">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2017年 “郑和国际和平奖” 提名">
+<meta property="og:url" content="http://zhengheforum.org/2016/11/20/2017-e5-b9-b4-e9-83-91-e5-92-8c-e5-9b-bd-e9-99-85-e5-92-8c-e5-b9-b3-e5-a5-96-e6-8f-90-e5-90-8d/index.html">
+<meta property="og:site_name" content="ZhengheForum.org">
+<meta property="og:description" content="郑和国际和平基金会由美国、中国、马来西亚和阿联酋研究中国和穆斯林世界关系的学者创立，其宗旨是通过挖掘和分享伊斯兰文化的仁慈（Rahman）价值和儒家文化中的“仁和”思想，来促进华人世界和穆斯林世界之间的持久交流、了解、友谊与和平。两个文明载体的明代伟大航海家郑和 （原名马和），其名（郑“和“）突显了伊斯兰文明及儒家文明 “仁和”之精神，其行践行了两种和平文明的深刻内涵。正是在这种人心相通、文明相">
+<meta property="og:image" content="http://zhengheforum.org/wp-content/uploads/2016/09/image-23-300x300.jpeg">
+<meta property="og:image" content="http://zhengheforum.org/wp-content/uploads/2016/10/507b9d1b031918bf3b910f-300x199.jpg">
+<meta property="og:updated_time" content="2017-11-02T05:19:39.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2017年 “郑和国际和平奖” 提名">
+<meta name="twitter:description" content="郑和国际和平基金会由美国、中国、马来西亚和阿联酋研究中国和穆斯林世界关系的学者创立，其宗旨是通过挖掘和分享伊斯兰文化的仁慈（Rahman）价值和儒家文化中的“仁和”思想，来促进华人世界和穆斯林世界之间的持久交流、了解、友谊与和平。两个文明载体的明代伟大航海家郑和 （原名马和），其名（郑“和“）突显了伊斯兰文明及儒家文明 “仁和”之精神，其行践行了两种和平文明的深刻内涵。正是在这种人心相通、文明相">
+<meta name="twitter:image" content="http://zhengheforum.org/wp-content/uploads/2016/09/image-23-300x300.jpeg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://zhengheforum.org/2016/11/20/2017-e5-b9-b4-e9-83-91-e5-92-8c-e5-9b-bd-e9-99-85-e5-92-8c-e5-b9-b3-e5-a5-96-e6-8f-90-e5-90-8d/"/>
+
+
+
+
+
+  <title>2017年 “郑和国际和平奖” 提名 | ZhengheForum.org</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ZhengheForum.org</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://zhengheforum.org/2016/11/20/2017-e5-b9-b4-e9-83-91-e5-92-8c-e5-9b-bd-e9-99-85-e5-92-8c-e5-b9-b3-e5-a5-96-e6-8f-90-e5-90-8d/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Haiyun">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZhengheForum.org">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">2017年 “郑和国际和平奖” 提名</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-20T12:21:51+08:00">
+                2016-11-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/News-信息/" itemprop="url" rel="index">
+                    <span itemprop="name">News/信息</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="http://zhengheforum.org/wp-content/uploads/2016/09/image-23-300x300.jpeg" alt="image"></p>
+<p>郑和国际和平基金会由美国、中国、马来西亚和阿联酋研究中国和穆斯林世界关系的学者创立，其宗旨是通过挖掘和分享伊斯兰文化的仁慈（Rahman）价值和儒家文化中的“仁和”思想，来促进华人世界和穆斯林世界之间的持久交流、了解、友谊与和平。两个文明载体的明代伟大航海家郑和 （原名马和），其名（郑“和“）突显了伊斯兰文明及儒家文明 “仁和”之精神，其行践行了两种和平文明的深刻内涵。正是在这种人心相通、文明相敬的氛围下，郑和下西洋的和平践行史无前例地链接了中国和印度洋地区，促进了中国和东南亚、中东以及东非穆斯林国家之间的商品、技术、文化等方方面面的互惠互通，将中国传统的经济文化交流重心从亚洲内陆转移到东南沿海以及印度洋地区，奠定了今日中国海上丝绸之路之历史文化基础。</p>
+<p>今天，中国“海上丝绸之路”倡议再次将华人世界和穆斯林世界历史性地链接在一起，这就更需要两个文明承载者之间的民心交流。郑和国际和平基金会尤其鼓励华人和穆斯林之间的互助友爱，民间交流和民心相通。因为只有华人和穆斯林民心相同的政治经济往来才有健康持续的可能。两大文明载体的心灵相通则要求两大文明之间及其内部的宗教宽容、民族团结和社会和谐。为此，郑和国际和平基金会特设立“郑和国际和平奖，”以此感谢和鼓励在各行各业为华人和穆斯林友好事业做出突出贡献的个人或团体。2016年”郑和国际和平奖“获得者是印度尼西亚华裔柳民源先生（附详细介绍）。</p>
+<p>2017年郑和国际和平奖提名现在开始，到2017年1月31日截止。郑和国际和平基金会欢迎社会各界提名候选人（不分民族、年龄、性别、职业、地域和国籍）。</p>
+<p>提名时须提供（1）被提名人的基本事迹，（2）联络方式（3）与提名者之间的关系。</p>
+<p>郑和国际和平基金会将从候选人中间选出年度获奖者并在2017年8月在哈萨克斯坦的第三届 “郑和论坛 “上颁发奖品。</p>
+<p>联系邮件：<a href="mailto:zhengheforum@gmail.com" target="_blank" rel="external">zhengheforum@gmail.com</a>; 标题注明 “2017年郑和国际和平奖提名“</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>附：2016**</strong>郑和国际和平奖获得者：印度尼西亚华裔柳民源先生**</p>
+<p>郑和基金会决定将本年度的郑和国际和平奖授予柳民源，主要基于如下考虑：</p>
+<p>1. 在印度尼西亚族群冲突时有发生的历史背景下，柳民源先生对华裔和印尼关系的理解和处置并没有采取简单地宗教化。他将印尼社会的政治、经济、社会等问题与冲突根源和世界性的伊斯兰文明做了深刻的思索和鲜明的切割。相反，华人和印尼人的社会冲突反而使他拥抱伊斯兰的核心价值观如和平、公平、正义，并以这些人类的基本价值来保护华人、维护华人利益。这对那些面临民族矛盾和冲突的国际社会极具启发意义，尤其对东南亚华人和所在国主体民族的关系发展提供了成功的经验。</p>
+<p>&nbsp;</p>
+<ol>
+<li>柳民源先生以兼具中华文化和伊斯兰文化身份的郑和作为纽带，慷概捐助建立郑和清真寺，来促进印尼社会华人与华人以及华人与穆斯林之间的融合。柳先生建立的郑和清真寺不仅仅是穆斯林的宗教场所，而且也是穆斯林和非穆斯林教育、体育、文艺、社交的中心。在印尼的特定场景下，柳民源所建的郑和清真寺为所有的华人提供了一个安全庇护所，这在根本上诠释了清真寺的真谛，即清真寺首先是实践和平的地方，是人们的安全庇护所。<br>&nbsp;</li>
+</ol>
+<p>3. 柳先生及海外华人对郑和文化和郑和精神的执着追求和实践不但历史性地链接了中华文化和穆斯林国家的交往纽带，而且实践性地传播和发扬了郑和精神，甚至将郑和精神转化为一种有效的和解模式，来处理华人和穆斯林群体之间产生的矛盾，这种模式不但成功输出和强化了早已熟知的郑和及其代表的中国文化，而且也为当代中国与一带一路穆斯林国家的文化关系发展塑造了成功模式。</p>
+<p>&nbsp;</p>
+<p>鉴于以上原因，郑和国际和平基金会认为，柳民源先生继承和实践了郑和的伟大和平精神，并通过商业互惠和文化互通提升了华人的社会地位，促进了华人和印尼人的友谊。不但如此，柳先生的经济、社会、文化实践不但保存和发扬了中华文化、语言，而且对于促进中印两国关系以及输出中华文化软实力做出了杰出的贡献。郑和国际和平基金会向柳民源先生表示诚挚祝贺，并邀请柳先生夫妇及印尼代表团赴迪拜参加6月4-5日的郑和国际和平会议。届时，伊斯兰合作组织第九任秘书长Ekmeleddin Ihsanoglu先生将在郑和国际和平会议开幕式上为柳民源先生颁奖。</p>
+<p>新闻报道，见<a href="http://v.ifeng.com/news/world/201606/014bdd65-9064-46c5-8e15-f73778fdf9fb.shtml" target="_blank" rel="external">http://v.ifeng.com/news/world/201606/014bdd65-9064-46c5-8e15-f73778fdf9fb.shtml</a></p>
+<p><img src="http://zhengheforum.org/wp-content/uploads/2016/10/507b9d1b031918bf3b910f-300x199.jpg" alt="507b9d1b031918bf3b910f"></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/11/13/e6-b2-99-e6-96-90-e4-bb-aa-e6-95-99-e6-b3-95-e5-ad-a6-e6-b4-be-e7-9a-84-e8-bf-b7-e6-80-9d-e9-83-91-e5-92-8c-e4-b8-8e-e5-8d-b0-e5-ba-a6-e6-b4-8b-e6-b2-bf-e5-b2-b8-e7-9a-84-e4-b8-ad-e5-9b-bd-e4-bc-8a/" rel="next" title="沙斐仪教法学派的迷思: 郑和与印度洋沿岸的中国伊斯兰国际都市">
+                <i class="fa fa-chevron-left"></i> 沙斐仪教法学派的迷思: 郑和与印度洋沿岸的中国伊斯兰国际都市
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/11/23/e4-b8-ad-e5-9b-bd-e7-9a-84-e6-97-8f-e7-be-a4-e8-9e-8d-e5-90-88-e4-b8-8e-e4-ba-92-e5-8a-a8-e5-85-b1-e7-94-9f/" rel="prev" title="中国的族群融合与互动共生">
+                中国的族群融合与互动共生 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Haiyun" />
+          <p class="site-author-name" itemprop="name">Haiyun</p>
+           
+              <p class="site-description motion-element" itemprop="description">Welcome to Zhenghe!</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">52</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Haiyun</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

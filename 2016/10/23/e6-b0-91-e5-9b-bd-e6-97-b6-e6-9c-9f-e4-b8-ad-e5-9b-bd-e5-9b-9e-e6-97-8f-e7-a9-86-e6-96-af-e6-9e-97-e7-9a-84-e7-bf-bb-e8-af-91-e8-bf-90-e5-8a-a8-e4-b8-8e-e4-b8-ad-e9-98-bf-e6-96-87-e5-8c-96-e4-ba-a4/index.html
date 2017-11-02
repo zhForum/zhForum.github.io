@@ -1,34 +1,682 @@
-include mixins
+<!doctype html>
 
-extends partial/layout
 
-block site_title
-    != page.title + " · " + config.title
 
-block description
-    - var desc = page.desc || strip_html(page.content).replace(/^\s*/, '').replace(/\s*$/, '').substring(0, 150);
-    meta(name="description", content=desc)
+  
 
-block content
-  .autopagerize_page_element: .content: .post-page
-    include mixins
-    +make_post(page, true)
-    .share
-      .evernote
-        a.fa.fa-bookmark(href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title);}})();", ref="nofollow", target="_blank")
-      .weibo
-        a.fa.fa-weibo(href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&title=',e(d.title),'&appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));")
-      .twitter
-        a.fa.fa-twitter(href=url_for("http://twitter.com/home?status="+","+config.url+"/"+page.path+","+config.title+","+page.title+",;"))
-    - var prev = page.prev ? page.prev.path : false;
-    - var next = page.next ? page.next.path : false;
-    .pagination
-      ul.clearfix
-        if prev
-          li.pre.pagbuttons
-            a.btn(role="navigation",href=url_for(prev), title=page.prev.title)!= __('prev_post')
-        if next
-          li.next.pagbuttons
-            a.btn(role="navigation",href=url_for(next), title=page.next.title)!= __('next_post')
-    if page.comments
-        include partial/comments
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="B-gg,mysql,php,golang,laravel" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="优素福·丁明俊 伊斯哈格·马建福 摘要：本文通过中华民国时期回族穆斯林新文化运动（new culture movement）探究当时回族穆斯林学者、政治家、商人、伊玛目等各方面人士在回族穆斯林内部及外部社会活动，表明回族穆斯林精英对新文化运动起了重要的推动作用，认为回族穆斯林作为中国有身份认同的民族，他们的历史活动对于今天的回族穆斯林社会、中国和阿拉伯世界的双边关系，以及与穆斯林国家关系有良好的促">
+<meta property="og:type" content="article">
+<meta property="og:title" content="民国时期中国回族穆斯林的翻译运动与中阿文化交流">
+<meta property="og:url" content="http://zhengheforum.org/2016/10/23/e6-b0-91-e5-9b-bd-e6-97-b6-e6-9c-9f-e4-b8-ad-e5-9b-bd-e5-9b-9e-e6-97-8f-e7-a9-86-e6-96-af-e6-9e-97-e7-9a-84-e7-bf-bb-e8-af-91-e8-bf-90-e5-8a-a8-e4-b8-8e-e4-b8-ad-e9-98-bf-e6-96-87-e5-8c-96-e4-ba-a4/index.html">
+<meta property="og:site_name" content="ZhengheForum.org">
+<meta property="og:description" content="优素福·丁明俊 伊斯哈格·马建福 摘要：本文通过中华民国时期回族穆斯林新文化运动（new culture movement）探究当时回族穆斯林学者、政治家、商人、伊玛目等各方面人士在回族穆斯林内部及外部社会活动，表明回族穆斯林精英对新文化运动起了重要的推动作用，认为回族穆斯林作为中国有身份认同的民族，他们的历史活动对于今天的回族穆斯林社会、中国和阿拉伯世界的双边关系，以及与穆斯林国家关系有良好的促">
+<meta property="og:updated_time" content="2017-11-02T05:19:39.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="民国时期中国回族穆斯林的翻译运动与中阿文化交流">
+<meta name="twitter:description" content="优素福·丁明俊 伊斯哈格·马建福 摘要：本文通过中华民国时期回族穆斯林新文化运动（new culture movement）探究当时回族穆斯林学者、政治家、商人、伊玛目等各方面人士在回族穆斯林内部及外部社会活动，表明回族穆斯林精英对新文化运动起了重要的推动作用，认为回族穆斯林作为中国有身份认同的民族，他们的历史活动对于今天的回族穆斯林社会、中国和阿拉伯世界的双边关系，以及与穆斯林国家关系有良好的促">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://zhengheforum.org/2016/10/23/e6-b0-91-e5-9b-bd-e6-97-b6-e6-9c-9f-e4-b8-ad-e5-9b-bd-e5-9b-9e-e6-97-8f-e7-a9-86-e6-96-af-e6-9e-97-e7-9a-84-e7-bf-bb-e8-af-91-e8-bf-90-e5-8a-a8-e4-b8-8e-e4-b8-ad-e9-98-bf-e6-96-87-e5-8c-96-e4-ba-a4/"/>
+
+
+
+
+
+  <title>民国时期中国回族穆斯林的翻译运动与中阿文化交流 | ZhengheForum.org</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ZhengheForum.org</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://zhengheforum.org/2016/10/23/e6-b0-91-e5-9b-bd-e6-97-b6-e6-9c-9f-e4-b8-ad-e5-9b-bd-e5-9b-9e-e6-97-8f-e7-a9-86-e6-96-af-e6-9e-97-e7-9a-84-e7-bf-bb-e8-af-91-e8-bf-90-e5-8a-a8-e4-b8-8e-e4-b8-ad-e9-98-bf-e6-96-87-e5-8c-96-e4-ba-a4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Haiyun">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZhengheForum.org">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">民国时期中国回族穆斯林的翻译运动与中阿文化交流</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-23T21:48:57+08:00">
+                2016-10-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Academic-Research-学术研究-版权所有，违者必究/" itemprop="url" rel="index">
+                    <span itemprop="name">Academic Research/学术研究 (版权所有，违者必究)</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>优素福·丁明俊</p>
+<p>伊斯哈格·马建福</p>
+<p>摘要：本文通过中华民国时期回族穆斯林新文化运动（new culture movement）探究当时回族穆斯林学者、政治家、商人、伊玛目等各方面人士在回族穆斯林内部及外部社会活动，表明回族穆斯林精英对新文化运动起了重要的推动作用，认为回族穆斯林作为中国有身份认同的民族，他们的历史活动对于今天的回族穆斯林社会、中国和阿拉伯世界的双边关系，以及与穆斯林国家关系有良好的促进作用，今天中国回族穆斯林仍延续着中华民国时期先辈们的事业。</p>
+<p>关键词：中国回族穆斯林；翻译运动；文化交流与互动</p>
+<p>20世纪30年代，随着中国回族穆斯林现代新文化运动（Hui modern new culture movement）的发展，回族穆斯林中的有识之士开设了一批新式回族学校，培养了大批具有现代科学知识的回族穆斯林知识分子。在回族穆斯林政治家、知识分子、商人和宗教人士以及穆斯林社区组织的支持下，1931年派遣第一批回族穆斯林学生前往埃及爱资哈尔大学（Azhar, al-Jami’al）学习，从1931到1938年3月先后派遣6批共36名留学生，其中10名是来自新疆维吾尔族的穆斯林学生，在这些回族穆斯林留学生中部分人在爱资哈尔大学学习时间长达8年以上，他们深刻了解了埃及和阿拉伯文化，在爱资哈尔大学学习期间开展了一系列的中国与阿拉伯文化交流活动，比如马坚教授在爱资哈尔大学学习期间将汉语书籍《论语》等翻译成阿拉伯语由开罗出版社出版，向阿拉伯世界介绍中国传统文化。<br>一、民国时期回族穆斯林新文化运动中的回族社会精英<br>中国回族穆斯林新文化运动始于1919年5月4日，由回族社会精英（回族穆斯林知识分子、政治家、商界名人和伊玛目）受到当时国内外时局影响而发起的，其目的是复兴民族文化促进民族发展，回族各界人士积极参与社会改革和经济发展运动，提升了回族穆斯林在经济、社会和文化教育方面的全面发展，从而造就了回族穆斯林的新文化运动，使之成为中国新文化运动的重要组成部分。<br>（一）伊玛目：传统宗教权威代表<br>正如民间所说“伊玛目是伊斯兰教门的支柱。”他们是伊斯兰教门的载体和发言人，同时也是在中国穆斯林社会中最具影响力的领导人物，代表着伊斯兰传统，正如学者赵振武所说“回族穆斯林的文化觉醒中，伊玛目是领导力量。”在这些人物中，我们可以列出一批具有代表性的伊玛目，如马万福、马元章、马启西、王宽（浩然）、王友三、张子文、王静斋、哈德成、虎嵩山、马松亭、庞士谦、达浦生，马良骏等，当代著名的中国回族穆斯林学者杨怀中教授认为“现代中国穆斯林对新文化运动的参与是通过一群具有爱国主义态度、热心于教育事业、致力于民族宗教研究的学者，以及拥护著名学者提出的改革而实现的，这种改革将他们推到运动的最前端。这些人是伊玛目王宽，还有哈德成、王静斋、马松亭、达浦生、马义宇、虎嵩山、马坚，纳训等。”当代中国著名的四大伊玛目达浦生、马松亭、哈德成，王静斋，他们通过开办宗教学校和改革宗教等一系列行动，为回族穆斯林新文化运动做出了巨大贡献。<br>伊玛目达浦生和哈德成是改革清真寺内教育的倡导者，他们使中国伊斯兰教育迈上新台阶。达浦生出生在伊玛目世家，他年幼时便开始学习伊斯兰教，在新文化运动的影响和穆斯林群众支持下，达浦生在1895年建立了回民广益小学,之后在兰州建立了南关回民学校，在上海伊斯兰师范学校担任校长，他是以现代科学和宗教知识相结合开展教学的发起者，对新兴伊斯兰学校教育有着深远的影响，作为上海伊斯兰师范学校校长他所作的贡献不可忽略。哈德成在上海建立了中国伊斯兰社团（Islamic Society of China），目的是为了澄清伊斯兰学说，发展回族穆斯林教育，同时开办了第一个伊斯兰师范学校，提升了中国伊斯兰教育使之迈上新台阶。<br>王静斋将阿拉伯语《古兰经》翻译成汉语，创立了《伊光》（Light of Islam）杂志，将伊斯兰文化和历史、生活介绍给中国穆斯林。<br>马松亭在济南创办了成达师范学校，创办了《月华》杂志，建立成达出版社，发表了伊斯兰经典和学术作品，尤其是《成达文汇》一书。<br>民国时期，在中国王宽、达浦生、哈德成、马松亭和王静斋等伊玛目在穆斯林社会是非常有影响力的宗教领袖，在回族穆斯林新文化一定中他们对回族穆斯林社会的贡献主要体现在对伊斯兰的理解、提倡宗教和教育改革的思想，正是由于他们的倡导和实践，使得中华民国时期伊斯兰在回族穆斯林之间大放异彩，他们对推动回族穆斯林社会发展做出了不可磨灭的贡献。<br>（二）回族穆斯林政治家及其贡献<br>中国回族穆斯林新文化运动得以维持和良好发展的原因与回族穆斯林政治家参与紧密相关。民国时期回族穆斯林政治家如马邻翼、马福祥、白崇禧、唐柯三、孙胜武、马流洲、赵振武和马步芳等，积极支持回族穆斯林新文化运动，他们在运动中扮演了民间与政府间沟通、协调和协商的桥梁作用，回族穆斯林新文化运动的成功得益于回族穆斯林政治家的支持和参与，他们的参与减少了回族穆斯林在现代社会的社会转型时期所面临的社会危机，保证活动顺利进行。<br>（三）回族穆斯林知识分子<br>回族穆斯林知识分子是最有现代意识的群体，在中国现代革命中他们一直站在时代最前端。如蔡大愚、保廷梁、张子岐、丁拱辰、童聪、丁宝臣、丁竹园、刘清扬、伍特公、傅统先、金吉堂等“他们大多数都去了日本，接受现代化的教育。”这些人是以极大的热情奉献、团结、吃苦耐劳的精神和高度的责任感和使命感参与回族穆斯林新文化运动，提倡教育改革和新思想，成为推动中国回族穆斯林现代社会转型发展的强大力量。<br>（四）回族穆斯林商界名人<br>回族穆斯林新文化运动作为意识形态领域的革命，如果缺少了经济基础，将注定要失败。在中国经济发展过程中，回族穆斯林经济一直占有重要地位，是中国现代经济发展的重要组成部分，尤其在东部发达地区。民国时期著名的回族穆斯林企业家如穆子光、哈少夫、马晋卿、马仁甫、马波生和金子云等，对回族穆斯林新文化运动给予了经济和其他方面的支持，如成达师范学校、中国回族穆斯林促进会、上海师范学校以及上海清真委员会（Shanghai Halal Board）的建立都得到他们的人力和资金支持。<br>根据以上事实，我们可以总结出回族穆斯林社会精英在中国现代社会巨变和改革的历史时刻顺应历史潮流，充当了回族穆斯林新文化运动的发起者和实践者。各行各业的回族穆斯林包括伊玛目、知识分子、政府官员和商界名人，他们都积极促进和参与了宗教改良、提倡新式教育、重视人才培养，通过建立各种社会组织凝聚力量，创办回族穆斯林报纸和期刊来启发民众参与，资助留学生到国外学习加强中外文化交流，积极推动爱国主义教育参与资产阶级民主革命运动和抗日活动等形式多样活动推动回族穆斯林新文化运动发展。回族穆斯林精英站在历史传统的根基上，代表着文化觉醒和潮流促进了回族穆斯林社会转变。<br>二、现代中国穆斯林学生海外求学的兴起及其对翻译事业的贡献<br>翻译工作是引进新思维、新文化，并且使不同文化进行互动交流的主要途径，也是发展民族文化的主要力量。在中国现代社会转型的过程中，翻译作为一种社会文化运动，对于民族文化发展有着重大影响。中国回族穆斯林历史上有两次大规模的翻译运动，第一次是在明朝、清朝年间，刘智和王岱舆作为代表人物，借助儒家学说概念逻辑解释伊斯兰世界观、讨黑德（Tawhid）（认主独一思想）、人性理论和伊斯兰美德观念，称为“汉克塔布”（汉语经书），实现了伊斯兰文化和中国文化的首次对话，加速了伊斯兰教在中国本土化发展进程。第二次翻译运动始于20世纪30年代，参与者有留学于爱资哈尔大学的学者马坚、纳忠、纳训、庞士谦和海维谅等，其他学者如王静斋、哈德成和马宏道等，他们通过将阿拉伯世界的文学、哲学、科学和技术等领域成果翻译成中文，此翻译运动持续到20世纪80年代。如仅《古兰经》就出版可多个汉语版本，译著水平极佳。这些翻译运动对促进中阿文化交流，以及现代中国的回族穆斯林新文化运动起了重要的推动作用。正如纳忠教授所言“事实上，在文化发展过程中，不同族群相互学习各自的传统，是人类文化发展不可避免的法则。在学术界，我们人类相互学习各自的专业领域。没有任何族群能各自独立地发展，他们在历史的过程中创新的同时也借鉴其他作品。”在阿拉伯帝国时期，阿巴斯王朝（750-1258）哈里发以巴格达为中心发动了一次持续了百年的翻译运动，在这次运动中，阿拉伯人翻译了古希腊、古罗马、古印度古和波斯文化的精髓，在此基础上建立了闻名世界的阿拉伯伊斯兰文明。<br>民国早期，哈德成、王静斋、马宏道、王浩然和其他著名的伊玛目和学者到埃及、土耳其和其他国家学习受到当地改良思想影响，回中国后开始传播他们所学的知识，对回族穆斯林教育和新文化运动做出了极大贡献，因此他们被称为是中国伊斯兰教育改革的倡导者和实践者。在他们的示范效益下，更多中国回族穆斯林学生被派遣到海外学习，尤其是被派遣到埃及的33名学生，他们为中国伊斯兰教育改革、回族穆斯林新文化运动以及现代中国的翻译运动提供重要的智力支持，在各领域做出了应有的贡献。<br>三、翻译运动与中国和阿拉伯世界的文化交流<br>留埃中国回族穆斯林学生是当代中国于阿拉伯世界文化交流的重要力量。如马坚在埃及学习期间就开始致力于中阿文化交流和互动，1934年马坚在开罗会议上作了“理解穆斯林世界”的阿拉伯语演讲，概述了中国伊斯兰教发展，这次演讲深受欢迎，演讲稿被印成小册子在阿拉伯国家发行。此外他还把中国传统文化经典—四书翻译成阿拉伯语在《胜利周刊》发表，他把阿拉伯语的《伊斯兰教哲学》翻译成汉语在中国出版。其他学者如纳忠，海维谅和林仲明等业翻译了众多书籍和文章寄回中国出版。<br>留学埃及的回族穆斯林学生回国后，利用他们的阿拉伯语优势专注于翻译工作直到20世纪80年代。在他们的辛勤工作下翻译了大批宗教、文学、哲学、艺术、医学等领域研究成果，他们成为翻译、文学等领域的著名专家学者，更是杰出的中阿文化互动交流先行者。<br>马坚教授（1906-1978）是中国第一批留学埃及的回族穆斯林学生。1931年他从上海伊斯兰师范学校毕业后被派遣埃及留学，他编写了中国第一部阿汉词典，在北京大学设立了中国第一个阿拉伯语系，将中国经典《论语》、《中国神话故事》以及《中国谚语与格言》等翻译成阿拉伯语在开罗出版，促进了中国文化于阿拉伯文化的交流以及阿拉伯世界对中国文化的理解。他将阿拉伯语书籍翻译成汉语，如《回教真相》、《伊斯兰教哲学》、《回教教育史》、《阿拉伯通史》等，他的中阿文化翻译对中国伊斯兰文化发展具有里程碑的重要意义。<br>庞士谦(1902-1958)《月华》杂志的总编辑。他在埃及留学的期间，作为讲师开设并讲授中国文化课程。回国后，他在北京师范大学教授阿拉伯语并出版书籍，如《埃及九年》、《回民教育与留埃学生》等。<br>纳训（1911-1989）著名的中国穆斯林翻译家。毕业于云南明德中学，1934年被派遣到埃及留学，20世纪40年代，他把《一千零一夜》翻译成汉语共有5册，由商务印书馆出版，后以《阿里巴巴和四十大盗》再版，在中国家喻户晓。<br>纳忠是中国著名穆斯林学者、阿拉伯历史专家和阿拉伯语言学家。毕业于云南明德中学，1931年被派遣到埃及再次深造，1932年他将埃及著名学者曼苏尔的著作《伊斯兰》翻译成白话文，1936年被爱资哈尔最高委员会授予该校最高学历—“学者证书”。回国后他在北京外国语大学任教，编辑出版了诸多翻译著作，如阿拉伯语教材（10册）、阿拉伯语基础语法（4册）等是中国学习阿拉伯语的最重要著作。此外他还翻译了《阿拉伯伊斯兰文化历史》（8册），著有《阿拉伯历史》等，现为北京外语学院的教授和博士生导师。<br>海维谅(1912-2006)1934年从印度克劳迪亚大学转到爱资哈尔大学学习阿拉伯语，在沙特阿拉伯工作18年，出版了阿拉伯语的《中阿关系》、《中国回教史的过去与现在》等著作，他还翻译了《伊朗与中国的外交关系》、《伊斯兰人权论丛》、《穆斯林教义指南》、《有先知身份的穆罕默德》等著作。<br>马金鹏(1913-2002)，1932年在埃及留学毕业回到中国后，在上海福佑路清真寺做伊玛目，后成为东方语言系的阿拉伯语副教授，翻译了书籍《伊本·白图泰游记》等。<br>结 论<br>在漫长的历史发展进程中，中国与阿拉伯世界有着天然的联系，在唐朝和宋朝时期，阿拉伯穆斯林商人来到中国沿海城市如泉州、广州和杭州做生意，成为早期中阿经济和文化交流的大使。在这些人中，有一部分商人和番客居住在中国，娶了中国当地妇女，成为中国回族穆斯林的先民。元朝时蒙古人东征大批中亚和阿拉伯人随军到中国，壮大了回族穆斯林人口。明朝时期，阿拉伯地区王国与明朝官方通过朝贡保持了密切关系。明清时期，中国穆斯林到麦加朝觐和学习，在阿拉伯地区周游多年，将阿拉伯文化带到了中国。现代时期，中国穆斯林学生到阿拉伯世界留学，他们的翻译运动将中阿双边关系发展推到一个新的历史时期。回族穆斯林先辈的成就为今天的回族穆斯林留下了大批的珍贵的历史文化遗产，他们的历史贡献为现今中阿穆斯林文化互动交流提供了可资借鉴的宝贵经验。<br>参考文献：<br>Ding Mingjun. Hui Muslims’ Social Organizations and Functions. The Journal of Northern University of Nationalities. 2011: 19-29<br>庞士谦：《埃及九年》，北京：中国伊斯兰协会，1988。<br>Communication. Ethnic Art Studies. 2014:04:30-34<br>李松茂：《纳忠和清真铎报》，载《云南民族大学学报》2008:11，第115-118页。<br>王子华：《马坚对回儒对话的贡献》，载《思想战线》2009（S2），第58-62页。Wang Zihua. Ma Jian’s Contribution to the Dialogue between Islam and Confucianism. The Journal of Frontier Thoughts. 2009:35: 58-65<br>Yao Jide. China’s Hui Muslims Students in Egypt. The Journal of Hui Muslim Studies. 1999:01<br>Yao Jide. Hui Muslim Overseas Students and Modern Islamic Culture in Yunnan. The Journal of Hui Muslim Studies. 1996:23:10-23<br>Zhao Guojun. Social History of Hui Muslims in Northwest China Since 1840. The Journal of Gansu Academia of Social Sciences. 2015:03: 243-247<br>Zhang Qing. Hui Muslims Education Practice from the Perspective of Sino-Arabia Cultural<br>Zhang Teng. Ma Fuxiang and Ningxia Hui Muslims Education. The Journal of Hui Muslim Studies, 2013:01:138-140<br>Yu Da. Ma Jian and His Islamic World. New West. 2014:07<br>作者简介：<br>丁明俊宁夏银川北方民族大学的教授，致力于中国伊斯兰、回族穆斯林及其历史研究。他在宁夏大学获得民族史研究博士学位，博士毕业论文《民国时期的穆斯林期刊与报纸》，在中国著名期刊中发表论文50余篇的，研究涉及领域包括中国穆斯林历史、回族穆斯林身份以及生活在其他非穆斯林民族区域如西藏、白族、蒙古族中的穆斯林。丁教授出版专著有《中国回族穆斯林文集》、《中国周边穆斯林及其身份》以及《西北伊斯兰教社会组织形态研究》等，主持中国国家社会科学基金的3个项目。曾担任两份期刊的总编辑、曾任北方民族大学科研处处长，现在为回族穆斯林研究院院长、中国回族穆斯林研究协会的成员和副主席，香港中文大学访问学者，多次参加在伊朗、乌兹别克斯坦、澳大利亚和加拿大等国召开的国际学术会议。<br>马建福教授毕业于香港中文大学，专业是文化人类学，他的毕业论文是《权力与抵抗：现代化与中国海原人》，加利福尼亚大学和圣地亚哥大学的访问学者，香港人类学协会的会员，他的研究方向为中国的国际化、食品人类学和伊斯兰人类学，擅长于汉语、英语和阿拉伯语。现就职于宁夏银川北方民族大学，先后在中国著名期刊、报纸和海外期刊上以中文和英文发表了论文30篇，出版的著作有《中国穆斯林在香港》、《信仰国家的存在》。<br>5</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/17/e6-97-a5-e6-9c-ac-e5-b8-9d-e5-9b-bd-e6-97-b6-e6-9c-9f-e7-9a-84-e4-bc-8a-e6-96-af-e5-85-b0-e5-92-8c-e4-b8-ad-e5-9b-bd-e8-be-b9-e7-96-86-e7-a0-94-e7-a9-b6/" rel="next" title="日本帝国时期的伊斯兰和中国边疆研究">
+                <i class="fa fa-chevron-left"></i> 日本帝国时期的伊斯兰和中国边疆研究
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/10/26/e4-bb-8e-e5-8f-a4-e6-b3-a2-e6-96-af-e5-8f-b2-e8-af-97kushuameh-e7-9c-8b-e8-90-a8-e7-8f-8a-e6-b3-a2-e6-96-af-e5-94-90-e6-9c-9d-e6-96-b0-e7-bd-97-e4-b9-8b-e5-85-b3-e7-b3-bb/" rel="prev" title="从古波斯史诗Kushnameh看萨珊波斯-唐朝-新罗之关系">
+                从古波斯史诗Kushnameh看萨珊波斯-唐朝-新罗之关系 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Haiyun" />
+          <p class="site-author-name" itemprop="name">Haiyun</p>
+           
+              <p class="site-description motion-element" itemprop="description">Welcome to Zhenghe!</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">52</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Haiyun</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

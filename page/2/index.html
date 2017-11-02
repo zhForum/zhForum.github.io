@@ -1,9 +1,2132 @@
-extends partial/layout
-block content
-	.autopagerize_page_element: .content
-		- page.posts.each(function (item) {
-			include mixins
-			+make_post(item, false)
-		- })
-		include mixins
-		+make_pager(__('prev'), __('next'))
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="B-gg,mysql,php,golang,laravel" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="Welcome to Zhenghe!">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ZhengheForum.org">
+<meta property="og:url" content="http://zhengheforum.org/page/2/index.html">
+<meta property="og:site_name" content="ZhengheForum.org">
+<meta property="og:description" content="Welcome to Zhenghe!">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ZhengheForum.org">
+<meta name="twitter:description" content="Welcome to Zhenghe!">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://zhengheforum.org/page/2/"/>
+
+
+
+
+
+  <title>ZhengheForum.org</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+   page-home 
+ ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ZhengheForum.org</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://zhengheforum.org/2016/11/03/2017-e9-83-91-e5-92-8c-e8-ae-ba-e5-9d-9b-ef-bc-88-e9-83-91-e5-92-8c-e5-9b-bd-e9-99-85-e5-92-8c-e5-b9-b3-e4-bc-9a-e8-ae-ae-ef-bc-89-e7-89-b9-e5-88-ab-e4-b8-93-e9-a2-98-ef-bc-9a/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Haiyun">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZhengheForum.org">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/11/03/2017-e9-83-91-e5-92-8c-e8-ae-ba-e5-9d-9b-ef-bc-88-e9-83-91-e5-92-8c-e5-9b-bd-e9-99-85-e5-92-8c-e5-b9-b3-e4-bc-9a-e8-ae-ae-ef-bc-89-e7-89-b9-e5-88-ab-e4-b8-93-e9-a2-98-ef-bc-9a/" itemprop="url">2017“郑和论坛”特别专题：人类学、清真拉面、全球化</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-03T07:02:56+08:00">
+                2016-11-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/News-信息/" itemprop="url" rel="index">
+                    <span itemprop="name">News/信息</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p><img src="http://zhengheforum.org/wp-content/uploads/2016/09/image-9-300x200.jpeg" alt="image"></p>
+<p>郑和国际和平基金会（ZIPF）</p>
+<p>是致力于促进中国和穆斯林国家之间交流、理解和友谊的民间组织。继2015和2016年分别在马来西亚和阿联酋召开“沟通中国与穆斯林世界”以及“沟通中国和印度洋地区”的国际和平会议后，郑和国际和平基金会将于2017年8月初在哈萨克斯坦的法拉比大学召开“中国和中亚的历史文化关联”国际学术研讨会。</p>
+</blockquote>
+<p>在中国如火如荼推进“一带一路”倡战略之际，尤其是考虑到习近平主席在哈萨克斯坦提出“丝绸之路经济带”建议的特殊场景以及推进民心相通的战略构想，2017年在阿拉木图举行的“郑和论坛”将深度挖掘中亚各国和中国的历史文化关联以及中国-中亚各族人民互助互爱传统。其中，以面食为代表的亚洲大陆的小麦文化早已根植于中亚各国。 此次大会的特别专题研讨会（“中国清真产业和拉面行业的国际化探讨”）将集中挖掘亚欧大陆饮食文化的传播，特别是拉面或面条谱系之间的相关性、差异性以及互补性，并就其流传、变异及其特定文化背景进行探索。此次会议尤其关注中国文化、尤其是面食文化经由东干回族在中亚各国的传播、发展经验，并以此为例深挖中国清真拉面国际化的潜力。</p>
+<p>有关亚欧大陆面食文化不但有助于促进亚欧大陆各国人民之间的和平与友谊，共享既存的面食文化，而且有助于在大众层面上促进中国文化在中亚的传播，同时也有助于探索中国（清真）拉面的国际化趋势。</p>
+<p>为此，郑和国际和平基金会将联合中亚各国“东干”协会、中亚各国食品协会、中国“伊尔伊”饮食文化公司、中国烹饪协会清真委员会、中国牛肉面协会等单位联合举办。为此，（1）会议将邀请研究亚欧大陆饮食文化专家对亚欧大陆面食文化做一理论探讨；（2）此次会议也将邀请日本拉面、韩国冷面专家、同行就东亚面条文化进行对比研究；（3）会议还将邀请中国清真拉面企业代表和各国清真拉面从业者从各国国情的实际出发，从法律、文化、经济、饮食习俗等方面探讨中国清真拉面国际化的挑战和困难，以便为中国清真拉面的升级换代和规模经营提供现实的经验和参考。</p>
+<p>会议时间：2017年8月初（具体时间待定），3天</p>
+<p>会议主要内容：<br>1. 郑和国际和平奖颁奖仪式暨郑和论坛国际学术会议<br>2. 庆祝中国-中亚人民历史友好联欢<br>3. 中国清真产业和拉面行业的国际化专题研讨会<br>4. 中国软实力展演：书法、绘画、舞蹈、武术、中医等。</p>
+<p><img src="http://zhengheforum.org/wp-content/uploads/2016/11/IMG_5744-300x79.jpg" alt="IMG_5744"><br>“中国拉面的国际化探讨”特别专题将由中国“伊尔伊”饮食文化公司具体挑选和组织国内拉面企业参会，详细参与信息和要求请直接咨询“伊尔伊”公司。</p>
+<p>联系电话：0931-7606944<br>邮箱：614529779@qq.com<br>联系人：田卫海 电话：13919875005</p>
+<p>&nbsp;</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://zhengheforum.org/2016/10/30/e4-b8-ad-e5-9b-bd-e6-b8-85-e7-9c-9f-e6-8b-89-e9-9d-a2-e7-9a-84-e5-9b-bd-e9-99-85-e5-8c-96-e6-8e-a2-e8-ae-a8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Haiyun">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZhengheForum.org">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/10/30/e4-b8-ad-e5-9b-bd-e6-b8-85-e7-9c-9f-e6-8b-89-e9-9d-a2-e7-9a-84-e5-9b-bd-e9-99-85-e5-8c-96-e6-8e-a2-e8-ae-a8/" itemprop="url">中国清真拉面的国际化探讨</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-30T13:47:24+08:00">
+                2016-10-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/News-信息/" itemprop="url" rel="index">
+                    <span itemprop="name">News/信息</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ol>
+<li>丝绸之路经济带的面食链接：中国（清真）拉面的国际化探讨<br>马海云<br><img src="http://zhengheforum.org/wp-content/uploads/2016/10/IMG_5374-225x300.jpg" alt="IMG_5374"><br>郑和国际和平基金会将于2017年8月初在哈萨克斯坦召开第三届“郑和论坛”（即郑和国际和平会议）。除了探讨有关亚欧大陆的历史文化关联之外，此次研讨会将特别增加“中国（清真）拉面的国际化探讨”专题。近年来，甘肃、青海、新疆等地清真拉面在内地城市的不断涌现见证了中国拉面文化的日益发展。事实上，随着2005年中国社会科学院考古研究所研究员叶茂林在青海的喇家遗址中发现了距今4000年以上历史的麵条以及2010年中国考古学家在吐鲁番再次发现面条遗存，有关拉面的话语不仅仅是一个西北回族的发展经济问题，而且涉及中国古代文化史以及欧亚大陆文明交流史。<br>在探讨拉面之前，有必要对拉面的原料（麦）、拉面的词源、拉面的分布与传播做一简单的介绍，就可以看出古代亚欧大陆丝绸（奢侈品）之路其实更像是（大众）面食之路、尤其是拉面之路。这样，中国的丝绸之路经济带和丝路沿线文化交流才更接地气，民心相通才有更大交集。众所周知，拉面的原料面粉来源于麦。对于麦在中国的起源，国际考古学界基本没有异议，那就是西来舶品。正如研究塔里木考古的Victor H.Mair教授在 “语言和文字：生物、考古和（史前）历史” 中所言，早在青铜器时代，操持印欧语系的塔里木居民的主食之一就是麦，所以 “麦” 字本身就起源于印欧语系。所以不难理解，中原的甲骨文中并没有出现 “麵” ，也没有出现 “拉” 。只有在草原民族和农耕民族大混合的南北朝时期， 《齐书》 中才首次出现了 “麵” 的记载。<br>但是“麵”食（“面”是“麵”的简体）的食用（如面条）及记载的出现，并没有随即产生“拉面”的称呼。根据西晋束皙 （264-304）在“湯餅賦”的说法，“禮，仲春之月，天子食麥，而朝事之籩，煮麥為麷”， “食麥”、 “煮麥為麷” 不仅仅是“天子” 的食物，更是一种礼仪。可见，煮面，斯事大矣！值得注意的是，早期的煮面叫做“湯餅”， “煮饼”。亚洲语言学家David Knechtges教授认为早期汉语中的细面名称—“餺飥”–不太可能是汉语。中国最早记载面条做法的书籍大概是16世纪初的 《宋氏養生部》，而最早将面条称之为“拉面”则是18-19世纪的俞正燮。<br>有意思的是，面条的食用几乎贯穿亚欧大陆，这似乎颠倒了我们对“草原游牧民族”的传统饮食印象。在对面条的不同称谓中，“拉面”可能是亚欧大陆流传最广、最有交集的一个词汇。如伊朗有一种面汤叫Laksa （ “叻沙” ），被语言学家追溯到梵文laksh （लक्ष），意思是 “十万”，指代细小繁多的东西。阿富汗有一个地方直接叫“拉面” （Laghman），这一地方以某种（面）汤闻名。土耳其也有一种叫做lâkçe的类似面条的东西。但由于土耳其词汇不太可能以L开头，所以学者们倾向于断定这是个外来词汇； 甚至还有学者指出，闪米特阿拉姆语中也有一种类似面包的食品叫“laḥma”；我们熟悉的维吾尔语中的“laghman”至少有两种解释：一是汉语“拉面”的转音，一是其词根源于“läglak （风筝，漂），意思是漂在水上的面条。<br>尽管对这些异彩纷呈的“拉面”或“拉”的起源和传播需要更多的考古学和语言学的研究和佐证，但有意思的是，中国的面条最终从诸多名称中（如捞面、撑面、揪面、扯面等）定格于“拉面”。如前文所述，18-19世纪“拉面”已经在内地使用。更有意思的是，成书于乾隆年间的《循化厅志》居然记载了一个以拉面命名的甘肃穆斯林，馬蘇拉麵。而20世纪初的瑞典考古学家在喀什也听到“laghman”的广泛使用。至少近代以来，亚洲大陆各族人民都在共享一个和“拉面”有关的面食和历史。<br>当中国的丝绸之路经济带横穿亚欧大陆时，以拉面为代表的面食饮食文化再次将不同文化和民族链接起来。事实上，比起古丝绸之路上那些稀有的奢侈品丝绸，面食才是真正面向大众的食品和商品。为此，在2017年8月在哈萨克斯坦阿拉木图召开的“郑和论坛”，将专题研讨亚欧大陆的面食文化。郑和国际和平基金会将邀请亚欧大陆语言学家和历史学家，就包括拉面在内的面食（如“馒头” 等）文化的起源、流传和分布做一理论探讨。<br>同时，“整合论坛”也将邀请中国的清真拉面产业的不同代表，分享在不同城市、省份、国家（尤其是海湾国家、东南亚国家、日本、中亚国家等）经营和推广拉面的经验。探讨作为中国饮食文化重要组成部分的拉面如何走向世界、如何避免海外“中餐馆综合症”（即味精的使用及其后果等）。另外，在“一带一路”以及亚欧大陆绝大部分国家是穆斯林国家的背景下，这一专题研讨会也将探讨清真拉面不仅作为一种经济，而且也是一种文化乃至政治，尤其是在日本拉面和韩国冷面日益扩张之际，中国拉面产业如何通过文化化、规模化和国际化来进行应对。如同13世纪马可波罗将中国面条引入欧洲，诞生了著名的通心粉那样，当代中国拉面文化在亚欧大陆的传播和推广，必将对 “一带一路” 的文化交流和民心相通产生远胜于“丝绸”之路的影响。因为“民以食为天”适用于各国人民。</li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://zhengheforum.org/2016/10/29/e9-83-91-e5-92-8c-e5-9b-bd-e9-99-85-e5-92-8c-e5-b9-b3-e5-9f-ba-e9-87-91-e4-bc-9a-e8-8d-a3-e5-b9-b8-e8-81-98-e8-af-b7-e6-9c-b1-e5-a8-81-e7-83-88-e6-95-99-e6-8e-88-e4-b8-ba-e5-ad-a6-e6-9c-af-e9-a1-be/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Haiyun">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZhengheForum.org">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/10/29/e9-83-91-e5-92-8c-e5-9b-bd-e9-99-85-e5-92-8c-e5-b9-b3-e5-9f-ba-e9-87-91-e4-bc-9a-e8-8d-a3-e5-b9-b8-e8-81-98-e8-af-b7-e6-9c-b1-e5-a8-81-e7-83-88-e6-95-99-e6-8e-88-e4-b8-ba-e5-ad-a6-e6-9c-af-e9-a1-be/" itemprop="url">郑和国际和平基金会荣幸聘请朱威烈教授为学术顾问</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-29T14:38:38+08:00">
+                2016-10-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Academic-Advisers-学术顾问/" itemprop="url" rel="index">
+                    <span itemprop="name">Academic Advisers/学术顾问</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Academic-Advisers-学术顾问/ZIPF-Advisers-基金会顾问/" itemprop="url" rel="index">
+                    <span itemprop="name">ZIPF Advisers/基金会顾问</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>&nbsp;</p>
+<p><img src="http://zhengheforum.org/wp-content/uploads/2016/10/IMG_5576-193x300.jpg" alt="IMG_5576"><br>朱威烈，上海外国语大学教授、博导，中东研究所（教育部重点研究基地）名誉所长，外交部中阿合作论坛研究中心主任，上海高校中东研究智库主任。主要学术兼职有教育部社会科学委员会综合研究学部委员，约旦、埃及和沙特等学术研究机构通讯院士和荣誉研究员等。<br>1965年毕业于北京大学阿拉伯语专业，在上海外国语大学执教50余载。1978～1980年国家公派赴开罗大学进修，1980～2015年任《阿拉伯世界（研究）》期刊主编，1991年起享受国务院特殊津贴。历任上外阿拉伯语系主任、社会科学研究院院长、中东研究所所长等职，主要从事阿拉伯语言文化和中东与伊斯兰问题的教学和研究工作，完成国家部委和上海市课题多项，发表出版论文专著译作等学术成果数十种。被评为上海市优秀教育工作者、劳动模范、中国译协“资深翻译家”等，获埃及高教部、文化部表彰、海湾合作委员会奖和沙特阿卜杜拉国王世界翻译奖等国内外多项荣誉。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://zhengheforum.org/2016/10/26/e4-b8-ad-e5-9b-bd-e4-b8-8e-e4-b8-ad-e4-ba-9a-e7-9a-84-e4-ba-a4-e6-b5-81-e4-bd-bf-e8-80-85-ef-bc-9a-e5-ae-89-e8-83-a1-e5-a1-9e/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Haiyun">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZhengheForum.org">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/10/26/e4-b8-ad-e5-9b-bd-e4-b8-8e-e4-b8-ad-e4-ba-9a-e7-9a-84-e4-ba-a4-e6-b5-81-e4-bd-bf-e8-80-85-ef-bc-9a-e5-ae-89-e8-83-a1-e5-a1-9e/" itemprop="url">中国与中亚的交流使者：安胡塞</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-26T23:22:01+08:00">
+                2016-10-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/News-信息/" itemprop="url" rel="index">
+                    <span itemprop="name">News/信息</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="http://zhengheforum.org/wp-content/uploads/2016/10/IMG_9671-300x225.jpg" alt="IMG_9671"></p>
+<p>东干人：中国与中亚的交流使者<br>——专访哈萨克斯坦东干协会会长安胡塞</p>
+<p>采访人：黄南；<br>本文来源：钝角网（ID：idunjiao）</p>
+<p>【钝角网按】在中亚的哈萨克斯坦、吉尔吉斯斯坦、乌兹别克斯坦以及俄罗斯西南部，生活着一个被称为“东干人”的民族，他们的长相和中国人无异。他们的民族语言为一百多年前的中国陕西方言。</p>
+<p>2016年6月5日“钝角” （ID：idunjiao）在迪拜召开的“郑和国际和平论坛”（www.zhengheforum.org）上采访到哈萨克斯坦国家民族委员会委员、哈萨克斯坦东干协会会长安胡塞先生。安胡塞出生于哈萨克斯坦江布尔州库尔达依县，祖籍陕西西安，其曾祖父安兴皇、安兴虎随东干之父白彦虎到中亚。</p>
+<p>从苏联解体哈萨克斯坦独立后，安胡塞频繁往来于中哈之间，为中哈友谊牵线搭桥。2004年原陕西省委书记李建国接见了包括胡塞在内的哈萨克苏滩民族委员会代表团，在李书记督促下，陕西省与江布尔州签订了友好省州协议，促进了东干人与老家更紧密地联系。从2000年开始，针对12万多东干人只会说不会写汉字的情况，“村长”安胡塞经多方面联系，公派了一批特殊的“陕西娃”回老家陕西学习汉语。这些学习汉语的东干族少年回国后为汉语在东干族人民中的传承和发展做了很大贡献。</p>
+<p>采访人：黄南。</p>
+<p>钝角：我们知道东干人是指迁移到中亚的中国甘肃及陕西回族后裔。“东干”这个词如何理解？</p>
+<p>安胡塞：一百多年前我们的祖辈迁入中亚时，被问到你们从哪里来，陕西话说是从东边来的，于是就取名叫东干。</p>
+<p>钝角：150年前从西安过去的？</p>
+<p>安胡塞：对，已经154年了，离开西安是1862年,那时候回民起义，一直往西退，到哈萨克斯坦边界了。后来没办法了，就过到那边去了。1877年过了边界线，当时有三万人，过边界的时候是腊月，天气很冷，雪很厚，山里有2米、3米的雪。光翻过这个雪山，三万人里面就只剩下3314个人。</p>
+<p>东干人过去以后，把菜种子都带了过去，带给了俄罗斯。原来那块还不属于哈萨克斯坦，属于俄国管。哈族人对咱们很好，那年的冬天很冷，把很多人都冻死了，哈族人杀了很多牲畜来救中国人的命。俄罗斯族、哈族、吉尔吉斯族、乌兹别克族等中亚人民，都救济帮助了我们东干兄弟。</p>
+<p>这些历史都是一辈一辈传下来的，我们不能忘了我们是中国人，是陕西人，不能忘了我们的文化和语言，所以把这个传统就保护得很好。</p>
+<p>钝角：东干人现在有多少？</p>
+<p>安胡塞：现在东干人在哈萨克斯坦有7万人，全中亚加上俄罗斯，现在有14万到15万人。东干人还是说的陕西话，吃的陕西面、馍馍、手撕面。还说一些古老的话，把政府还叫衙门，把警察叫衙役，把总统叫皇上，店铺老板叫掌柜，学校叫学堂等等。东干人的传统服饰和清朝时期是一样的，新娘子还穿清朝的长袍子。部落的文化、风俗、习惯都保留下来了。你看这个陕西银条子都是手工绣的，这个披肩，每一个花都有自己的讲究，都是手工绣花，包括这个银元头，有的文化学者把这个研究了。东干文化是清朝陕西文化的活化石。<br>（图：东干新娘子的服饰）</p>
+<p>钝角：哈萨克斯坦东干人与其他中亚国家的东干人的联系怎么样？</p>
+<p>安胡塞：所有中亚的、俄罗斯的东干人都有关系，有一个国际东干协会，我也是那个国际东干协会的会长。原来苏联的时候，东干人没有办法回中国，没有办法回老家。现在东干人很幸福，能回老家，能学母语。东干协会从1994年开始就可以回陕西老家交流了。这20年，我们送了2000多东干孩子回老家学母语，现在东干孩子已经会汉字了——原来不会汉字，因为没有人教汉字，毕竟已经过了150多年了——但是现在的东干孩子学汉字、学汉语非常方便。培养的2000多个孩子，在东干与中亚及俄罗斯的合作中，起了很重要的作用。</p>
+<p>钝角：您如何看待当前哈萨克斯坦和中国的关系？</p>
+<p>安胡塞：哈萨克斯坦和中国的关系现在是最好的一段时间。</p>
+<p>钝角：为什么这么说呢？</p>
+<p>安胡塞：苏联的时候没有交流。那时候是苏联管哈萨克斯坦，边界都封闭着。2013年习主席去了哈萨克斯坦以后，哈萨克斯坦同中国的关系就变好了，开始了更多的合作。现在哈萨克斯坦到中国有4个天然气管道、6个石油管道，有2个铁路，有25个边界口岸。现在的关系在历史上最好的一段时间，合作规模也很大。</p>
+<p>钝角：“一带一路”倡议与哈萨克斯坦关系密切， “一带一路”倡议对哈萨克斯坦的影响？</p>
+<p>安胡塞：“一带一路”倡议是习主席在哈萨克斯坦提出来的。刚好现在通过哈萨克斯坦修的高速公路和铁路到俄罗斯，是直接到欧洲最近的一条路。</p>
+<p>另外，2014年 12月25日李克强总理跟马西莫夫总理签协议，把60个大工厂迁到哈萨克斯坦去，现在已经有20多个迁过去了。马西莫夫还是哈萨克斯坦新丝绸之路文化经济国际科学院的院长。哈萨克斯坦原来同中国的贸易都是石油、矿产、天然气，现在主要是投资高科技、农业，现在中国在哈萨克斯坦发展高科技农业、有机农业，两岸三地的合作非常大。纳扎尔巴耶夫总统还提出了“光明之路”发展计划，把这两个合在一起发展。</p>
+<p>哈萨克斯坦总统和习主席每年都要见几次面，今年是6月23日在乌兹别克斯坦的上海合作组织大会上见，他们经常见。还有外交部部长王毅到哈萨克斯坦去，已经确定6月17日习主席要访哈萨克斯坦。哈萨克斯坦与中国有1700公里的共同边界线，现在有很大规模的合作，这对东干人是一个很好的机遇，“一带一路”对东干人也是一个很好的机遇。东干人会俄语，会汉语，会哈萨克斯坦语，对中国很了解，这就使得东干人在东亚，在俄罗斯和中国之间是一个桥梁，一个平台。</p>
+<p>钝角：东干人是不是都信仰伊斯兰教？</p>
+<p>安胡塞：都是信仰伊斯兰教，实际上它是丝路民族。原来阿拉伯人、波斯人都到中国来，这些人已经被中国文化同化了，但是信仰的是伊斯兰教。从丝绸之路来的阿拉伯人、波斯人到中国之后，就成立了回族。没有丝绸之路，也就没有这个民族了。</p>
+<p>钝角：哈萨克斯坦的其他民族也是信仰伊斯兰教么？</p>
+<p>安胡塞：哈萨克斯坦70%的人信仰伊斯兰教，130多个民族大部分都是伊斯兰教，也还有基督教、东正教。</p>
+<p>钝角：现在中哈之间的民间交流怎么样？东干协会在中国有没有民间对接组织？</p>
+<p>安胡塞：有，2002年东干协会就在中国西安注册了一个办事处。我们有很多的交流，有很多省长、州长都来做友谊、文化交流，相当不错。包括马西莫夫是陕西省的经济顾问。通过民间的接触，两国的合作规模也是非常大的。</p>
+<p>习主席2014年在北京召开的世界华人大会上接见华人华裔，世界华人大会每两年一次。2014年是6月1号、2号开会，6月2号李克强总理接见，6月1号是习主席专门接见。他们都说了：不管在国外住多久，不管你会不会汉语，不管你的信仰，我们都是中华民族的后裔，都是中华民族的孩子。</p>
+<p>习主席说：你现在必须要干好，你代表的是中华民族，代表中华人的哲学。你在哈萨克斯坦一定要干好，要给人感觉咱们不一样。必须对现在的祖国有很大的贡献，要做两国的平台和桥梁。包括哈萨克斯坦的总统——因为我也是哈萨克斯坦民族大会的理事，他（纳扎尔巴耶夫总统）也让我回去跟中国的同志说：把你们高科技的技术都带过来，把投资也带过来，我会大力地支持。所以，现在两国的交流合作搞得非常不错，现在我们已经有三、四个项目正在建设。</p>
+<p>钝角：去年有一个新闻，好像哈萨克斯坦爆发过反华事件，因为在那里搞建设的中国人不尊重当地信仰。</p>
+<p>安胡塞：有一些是反对派，他们反对总统，他们说总统把农业土地卖给中国了。其实没有卖，是让中国帮助发展农业。这些反对派反对现在的政府，他们都跟国外有关系，因为现在哈萨克斯坦跟中国的关系太好了，他们就在外国炒作，想在哈萨克斯坦搞出一个“颜色革命”来，但是哈萨克斯坦人的社会福利很好，生活水平很好。</p>
+<p>钝角：具体是怎样好呢？</p>
+<p>安胡塞：它仍保留原来苏联的福利系统。教育上，从小学到高中全部都是免费的，大学30%也是免费的，谁考分考得高都是免费的。医疗上，老人、孩子的医疗都是免费的。社会福利很好，对老百姓的福利很好，老百姓都很支持总统。西方搞的两次颜色革命，像乌克兰都混乱了。原来一个乌克兰是哈萨克斯坦GDP的四倍。现在一个哈萨克斯坦是乌克兰GDP的两倍，你看“颜色革命”都搞坏了。所以民众都欢迎总统和中国合作。</p>
+<p>钝角：现在哈萨克斯坦跟俄罗斯的关系怎么样？</p>
+<p>安胡塞：也很好，包括俄罗斯、哈萨克斯坦和中国都是上海合作组织成员国。习主席2013年到哈萨克斯坦去也接见过，习主席说了一句话，他说哈萨克斯坦是中国最好的合作伙伴。习主席和总统的关系也很好，就像弟兄一样，两个国家领导人的关系对两个国家的关系非常重要。</p>
+<p>钝角：中国发起的上海合作组织把中亚国家以及俄罗斯都连接了起来，您如何看待上海合作组织？</p>
+<p>安胡塞：上海合作组织把几个国家团结在一起，对全世界的影响力很大。上合组织今年6月23日至24日在乌兹别克斯坦举行15周年峰会。2015年的峰会上合组织决定扩员，明年可能巴基斯坦等一些国家要加入上海合作组织。上海合作组织会把大家都团结起来。</p>
+<p>钝角：中亚所面临的最严重的恐怖主义威胁是什么呢？</p>
+<p>安胡塞：现在最大的危险还是伊斯兰国。伊斯兰国在阿富汗很厉害，像叙利亚、伊拉克打击控制很严格。可这些是人为的，现在最危险的就是伊斯兰国。中亚这几个“斯坦”，有两国的生活水平还是不太高——塔吉克斯坦和吉尔吉斯斯坦人民的生活水平不高，伊斯兰国就会到这里面来，所以有这个风险。但是有了上海合作组织，俄罗斯、中国会帮助它们防止一些恐怖组织的威胁。</p>
+<p>钝角：我还看过一篇文章，内容是俄罗斯的知识分子说俄罗斯的野心，他们认为哈萨克斯坦是俄罗斯的一部分，俄罗斯有没有这种想法？</p>
+<p>安胡塞：有这种说法。哈萨克斯坦跟俄罗斯的关系是最近的关系，最好的关系，但有一些反对派，经常做这个事，觉得俄罗斯和哈萨克斯坦关系不好，实际上没有这回事。哈萨克斯坦有20%的俄罗斯人，俄罗斯也有很多哈萨克斯坦人。两国的经济一体化的量也很大，现在又是欧亚经济联盟里面的，所以并不存在层级。哈萨克斯坦和俄罗斯早就把边界全部都迁完了。哈萨克斯坦的总统纳扎尔巴耶夫很厉害，是很强大的一个人，能够跟中国把关系搞这么好，跟俄罗斯关系也好，跟美国关系也好。</p>
+<p>钝角：我看过哈萨克斯坦总统纳扎尔巴耶夫的讲话视频，真的很有魅力很坚定有力，据说他已经当了很多年的总统了。</p>
+<p>安胡塞：他当了25年的总统了，他的管理（能力）很强，很厉害。</p>
+<p>—结束—</p>
+<p>钝角网</p>
+<p>（ID：idunjiao）</p>
+<p>晓世界，知天下</p>
+<p>关注“钝角”就够了</p>
+<p>联系方式：dunjiao2016@163.com</p>
+<p>政治学与国际关系论坛<br>ID：sinozhuge</p>
+<p>长按二维码关注<br>万里常安研究院旗下中国最大的政治学与国际关系社区，投稿或课题研究合作请联系邮箱：sinozhuge@126.com，另外欢迎关注“海外利益研究”（haiwailiyi）微信公众平台，期待您的加入。<br>责任编辑：沈越<br>阅读 2163 投诉<br>写留言</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://zhengheforum.org/2016/10/26/e4-bb-8e-e5-8f-a4-e6-b3-a2-e6-96-af-e5-8f-b2-e8-af-97kushuameh-e7-9c-8b-e8-90-a8-e7-8f-8a-e6-b3-a2-e6-96-af-e5-94-90-e6-9c-9d-e6-96-b0-e7-bd-97-e4-b9-8b-e5-85-b3-e7-b3-bb/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Haiyun">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZhengheForum.org">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/10/26/e4-bb-8e-e5-8f-a4-e6-b3-a2-e6-96-af-e5-8f-b2-e8-af-97kushuameh-e7-9c-8b-e8-90-a8-e7-8f-8a-e6-b3-a2-e6-96-af-e5-94-90-e6-9c-9d-e6-96-b0-e7-bd-97-e4-b9-8b-e5-85-b3-e7-b3-bb/" itemprop="url">从古波斯史诗Kushnameh看萨珊波斯-唐朝-新罗之关系</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-26T16:08:23+08:00">
+                2016-10-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Academic-Research-学术研究-版权所有，违者必究/" itemprop="url" rel="index">
+                    <span itemprop="name">Academic Research/学术研究 (版权所有，违者必究)</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="http://zhengheforum.org/wp-content/uploads/2016/10/1448009528805-1-1-238x300.jpg" alt="1448009528805-1-1"></p>
+<p>Lee. Hee Soo<br>Professor, Dept. of Cultural Anthropology<br>Hanyang University, Seoul, Korea</p>
+<p>1. Preface</p>
+<p>This paper is designed to discuss new facts on ancient Silla-T’ang-Sassanid Persia relations based on Kushnameh, an ancient Persian epic compiled in the 11th century. Kushnameh gives us significant and remarkable description on Silla Kingdom of the 7th century. Among total 10,129 couples, 3,914 couples(No.2011~5925) deal with such Silla country as its society, Iran-China-Korea relations, military cooperation between Silla and Iran, Iranian settlement in Silla society, marriage of Iranian prince with Silla princess, and excellent living condition of Silla.</p>
+<p>Of course, long before the advent of Islam, China and Iran Relations were widely connected, diplomatically, economically and culturally along the Silk Road for many centuries. According to Chinese records, the Sassanian embassies sent to China more than 13 times, particularly to promote mutual commercial benefits. The discovery of large number of Sassanid coins in southern China confirms the maritime trade. Together with diplomats and commercial delegations, Sassanid court frequently sent talented musicians(胡樂) and dancers(胡姬) to Chinese imperial court.</p>
+<p>At the same time, Korea and the West Asia were trading actively by sea and by such overland routes as the Silk Road. Documented references are few and far between, but sufficient remain to give proof of substantial commerce between Korea and the West Asia through China.</p>
+<p>One example is the glass cups excavated from ancient tombs in Silla Kingdom. Most of the glass cups unearthed from the tombs were either from Roman territories in the West Asia and the Sassanid Persia in the 5-6th century. In addition, silver bowl on which the Persian goddess Anahita was inscribed, clay busts and figures representing Sogdian merchants, Persian styled golden dagger were excavated. Moreover, the Samguksagi(三國史記), an official chronicle of the Three Kingdoms of Korea compiled in 1145, has a detailed account of commercial items including Persian carpets which were mainly transacted by the Iranian merchants and widely used in the upper class of Silla society.</p>
+<p>With advent of Islam, Korean-Muslim cultural contacts are more accelerated as an outcome of ancient China-West Asian commercial relations via the Silk Roads. The contacts are believed to be initiated as early as the middle of the 7th century. The direct contacts between Muslims and Koreans in the Korean peninsula can be borne out by references to Korea found in 23 Islamic sources written between the 9-16th century by 18 Muslim scholars such as Ibn Khurdadbih, Sulaiman al-Tajir, Mas’udi, etc. Ibn Khurdadbih was the first Arab scholar who informed of Muslims’ residence in the Unified Silla Kingdom(661-935CE).</p>
+<p>But till now, no documents or epic are found to show ancient relations between Iran and Silla. In this sense, the finding of Kushnameh and its re-interpretation shall contribute a lot to Korean academic society and the Silk Road studies to open new dimension in making research for Silla’s foreign relations and more vivid understanding on Silla society. Kushnameh is basically Persian epic based on oral tradition following Shahnameh style and it is compiled in the form of manuscript later. It seems that some historical events mingled with mythological beliefs of ancient Persia. To what extent we can accept it as the reliable historical facts from the Kushnameh contents of more than 10,000 couples, is the key task in Kushnameh studies. By more systemic and long term research project, we hope that the wide range of new contents on cultural and political relations on Silla-T’ang-Sassanid Persia described in Kushnameh can be steadily enlightened.</p>
+<p>2. The significance of Kushnameh and current research status.</p>
+<p>It seems that Kushnameh epic has extraordinary meaning in the Silk Road studies to upgrade current Korea-Iranian cultural history. According to recent researches by the joint academic team headed by Prof. Lee, Hee-Soo at Hanyang University of Korea and Dr. Daryoosh Akbarzade, former Director at the National Museum of Iran, a Persian prince Abtin together with his peoples immigrated to Silla under sincere patronage of Silla king, Tayhur. The Sassanid prince got married Frarang, a Silla princess and contribute a lot to Silla society. In these points, it is not at all surprising that the Koreans were in close contact with Iranians and the Sassanid. Two different cultures thus naturally met and blended with each other.</p>
+<p>The Kushnameh manuscripts contain historical facts and traditional Iranian legends, and sometimes mingle each other. During the war between the Arabs and the Sassanid Persia, Yazdegird III, the last king of the Sassanid sent his prince Piruz to Ch’ang-an to demand China’s aid against the attacks of the Arabs. This occurred in 650. No doubt, however, Chinese emperor Kao-tsung(唐高宗) was already fully apprised that the Arabs would constitute formidable adversaries, so he replied that Persia was too far away for the required troops to be sent. At the same time, with formal diplomatic establishment between T’ang and Arabia in 651, the Chinese emperor was forced to expel Prince Piruz and his followers from official protection. We know that many artisans accompanied Piruz when he took refuge in China. Both Piruz and his son Narsieh were protected and given high titles at the Chinese court. However, history preserves no memory of what happen to them exactlyand then the existence and fate of Narsieh and his descendant was gradually forgotten and disappeared in history.</p>
+<p>In the Kushnameh, surprisingly Piruz and the Iranian group appeared again in the form of different names and stories migrating to Silla to dream political asylum. The prince Piruz was replaced by Abitin who got married Frarang, a Silla princess. The Persian group contributed greatly to Silla society, in particular in the fields of weapon, polo sports, military equipment and daily life. After coming back home country under positive patronage of Silla king, Tayhur, Persians remembered and described beautiful Silla peoples and their society</p>
+<p>The Kushname was handed down from generation to generation in the form of oral epic till 11thcentury when Iran-shan Ibn Abal Khayr, a great Iranian scholar, compiled the oral epic to manuscripts. Afterward, Jalal Matini, an Iranian historian re-edited Kushnameh and published in the form of modern book in 1998. Accordingly, Kushnameh can be valuable source material to reconstruct historical relation between Iran and Silla, i.e. a land near to China as found also in other Islamic texts.<br>In the 1985, Professor Matini published a papers in the journal “Irannameh” by title “Kush wa Kushe pilgush”. In the article, he introduced for the first time the historical relationship between Korea and Iran. According to the manuscript entitled Kushnameh, the sons of Jamshid the mythical king of Persia fled to Chin and Machin, and Abtin one of the sons of Jamshid conflicted with Kush, a son of Zahhak. Then Abtin sought asylum from the king of Silla. Based on Kushnameh stories, Matini has published many articles as “Kush or Gush”, “Different narrations about the infant of Faraidun”, “Another narration about the Zahhak”, “The another translation of the Yadegar-e Bozorgmehr”, “In search of Faraidun’s throne”, “Another narration about the divided of the world by Faraidun” and “Some tricks of war in the Kushnameh”. Finally he published the full text of Kushnameh with detailed preface in 1998.</p>
+<p>The Kushnameh studies pushed the documented history of Iran-Korea relations back into the pre-Islamic mythological period, making clear that the origin of this international relationship is far older than the Islamic period. It also suggests that it was the Iranians who introduced Silla to the Islamic world, although it appears that the Kushnameh was originally written in Pahlavi(Middle Persian). The Pahlavi language was the more ancient version of Persian in use during the Parthian/Arsacid(247BCE-224CE) and the Sassanid(224~651) periods. Although it is still too early to decide the exact time and place the story is set, the text of the narrative may imply reference to certain real historical events. For example, certain goods traded by sea between Iran and Korea before the Islamic era are mentioned in the Kushnameh in the course of the narration of the story of Abtin’s return to Iran from Silla. Abtin, accompanied by a Korean prince, takes the maritime route back to Iran, guided by an experienced Korean navigator. Their route probably took them through the South China Sea, the Indian Ocean and finally the Gulf. This point shows that maritime relations between Iran and Korea were probably quite well established in the pre-Islamic period. Further, the description of Silla’s climatic and geographical conditions in the Kushnameh is very similar to those that prevail in present day Korea, which suggests the story’s writer had a credible degree of knowledge about the peninsula.</p>
+<p>One thing is still not clear why Kushnameh mentions Korea not as Silla but as Basilla(Besilla). In the Islamic texts, Korea is described as Silla, not as Basilla. Dr.Daryoosh explained that the name of Basilla is special to the Kushnameh and it definitely is not a kind of mistaken writing because this toponym is so written in all pages. He strongly believes that the first syllable &lt;ba&gt; is not to be preposition &lt;be&gt;. He believes it adjective to emphasize Silla’s beauty and utopian image.</p>
+<p>3. Ancient Relations between Persian and Korea</p>
+<p>Korea belonged to mainly the East Asian cultural sphere and thus external contacts were largely confined to China and other northern peoples. Consequently, historic inquiry has generally concentrated on those nations. Furthermore, frequent wars all but destroyed the ancient literature that might have shed light on early contact with West Asian regions and what little remains is very fragmentary. Nevertheless, it is believed that Islamic-Persian culture have had a significant influence on Korean culture since ancient times.<br>We already mentioned about unearthed glasscups from Silla tombs which are believed to be imported from the Sassanid period. Among specimen of typical cut glass, the glass bottle unearthed from a Silla tomb(No.98) shows same manufacturing technique of the Sassanid dynasty. Assuming that the tomb was constructed in the 5-6th century, it can be safely said that about that time Persian merchandise had already found its way into Korea and was being used by Koreans.</p>
+<p>In the 5-6th century, the influence of Sassanid culture was very strong in Korea. The winds of Persian style blew forcefully on the cultural centers of China in that period. In the fields of music, art, literature and related disciplines, Iranian motifs came to Korea, stimulating imports and the subsequent popularity of designs and patterns initially inspired by the imported goods. These are represented by “the design of pearl-studded roundels” and symmetrical, zoomorphic patterns.</p>
+<p>We know that human statues of Iranians with deep socketed eyes and a high nose(深目高鼻) were produced in quantity as earthen burial figurines in Korea. It is possible that the military guardians at Gwaerung tomb of Korea might have been modeled on Iranian earthen figurines. On the other hand, the head bands, characteristic of Iranian or Muslims, are minutely depicted in the stone statues at Gwaerung tomb. This leads us to presume that there must have been some direct contact with Iranians.</p>
+<p>As Iranian items, the Persian carpets and wool fabrics were imported and widely used among Silla aristocrats. The floral-designed seating mattress in Persian style was quite popular in daily life in the ancient Korea. It is also of interest to note that alfalfa or ‘medicago lentilata’, a plant which is native to Caucasus or Persia, was transplanted to the Korean peninsula. According to the Samguksagi(三國史記), there were four state-run farms in Silla, where alfalfa or moksuk as it is called in Korea was grown. However, glassware and alfalfa are not the only things to have reached the Korean peninsula in ancient times. According to the “Sino-Iranica” of Berthold Laufer, some of Iranian products such as Persian emerald called “Se-se(瑟瑟)”, aloe, ambergris, pomegranate and sesame, and such products as grape, peppermint and walnut were transplanted to Korea. According to the chronicles of Korea, they have a detailed account on the items of peculiar musical instruments and trading products representing Persian culture.</p>
+<p>The introduction of Persian culture and its products into Korea before the advent of Islam, was largely a result of indirect contact between Korea and Persia via China. But direct contacts of Persians and Central Asians to the Korean peninsula were also achieved from time to time. Moreover recently during the archaeological digs carried out in Korea, several clay busts were revealed whose shape resembled Persian merchants with beards and moustaches. Furthermore in comprehensive researches carried out recently by several Korean scholars, they postulates that the hero of the Ch’o-yong mask dance was a real human being who might have originated an Indo-Arian tribe that came to Silla in 880.</p>
+<p>4. The Korea-Muslim Relations based on Islamic Texts</p>
+<p>Muslim merchants from Iran may have extended their own trade routes to the Korean peninsula. While trade was the primary reason for their contacts, it seems that many elements of Islamic culture were introduced to Korean peninsula as well. This development is well supported by accounts on Korea called ‘Silla’ ‘found in 23 Islamic books of geography, history and travel written by eighteen Muslim scholars ranging from Ibn Khurdādbih of the mid-9th century to A’bul Fazl of the early sixteenth century.</p>
+<p>Interestingly, Silla appears in Islamic texts not as a trading land like China, but mainly as a “land of dream”. Islamic texts hardly pay attention to the economical relation between Persia and Silla. In particular, the writings of Dimashqi, Al-Nuwairi and Al-Maqrizi are worth extraordinary attention. To our surprise, they recorded that part of the Alawis(the followers of Ali) took refuge on the Korean peninsula, fleeing persecution from the Arab Ummaiya Dynasty(661-750).<br>The fourth Caliph, Al(r.656~661) was killed and the power of Alawis, the followers of Ali, quickly waned. Ali’s rival, Muawiya(r.661-680) put an end to the Orthodox Caliphate, and set up the Ummaiya Dynasty in Damascus. In order to survive, Ali’s factions(Alawis) dispersed, seeking political asylum in many regions. The Alawi was known to have gone as far as the south-eastern coast of China. According to writing of Nureddin Muhammad al-Awfi, at the time of the inauguration of the Ummaiya Dynasty, a great number of Muslim Shiites, in allegiance to Ali, formed their own community and lived collectively on Hainan Island, south of China. We have no way of knowing how accurate or how credible the writing of Dimashqi may be. Nevertheless the fact that Shiite tribes in allegiance to Ali were living en masse on Hainan Island and in the south-eastern part of China, around the 7th century, raises a possibility that some of Ali’s followers could have advanced as far as the Korean peninsula in search of ‘Utopia’.</p>
+<p>The structure of Kushnameh story is strongly connected to Islamic texts that mentioned the Alawis(mostly Persian Shia) refugees in Silla. With collapse of the Sassanid by the Arabs, some of Persians were forced to flee to neighbor countries while absolute majority of Persian accepted Arab dominance and embraced Islam from Zoroaster. It is clear that under Arab Ummaiya regime Shia Muslims(mostly Persians) were severely persecuted. It seems that the common suffering of Persians was well described in Kushnameh and Islamic texts in respective. ,</p>
+<p>5. Conclusion</p>
+<p>Unfortunately in studying of Korean history, little attentions have been paid to wide range of cross cultural aspects along the Silk Road mainly due to lack of experts and shortage of reliable materials. Reflecting this asymmetric trend prevalent in the today’s historical approaches, it is very time to dig out some illuminating facts on Korea-West Asian cultural exchange during 5~10th centuries along the Silk Road. These historical relations are supported by the first-hand materials and other essential historical references written in Persian or Arabic languages. In this sense newly discovered Persian epic Kushnameh and other Persian manuscripts which contain many informative contents on Silla shall be the pivotal source materials for further Silk Road studies in the East Asia.</p>
+<p>Bibliography</p>
+<p><em>Kushnameeh(1998), Hakim Iranshan-ibn- Abal Khayr, corrector: J. Matini, Tehran.
+</em>Akbarzadeh, Daryoosh,(2010). “Silla, Paradise of the Ancient Iranians” 2010 International Conference &lt;The Middle East in the World, The World in the Middle East&gt; May 19~21, 2010, The Institute of Middle East Studies, HUFS<br><em>Akbarzadeh, Daryoosh,(2010). “Kush-nameh and Historical Relation of Iran-Silla” International Seminar on &lt;Ancient Relation between Korea and Iran&gt; July 24, 2010, Tehran
+</em>Davis, Richard,(2006). “Persian Epic” &lt;An Encyclopedia, Medieval Islamic Civilization&gt; 2V(Ed. Josef W. Meri).<br><em>“Rostam” Wikipdia, An Free Encyclopedia.
+</em>Daryaee, T(2004), Sasanian Empire, translation by M. Saghebfar, Tehran.<br><em>Lee, Hee Soo,(1997), The Advent of Islam in Korea, IRICICA, Istanbul
+</em>Abul-Fida, M. Reinaud(ed.)(1883), Taqwin al-buldan(제국 안내 목록), Paris<br><em>Abu’l-Fida(1956), Kitāb al-mutahsar fi akhbar al-bashar(인류정보의 요약서), Vol.1, Beirut
+</em>Ahmet al-Nuwayri(1923), Nihayat al-arab fi funun al-adab, Cairo,<br><em>Ali b. Hamid b. Abubakr Kufi(1216), Fathnāmah-i Sind
+</em>Al-Makdisi(1907), Kitāb al-bad‘ wa’l-tarikh(창세와 역사서), Baghdad</p>
+<ul>
+<li>Al-Maqrizi(1911), G.Wiet(ed.), Al-mawa’iz wa’l-i’ tibar fi zikr al-khitat wa’l-athar(정착지와 유적에 관한 해설과 참고서) Cairo<br><em>Baloch, N.A.(ed.)(1983), Fathnāmah-i Sind: Being the Original Record of The Arab Conquest of Sind, Islamabad, Institute of Islamic History, Culture and Civilization.
+</em>Biruni(1355H), Kitāb al-Jamahir fi Ma’rifat al-Jawahir, Hyderabad Deccan<br><em>Buzurg b. Shahryar(1882~86), Kitāb ‘Aja’ib al-Hind, Leiden
+</em>Daudpota(1939), Fathnamah-i Sind Alias Chachnamah, Hayderabad, Majlis Makhtutat-i-Farsiyyah<br><em>Ibn al-Bakuwi(1971), Kitāb talkhis al-athar wa aja‘ib al-malik al-qahhar(대왕들의 업적과 경이의 요약), Moscow
+</em>Ibn Khurdadhbih, M. J. de Goeje(ed.), 1889, Kitāb al-masalik wa’l-mamalik(도로와 왕국총람), Leiden<br><em>Ibn al-Nadim, Flugel(ed.)(1348 H), Kitāb al-fihrist(색인표), Cairo.
+</em>Ibn Rustah, M.J. de Goeje(ed.)(1892), Kitāb al-a’laq al-nafisah(진귀품 목록), Leiden<br><em>Ibn Sa’id(1970), Kitāb al-jughrafiya fi’l-aqalim al-sab’a, Beriut<br>Khawarazmi, Kitāb Surat al-‘Ard
+</em>Masu‘di(1938), Kitāb al-tanbih wa’l-ishraf(학습과 개관서), Baghdad<br><em>Masu‘di(346H), Muru al-jahab wa ma’adin al-jauhar(황금초원과 보석광), Cairo
+</em>Shamsuddin Dimashqi(1865), Kitāb nukhbat al-dahr aja’ib al-barr wa’l-bahr, Petersburg,<br><em>Yakut, Wustenfeld(ed.),(1860-66), Mu’jam al-Buldan, Leipzig.
+</em>Zakariya Qazwini(1869), Athar al-bilad(제국(諸國) 유적기), Cairo<br><em>Zakarya Qazwini(1957), Aja’ib al-makhlugat wa ghara’ib al-mawjudat, Cairo
+</em>이희수 (2010), “고대 페르시아 서사시 쿠쉬나메의 발굴과 신라 관련 내용”, &lt;한국이슬람학회 논총&gt; 제 20-3집<br><em>이희수(2012) 이슬람과 한국문화, 청아
+</em>정수일 (2002). 이슬람 문명, 창비<br>13</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://zhengheforum.org/2016/10/23/e6-b0-91-e5-9b-bd-e6-97-b6-e6-9c-9f-e4-b8-ad-e5-9b-bd-e5-9b-9e-e6-97-8f-e7-a9-86-e6-96-af-e6-9e-97-e7-9a-84-e7-bf-bb-e8-af-91-e8-bf-90-e5-8a-a8-e4-b8-8e-e4-b8-ad-e9-98-bf-e6-96-87-e5-8c-96-e4-ba-a4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Haiyun">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZhengheForum.org">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/10/23/e6-b0-91-e5-9b-bd-e6-97-b6-e6-9c-9f-e4-b8-ad-e5-9b-bd-e5-9b-9e-e6-97-8f-e7-a9-86-e6-96-af-e6-9e-97-e7-9a-84-e7-bf-bb-e8-af-91-e8-bf-90-e5-8a-a8-e4-b8-8e-e4-b8-ad-e9-98-bf-e6-96-87-e5-8c-96-e4-ba-a4/" itemprop="url">民国时期中国回族穆斯林的翻译运动与中阿文化交流</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-23T21:48:57+08:00">
+                2016-10-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Academic-Research-学术研究-版权所有，违者必究/" itemprop="url" rel="index">
+                    <span itemprop="name">Academic Research/学术研究 (版权所有，违者必究)</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>优素福·丁明俊</p>
+<p>伊斯哈格·马建福</p>
+<p>摘要：本文通过中华民国时期回族穆斯林新文化运动（new culture movement）探究当时回族穆斯林学者、政治家、商人、伊玛目等各方面人士在回族穆斯林内部及外部社会活动，表明回族穆斯林精英对新文化运动起了重要的推动作用，认为回族穆斯林作为中国有身份认同的民族，他们的历史活动对于今天的回族穆斯林社会、中国和阿拉伯世界的双边关系，以及与穆斯林国家关系有良好的促进作用，今天中国回族穆斯林仍延续着中华民国时期先辈们的事业。</p>
+<p>关键词：中国回族穆斯林；翻译运动；文化交流与互动</p>
+<p>20世纪30年代，随着中国回族穆斯林现代新文化运动（Hui modern new culture movement）的发展，回族穆斯林中的有识之士开设了一批新式回族学校，培养了大批具有现代科学知识的回族穆斯林知识分子。在回族穆斯林政治家、知识分子、商人和宗教人士以及穆斯林社区组织的支持下，1931年派遣第一批回族穆斯林学生前往埃及爱资哈尔大学（Azhar, al-Jami’al）学习，从1931到1938年3月先后派遣6批共36名留学生，其中10名是来自新疆维吾尔族的穆斯林学生，在这些回族穆斯林留学生中部分人在爱资哈尔大学学习时间长达8年以上，他们深刻了解了埃及和阿拉伯文化，在爱资哈尔大学学习期间开展了一系列的中国与阿拉伯文化交流活动，比如马坚教授在爱资哈尔大学学习期间将汉语书籍《论语》等翻译成阿拉伯语由开罗出版社出版，向阿拉伯世界介绍中国传统文化。<br>一、民国时期回族穆斯林新文化运动中的回族社会精英<br>中国回族穆斯林新文化运动始于1919年5月4日，由回族社会精英（回族穆斯林知识分子、政治家、商界名人和伊玛目）受到当时国内外时局影响而发起的，其目的是复兴民族文化促进民族发展，回族各界人士积极参与社会改革和经济发展运动，提升了回族穆斯林在经济、社会和文化教育方面的全面发展，从而造就了回族穆斯林的新文化运动，使之成为中国新文化运动的重要组成部分。<br>（一）伊玛目：传统宗教权威代表<br>正如民间所说“伊玛目是伊斯兰教门的支柱。”他们是伊斯兰教门的载体和发言人，同时也是在中国穆斯林社会中最具影响力的领导人物，代表着伊斯兰传统，正如学者赵振武所说“回族穆斯林的文化觉醒中，伊玛目是领导力量。”在这些人物中，我们可以列出一批具有代表性的伊玛目，如马万福、马元章、马启西、王宽（浩然）、王友三、张子文、王静斋、哈德成、虎嵩山、马松亭、庞士谦、达浦生，马良骏等，当代著名的中国回族穆斯林学者杨怀中教授认为“现代中国穆斯林对新文化运动的参与是通过一群具有爱国主义态度、热心于教育事业、致力于民族宗教研究的学者，以及拥护著名学者提出的改革而实现的，这种改革将他们推到运动的最前端。这些人是伊玛目王宽，还有哈德成、王静斋、马松亭、达浦生、马义宇、虎嵩山、马坚，纳训等。”当代中国著名的四大伊玛目达浦生、马松亭、哈德成，王静斋，他们通过开办宗教学校和改革宗教等一系列行动，为回族穆斯林新文化运动做出了巨大贡献。<br>伊玛目达浦生和哈德成是改革清真寺内教育的倡导者，他们使中国伊斯兰教育迈上新台阶。达浦生出生在伊玛目世家，他年幼时便开始学习伊斯兰教，在新文化运动的影响和穆斯林群众支持下，达浦生在1895年建立了回民广益小学,之后在兰州建立了南关回民学校，在上海伊斯兰师范学校担任校长，他是以现代科学和宗教知识相结合开展教学的发起者，对新兴伊斯兰学校教育有着深远的影响，作为上海伊斯兰师范学校校长他所作的贡献不可忽略。哈德成在上海建立了中国伊斯兰社团（Islamic Society of China），目的是为了澄清伊斯兰学说，发展回族穆斯林教育，同时开办了第一个伊斯兰师范学校，提升了中国伊斯兰教育使之迈上新台阶。<br>王静斋将阿拉伯语《古兰经》翻译成汉语，创立了《伊光》（Light of Islam）杂志，将伊斯兰文化和历史、生活介绍给中国穆斯林。<br>马松亭在济南创办了成达师范学校，创办了《月华》杂志，建立成达出版社，发表了伊斯兰经典和学术作品，尤其是《成达文汇》一书。<br>民国时期，在中国王宽、达浦生、哈德成、马松亭和王静斋等伊玛目在穆斯林社会是非常有影响力的宗教领袖，在回族穆斯林新文化一定中他们对回族穆斯林社会的贡献主要体现在对伊斯兰的理解、提倡宗教和教育改革的思想，正是由于他们的倡导和实践，使得中华民国时期伊斯兰在回族穆斯林之间大放异彩，他们对推动回族穆斯林社会发展做出了不可磨灭的贡献。<br>（二）回族穆斯林政治家及其贡献<br>中国回族穆斯林新文化运动得以维持和良好发展的原因与回族穆斯林政治家参与紧密相关。民国时期回族穆斯林政治家如马邻翼、马福祥、白崇禧、唐柯三、孙胜武、马流洲、赵振武和马步芳等，积极支持回族穆斯林新文化运动，他们在运动中扮演了民间与政府间沟通、协调和协商的桥梁作用，回族穆斯林新文化运动的成功得益于回族穆斯林政治家的支持和参与，他们的参与减少了回族穆斯林在现代社会的社会转型时期所面临的社会危机，保证活动顺利进行。<br>（三）回族穆斯林知识分子<br>回族穆斯林知识分子是最有现代意识的群体，在中国现代革命中他们一直站在时代最前端。如蔡大愚、保廷梁、张子岐、丁拱辰、童聪、丁宝臣、丁竹园、刘清扬、伍特公、傅统先、金吉堂等“他们大多数都去了日本，接受现代化的教育。”这些人是以极大的热情奉献、团结、吃苦耐劳的精神和高度的责任感和使命感参与回族穆斯林新文化运动，提倡教育改革和新思想，成为推动中国回族穆斯林现代社会转型发展的强大力量。<br>（四）回族穆斯林商界名人<br>回族穆斯林新文化运动作为意识形态领域的革命，如果缺少了经济基础，将注定要失败。在中国经济发展过程中，回族穆斯林经济一直占有重要地位，是中国现代经济发展的重要组成部分，尤其在东部发达地区。民国时期著名的回族穆斯林企业家如穆子光、哈少夫、马晋卿、马仁甫、马波生和金子云等，对回族穆斯林新文化运动给予了经济和其他方面的支持，如成达师范学校、中国回族穆斯林促进会、上海师范学校以及上海清真委员会（Shanghai Halal Board）的建立都得到他们的人力和资金支持。<br>根据以上事实，我们可以总结出回族穆斯林社会精英在中国现代社会巨变和改革的历史时刻顺应历史潮流，充当了回族穆斯林新文化运动的发起者和实践者。各行各业的回族穆斯林包括伊玛目、知识分子、政府官员和商界名人，他们都积极促进和参与了宗教改良、提倡新式教育、重视人才培养，通过建立各种社会组织凝聚力量，创办回族穆斯林报纸和期刊来启发民众参与，资助留学生到国外学习加强中外文化交流，积极推动爱国主义教育参与资产阶级民主革命运动和抗日活动等形式多样活动推动回族穆斯林新文化运动发展。回族穆斯林精英站在历史传统的根基上，代表着文化觉醒和潮流促进了回族穆斯林社会转变。<br>二、现代中国穆斯林学生海外求学的兴起及其对翻译事业的贡献<br>翻译工作是引进新思维、新文化，并且使不同文化进行互动交流的主要途径，也是发展民族文化的主要力量。在中国现代社会转型的过程中，翻译作为一种社会文化运动，对于民族文化发展有着重大影响。中国回族穆斯林历史上有两次大规模的翻译运动，第一次是在明朝、清朝年间，刘智和王岱舆作为代表人物，借助儒家学说概念逻辑解释伊斯兰世界观、讨黑德（Tawhid）（认主独一思想）、人性理论和伊斯兰美德观念，称为“汉克塔布”（汉语经书），实现了伊斯兰文化和中国文化的首次对话，加速了伊斯兰教在中国本土化发展进程。第二次翻译运动始于20世纪30年代，参与者有留学于爱资哈尔大学的学者马坚、纳忠、纳训、庞士谦和海维谅等，其他学者如王静斋、哈德成和马宏道等，他们通过将阿拉伯世界的文学、哲学、科学和技术等领域成果翻译成中文，此翻译运动持续到20世纪80年代。如仅《古兰经》就出版可多个汉语版本，译著水平极佳。这些翻译运动对促进中阿文化交流，以及现代中国的回族穆斯林新文化运动起了重要的推动作用。正如纳忠教授所言“事实上，在文化发展过程中，不同族群相互学习各自的传统，是人类文化发展不可避免的法则。在学术界，我们人类相互学习各自的专业领域。没有任何族群能各自独立地发展，他们在历史的过程中创新的同时也借鉴其他作品。”在阿拉伯帝国时期，阿巴斯王朝（750-1258）哈里发以巴格达为中心发动了一次持续了百年的翻译运动，在这次运动中，阿拉伯人翻译了古希腊、古罗马、古印度古和波斯文化的精髓，在此基础上建立了闻名世界的阿拉伯伊斯兰文明。<br>民国早期，哈德成、王静斋、马宏道、王浩然和其他著名的伊玛目和学者到埃及、土耳其和其他国家学习受到当地改良思想影响，回中国后开始传播他们所学的知识，对回族穆斯林教育和新文化运动做出了极大贡献，因此他们被称为是中国伊斯兰教育改革的倡导者和实践者。在他们的示范效益下，更多中国回族穆斯林学生被派遣到海外学习，尤其是被派遣到埃及的33名学生，他们为中国伊斯兰教育改革、回族穆斯林新文化运动以及现代中国的翻译运动提供重要的智力支持，在各领域做出了应有的贡献。<br>三、翻译运动与中国和阿拉伯世界的文化交流<br>留埃中国回族穆斯林学生是当代中国于阿拉伯世界文化交流的重要力量。如马坚在埃及学习期间就开始致力于中阿文化交流和互动，1934年马坚在开罗会议上作了“理解穆斯林世界”的阿拉伯语演讲，概述了中国伊斯兰教发展，这次演讲深受欢迎，演讲稿被印成小册子在阿拉伯国家发行。此外他还把中国传统文化经典—四书翻译成阿拉伯语在《胜利周刊》发表，他把阿拉伯语的《伊斯兰教哲学》翻译成汉语在中国出版。其他学者如纳忠，海维谅和林仲明等业翻译了众多书籍和文章寄回中国出版。<br>留学埃及的回族穆斯林学生回国后，利用他们的阿拉伯语优势专注于翻译工作直到20世纪80年代。在他们的辛勤工作下翻译了大批宗教、文学、哲学、艺术、医学等领域研究成果，他们成为翻译、文学等领域的著名专家学者，更是杰出的中阿文化互动交流先行者。<br>马坚教授（1906-1978）是中国第一批留学埃及的回族穆斯林学生。1931年他从上海伊斯兰师范学校毕业后被派遣埃及留学，他编写了中国第一部阿汉词典，在北京大学设立了中国第一个阿拉伯语系，将中国经典《论语》、《中国神话故事》以及《中国谚语与格言》等翻译成阿拉伯语在开罗出版，促进了中国文化于阿拉伯文化的交流以及阿拉伯世界对中国文化的理解。他将阿拉伯语书籍翻译成汉语，如《回教真相》、《伊斯兰教哲学》、《回教教育史》、《阿拉伯通史》等，他的中阿文化翻译对中国伊斯兰文化发展具有里程碑的重要意义。<br>庞士谦(1902-1958)《月华》杂志的总编辑。他在埃及留学的期间，作为讲师开设并讲授中国文化课程。回国后，他在北京师范大学教授阿拉伯语并出版书籍，如《埃及九年》、《回民教育与留埃学生》等。<br>纳训（1911-1989）著名的中国穆斯林翻译家。毕业于云南明德中学，1934年被派遣到埃及留学，20世纪40年代，他把《一千零一夜》翻译成汉语共有5册，由商务印书馆出版，后以《阿里巴巴和四十大盗》再版，在中国家喻户晓。<br>纳忠是中国著名穆斯林学者、阿拉伯历史专家和阿拉伯语言学家。毕业于云南明德中学，1931年被派遣到埃及再次深造，1932年他将埃及著名学者曼苏尔的著作《伊斯兰》翻译成白话文，1936年被爱资哈尔最高委员会授予该校最高学历—“学者证书”。回国后他在北京外国语大学任教，编辑出版了诸多翻译著作，如阿拉伯语教材（10册）、阿拉伯语基础语法（4册）等是中国学习阿拉伯语的最重要著作。此外他还翻译了《阿拉伯伊斯兰文化历史》（8册），著有《阿拉伯历史》等，现为北京外语学院的教授和博士生导师。<br>海维谅(1912-2006)1934年从印度克劳迪亚大学转到爱资哈尔大学学习阿拉伯语，在沙特阿拉伯工作18年，出版了阿拉伯语的《中阿关系》、《中国回教史的过去与现在》等著作，他还翻译了《伊朗与中国的外交关系》、《伊斯兰人权论丛》、《穆斯林教义指南》、《有先知身份的穆罕默德》等著作。<br>马金鹏(1913-2002)，1932年在埃及留学毕业回到中国后，在上海福佑路清真寺做伊玛目，后成为东方语言系的阿拉伯语副教授，翻译了书籍《伊本·白图泰游记》等。<br>结 论<br>在漫长的历史发展进程中，中国与阿拉伯世界有着天然的联系，在唐朝和宋朝时期，阿拉伯穆斯林商人来到中国沿海城市如泉州、广州和杭州做生意，成为早期中阿经济和文化交流的大使。在这些人中，有一部分商人和番客居住在中国，娶了中国当地妇女，成为中国回族穆斯林的先民。元朝时蒙古人东征大批中亚和阿拉伯人随军到中国，壮大了回族穆斯林人口。明朝时期，阿拉伯地区王国与明朝官方通过朝贡保持了密切关系。明清时期，中国穆斯林到麦加朝觐和学习，在阿拉伯地区周游多年，将阿拉伯文化带到了中国。现代时期，中国穆斯林学生到阿拉伯世界留学，他们的翻译运动将中阿双边关系发展推到一个新的历史时期。回族穆斯林先辈的成就为今天的回族穆斯林留下了大批的珍贵的历史文化遗产，他们的历史贡献为现今中阿穆斯林文化互动交流提供了可资借鉴的宝贵经验。<br>参考文献：<br>Ding Mingjun. Hui Muslims’ Social Organizations and Functions. The Journal of Northern University of Nationalities. 2011: 19-29<br>庞士谦：《埃及九年》，北京：中国伊斯兰协会，1988。<br>Communication. Ethnic Art Studies. 2014:04:30-34<br>李松茂：《纳忠和清真铎报》，载《云南民族大学学报》2008:11，第115-118页。<br>王子华：《马坚对回儒对话的贡献》，载《思想战线》2009（S2），第58-62页。Wang Zihua. Ma Jian’s Contribution to the Dialogue between Islam and Confucianism. The Journal of Frontier Thoughts. 2009:35: 58-65<br>Yao Jide. China’s Hui Muslims Students in Egypt. The Journal of Hui Muslim Studies. 1999:01<br>Yao Jide. Hui Muslim Overseas Students and Modern Islamic Culture in Yunnan. The Journal of Hui Muslim Studies. 1996:23:10-23<br>Zhao Guojun. Social History of Hui Muslims in Northwest China Since 1840. The Journal of Gansu Academia of Social Sciences. 2015:03: 243-247<br>Zhang Qing. Hui Muslims Education Practice from the Perspective of Sino-Arabia Cultural<br>Zhang Teng. Ma Fuxiang and Ningxia Hui Muslims Education. The Journal of Hui Muslim Studies, 2013:01:138-140<br>Yu Da. Ma Jian and His Islamic World. New West. 2014:07<br>作者简介：<br>丁明俊宁夏银川北方民族大学的教授，致力于中国伊斯兰、回族穆斯林及其历史研究。他在宁夏大学获得民族史研究博士学位，博士毕业论文《民国时期的穆斯林期刊与报纸》，在中国著名期刊中发表论文50余篇的，研究涉及领域包括中国穆斯林历史、回族穆斯林身份以及生活在其他非穆斯林民族区域如西藏、白族、蒙古族中的穆斯林。丁教授出版专著有《中国回族穆斯林文集》、《中国周边穆斯林及其身份》以及《西北伊斯兰教社会组织形态研究》等，主持中国国家社会科学基金的3个项目。曾担任两份期刊的总编辑、曾任北方民族大学科研处处长，现在为回族穆斯林研究院院长、中国回族穆斯林研究协会的成员和副主席，香港中文大学访问学者，多次参加在伊朗、乌兹别克斯坦、澳大利亚和加拿大等国召开的国际学术会议。<br>马建福教授毕业于香港中文大学，专业是文化人类学，他的毕业论文是《权力与抵抗：现代化与中国海原人》，加利福尼亚大学和圣地亚哥大学的访问学者，香港人类学协会的会员，他的研究方向为中国的国际化、食品人类学和伊斯兰人类学，擅长于汉语、英语和阿拉伯语。现就职于宁夏银川北方民族大学，先后在中国著名期刊、报纸和海外期刊上以中文和英文发表了论文30篇，出版的著作有《中国穆斯林在香港》、《信仰国家的存在》。<br>5</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://zhengheforum.org/2016/10/17/e6-97-a5-e6-9c-ac-e5-b8-9d-e5-9b-bd-e6-97-b6-e6-9c-9f-e7-9a-84-e4-bc-8a-e6-96-af-e5-85-b0-e5-92-8c-e4-b8-ad-e5-9b-bd-e8-be-b9-e7-96-86-e7-a0-94-e7-a9-b6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Haiyun">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZhengheForum.org">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/10/17/e6-97-a5-e6-9c-ac-e5-b8-9d-e5-9b-bd-e6-97-b6-e6-9c-9f-e7-9a-84-e4-bc-8a-e6-96-af-e5-85-b0-e5-92-8c-e4-b8-ad-e5-9b-bd-e8-be-b9-e7-96-86-e7-a0-94-e7-a9-b6/" itemprop="url">日本帝国时期的伊斯兰和中国边疆研究</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-17T22:26:49+08:00">
+                2016-10-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Academic-Research-学术研究-版权所有，违者必究/" itemprop="url" rel="index">
+                    <span itemprop="name">Academic Research/学术研究 (版权所有，违者必究)</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>日本帝国时代的伊斯兰与中国边疆研究：日本汉学的问题，以及被浪漫化的“丝绸之路”话语的遗产</p>
+<p><img src="http://zhengheforum.org/wp-content/uploads/2016/10/IMG_5325-169x300.png" alt="IMG_5325"><br>日本室兰工业大学</p>
+<p>教授　Masumi MATSUMOTO</p>
+<p>“丝绸之路”（Seidenstraße）一语是由德国地理学家李希霍芬（Richthofen）提出的。19世纪末他到中国西北旅行，出版了一本名为《中国》的书。李希霍芬是在“不平等条约”时代进行的这番研究，此语是他的研究结果。这本书后来被译成日语，1942-1944年由东京岩波书店出版。这本书日语版的出版时间正值中日战争，不出意外的是，“丝绸之路”这个关键词迅速流行开来。1940年代，为了改善战争形势，日本人重新审视这份约70年前的旅行记录。</p>
+<p>在这篇论文中，我将分析在1945年日本战败之前，日本的中国边疆研究与伊斯兰研究发展情况的关系。而且，我将介绍华北交通株式会社（Kahoku Kotsu）聘请的摄影师拍下的一些照片。该株式会社是当时在华北运营的一家国家政策型企业。</p>
+<p>一、 卢沟桥事变后日本汉学的发展状况</p>
+<p>1. 日本汉学的“史前史”：学术研究者的情况</p>
+<p>在江户时代，日本的中国研究就有悠久传统。当时，日本学者尊崇、赞赏中国的文化、思想与作品，包括儒家的四书五经。不过，1905年日本战胜俄国后，日本汉学被修正、重塑。1906年，日本开始在中国东北运营南满铁路公司（Mantsu），其后就出现了一波亚洲史的研究高潮。京都帝国大学于1906年开设亚洲史课程，内藤湖南（Naito Konan）和Kuwabara Jitsuzo桑原隲蔵　是该校学者的代表。1910年东京帝国大学在文学系里开设亚洲史课程，白鸟库吉（Shiratori Kurakichi）教授是其著名学者。</p>
+<p>为了回应时代需求，日本学界开始了满洲-蒙古研究、满洲-朝鲜研究与东亚（区域）研究。这些研究聚焦于游牧民族霸权在历史上不断的兴衰交替，以及中国历代王朝的更迭，在此过程中，明治时代被美化、修饰的作为道德之邦的中国形象，被否定了。相反，与“进步”的明治时代日本相比，中国开始被视为陈腐落后的国家。他们认为，日本正在所有方面奋力追赶“文明”的西方社会，包括国家建设与民族思想的形成。</p>
+<p>他们的汉学研究越深入，他们就越自信地肯定和强调所谓日本帝制优于中国的话语，因为在他们看来，日本天皇体制保持了两千年无中断的连续性与完整性，而中国历史上的皇帝与王朝兴衰交替不绝。这一话语也将日本对中国东北的统治合法化。</p>
+<p>另一方面，他们积累对中国本部四周游牧民族的历史与特征的研究，强调中国的分裂性与不连贯性，认为中国的完整性存在根本缺陷。这一时期的汉学研究试图以中国经典为基础，证明日本的历史、文化根基，有时还试图以此证明日本的种族根基。他们以这些研究来证明，日本是一个独立强大的现代国家，拥有一些独特特征，如天皇制，以及独特的语言、风俗、伦理与种族。换言之，他们用汉学研究来审视自信的日本国这一鲜明的自我形象——这个国家正在所有方面经历现代化，但也因快速的社会变迁而焦虑、烦恼。具体而言，这一自豪的日本民族“进步”、“独一无二”的自我形象，为1937-1945年中日战争期间的“丝绸之路”研究热创造了条件。</p>
+<p>新培养出来的汉学家们根基薄弱，但他们自信能比中国和西方汉学家更好地理解中国史。在明治时期之前，日本私塾就教授儒家思想。这些傲慢、刚愎自用的学者相信，他们精通文言文和儒家思想，所以在理解中国问题方面，比中国人和西方人有更完善的知识基础。</p>
+<p>1932年满洲国成立后，为了将日本在亚洲大陆上的军事占领合理化，他们对满族、蒙古族、突厥族等游牧民族的历史展开研究，并进而研究东西方关系史。例如，1933年Fujita Toyohachi藤田豊八写了《东西方关系史》，1939年Iwamura Shinobu岩村忍写了《东西方关系研究导论》（Tozai Koshoshi Josetsu）。亨利·玉尔（Henry Yule）和亨利·柯蒂埃（Henry Coldier）的《中国之路》（Cathay and the Way Thither）也被译为日语，在1944年出版。《朝日新闻》也出版了一本书《西北中国》（Seihoku Shina），并提到了李希霍芬命名的“丝绸之路”（《朝日新闻》 1945:19）。</p>
+<p>2. 右翼亚洲主义者的诞生</p>
+<p>在明治时代的政治团体中存在两种流派：“主权派”（Kokken-ha）和“民权派”（Minken-ha）。1894-1895年第一次中日战争后，“主权派”与右翼亚洲主义者合流。右翼亚洲主义者坚信亚洲“需要日本的扶助”，日本应独霸亚洲。他们觉得，日本有足够的力量在短时间内实现现代化和国家建设，日本能成为“落后”的亚洲的领导者，这是因为日本的“特殊性”——拥有不曾中断的帝系。这些亚洲主义者试图输出日本的现代化模式与路径，该模式不包含民主与对人性尊严的尊重。他们对性别平等、国民平等不感兴趣。亚洲主义者全都是中产阶级的男性活跃分子，就像父权制的日本社会里的其他男性一样，他们不听其他人的意见。他们希望建立一种新秩序，让日本男性成为亚洲的核心。</p>
+<p>3. 伊斯兰研究的开始</p>
+<p>尽管日本汉学发展起来并取得了成就，但学术圈依旧对伊斯兰研究无所问津。1920年代，一些持亚洲主义观点的浪人，如Sakuma Teijiro佐久間貞次郎和Tanaka Ippei　田中逸平，归信了伊斯兰教。他们希望日本人和穆斯林在亚洲大陆的合作，能够“解放”亚洲人，使其摆脱西方列强和布尔什维克的控制。满洲国的成立也使日本人意识到伊斯兰研究的紧迫性，因为在满洲国境内有回族，还有来自前帝俄领土的3万多穆斯林难民（Sakuma 佐久間1938）。在这种情况下，“满铁”和持亚洲主义观点的浪人开始对穆斯林和伊斯兰教进行初步研究。但这不是官方资助的项目，而是由“满铁”提供一笔秘密经费，进行私人研究。</p>
+<p>4. 日本伊斯兰研究开始的背景</p>
+<p>对伊斯兰的全面研究是在1937年卢沟桥事变爆发后开始的。日本军队很快占领了整个华北和内蒙古。这个地区的人口据认为有5000万-8000万，日本人接触到大量穆斯林。尽管不同的文化与宗教信仰带来了不便，但日本人不得不“控制”穆斯林。</p>
+<p>搞阴谋诡计的专家Shigekawa茂川少佐被任命为Shigekawa茂川机关长，处理伊斯兰事务。该局在1938年2月成立了“中国回教总联合会”，目的是把日本占领区的所有穆斯林组织起来，动员他们参加反共亲日运动（Ando 2015）。</p>
+<p>在东京，1938年8月，日本陆军、海军与外交部联合确定了一项关于伊斯兰的国家政策，针对中国、中亚与中东的伊斯兰教与穆斯林，确定了基本方针（Shimada　島田 2015）。在一篇题为《我国对伊斯兰教的基本政策》（《我回教政策樹立ノ基礎》）的论文中，作者指出了以下行动方向：（1）利用穆斯林的联合力量；（2）利用伊斯兰反无神论布尔什维主义的根本性质；（3）利用穆斯林的反基督教、反西方情绪；（4）利用穆斯林的才能与勇敢；（5）利用这一点：穆斯林是被剥夺权利的民族，与日本有共同利益，日本也试图向伊斯兰地区拓展商品市场；（6）利用伊斯兰地区在地缘政治上的重要性。（注1）</p>
+<p>具体对中国的伊斯兰教而言，该论文认为：“穆斯林反共、反西方情绪强烈。他们开始慢慢地对日本有好感……俄国和英国在经济和军事上支持中国反日，而我们已使他们从中国要反日的幻觉中清醒。这么做，我国的亚洲政策将易于成功，并将使东亚（在日本统治下）变得更稳定。我们迫切需要与亚洲穆斯林形成紧密关系。”（注2）</p>
+<p>换言之，日本计划把回族作为分而治之的工具，在反日的中国制造回汉分歧。在具体做法上，日本制定了一项政策，要在中国西北建立一个反共地带，将穆斯林与汉人分离。（注3）他们计划建立一个日本控制下的“回回国”。</p>
+<p>5. 伊斯兰学术研究的发展</p>
+<p>1938年，在国民党军队很快退出华北、该地区被认为恢复“稳定”之后，日本的伊斯兰研究迅速兴起。</p>
+<p>在“蒙疆政府”管辖下的张家口和呼和浩特，日本成立了研究机构，这些机构成为对穆斯林和蒙古族进行田野研究的中心。日本还在包头成立了特务机构“包头公所”（Komura　小村1988：95）。日本人在那里制定了一项计划，要修建一条从北京到伊斯坦布尔的亚洲铁路。华北交通株式会社征收了华北所有铁路系统，它不仅负责交通运输和安全事务，而且主持研究与宣传活动。</p>
+<p>为此目的，在日本看来，穆斯林研究以及中国西北穆斯林研究，对解决“中国问题”具有重要意义。“中国问题”是指如何应对中国的反日情绪，建立日本的势力范围。他们制定了一项详细的铁路建设方案，准备修建8000公里横穿中亚的铁路，从包头经哈密、库车、喀什、帕米尔高原、阿富汗、德黑兰、巴格达、伊斯兰布尔，直抵柏林和巴黎。根据计划，该铁路将用于发展矿业、运输日本产品。经该铁路，只需十天便可从东京到达柏林。它被命名为“反共铁路”、“穆斯林铁路”。穆斯林被视为抵御共产主义侵蚀的“天然”屏障（Yumoto 汤本1942: 10-15）。</p>
+<p>在这样的情况下，人类学、史学、语言学、哲学、文献学、生态学领域的很多年轻研究者，大部分是日本各帝国大学的毕业生，被统一组织起来，在充裕资金支持下，投入这一新的伊斯兰研究领域。他们意识到“日本的伊斯兰研究比西方落后一二百年”（Nohara 野原1965）。在短时间里，他们开始了田野研究，并发表了大量论文。</p>
+<p>例如，在内蒙古和华北对伊斯兰进行田野研究的很多年轻研究者，对战后日本很多学术领域的研究起了推动作用，如亚洲史、现代中国研究、民族学、考古学、人类学等。其中的杰出学者有Iwamura Shinobui岩村忍、Nohara Shiro野原四郎、Takeuchi Yoshimi竹内好、Ishida Eiichiro石田英一郎、Niida Noboru仁井田陞、Matsuda Hisao　松田寿男、Tasaka Kodo田坂興道、Saguchi Toru佐口透、Ono Shinobu小野忍、Fujieda Akira藤枝晃、Imanaga Seiji今永清二、Mitsuhashi Fujio三橋冨治男等。</p>
+<p>但我们必须指出，上述研究者中的一些在战后放弃了伊斯兰研究。我们必须考虑学术活动与时务需求、与日本维持军事占领之间的关系。这些研究并不独立，而是服从于国家政策，因而有时会犯错误。</p>
+<p>战后，Nohara Shiro野原四郎　放弃伊斯兰研究，重拾对中国共产党的研究。他在1960年代做了自我反思。他坦承，在战争期间，日本学者无法对日本意在对中国分而治之的伊斯兰政策进行批评。Nohara Shiro野原四郎回忆说，这些学者的态度几乎与极端民族主义者一模一样。极端民族主义者的亚洲解放只是嘴上说说，实际上却支持对其他亚洲人实行军事压迫（Nohara 野原1965）。换言之，即使是日本的田野研究者，也未能把自己的立场放在其他亚洲人一边。尽管亲眼目睹了日本对当地人野蛮残酷的军事占领，但他们没有慎重考虑自己的立场，只是不加质疑地配合日本的军事政策。显然，这样的研究无论如何是不可靠的。</p>
+<p>二、 华北交通株式会社相集中的穆斯林照片</p>
+<p>2013年，我和京都大学的一些其他学者开始对京都大学人类学系收藏的一套相集进行研究。该相集有超过3.6万张照片，拍摄于1938-1943年的华北和内蒙古，似乎是由Kato Shinkichi加藤新吉捐献的。Kato Shinkichi加藤新吉是前华北交通株式会社的宣传部部长，在战后，因为担心被收缴，他把该相集上交给了美国占领当局。相集中有200多张穆斯林的照片。</p>
+<p>相片内容多种多样，有礼拜，清真寺，驼队、清真食品铺等穆斯林经营活动，穆斯林学校，穆斯林青年组织等。照片拍摄于内蒙古（包括张家口和呼和浩特）（译者注：张家口当时位于“蒙疆联合自治政府”辖区）、北京和河南的清化。在1942年9月《北支》杂志（Hokushi）的穆斯林特辑中，说明语是这么写的：</p>
+<p>“华北交通株式会社出品的流行摄影杂志《北支》也出了穆斯林特辑。</p>
+<p>如今，一些重要的穆斯林地区已被置于我们的共荣圈之下。我们必须建设一个稳定的社区，传给我们的后代……认识北京的穆斯林，和认识西北的穆斯林有相同的效果。这将引领我们认识全世界的穆斯林。如果我们更好地对待中国的穆斯林，全世界的穆斯林都将重新评价日本人和日本。”</p>
+<p>拍摄这些照片是为了让日本读者了解穆斯林——穆斯林虽然看起来比较特殊，但被视为日本潜在的朋友。但真相是，与日本当局合作的回族人，当时只是为了保护贫穷愚昧的回族社会。例如，“中国回教总联合会”的负责人之一Tang Yicheng唐易塵，就试图以食物和必需物资，给他所在的回族群体更好的保障。虽然日本宣称自己是“伊斯兰的保护者”，但日占区的回族人害怕这种外来军事统治，希望他们被赶走。</p>
+<p>华北交通株式会社拍摄这些照片是为了宣传目的，是要让日本民众相信，伊斯兰对于日本的东亚战略很重要。照片经过严格审查，精心筛选。但尽管如此，我们依然能看到，在“稳定已恢复”的表象之下，被拍摄者看到日本摄像师和军人时面露恐惧。</p>
+<p>尽管日本摄像师和研究者无意识地配合了日本的占领政策，但这些照片还是描述了一些当时回族社会的现实。经历1958年的破坏和“文化大革命”后，这些现实至今未能恢复。同时，我们可以估测，在违反当地人意愿的外国军事占领之下，会发生什么样的事情。此外，对“丝绸之路”的浪漫化表述，曾经是建立针对“他者”的经济与军事宰制的工具。</p>
+<p>小结</p>
+<p>在这篇论文中我讨论了三点。第一点是汉学与日本军事政策之间的关系。第二点，在日本的军事统治之下，学者被动员起来研究伊斯兰问题。他们没有意识到自己是在配合军方，只是觉得，研究这个对日本而言“奇异”但很重要的群体，是他们的责任。第三点，为宣传目的拍摄的照片是给日本读者看的，照片激起了日本人在知识方面的好奇心，当时他们自视为亚洲的领导者。</p>
+<p>战争期间日本的伊斯兰研究兴盛一时。1999-2015年，日本又实行了一项伊斯兰领域的研究项目，我也是其参与者。我们必须注意到战前与战后这两个研究项目之间的关系。不进行这样的回顾，我们就无法避免对伊斯兰观念进行浪漫化表述，也无法批评伊斯兰原教旨主义者的野蛮行为。</p>
+<p>注：<br>(1) 「JACAR(アジア歴史資料センター)Ref.B04012533600、本邦ニ於ケル宗教及布教関係雑件／回教関係 第二巻(I-2-1-0-1_2_002)(外務省外交史料館)」914-917　33-34コマ目<br>（2）「JACAR(アジア歴史資料センター)Ref.B04012533600、本邦ニ於ケル宗教及布教関係雑件／回教関係 第二巻(I-2-1-0-1_2_002)(外務省外交史料館)」930　42コマ目<br>(3) 「１２．時局に伴う対支謀略」「JACAR(アジア歴史資料センター)　Ref.B02030538700、支那事変関係一件 第十四巻(A-1-1-0-30_014)(外務省外交史料館)」4コマ目</p>
+<p>参考文献：<br>Ando Jun’ichiro安藤潤一郎2014「日本占領下の華北における中国回教総聨合会の設立と回民社会――日中戦争期中国の「民族問題」に関する事例研究へ向けて――」(Nihon senryoka no kahoku niokeru chugoku kaikyo sou renngoukai to kaimin shakai)The foundation of China Islamic League and Muslim Society in North China under Japanese military occupation)『アジアアフリカ言語文化研究』(Ajia afurika gengo bunka kenkyu)87、21-81．<br>Asahi Shimbun 1945 「西北支那」Seihoku shina<br>Yumoto Noboru 湯本昇1942 「建設計画と其の意義」Kensetsu keikaku to sono igi（The Construction Plan and its Significance,『中央亜細亜横断鉄道概要』Chuo Ajia ou dan Tetsudou Gaiyou (Outline of the Central Asian Transborder Railway), 帝国鉄道協会Teikoku Tetudou Kyokai<br>Sakuma Teijiro 佐久間貞次郎1938 「満洲回教民族と現在の動向」Manshu Kaikyo minzoku to genzai no doukou (Muslims in Manchuria and their current situations) 『イスラム』(Islam)２、イスラム文化協会 (Isramu bunka kyokai).<br>Komura　Fujio小村不二男1988『日本イスラーム史』Nihon Isuamu shi (History of Islam in Japan), Nihon Isramu yuko domei.<br>Nohara Shiro野原四郎1965　「回教圏研究所の思い出」Kaikyoken Kenkyujo no omoide (Memoire of Kaikyoken Kenkyujo (Institute of the Islamic Area) 『東洋文化』Toyo Bunka No.38.<br>Hokushi北支　Sep.　1942</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://zhengheforum.org/2016/10/17/islamic-and-chinese-peripheral-studies-in-imperial-japana-problem-of-japans-sinology-and-the-legacy-of-romanticized-silk-road-discourses/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Haiyun">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZhengheForum.org">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/10/17/islamic-and-chinese-peripheral-studies-in-imperial-japana-problem-of-japans-sinology-and-the-legacy-of-romanticized-silk-road-discourses/" itemprop="url">日本帝国的伊斯兰和中国周边研究/Islamic and Chinese Peripheral Studies in Imperial Japan</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-17T05:41:20+08:00">
+                2016-10-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Academic-Research-学术研究-版权所有，违者必究/" itemprop="url" rel="index">
+                    <span itemprop="name">Academic Research/学术研究 (版权所有，违者必究)</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="http://zhengheforum.org/wp-content/uploads/2016/10/IMG_5325-169x300.png" alt="IMG_5325"></p>
+<p><strong>MATSUMOTO</strong>,Masumi Ph.D.</p>
+<p>Muroran Institute of Technology</p>
+<p><strong>（松本真澄教授有关日本的伊斯兰和中国周边研究追溯了日本帝国期间的汉学研究及其问题，以及日本帝国有关丝绸之路的浪漫化话语问题。日本帝国早期的丝绸战略、尤其是对伊斯兰文化的敏感度值得当代中国丝路倡议借鉴。该文中文译本将在下周发布）</strong></p>
+<p>The word Silk Road ‘Seidenstraße’ was made by Richthofen, a German geographer. He made a journey to Northwest China and published a book entitled Chine in the end of the 19<sup>th</sup> century. The research was done during the era of unequal treaty system and this word appeared in consequence. This book was translated into Japanese and published in 1942- 1944 from Iwanami Shoten, Tokyo. As we suspect from the year of the publication of the translation, the keyword Silk Road became a boom during the Sino-Japanese War. In order to make the war situation better, a travel record about 70 years ago was reviewed in 1940s.</p>
+<p> In this paper, I will analyze the relationship between the development of China’s peripheral studies and Islamic area studies in Japan prior to the defeat of the Sino-Japanese War in 1945. Furthermore, I will introduce several pictures taken by cameramen hired by Kahoku Kotsu, a national-policy company in North China.</p>
+<ol>
+<li>Japan’s Sinology in progress after the Marco Polo Bridge Incident</li>
+</ol>
+<ul>
+<li>Pre-history of Sinology : Case of Academic Researchers</li>
+</ul>
+<p>During the long tradition on Chinese studies in Japan during the Edo Period, Japanese literati respected and praised Chinese cultures, thought and writings, including four classics and five classics on Confucians. However, Japan’s sinology was modified and re-established after the victory over Russia in 1905. In 1906, Japan began to run Southern Manchuria Railway Co.(Mantsu) in Northeast China and then came a boom to study Asian history. In Kyoto Imperial University, they established a course of Asian history in 1906. Naito Konan and Kuwabara Jitsuzo were the representatives of scholars. On the other hand they established a course on Asian history at Faculty of Literature, Tokyo Imperial University in 1910, featuring Shiratori Kurakichi as the professor.</p>
+<p>  In order to respond the needs of time, they began to establish Manchuria-Mongolian studies, Manchuria-Korean studies and East Asian (area) studies. They focused on the historical and perpetual rise and fall of the hegemony of nomad tribes and the changes of various dynasties of China, denying the Edo period’s beautified and decorated image of China as the land of morality. Quite contrary. China began to be regarded to be obsolete and backward compared to “progressive” Meiji Japan, which strived to catch up Western “civilized” countries in every aspect of the society, including the nation-building and the creation of national thought.</p>
+<p>The more they studied sinology, the more they were able to strengthen and affirm the discourse of the supremacy of Japanese Emperors over China’s traditional and changing Emperors and dynasties because Japanese emperor system had allegedly had two-thousand-year continuity and integrity without interval. This discourse also legitimized Japan’s rule over Northeast China.</p>
+<p>On the other hand, they accumulated the studies of the history and characters of nomad tribes around China proper, stressing the disintegrated and intermissive character of China and pointing out the fundamental weakness of China’s integrity. Sinology in this period tried to prove Japan’s historical, cultural, and sometimes racial roots based on Chinese classic writings. These works were important to prove Japan was an independent and strong modern country, which had unique characters such as emperor, a different language, manners, morality and Japanese race. In other words, Sinology was done in order to scrutinize the strong self-image of confident Japanese nation, which was in process of modernization in every aspects but also annoyed by anxiety to confront the rapid social changes. In particular, this proud self-image of “progressed” a  “unique” Japanese people gave a way to the boom of Silk Road during the Sino-Japanese era (1937-1945).</p>
+<p>Newly fostered academic sinologists had no foundation but had more confident in understanding China’s history than Chinese sinologists and western sinologists. Such arrogant and self-sufficient scholars believed to have better background than Chinese and westerners in understanding Chinese issues because of the full literacy in classic Chinese and the knowledge on Confucian thought, which were taught in private schools prior to the Meiji era.</p>
+<p>After the making of Manchukuo in 1932, in order to justify the Japan’s military occupation on the continent, they developed the studies on the history of nomad tribes such as Manchus, Mongolians and Turks and they extended studies on the history of East-West relations. For example, Fujita Toyohachi wrote <em>A history of East-West Relations</em> in 1933, Iwamura Shinobu wrote <em>Tozai Koshoshi Josetsu</em> (an Introductory Study on East- West Relationship) in 1939. Henry Yule and Henry Coldier’s <em>Cathay and the Way Thither</em> (1866) was also translated into Japanese and published in1944. Asahi Shimbun also published a book <em>Seihoku Shina</em> (Northwest China) and referred to the word Silk Road named by Richthofen (Asahi Shimbun 1945: 19).</p>
+<ul>
+<li>Birth of right-wing Asianists</li>
+</ul>
+<p>There were two trends among political groups in Meiji era. One is Kokken-ha or the Sovereign Right Sect and Minken-ha or the Civil Right Sect. After the first Sino-Japanese War in 1894-1985, the Sovereign Right Sect was merged into right-wing Asianists, who believed in Japan’s preferential hegemony over Asia, which “needed assistance” from Japan. They imagined that Japan had enough power to achieve modernization and nation-building in a short period and also imagined that Japan could be the leader of “backward” Asia because of its “special” character of having the emperor with unbroken imperial line. These Asianists tried to export the methodology and model of modernization in a Japanese style, which excluded democracy and respects to human dignity. Gender equality and national equality were not of their interest. Asianists consisted of 100 % male activists from the middle class and didn’t listen to others’ voices as same as the other males in the patriarchal society of Japan. They wished to construct an order to put Japanese male in the center of Asia.</p>
+<ul>
+<li>Start of Islamic Studies</li>
+</ul>
+<p>In spite of the success and the development of sinology in Japan, Islamic studies was still kept untouched in academic circle.  Several Asianist <em>ronins</em> such as Sakuma Teijiro and Tanaka Ippei converted to Islam in 1920s, in a hope that the cooperation between Japanese and Muslims in the continent could lead to the “liberation” of Asians under the control of western powers and Bolshevik.  The making of Manchukuo also accelerated the need of the study of Islam because in Manchukuo there were more than 30 thousand of Muslim refugees from ex-Imperial Russian territory as well as Hui-Muslims 〔Sakuma 1938〕. Mantetsu and Asianist _ronin_s started the primary research on Muslims and Islam. But it was not an officially subsidized project but privatized one supported by secret budget from Mantetsu.</p>
+<ul>
+<li>Background of the Start of Islamic Studies in Japan</li>
+</ul>
+<p>The full-scale study on Islam was initiated after the breakout of the Parco Polo Bridge Incident in July 1937. After a short period, Japanese Army occupied the whole North China and Inner Mongolia. Japanese encountered Muslims with an alleged population of 50 million-80 million and had to “control” them in spite of the annoyance of the different culture and religious belief.</p>
+<p>Major Shigekawa, who was a specialist in making conspiracy in tactics, was appointed to the head of the Shigekawa Agency to deal with Islamic affairs. This agency founded China Islamic League in February 1938 in the intention to organize all the Muslims under Japan’s military occupation and mobilize them to the anti-communist and pro-Japanese movements 〔Ando 2015〕.</p>
+<p> In Tokyo, Japanese Army, Navy and Ministry of Foreign Affairs affiliated and decided a national policy toward Islam in August 1938, figuring out the fundamental direction toward Islam and Muslims in China, Central Asia and Middle East〔Shimada 2015〕In a paper entitled “Our Fundamental Policy toward Islam”, 「我回教政策樹立ノ基礎」, they pointed out the following direction, 1) utilizing the unification of power of Muslims, 2) utilizing Islam’s fundamental character of anti-atheist Bolshevism,3) utilizing their anti-Christian and anti-Western sentiment,  4) utilizing Muslims’ ability and braveness, 5) utilizing the fact that Muslims as deprived people had the same interest as Japan, which also sought good market to Islamic area, 6) utilizing geopolitical importance of Islamic area（1）. Particularly as for Islam in China, the paper argued as follows, “Muslims have strong anti-communist and anti-western sentiment. Gradually they have become to have good feeling toward Japan… We have make them awake from the delusion of anti-Japanese China, which is supported by Russia and UK financially and militarily. If we do so, our policy toward the continent will become easier to accomplish and make East Asia more stable (under Japan’s rule). It would be in argent need to have an intimate relationship with Asian Muslims”.（2）.</p>
+<p>In other words, Japan proposed to make Hui-Muslims as the tool of divide and policy to drive a wedge to anti-Japanese China, which consisted of Han. Concretely, Japan stipulated a policy to construct anti-communist zone in Northwest China to make Muslims divided from the Han ethnicity（3）. That was to say, it was a plan of the formation of “Huihui-guo”, or a Muslim country under Japan’s dominance.</p>
+<ul>
+<li>Development of Islamic scholarly work</li>
+</ul>
+<p>Islamic area studies become a big boom in Japan after 1938, when the “security” was regarded to be restored in North China after the prompt retreat of the Guomindang troops.</p>
+<p>In Zhangjiakou and Hohhot in Inner Mongolia or in Mengjiang Government, Japan founded research institutes and they became centers to do field research on Muslims and Mongolians. In Baotou, they also opened Baotou Gongsuo (spy agency)〔Komura　1988：95〕, where they made a plan to construct an Asian Railway from Beijing to Istanbul. Kahoku Kotsu Co. a Japan’s national company, confiscated whole railways in North China and run not only transportation and security service but also was in charge of research and propaganda activities.</p>
+<p>For the purpose, research project to investigate Muslims and Muslims in Northwest China became important to resolve the “China problem”, which meant how to cope with anti-Japanese sentiments and how to build a Japanese sphere of influence. They made a concrete construction plan of 8000 km railways across Central Asia from Baotou through Hami, Kucha, Kashgar, Pamir Highland, Afghanistan, Tehran, Baghdad, Istanbul to Berlin and Paris. The planned railway, through which it would take only 10 days from Tokyo to Berlin, was named anti-Communist railway and Muslim railway for the development of mineral resources and transportation of Japanese goods. Muslims were regarded as “natural” buffers of communist penetration〔Yumoto 1942: 10-15〕.</p>
+<p>Under these circumstances, many young researchers, mostly graduates of Imperial Universities, in anthropology, history, linguistics, philosophy, philology and bionomics were totally mobilized and sent to this new Islamic research field with a full amount of grants. They perceived that “Islamic study in Japan is more backward than that of the West by a century or two” 〔Nohara 1965〕and started the field research and publish a lot of papers and articles in a short period.</p>
+<p>For example, young researchers who did field research on Islam in Inner Mongolia and North China played a role of engine to promote such research fields as Asian history, modern Chinese studies, ethnology, archeology and anthropology after the war. We can recall the prominent names such as Iwamura Shinobu, Nohara Shiro, Takeuchi Yoshimi, Ishida Eiichiro, Niida Noboru, Matsuda Hisao, Tasaka Kodo, Saguchi Toru, Ono Shinobu, Fujieda Akira, Imanaga Seiji and Mitsuhashi Fujio.</p>
+<p>However, among the researchers above mentioned, we should point out many gave up Islamic studies after the war. We have to ponder the relationship between academic activities and the need of current affairs or the need of the continuation of military occupation. There was no independence of the study but the subordination to the national policy, which sometimes made mistakes.</p>
+<p>Nohara Shiro, who gave up Islamic studies and restarted the study of Chinese Communist Party after the war, reflect himself in 1960s. He confessed that during the war Japanese scholars had not been able to criticize Japan’s Islamic policy, which aimed at the divide and rule of the Chinese nation. Their attitude was, Nohara recalled, almost the same as ultra-nationalists, who only asserted Asian liberation as lip service but supported military oppression over Asian people〔Nohara1965〕. In other words, even Japanese researchers on the field were not able to put themselves on people’s side. They didn’t ponder their stance seriously but only cooperated with Japan’s military policy without criticism, disregarding their own witness of Japanese military occupation which was inhuman and harsh to the local people. Such studies were, needless to say, not countable in any case.</p>
+<ol>
+<li>Pictures on Muslims at the Kahoku Kotsu Photo Collection</li>
+</ol>
+<p>In 2013, I and other scholars of Kyoto University started a project on the research of a photo collection kept at the Institute of Humanities, Kyoto University. The collection includes more than 36000 photos taken from 1938 until 1943 in North China and Inner Mongolia and seemed to be donated by Kato Shinkichi, the chief of Advertisement Bureau of ex-Kahoku Kotsu (the North China Railway) after the war in the fear of the confiscation by GHQ. The photo collection has more than 200 photos of Muslims.</p>
+<p>They are various pictures such as prayer, mosques, Muslims’ business such as camel rides and halal food stall, Muslim schools and Muslim youth organizations. The places of photo-taking spots were Inner Mongolia, including Zhangjiakou and Hohhot, Beijing, and Qinghua of Henan. On the special issue on Islam of September 1942 of <em>Hokushi</em>, the caption told as follows,</p>
+<p>Kahoku Kotsu’s popular photo journal <em>Hokushi</em> (North China) also had special issues on Islam. The caption said as follows;</p>
+<p>Nowadays, important parts of Islamic area have been put under the umbrella of our sphere of co-prosperity, we have to construct a solid community and inherit it to our offspring…. Knowing Muslims in Beijing is equivalent to knowing Muslims in Northwest. And this will leads to the road to know all the Muslims in the world. If we treat Muslims in China better, Muslims in the world will reassess Japanese and Japan.</p>
+<p>Pictures were taken in the expectation to let Japanese audience know Muslims who seemed to be peculiar ones but potential friends for Japan. The truth was that Hui-Muslim collaborators were only the protectors of the Hui society in poverty and ignorance. For example, Tang Yicheng, one of responsible members of China Unified Muslim League, tried to keep food and necessary goods to make their Hui community safer. Despite Japan’s discourse of “protector of Islam”, Hui-Muslims in the occupied area were scared of the foreign military dominance and wished to make them wiped out.</p>
+<p>Pictures of Kahoku Kotsu were taken for the purpose of advertisement to make Japanese people to believe the importance of Islam in Japanese roles in East Asian strategies. Pictures were carefully selected under strict censorship. However, we can observe how people were scared to see Japanese photographers and military troops under the “recovery of security”.</p>
+<p>Despite the unconscious cooperation of Japanese photographers and researchers to the Japan’s occupation, these pictures describes some realities of the Hui-society, which has been lost since the destruction of 1958 and the Cultural Revolution. At the same time, we can suspect what would happen if military occupation by foreign powers took place against the local people’s will. At the same time, romanticized word of Silk Road used to be the tool of economic/ military dominance against the “others”.</p>
+<p><strong>Conclusion</strong></p>
+<p>In this paper, I have argued three points. One is the relationship between academic sinology and Japanese military policy. Second, researchers were mobilized to study Islamic affairs under Japan’s military dominance. They were unconscious of their collaboration with the Army and felt it was their responsibility to study “strange” but important people to Japan. Third, pictures for advertisement were taken for Japanese audience and they stimulated the intellectual curiosity of Japanese, who were also in the mode of Asian leaders.</p>
+<p>Japan’s Islamic study became boom during the war and another Islamic area study project was conducted from 1999 until 2015. I was the one who were involved in the project. We have to recall the relationship between the two projects before and after the war. Without the reflection, we cannot escape from the romanticized Islamic consciousness and criticize Islamic fundamentalists’ brutal activities.</p>
+<p>&nbsp;</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://zhengheforum.org/2016/10/15/zipf-e9-83-91-e5-92-8c-e5-9b-bd-e9-99-85-e5-92-8c-e5-b9-b3-e5-9f-ba-e9-87-91-e4-bc-9a-e9-93-b6-e8-a1-8c-e8-b4-a6-e5-8f-b7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Haiyun">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZhengheForum.org">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/10/15/zipf-e9-83-91-e5-92-8c-e5-9b-bd-e9-99-85-e5-92-8c-e5-b9-b3-e5-9f-ba-e9-87-91-e4-bc-9a-e9-93-b6-e8-a1-8c-e8-b4-a6-e5-8f-b7/" itemprop="url">ZIPF/郑和国际和平基金会银行账号</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-15T12:29:04+08:00">
+                2016-10-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Home-主页/" itemprop="url" rel="index">
+                    <span itemprop="name">Home/主页</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="http://zhengheforum.org/wp-content/uploads/2016/10/IMG_5279-169x300.png" alt="IMG_5279"></p>
+<p><strong><img src="http://zhengheforum.org/wp-content/uploads/2016/09/image-23-300x300.jpeg" alt="image"></strong></p>
+<p><strong>积水成渊、积善成德 </strong></p>
+<p>郑和国际和平基金会作为一个非盈利、非政府机构，致力于促进中国和穆斯林世界的学术交流、提升华人和穆斯林之间的理解和友谊。我们欢迎不附加任何条件、来自合法收入、不涉任何违法行为的个人、单位、组织或其他机构的募捐。本基金会一切财务活动接受美国国税局年度审查。捐赠款项直接汇入郑和国际和平基金会的唯一官方账号。</p>
+<p>汇捐之前最好邮件或电话确认：</p>
+<p><a href="mailto:zhengheforum@gmail.com" target="_blank" rel="external">zhengheforum@gmail.com</a>;</p>
+<p>电话：（001）-301-806-9651</p>
+<p><strong>郑和国际和平基金会唯一官方账号</strong></p>
+<p>账户名称：郑和国际和平基金会</p>
+<p>(Zhenghe International Peace Foundation)</p>
+<p>&nbsp;</p>
+<p>开户银行：美国银行（Bank of America）</p>
+<p>银行开户经美国国税局 (IRS) 批准</p>
+<p>银行地址：</p>
+<p>美国北卡罗莱纳州夏洛特市美国银行总部</p>
+<p>（900 W Trade St, Charlotte, NC 28255）</p>
+<p>&nbsp;</p>
+<p>账号：                      <u>435036709128</u></p>
+<p>美国银行的国际电汇BIC：    <u>BOFAUS3N</u></p>
+<p>国际电汇美国银行的路由号码：<u>026009593</u></p>
+<p>&nbsp;</p>
+<p><strong>具体银行英文信息如下</strong></p>
+<p>Bank Account title:</p>
+<p>Zhenghe International Peace Foundation</p>
+<p>&nbsp;</p>
+<p>Bank name:          Bank of America</p>
+<p>Bank Address:</p>
+<p>900 W Trade St, Charlotte, NC 28255</p>
+<p>&nbsp;</p>
+<p>Account Number:      <u>435036709128</u></p>
+<p>Bank of America’s BIC for Incoming International Wire: <u>BOFAUS3N</u></p>
+<p>Bank of America’s Routing Number for international wire: <u>026009593</u></p>
+<p>&nbsp;</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://zhengheforum.org/2016/10/15/e9-83-91-e5-92-8c-e4-b8-8b-e8-a5-bf-e6-b4-8b-e4-b8-8e-e4-b8-96-e7-95-8c-e5-8f-b2-e5-9c-b0-e5-9b-be/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Haiyun">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZhengheForum.org">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/10/15/e9-83-91-e5-92-8c-e4-b8-8b-e8-a5-bf-e6-b4-8b-e4-b8-8e-e4-b8-96-e7-95-8c-e5-8f-b2-e5-9c-b0-e5-9b-be/" itemprop="url">郑和下西洋与世界史地图</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-15T09:23:55+08:00">
+                2016-10-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/News-信息/" itemprop="url" rel="index">
+                    <span itemprop="name">News/信息</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>长期以来，西方认为欧洲地图的发展带动了“地理大发现”！但是事实并非如此！在2016年迪拜“郑和论坛”上，美国华裔学者、美洲郑和学会会长李兆良教授通过展示美国各种中国文化遗存，以及通过东西方地图及其地理术语的历时比较，揭示出欧洲的早期世界地图实为明代郑和下西洋所用！这一发现已经引起中国测绘界关注！</p>
+<p>2016年10月7日，李教授再次在俄亥俄州立大学中国研究院、全国东亚语文资源中心进行专题演讲！李教授对东西方世界地图的比较研究揭示出郑和下西洋的世界史意义！我们期待更多地图学的发现，重新思考郑和七下西洋之于当代中国的意义！</p>
+<p>2016年10月7日，题为“翻转世界史的地图”由李兆良讲演，由俄亥俄州立大学中国研究所，美国国家东亚语言资源中心合办，是俄亥俄州美国华人专业协会赞助基金的创始演讲（InauguralLecture）。</p>
+<p>李兆良首先点明，这不是关于谁发现美洲的问题，也不是哪一个种族优秀的问题，是谁开创地理大发现，谁测绘了第一份世界地图，是科学论证。讲者层层剥开论据，从古地图的制作与如何分析开始，李兆良用多幅主要的西方地图比较坤輿万国全图，推论西方不能测绘该地图。坤輿万国全图没有欧洲人当时认为最重要的地名，却标示欧洲人两百年以后才到达的地理，是不可能的，因此称之为“不可能的黑郁金香”。全图是中文标注，没有一个拉丁字符，唯一可能是中国人测绘。地名的历史，也显示成图年代不是1602年，是1430年，即郑和下西洋的年代。在美国“哥伦布日”之前几天举办这讲座是巧合，反映出积非成是的书本历史，并不可靠。</p>
+<p>李兆良自2006年开始，因为好奇心，要了解一枚宣德金牌为什么在被卡罗莱纳州的山区里被发现，开始追寻答案，谁料一发不可收拾，一做就是十年。最开始，开车一千里到北卡罗莱纳州发现金牌处了解当地的历史。当年1776年美国独立后欧洲移民与原住民冲突，翻出了一段血泪史。接着，利用互联网的古籍，古地图，图片，视频，并亲自到实地去考察，比较了七八百份古地图，结果掀出了越来越多的证据。根据分析，一直被认为是意大利传教士利玛窦带来的世界地图《坤輿万国全图》根本不可能是欧洲人测绘的，是中国人自己测绘的地图，成图时间在1430年左右，因此推翻了六百年郑和船队只到达非洲东岸的说法，推翻了哥伦布发现新大陆，也推翻了利玛窦带来西方世界地理的说法。整个六百年的中西交通史被翻转。</p>
+<p>明代中国人通过郑和的大航海活动，环球测绘，制作了坤輿万国全图，发展了现代地图学。后来，利玛窦在原来的地图上加上一些欧洲人命名的地名，引起错觉，以为地图来自西方。地图学其实是中国传到欧洲。除了地图证据，还有中国文化遗存在美洲的证据，例如，从华盛顿州到加拿大育空（Yukon）地区都有他们留下的永乐铜钱，后来原住民按习惯沿用清代铜钱作头饰，盔甲。不过时间所限，这次讲演只能讲述地图方面的证据。</p>
+<p>为了搜集文物与文献证据，李兆良在过去十年内，跑了九万英里，到过英国伦敦，哈里福德（Hereford），西班牙巴塞罗那，意大利罗马，梵蒂冈，佛罗伦萨，威尼斯；亚洲方面有马六甲，泉州，南京，北京；美洲方面，他曾到欧洲人最早的殖民地 - 东岸的英国殖民地詹姆斯敦（Jamestown）, 法国人据点（Jacksonville），西班牙人登陆佛罗里达州的西海岸。此外涉猎Cherokee，Catawba，Hopi，Navajo原住民居留地，到过全美各地主要的博物馆。今年，为了证实《坤輿万国全图》上的三处地名地理，李兆良特别走了12000公里，到加拿大，阿拉斯加，还冒着山火危险去探寻地理特点。正如原来预期的结果，明代中国人必定到过今天阿拉斯加的Anchorage，看到TurnagainArm的水潮和Denali高峰，才命名水潮峰，因为天气季节关系，这两个景点都不是经常看到，他们能命名，肯定待了一段时间。</p>
+<p>讲演结束，李兆良特别將他的兩本著作《坤輿万国全图解密-明代测绘世界》，《宣德金牌启示录-明代开拓美洲》贈予俄亥俄州立大学，由吴伟克教授，陳潔雯教授接收。李兆良的两部书由台北联经出版社出版后，受到热烈欢迎。因为大陆不习惯繁体字，而且购买困难，一直有人建议在大陆出版简体字版，现在，刚刚接到消息，台陆双方的协议已经谈妥，明年初，简体版即可在大陆面世。</p>
+<p>李兆良这项研究，已经得到中国测绘科学院的认可，在今年7月号的官方学刊发布了李兆良的论文，同意利玛窦并非坤輿万国全图的作者。李兆良把中美最早接触的历史重现，打破了华人一直被认为是后来者，享受欧洲人开垦成果的误解。没有明代大航海的世界性测绘，也许没有哥伦布，起码要等很久才知道新大陆。而且有充分证据，美洲的稻米农业是中国人开始的。此外，李兆良认为，过去中国人学美洲史，一直沿用西方教科翻译本，有许多歪曲不确，缺乏验证，人云亦云，造成中国人认为自己国家没有科学的自卑，应该从新严格审视东西方文化碰撞初期的文献，发扬科学推理精神，纠正错误，使世界华人对先人的贡献感到自豪。1882年美国通过历史上首次种族歧视的排华法案，联邦政府至今没有道歉，只有加州道歉，美国华人继续为歧视的对象。美国华人应该认识这段历史，了解误会、改写、歪曲的过程，向其他人阐明这段更正的历史，为所有美国华人争一口气。</p>
+<p> <img src="http://zhengheforum.org/wp-content/uploads/2016/10/IMG_9942-300x225.jpg" alt="IMG_9942"> <img src="http://zhengheforum.org/wp-content/uploads/2016/10/IMG_5275-300x226.jpg" alt="IMG_5275"></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Haiyun" />
+          <p class="site-author-name" itemprop="name">Haiyun</p>
+           
+              <p class="site-description motion-element" itemprop="description">Welcome to Zhenghe!</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">52</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Haiyun</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
