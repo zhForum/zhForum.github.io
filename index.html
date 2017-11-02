@@ -93,15 +93,15 @@
 
 
 
-<meta name="description" content="Welcome to Saritai!">
+<meta name="description" content="Welcome to Zhenghe!">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Saritai">
-<meta property="og:url" content="http://b-gg.com/index.html">
-<meta property="og:site_name" content="Saritai">
-<meta property="og:description" content="Welcome to Saritai!">
+<meta property="og:title" content="ZhengheForum.org">
+<meta property="og:url" content="http://zhengheforum.org/index.html">
+<meta property="og:site_name" content="ZhengheForum.org">
+<meta property="og:description" content="Welcome to Zhenghe!">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Saritai">
-<meta name="twitter:description" content="Welcome to Saritai!">
+<meta name="twitter:title" content="ZhengheForum.org">
+<meta name="twitter:description" content="Welcome to Zhenghe!">
 
 
 
@@ -129,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://b-gg.com/"/>
+  <link rel="canonical" href="http://zhengheforum.org/"/>
 
 
 
 
 
-  <title>Saritai</title>
+  <title>ZhengheForum.org</title>
   
 
 
@@ -173,7 +173,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Saritai</span>
+        <span class="site-title">ZhengheForum.org</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -256,16 +256,16 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://b-gg.com/2017/07/14/golang-array-slice-map/">
+    <link itemprop="mainEntityOfPage" href="http://zhengheforum.org/2017/01/25/e9-83-91-e5-92-8c-e5-9b-bd-e9-99-85-e5-92-8c-e5-b9-b3-e5-9f-ba-e9-87-91-e4-bc-9a-e5-85-ac-e5-bc-80-e5-a3-b0-e6-98-8e/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Bo">
+      <meta itemprop="name" content="Haiyun">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Saritai">
+      <meta itemprop="name" content="ZhengheForum.org">
     </span>
 
     
@@ -275,7 +275,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/14/golang-array-slice-map/" itemprop="url">golang array slice map</a></h1>
+                <a class="post-title-link" href="/2017/01/25/e9-83-91-e5-92-8c-e5-9b-bd-e9-99-85-e5-92-8c-e5-b9-b3-e5-9f-ba-e9-87-91-e4-bc-9a-e5-85-ac-e5-bc-80-e5-a3-b0-e6-98-8e/" itemprop="url">郑和国际和平基金会公开声明</a></h1>
         
 
         <div class="post-meta">
@@ -287,8 +287,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-14T14:26:28+08:00">
-                2017-07-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-25T02:59:54+08:00">
+                2017-01-25
               </time>
             
 
@@ -297,6 +297,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/News-信息/" itemprop="url" rel="index">
+                    <span itemprop="name">News/信息</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -324,30 +346,12 @@
       
         
           
-            <h1 id="golang-中array-slice-map之间的区别"><a href="#golang-中array-slice-map之间的区别" class="headerlink" title="golang 中array\slice\map之间的区别"></a>golang 中array\slice\map之间的区别</h1><h2 id="声明和初始化"><a href="#声明和初始化" class="headerlink" title="声明和初始化"></a>声明和初始化</h2><p>1、指明存储数据的类型；2、存储元素的数量</p>
-<h3 id="数组："><a href="#数组：" class="headerlink" title="数组："></a>数组：</h3><pre><code>var array [5]int
-array=[5]int{1,2,3,4,5}
-以上两步可以省略为array:=[5]int{1,2,3,4,5} 或者 array:=[...]int{1,0,3,0,5} 也可以array:=[5]int{1:2,3:9}
-</code></pre><h3 id="切片："><a href="#切片：" class="headerlink" title="切片："></a>切片：</h3><pre><code>slice:=make([]int,5)默认切片容量是其长度，也可以指定其容量slice:=make([]int,5,10)
-slice:=[]int{1,2,3,4,5}或者slice:=[]int{4:2}切片不用数组那样制定[]中的值。
-var nliSlice []int nil切片表示不存在的切片，slice:=[]int{}而空切片表示一个空集合，它们各有用处。
-</code></pre><p>eg:<br>对于底层数组容量是k的切片slice[i:j]来说<br>长度：j-i len()<br>容量:k-i  cap()<br>slice := []int{1, 2, 3, 4, 5}<br>slice1 := slice[:]<br>slice2 := slice[0:]<br>slice3 := slice[:5]</p>
-<h3 id="map"><a href="#map" class="headerlink" title="map:"></a>map:</h3><pre><code>dict=make(map[string]int)
-dict[&quot;sa&quot;] = 6 
-以上可以简写dict:=map[string]int{&quot;sa&quot;:6,&quot;yue&quot;:2}
-</code></pre><h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><h3 id="数组：-1"><a href="#数组：-1" class="headerlink" title="数组："></a>数组：</h3><pre><code>array[1]=3 //修改
-</code></pre><h3 id="切片：-1"><a href="#切片：-1" class="headerlink" title="切片："></a>切片：</h3><pre><code>slice[1]=3 //  newSlice=append(newSlice,10,20,30)
-</code></pre><h3 id="map-1"><a href="#map-1" class="headerlink" title="map:"></a>map:</h3><pre><code>dict[&quot;sa&quot;]=6 
-age,exists := dict[&quot;sa&quot;] ;delete(dict,&quot;alibaba&quot;)
-</code></pre><h2 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h2><pre><code>for i,k = range array{
-fmt.Println(&quot;索引:%d,值:%d\n&quot;,i,v)
-</code></pre><p>}</p>
-<pre><code>for i,k = range slice{
-fmt.Println(&quot;索引:%d,值:%d\n&quot;,i,v)
-</code></pre><p>}</p>
-<pre><code>for key,value =range dict{
-fmt.Println(key,value)
-</code></pre><p>}</p>
+            <p>郑和国际和平基金会公开声明<br>近日，友人发来两幅截图有关一个所谓“海上丝绸之路发展基金会设立倡议书”，并咨询是否是郑和国际和平基金会下属或另设的一个基金会。</p>
+<p><img src="http://zhengheforum.org/wp-content/uploads/2017/01/IMG_8599-169x300.png" alt="IMG_8599"> <img src="http://zhengheforum.org/wp-content/uploads/2017/01/IMG_8600-169x300.png" alt="IMG_8600"></p>
+<p>为此，郑和国际和平基金会特此声明如下：<br>郑和国际和平基金会是2014年在美国华盛顿成立的一个非盈利、非政府组织，接受美国国税局年度审查，致力于崛起中的中国和周边国家、尤其是“一带一路”沿线国家文化交流。郑和国际和平基金会举办年度“郑和论坛”（Zhenghe Forum）并设立年度“郑和国际和平奖”。</p>
+<p>郑和国际和平基金会于2015年在马来西亚吉隆坡召开首届“郑和论坛”国际会议（即郑和国际和平会议）。第二届 “郑和论坛”于2016年在阿联酋迪拜举办并颁发首届“郑和国际和平奖”（获得者为印度尼西亚华裔柳民源先生）。这两次围绕文化交流与和平友谊的国际会议取得了巨大的成功！第三届“郑和论坛”国际会议将于2017年8月在哈萨克斯坦阿拉木图举办。</p>
+<p>郑和国际和平基金会相关信息包括 “郑和论坛”、 “郑和国际和平奖”以及“郑和论坛委员会”信息只由“郑和论坛”微信公众号（“zhenghe luntan”）以及郑和国际和平基金会网站（www.zhengheforum.org）独家发布。</p>
+<p>郑和国际和平基金会独立运行，不参与其他任何机构或个人的以“丝路”或“郑和”命名的基金募集等活动。特此声明。</p>
 
           
         
@@ -391,16 +395,16 @@ fmt.Println(key,value)
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://b-gg.com/2017/07/12/php-operator/">
+    <link itemprop="mainEntityOfPage" href="http://zhengheforum.org/2017/01/24/e7-ac-ac-e4-b8-89-e5-b1-8a-e9-83-91-e5-92-8c-e8-ae-ba-e5-9d-9b-e5-9b-bd-e9-99-85-e4-bc-9a-e8-ae-ae-e5-b0-86-e4-ba-8e2017-e5-b9-b48-e6-9c-88-e5-9c-a8-e5-93-88-e8-90-a8-e5-85-8b/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Bo">
+      <meta itemprop="name" content="Haiyun">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Saritai">
+      <meta itemprop="name" content="ZhengheForum.org">
     </span>
 
     
@@ -410,7 +414,7 @@ fmt.Println(key,value)
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/12/php-operator/" itemprop="url">php operator</a></h1>
+                <a class="post-title-link" href="/2017/01/24/e7-ac-ac-e4-b8-89-e5-b1-8a-e9-83-91-e5-92-8c-e8-ae-ba-e5-9d-9b-e5-9b-bd-e9-99-85-e4-bc-9a-e8-ae-ae-e5-b0-86-e4-ba-8e2017-e5-b9-b48-e6-9c-88-e5-9c-a8-e5-93-88-e8-90-a8-e5-85-8b/" itemprop="url">第三届“郑和论坛”国际会议将于2017年8月在哈萨克斯坦召开</a></h1>
         
 
         <div class="post-meta">
@@ -422,8 +426,8 @@ fmt.Println(key,value)
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-12T10:33:10+08:00">
-                2017-07-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-24T17:49:52+08:00">
+                2017-01-24
               </time>
             
 
@@ -432,6 +436,28 @@ fmt.Println(key,value)
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/News-信息/" itemprop="url" rel="index">
+                    <span itemprop="name">News/信息</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -459,17 +485,25 @@ fmt.Println(key,value)
       
         
           
-            <h1 id="php基础之运算符"><a href="#php基础之运算符" class="headerlink" title="php基础之运算符"></a>php基础之运算符</h1><p>   运算符是所有编程语言的基本功，任何语言，这都是基础。</p>
-<h2 id="算数运算符"><a href="#算数运算符" class="headerlink" title="算数运算符"></a>算数运算符</h2><ul>
-<li><ul>
-<li><ul>
-<li>／ %，简单讲就是加、减、乘、除、余（模数）。<br>eg:<br>&lt;?php<br>$a = 50;<br>$b = 4<br>echo($a + $b);<br>echo($a - $b);<br>echo($a * $b);<br>echo($a / $b);<br>echo($a % $b);<h2 id="赋值运算符"><a href="#赋值运算符" class="headerlink" title="赋值运算符"></a>赋值运算符</h2>赋值运算符，最容易理解也最常用的就是$a = 100;$a = $b; ‘=’右侧的表达式为其左侧变量设置值。<br>在此基础上演变出来了一些其他的赋值符号：<br>$a += 10;  等同于 $a = $a+10; 其他同理如：”-=”、”*=”、”/=”、”%=” <h2 id="字符串运算符"><a href="#字符串运算符" class="headerlink" title="字符串运算符"></a>字符串运算符</h2>字符串运算符，”.”和演变出的”.=”<br>eg:<br>&lt;?php<br>$a = “Hello”;<br>$b = $a.”world!”;<br>echo $b;<br>$a .= “world!”;<br>echo $a;<h2 id="递增／递减运算符"><a href="#递增／递减运算符" class="headerlink" title="递增／递减运算符"></a>递增／递减运算符</h2>之所以把这类单独拎出来是因为，常有人混淆，常有人拿这个来面试。++、–符号分别表示递增、递减。<br>++$a 和 $a++ 的区别：++$a是先运算再返回变量值，$a++则是先返回值在运算。<h2 id="比较运算符"><a href="#比较运算符" class="headerlink" title="比较运算符"></a>比较运算符</h2>比较运算符顾名思义是比较两个值（数字或者字符串）。<br>|运算符 |名称           |例子                           |结果                                                      |<br>|——-|—————|——————————-|———————————————————-|<br>|==    |等于       |            $x == $y|如果 $x 等于 $y，则返回 true。                            |<br>|===    |全等（完全相同）    |$x === $y    |如果 $x 等于 $y，且它们类型相同，则返回 true。|<br>|!=    |不等于    |$x != $y    |如果 $x 不等于 $y，则返回 true。|<br>|&lt;&gt;    |不等于    |$x &lt;&gt; $y    |如果 $x 不等于 $y，则返回 true。|<br>|!==    |不全等（完全不同）    |$x !== $y    |如果 $x 不等于 $y，或它们类型不相同，则返回 true。|<br>|&gt;    |大于    |$x &gt; $y    |如果 $x 大于 $y，则返回 true。|<br>|&lt;    |大于    |$x &lt; $y    |如果 $x 小于 $y，则返回 true。|<br>|&gt;=    |大于或等于    |$x &gt;= $y    |如果 $x 大于或者等于 $y，则返回 true。|<br>|&lt;=    |小于或等于    |$x &lt;= $y    |如果 $x 小于或者等于 $y，则返回 true。|<h2 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h2>与或非，&amp;&amp;、||、!，还有and、or、xor，需要注意的是xor不是’非’，而是表示’异或’,与’或’的区别是’有且仅有一个为 true，才返回 true’。<br>比较运算符和逻辑运算符构成的表达式，其结果均为布尔型。</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="数组运算符"><a href="#数组运算符" class="headerlink" title="数组运算符"></a>数组运算符</h2><p>  数组运算符里除了’+’号是表示两个数组的联合（不覆盖重复值），其返回值还是数组。其他的”==、===、!=、&lt;&gt;、!==”和比较运算符一样，其返回值均为布尔型。</p>
+            <hr>
+<p>2017年新年将至，郑和国际和平基金会主席马海云对中亚三国进行了工作访问，就2017年8月第三届“郑和论坛”在哈萨克斯坦阿拉木图市召开同有关方面和人员进行了协商和落实。这将是郑和国际和平基金会继2015年马来西亚会议、2016年迪拜会议之后举行的第三届“郑和论坛”国际会议。会议将于2017年8月12到14号在阿拉木图独立宫（暂定）举办。此次会议由郑和国际和平基金会和哈萨克斯坦“新丝路基金会”、哈萨克斯坦科学院、法拉比大学、哈萨克斯坦回族协会等其他单位一起主办。此次会议主要涉及陆上“丝绸之路经济带”和中国的历史文化交流，亚欧大陆丝绸之路和海上丝绸之路的历史文化关联，以及民营企业在中亚的发展（具体会议征文信息参见“郑和论坛”微信公众号“zhengheluntan”以及郑和论坛网址:<a href="http://www.zhengheforum.org）。" target="_blank" rel="external">http://www.zhengheforum.org）。</a></p>
+<p><img src="http://zhengheforum.org/wp-content/uploads/2017/01/IMG_8112-225x300.jpg" alt="IMG_8112"></p>
+<p>哈萨克斯坦前总理（现国家安全委员会主席）父亲来看望郑和国际基金会代表</p>
+<p>&nbsp;</p>
+<p><img src="http://zhengheforum.org/wp-content/uploads/2017/01/IMG_7885-225x300.jpg" alt="IMG_7885"></p>
+<p>会见吉尔吉斯前总统助理</p>
+<p>&nbsp;</p>
+<p><img src="http://zhengheforum.org/wp-content/uploads/2017/01/IMG_7836-225x300.jpg" alt="IMG_7836"></p>
+<p>会见阿拉木图安保专家和企业代表</p>
+<p>&nbsp;</p>
+<p><img src="http://zhengheforum.org/wp-content/uploads/2017/01/IMG_8125-300x212.jpg" alt="IMG_8125"></p>
+<p>会见吉尔吉斯学者</p>
+<p><img src="http://zhengheforum.org/wp-content/uploads/2017/01/IMG_8512-300x225.jpg" alt="IMG_8512"></p>
+<p>哈萨克斯坦投资与发展部门代表宴请郑和国际基金会代表一行</p>
+<p><img src="http://zhengheforum.org/wp-content/uploads/2017/01/IMG_8499-300x225.jpg" alt="IMG_8499"></p>
+<p>郑和国际基金会主席马海云接受哈萨克斯坦记者采访</p>
+<p>马海云主席等在哈萨克斯坦、吉尔吉斯斯坦以及乌兹别克斯坦拜会了上述国家的国会议员、学者、法官、检察官、民间团体代表等不同行业的人士，就此次“郑和论坛”的召开进行了充分的交流和座谈，听取了诸多有建设性的指导意见。据悉，此次会议将是继2017年5月中国举办“一路一带高峰论坛”之后在一带一路沿线核心国家召开的又一盛会。届时，来自中国、印度尼西亚、马来西亚、日本、韩国、中亚国家、中东国家、俄罗斯、美国等国家和地区代表将就中国“一带一路”倡议和实践进行研讨，以东南亚、中东和中亚经验总结和展望这一关乎亚欧大陆和亚洲大洋沿岸国家前途的中国蓝图。<br>附：2017年郑和论坛征文<br><a href="http://mp.weixin.qq.com/s/h6EGO90v2_areuPDWrdK-Q" target="_blank" rel="external">http://mp.weixin.qq.com/s/h6EGO90v2_areuPDWrdK-Q</a><br>附：从印度尼西亚到哈萨克斯坦的历史文化链接：2017年“郑和论坛”<br><a href="http://mp.weixin.qq.com/s/8vzchrJIx_gGjpXZ-vXtUA" target="_blank" rel="external">http://mp.weixin.qq.com/s/8vzchrJIx_gGjpXZ-vXtUA</a><br>附：郑和论坛简介与郑和基金委员会邀请函<br><a href="http://mp.weixin.qq.com/s/HtSQd_owvzeOBLZ3bs9ecw" target="_blank" rel="external">http://mp.weixin.qq.com/s/HtSQd_owvzeOBLZ3bs9ecw</a><br>（以上附文如果打不开，请分别查看公众号2016年11月26日，12月12日，12月18日历史消息。）<br>郑和国际和平基金会：<br>网址：www.zhengheforum.org<br>微信公众号：郑和论坛<br>邮件：zhengheforum@gmail.com<br>尊敬的订阅用户，您可以把您的邮箱发送到我们的官方邮箱，我们会定期为您推荐最有价值的原创文章！</p>
+<p>&nbsp;</p>
 
           
         
@@ -513,16 +547,16 @@ fmt.Println(key,value)
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://b-gg.com/2017/07/07/about-array-map/">
+    <link itemprop="mainEntityOfPage" href="http://zhengheforum.org/2016/11/26/e7-ac-ac-e4-b8-89-e5-b1-8a-e9-83-91-e5-92-8c-e8-ae-ba-e5-9d-9b-e5-be-81-e6-96-87/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Bo">
+      <meta itemprop="name" content="Haiyun">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Saritai">
+      <meta itemprop="name" content="ZhengheForum.org">
     </span>
 
     
@@ -532,7 +566,7 @@ fmt.Println(key,value)
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/07/about-array-map/" itemprop="url">about/array_map</a></h1>
+                <a class="post-title-link" href="/2016/11/26/e7-ac-ac-e4-b8-89-e5-b1-8a-e9-83-91-e5-92-8c-e8-ae-ba-e5-9d-9b-e5-be-81-e6-96-87/" itemprop="url">第三届“郑和论坛”征文（哈萨克斯坦）</a></h1>
         
 
         <div class="post-meta">
@@ -544,8 +578,8 @@ fmt.Println(key,value)
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-07T16:51:55+08:00">
-                2017-07-07
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-26T14:42:47+08:00">
+                2016-11-26
               </time>
             
 
@@ -554,6 +588,28 @@ fmt.Println(key,value)
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/News-信息/" itemprop="url" rel="index">
+                    <span itemprop="name">News/信息</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -581,10 +637,17 @@ fmt.Println(key,value)
       
         
           
-            <h1 id="关于array-map和array-walk"><a href="#关于array-map和array-walk" class="headerlink" title="关于array_map和array_walk"></a>关于array_map和array_walk</h1><h2 id="array-map"><a href="#array-map" class="headerlink" title="array_map"></a>array_map</h2><p>array array_map ( callable $callback , array $array1 [, array $… ] )<br>返回值是一个数组</p>
-<h2 id="array-walk"><a href="#array-walk" class="headerlink" title="array_walk"></a>array_walk</h2><p>bool array_walk ( array &amp;$array , callable $callback [, mixed $userdata = NULL ] )<br>返回值是一个布尔值</p>
-<h2 id="两者的不同之处"><a href="#两者的不同之处" class="headerlink" title="两者的不同之处"></a>两者的不同之处</h2><p>|——|———|<br> map    主要是为了得到你的回调函数处理后的新数组，要的是结果。<br> map    主要是对数组中的值进行操作后返回数组，以得到一个新数组</p>
-<p> walk   主要是对每个参数都使用一次你的回调函数，要的是处理的过程。<br> walk   可以认为提供额外参数给回调函数，map不可以<br> walk   主要是要对数组内的每个值进行操作，操作结果影响原来的数组<br> walk   可以没有返回值 map要有，因为要填充数组</p>
+            <p><img src="http://zhengheforum.org/wp-content/uploads/2016/09/image-23-300x300.jpeg" alt="image"></p>
+<p>第三届“郑和论坛”（即郑和国际和平会议）征文</p>
+<p>“郑和论坛” 自成立以来，已经成为华人世界和穆斯林国家文化交流的主要民间平台。2015年和2016年“郑和论坛”在马来西亚和迪拜的成功举办，标志着中国和周边穆斯林国家的民间文化交流进入一个崭新的阶段。</p>
+<p><img src="http://zhengheforum.org/wp-content/uploads/2016/11/IMG_6627-169x300.png" alt="IMG_6627"></p>
+<p>第三届“郑和论坛”将于2017年8月初在哈萨克斯坦的阿拉木图举行。此次会议将邀请中亚、南亚、欧美、东亚等地区研究亚欧大陆的学者参会，并就下列主题展开探讨：</p>
+<p>历史文化专题：<br>1. 自蒙古以来的亚欧大陆交流：人口、商贸、文化和社团<br>2. 从中亚到中国：赛典赤家族研究以及中国穆斯林史<br>3. 从赛典赤到郑和：陆上丝路与海上丝路的前现代关联<br>4. 从中国到中亚：东干在丝绸之路经济带的角色扮演及中国软实力</p>
+<p>特别经贸专题（这两个专题由中国兰州拉面行业和中亚经贸部门联合举办）：<br>5. “一带一路” 沿线国家的中国饮食业：清真拉面的国际化探讨<br>6. 中国民营企业在中亚国家的发展：潜力、挑战及应对</p>
+<p>现诚请有意参会的学者积极撰写并提交论文</p>
+<p>会议演讲与语言：<br>20分钟/人；中文、俄文、英文；<br>学术论文规范：<br>参会人员简历（250字）、内容提要（250字）；论文（4000到5000字，脚注、参考文献）<br>截至日期：<br>内容提要在2017年2月1日之前邮寄：zhengheforum@gmail.com；“郑和论坛”学术委员会将在2017年3月1日之前通知结果。获邀学者将会收到会议正式邀请函，并需在2017年6月1日之前提交完整论文并授权郑和国际和平基金会出版。符合上述条件者，郑和国际和平基金会将承担往返路费、会议期间住宿、饮食等费用。</p>
+<p>会议期间，郑和国际和平基金会将颁发2017年“郑和国际和平奖”。除了学术会议之外，郑和国际和平基金会还将与哈萨克斯坦和吉尔吉斯斯坦社团联合举办中国-中亚人文联谊并参观当地中国历史文化遗迹。</p>
+<p>郑和国际和平基金会：<br>网址：www.zhengheforum.org<br>微信公众号：郑和论坛<br>邮件：zhengheforum@gmail.com</p>
 
           
         
@@ -628,16 +691,16 @@ fmt.Println(key,value)
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://b-gg.com/2017/07/05/Laravel-create-model/">
+    <link itemprop="mainEntityOfPage" href="http://zhengheforum.org/2016/11/25/e7-83-ad-e7-83-88-e7-a5-9d-e8-b4-ba-e5-8d-b0-e5-b0-bc-e7-ac-ac-e5-8d-81-e5-ba-a7-e9-83-91-e5-92-8c-e6-b8-85-e7-9c-9f-e5-af-ba-e6-88-90-e7-ab-8b/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Bo">
+      <meta itemprop="name" content="Haiyun">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Saritai">
+      <meta itemprop="name" content="ZhengheForum.org">
     </span>
 
     
@@ -647,7 +710,7 @@ fmt.Println(key,value)
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/05/Laravel-create-model/" itemprop="url">Laravel create model</a></h1>
+                <a class="post-title-link" href="/2016/11/25/e7-83-ad-e7-83-88-e7-a5-9d-e8-b4-ba-e5-8d-b0-e5-b0-bc-e7-ac-ac-e5-8d-81-e5-ba-a7-e9-83-91-e5-92-8c-e6-b8-85-e7-9c-9f-e5-af-ba-e6-88-90-e7-ab-8b/" itemprop="url">热烈祝贺印尼第十座郑和清真寺成立</a></h1>
         
 
         <div class="post-meta">
@@ -659,8 +722,8 @@ fmt.Println(key,value)
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-05T20:48:39+08:00">
-                2017-07-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-25T09:17:43+08:00">
+                2016-11-25
               </time>
             
 
@@ -669,6 +732,28 @@ fmt.Println(key,value)
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/News-信息/" itemprop="url" rel="index">
+                    <span itemprop="name">News/信息</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -696,30 +781,13 @@ fmt.Println(key,value)
       
         
           
-            <p>laravel的 Eloquent 模型其实就是我们平时说的MVC里Model，只是换了个名字而已~</p>
-<p>1）Eloquent 是啥？</p>
-<p>Eloquent 本质就一个查询构建器（laravel里叫查询构建器，想上面所说的一样，它其实就是一个Model），所以它使用查询构建器的所以方法，</p>
-<p>如果你不知道laravel查询构建器都有些什么方法，看这里：<a href="http://www.cnblogs.com/tujia/p/6292832.html" target="_blank" rel="external">http://www.cnblogs.com/tujia/p/6292832.html</a></p>
-<p>2）Eloquent 怎么用？</p>
-<p>1、创建一个Eloquent 模型（生成的model方法位于app目录下）</p>
-<p>php artisan make:model Goods</p>
-<p>2、指定一下Model绑定的数据表及表主键（如果不声明表名及主键，默认的表名是model名字的复数，例如我这里的话，默认表名就成了Goodss了，默认主键是id）</p>
-<p>复制代码<br>&lt;?php</p>
-<p>namespace App;</p>
-<p>use Illuminate\Database\Eloquent\Model;</p>
-<p>class Goods extends Model<br>{<br>    protected $table         = “goods”;<br>    protected $primaryKey     = “goods_id”;<br>    //<br>}<br>复制代码</p>
-<p>3、数据库操作的话，这按之前的查询构建器的写法来就行了，不过这里不再是用的 DB::table(‘table_name’) 了，直接用$this就行了，例如：</p>
-<p>$goods = $this-&gt;where(‘goods_id’, ‘1’)-&gt;first();<br>当然，这时在Model里方法的写法，在别的地方（例如控制器）调用Model的话，要实例化一个模型来调用</p>
-<p>$goods = \App\Goods::where(‘goods_id’, ‘1’)-&gt;first();<br>如果我们需要通过模型查询多次的话，先实例化一个模型并赋值给一个变量是一个不错的选择</p>
-<p>$goodsModel = new \App\Goods();<br>$row        = $goodsModel-&gt;where(‘goods_id’, $id)-&gt;first();<br>$count      = $goodsModel-&gt;count();</p>
-<p>3）Eloquent 模型特有的方法</p>
-<p>Eloquent 除了具备 “查询构建器” 的所有功能（方法），它还自己的一些“更强大”的方法（DB::table不能使用的方法）</p>
-<p>1、find 方法，find 方法可以查询一行或多行</p>
-<p>$goodsModel = \App\Goods();<br>$one        = $goodsModel-&gt;find(1);<br>$some       = $goodsModel-&gt;find([1,2,3,4]);</p>
-<p>2、save 方法，save 方法具备 insert 方法和 update 方法的功能（记录不存在时insert，记录存在时update）</p>
-<p>复制代码<br>$model-&gt;save(<br>    [‘email’ =&gt; ‘john@example.com’, ‘votes’ =&gt; 0]<br>);</p>
-<p>$model-&gt;save(<br>    [‘id’=&gt;1,’email’ =&gt; ‘john@example.com’, ‘votes’ =&gt; 0]<br>);<br>复制代码<br>更新时，需要提示数据表的主键字段，例如上面的id字段</p>
-<p>PS：如果你在做数据迁移时，有设置到 $table-&gt;timestamps()，生成数据表时会有一个 created_at 字段 和 updated_at 字段，而使用save方法插入或更新记录时，这两个字段会被自动更新（使用insert和update方法没这种效果）</p>
+            <p><img src="http://zhengheforum.org/wp-content/uploads/2016/11/IMG_6589-169x300.jpg" alt="IMG_6589"> <img src="http://zhengheforum.org/wp-content/uploads/2016/11/IMG_6590-169x300.jpg" alt="IMG_6590"></p>
+<p><img src="http://zhengheforum.org/wp-content/uploads/2016/11/IMG_6594-225x300.jpg" alt="IMG_6594"></p>
+<p>热烈祝贺印尼第十座郑和清真寺落成</p>
+<p>2016-11-25 马海云 郑和论坛<br>由首届“郑和国际和平奖”获得者、印尼华裔柳民源先生主持修建的第十座印尼郑和清真寺顺利竣工！</p>
+<p>郑和国际和平基金会祝贺柳民源先生以及郑和清真寺全体同仁！<br>愿你们的善举进一步促进印尼华裔和主体民族的文化交融和族群和谐！阿敏！</p>
+<p>郑和国际和平基金会将邀请印尼柳先生一行出席2017在哈萨克斯坦召开的第三届“郑和论坛”，并就华人和穆斯林关系进行研讨！</p>
+<p>郑和国际和平基金会：<br>网址：www.zhengheforum.org<br>微信公众号：郑和论坛<br>邮件：zhengheforum@gmail.com<br>尊敬的订阅用户，您可以把您的邮箱发送到我们的官方邮箱，我们会定期为您推荐最有价值的原创文章！</p>
 
           
         
@@ -763,16 +831,16 @@ fmt.Println(key,value)
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://b-gg.com/2017/07/05/Laravel-select-update-delete-insert/">
+    <link itemprop="mainEntityOfPage" href="http://zhengheforum.org/2016/11/25/e5-bd-93-e4-bb-a3-e4-b8-ad-e5-9b-bd-e6-97-8f-e7-be-a4-e8-9e-8d-e5-90-88-ef-bc-9a-e5-9f-8e-e5-b8-82-e5-8c-96-e8-83-8c-e6-99-af-e4-b8-8b-e7-9a-84-e5-9b-9e-e6-b1-89-e4-ba-92-e5-8a-a8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Bo">
+      <meta itemprop="name" content="Haiyun">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Saritai">
+      <meta itemprop="name" content="ZhengheForum.org">
     </span>
 
     
@@ -782,7 +850,7 @@ fmt.Println(key,value)
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/05/Laravel-select-update-delete-insert/" itemprop="url">Laravel-select-update-delete-insert</a></h1>
+                <a class="post-title-link" href="/2016/11/25/e5-bd-93-e4-bb-a3-e4-b8-ad-e5-9b-bd-e6-97-8f-e7-be-a4-e8-9e-8d-e5-90-88-ef-bc-9a-e5-9f-8e-e5-b8-82-e5-8c-96-e8-83-8c-e6-99-af-e4-b8-8b-e7-9a-84-e5-9b-9e-e6-b1-89-e4-ba-92-e5-8a-a8/" itemprop="url">当代中国族群融合：城市化背景下的回汉互动</a></h1>
         
 
         <div class="post-meta">
@@ -794,8 +862,8 @@ fmt.Println(key,value)
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-05T16:11:44+08:00">
-                2017-07-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-25T05:28:28+08:00">
+                2016-11-25
               </time>
             
 
@@ -804,6 +872,28 @@ fmt.Println(key,value)
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Academic-Research-学术研究-版权所有，违者必究/" itemprop="url" rel="index">
+                    <span itemprop="name">Academic Research/学术研究 (版权所有，违者必究)</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -831,80 +921,34 @@ fmt.Println(key,value)
       
         
           
-            <p>Laravel框架——增删改查</p>
-<p>增：</p>
-<p>//save返回true false</p>
-<p>$res = new member();</p>
-<p>res-&gt;username = ‘a’;</p>
-<p>$res-&gt;password = ‘b’;</p>
-<p>dd($res-&gt;save());</p>
-<p>　　</p>
-<p>//返回插入数据的数组array</p>
-<p>$res = member::create([‘username’=&gt;’add’,’password’=&gt;’addp’])-&gt;asArray();</p>
-<p>dd($res);</p>
-<p>//create只能添加一条，如果需要批量插入用insert</p>
-<p>Member::insert($data)</p>
-<p>//先去数据库中找，如果没有找到则创建，返回的都是对象</p>
-<p>$res = member::firstOrCreate([‘username’=&gt;’asfsds’]);</p>
-<p>dd($res[‘id’]);</p>
-<p>　　</p>
-<p>删：</p>
-<p>//通过主键删除 返回删除的条数</p>
-<p>$res = member::destroy(13);</p>
-<p>member::destroy([1, 2, 3]);</p>
-<p>member::destroy(1, 2, 3);</p>
-<p>dd($res);</p>
-<p>　　</p>
-<p>//通过查询删除，返回删除条数</p>
-<p>$res = member::where(‘id’,12)-&gt;delete();</p>
-<p>dd($res);</p>
-<p>　　</p>
-<p>改：</p>
-<p>//返回修改成功的条数</p>
-<p>$res = member::where(‘username’,’XJ’)-&gt;update([‘username’=&gt;’xj’]);</p>
-<p>dd($res);</p>
-<p>//save()返回true or false</p>
-<p>$res = member::where(‘username’,’xj’)-&gt;first();</p>
-<p>$res-&gt;username = ‘XJ’;</p>
-<p>if ($res-&gt;save()){</p>
-<pre><code>dd(&apos;修改成功&apos;);
-</code></pre><p>} else {</p>
-<pre><code>dd(&apos;修改失败&apos;);
-</code></pre><p>}</p>
-<p>　　</p>
-<p>查：</p>
-<p>　　查询一条信息：</p>
-<p>// 通过主键获取模型…</p>
-<p>model::find(1);</p>
-<p>// 获取匹配查询条件的第一个模型…</p>
-<p>model::where(‘id’, 1)-&gt;first();</p>
-<p>//如果有时候你可能想要在模型找不到的时候抛出异常(如果没找到跳转到404页面)</p>
-<p>model::findOrFail(1);</p>
-<p>model::where(‘id’,’&gt;’,0)-&gt;firstOrFail();</p>
-<p>　　</p>
-<p>　　获取聚合：例如count、sum、max　</p>
-<p>model::where(‘active’, 1)-&gt;count();</p>
-<p>model::where(‘active’, 1)-&gt;max(‘col’);</p>
-<p>　　判断查询结果是否为空，并且转成数组　　</p>
-<p>$result = Model::where(…)-&gt;get();</p>
-<p>//不为空则</p>
-<p>if ($result-&gt;first()) { }</p>
-<p>if (!$result-&gt;isEmpty()) { }</p>
-<p>if ($result-&gt;count()) { }</p>
-<p>　　多条件查询：</p>
-<p>$res = member::where(‘id’,’&gt;’,0)-&gt;where(‘username’,’aaa’)-&gt;get();</p>
-<p>or</p>
-<p>$res = member::where([[‘id’,’&gt;’,0],[‘username’,’aaa’]])-&gt;get();</p>
-<p>　　IN查询</p>
-<p>//可以用get获取单个字段，但是也必须是数组类型</p>
-<p>$res = member::whereIn(‘id’,[1,2,3])-&gt;get([‘username’])-&gt;toArray();</p>
-<p>$res = member::whereNotIn(‘id’,[1,2,3])-&gt;get()-&gt;toArray();</p>
-<p>　　between查询</p>
-<p>$res = member::whereBetween(‘id’,[1,3])-&gt;get()-&gt;toArray();</p>
-<p>$res = member::whereNotBetween(‘id’,[1,3])-&gt;get()-&gt;toArray();</p>
-<p>　　null/notnull查询</p>
-<p>$res = member::whereNull(‘username’)-&gt;get()-&gt;toArray();</p>
-<p>$res = member::whereNotNull(‘username’)-&gt;get()-&gt;toArray();</p>
+            <p>当代中国族群融合：城市化背景下的回汉互动<br>2016-11-24 张中复、黄南/采 郑和论坛<br>本文转自新视角NPF</p>
+<p><img src="http://zhengheforum.org/wp-content/uploads/2016/10/tn-300x200.jpg" alt="tn"><br>新视角按：</p>
+<p>台湾政治大学民族学系主任张中复副教授在谈到中国族群融合的历史和现实时，认为随着近几年来大陆的都市发展和城市改建，穆斯林的流动增多，给当地带来新的影响，在其看来，这种影响比较正面。同时，张教授也表达了其比较关注“大陆作为一个崛起的大国角色——它如何对待自己文化族群的多样性，维持一种更符合文明化、或者一个大国所应该扮演的角色的包容力和多样性”。本文为中国族群融合访谈的当代部分，历史部分详见上一条微信：中国族群融合史：唐、元、清时期形成的共生互动模式。</p>
+<p>新视角（黄南）：您以前重点做中国西北的民族研究，现在做东南沿海地区的民族学研究，从您的研究经历谈谈中国的回族与主体民族汉族的互动关系？</p>
+<p>张中复（台湾政治大学民族学系主任）：我的本行是做民族学研究。回族跟大陆各地的汉族，有不同的互动模式，有的互动模式非常接近，但再怎么互动都要和伊斯兰教信仰、跟它所代表的生活、习惯结合。</p>
+<p>可能汉族毕竟是一个影响力比较大的群体，回民在中国要保持伊斯兰的信仰，但是在文化上又必须跟汉族有大量的接触。所以除了信仰之外，其他在语言、在相关社会性上来讲基本是采取汉人的文化模式。所以很容易造成像汪洋中的孤岛一样的状况，很容易受到大环境的影响。</p>
+<p>回民坚持信仰的三道防线<br>通常回民在坚持自己信仰过程中有三道防线——饮食、婚姻和丧葬。如果这三件事情都完全不与教规的规范做一个配合的话，他们的民族特色和信仰体系就会受很大影响。但是，用大陆的话来讲，散杂居地区的回族比较不容易在这三件事情上做到实际的坚持；而在民族聚居区——非散杂区，比如像甘肃、青海，他们就比较容易维持这种饮食。比如如果我是散杂居地区的，我的单位可能并无法提供清真食堂，我小孩读的学校是汉人为主的学校，所以饮食会受到很大制约。</p>
+<p>婚姻也是很大的影响，尤其以前回民大多因为自己本身的流动性低，他们互相嫁娶。现在女生受教育机会跟男生一样均等，甚至表现更好，所以在选择将来的配偶上来讲，就容易跟外族互动和影响。另外还有丧葬，我个人感觉丧葬还是比较坚持的。</p>
+<p>大陆和台湾最大的差别在于，台湾的穆斯林基本没有民族身份，大陆是民族识别，所以回族的民族身份反而有助于他信仰的坚持——在形式上或者政府配套优惠政策上，成为一种比较有帮助的景象。</p>
+<p>跟其他少数民族不一样的是，回族的分布仅次于汉族，大陆90%几的县都有回族分布，没有一个中国少数民族的分布像回族那么宽泛。所以从民族学角度来看，这种分布状况提供了很多不同的适应机制。</p>
+<p>我以前做西北问题，后来想做更全面的研究，所以现在换一个角度，来看看东南沿海或者江南地区的穆斯林在面对汉化的时候，所碰到的一些民族学比较关注的议题——怎么来看待一个汉化的概念和事实。</p>
+<p>城市化背景下的回民与汉族互动增多</p>
+<p>新视角：民族聚居区之外，当代回民在城市里的“散杂居”是如何形成的？</p>
+<p>张中复：和短时间内所形成的外来移民社群不一样，回民在中国大城市里面会形成“世居化”——不是那种外来打工者自然形成的一个聚落，我想这个现象从元朝开始就越来越明显。这些穆斯林——我们称为回民，大陆识别为回族人群——在大城市里都是世居少数民族，它的形成是散杂居式的一种适应状态，但是因为过去他是聚居，而且回民是靠聚居维持自己的信仰，所以这种功能会比较明显。</p>
+<p>这几年来，随着大陆的都市发展、城市改建，我们观察到，大城市中，回民社区的民族文化特色在不断流失。现在看起来，大陆大城市里还坚持保留一个比较有回民特色的社区的，大概只有西安了。其他几个大城市，像西北的兰州小西湖，北京的牛街、宣武区那一带，基本都因为城市的改建，都已经不像过去那么传统、集中，而且这种变化产生的时间也不过最近十几年。所以未来在这种“都会地区”，穆斯林在宗教和文化上所产生的适应机制值得关注。</p>
+<p>但另外一种现象，因为商业经济的发展、人口的流通，也让很多西北穆斯林或者叫做民族聚居区的穆斯林，往散杂居地区发展。这么多甘肃、青海的穆斯林在沿海地区开拉面馆，到义乌、到大城市发展，这是另外一种穆斯林的人群流动现象。</p>
+<p>这些穆斯林人群流动的现象，又给当地伊斯兰教、当地信仰群体和当地宗教文化发展带来新的影响。在我看来这种影响还是比较正面的。比如说某种意义上来讲，它可以振兴教门，可以带动当地伊斯兰教的发展态势，但是它也可能引起汉人重新对伊斯兰教进行认识和评价。</p>
+<p>&nbsp;</p>
+<p>崛起大国应有的包容力和多样性</p>
+<p>我现在比较关注的在于，大陆作为一个崛起的大国角色——它如何对待自己文化族群的多样性，维持一种更符合文明化、或者一个大国所应该扮演的角色的包容力和多样性。我个人很不乐见——我本身不是回民，但是我自己做回民研究，接触很多的人都是帮我很大忙的回民学者和朋友——我觉得对穆斯林来讲，他们最在乎的是，不要把伊斯兰教看成是一种有问题的宗教。我觉得信仰是一回事，信仰变成宗教后就会跟人类所有的现象产生结合，各种所谓的正面负面都会有。</p>
+<p>伊斯兰教在中国存在不是最近一两百年的事情，伊斯兰教在中国的存在已经将近1400年，这1400年当中有它的发展适应机制，如果这个宗教一开始就是比较有偏向的——如果它强调的就是杀人放火才能振兴宗教，或者有一些负面的发展才能成为的宗教——如果是这样，我觉得它没有办法在中国存在一千多年。</p>
+<p>虽然在这个存在过程中，也发生过一些我们认为比较负面的例子，比如清代的回民起义，但是我觉得大致来讲，伊斯兰教在中国、在华夏社会维持的还是一种理性、稳定的互动机制。只是现在这种理性、互动的机制，收到大流量的不同信息的出现——以前是我没有接触，我不说它的好坏，但现在是，我没有接触，我也跟着说好跟着说坏，甚至跟着说坏的比较多——这似乎不是我们期待一个大国崛起下该有的多元性和包容性。</p>
+<p>我觉得极端主义和恐怖主义都必须要制裁，但毕竟中国两千多万穆斯林，不是每个人都是信仰极端主义。比如少数新疆人在大城市里面做一些非法勾当，整个民族就被污名化，大陆这么多刑案的发生，汉族是不是要被污名化？所以民族这个标签不要被很多事情过度操弄。<br>新视角：台湾的穆斯林大致的来历以及现在在台湾的发展情况怎么样？</p>
+<p>张中复：台湾的穆斯林大致分两个阶段：首先是明清时期从泉州移民来的穆斯林后代，但这些人大部分都已经完全汉化了，融入到当地汉人社会里。台湾再次出现大量穆斯林是1949年，跟着国民党撤退来台湾的居民里面，有不少是各省份的穆斯林，比较多的是江苏、山东这些地方的穆斯林。所以那个时候才会有清真寺，包括抗战时候在武汉所成立的中国回教救国会，后来叫做中国回教协会，1949年以后也迁到台湾来。这几年因为还有一些新的案例。</p>
+<p>从上世纪80年代开始，缅甸、泰国的穆斯林——祖先是云南人，可能从清朝末年，做生意或是躲避战乱迁徙到泰国和缅甸了——这一群华裔穆斯林在上世纪八十年代也不少来到台湾定居。缅甸是因为当时比较封闭，而且台湾提出了一些优惠政策，把泰国和缅甸的华人穆斯林视为华侨，台湾那时候鼓励这些华侨回到台湾来就业、读书。因为台湾有一座清真寺，在桃园，还是以泰缅穆斯林为主体的，形成了哲马提(JAMAT)——他们自己的社群。这是台湾穆斯林目前的发展。</p>
+<p>台湾现在最大的问题在于，伊斯兰教毕竟必须要结合它的信仰和生活实践，老一辈的穆斯林在台湾凋零以后，他们的后代基本对这个教门所产生的依赖程度越来越弱化，跟大陆一些散杂居地区的穆斯林很像。出现一个现象就是——他是回族，但不是穆斯林，他父母是回族，也取得回族身份，但是他在宗教信仰上不去实践穆斯林的宗教工作——我说这是大陆的一个特色，虽然没有伊斯兰教信仰，但是在意识上来讲他还是回族。我碰到的一些例子是虽然他父母是回族，他现在也是回族，他不是一个穆斯林，但他还是有一些来自父母方面的文化留存，比如饮食还是会有一些禁忌，信仰上不是实践穆斯林，但是意识上来讲他觉得是回民。</p>
+<p>—结束—</p>
+<p>【本文为2016年6月在“郑和国际和平论坛”（ID：zhengheluntan）上的采访节选。】<br>郑和国际和平基金会：<br>网址：www.zhengheforum.org<br>微信公众号：郑和论坛<br>邮件：zhengheforum@gmail.com<br>尊敬的订阅用户，您可以把您的邮箱发送到我们的官方邮箱，我们会定期为您推荐最有价值的原创文章！</p>
 
           
         
@@ -948,16 +992,16 @@ fmt.Println(key,value)
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://b-gg.com/2017/07/04/PHP-debugging-skills/">
+    <link itemprop="mainEntityOfPage" href="http://zhengheforum.org/2016/11/23/e4-b8-ad-e5-9b-bd-e7-9a-84-e6-97-8f-e7-be-a4-e8-9e-8d-e5-90-88-e4-b8-8e-e4-ba-92-e5-8a-a8-e5-85-b1-e7-94-9f/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Bo">
+      <meta itemprop="name" content="Haiyun">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Saritai">
+      <meta itemprop="name" content="ZhengheForum.org">
     </span>
 
     
@@ -967,7 +1011,7 @@ fmt.Println(key,value)
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/04/PHP-debugging-skills/" itemprop="url">PHP debugging skills</a></h1>
+                <a class="post-title-link" href="/2016/11/23/e4-b8-ad-e5-9b-bd-e7-9a-84-e6-97-8f-e7-be-a4-e8-9e-8d-e5-90-88-e4-b8-8e-e4-ba-92-e5-8a-a8-e5-85-b1-e7-94-9f/" itemprop="url">中国的族群融合与互动共生</a></h1>
         
 
         <div class="post-meta">
@@ -979,8 +1023,8 @@ fmt.Println(key,value)
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-04T12:47:29+08:00">
-                2017-07-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-23T22:13:02+08:00">
+                2016-11-23
               </time>
             
 
@@ -989,6 +1033,28 @@ fmt.Println(key,value)
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Academic-Research-学术研究-版权所有，违者必究/" itemprop="url" rel="index">
+                    <span itemprop="name">Academic Research/学术研究 (版权所有，违者必究)</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -1016,9 +1082,38 @@ fmt.Println(key,value)
       
         
           
-            <h1 id="php-初学者的一些调试技巧"><a href="#php-初学者的一些调试技巧" class="headerlink" title="php 初学者的一些调试技巧"></a>php 初学者的一些调试技巧</h1><p>程序不是一次成型，遇到问题了，怎么定位问题，初学者请看以下：<br>法宝１：<br>ini_set(‘display_errors’,true);ini_set(‘error_reporting’,E_ERROR);</p>
-<p>程序前面加上这个语句，会有明确的错误提示。<br>法宝２：<br>die(‘L:’.<strong>LINE</strong>);<br>出了问题，在疑似有问题的地方插入一句，直到不出现‘L:行数’，可以确定此句前一行存在问题。</p>
-<p>法宝3：<br>var_dump(变量1,变量2,…,变量n);die(‘L:’.<strong>LINE</strong>);<br>看到的是不是预想的？</p>
+            <p>独家|中国族群融合史：唐、元、清时期形成的共生互动模式<br>2016-11-23 张中复、黄南/采 新视角NPF</p>
+<p><img src="http://zhengheforum.org/wp-content/uploads/2016/11/IMG_9804-300x192.jpg" alt="IMG_9804"><br>新视角按：</p>
+<p>台湾政治大学民族学系主任张中复副教授在谈到中国民族融合的历史和现实时，认为中国的民族融合有长期的历史积累。中国的少数民族先民们跟汉族先民们的互动有上千年的历史，中国逐渐形塑成一个多民族统一国家，就表示这种互动力量背后有一些正面效益，比如说汉文化不是一种强力，汉文化并不是一种逼你要变成我。本文为该采访的族群融合历史部分，现实部分请继续关注本微信号。</p>
+<p>新视角：历史上的唐朝与阿拉伯有过交手，很多阿拉伯人远到中国之后，中国皇帝就让他们都跟汉族人通了婚。</p>
+<p>唐朝：中国的外籍兵团——大食兵</p>
+<p>张中复（台湾政治大学民族学系主任）：这是唐朝历史上一个有名的例子。当年郭子仪借了三千大食兵来平定安史之乱，这三千大食兵用我们的话来讲，就是当时的外籍兵团，帮助平定安史之乱，然后就留在中国各自嫁娶，是当时的外籍新郎。这是作为回民，对自己的祖先传说当中如何来到中国的一种历史记忆，虽然这三千人的后代可能也变成了汉人，毕竟这是中国历史上跟伊斯兰世界发生联系，或者说回民祖先来到中国的一个证据。</p>
+<p>《新唐书》、《旧唐书》都提到，唐高宗永徽二年，当时的哈里发帝国，第二任哈里发乌马尔时代，正式派使臣来到长安，见到唐高宗。历史上，罗马帝国和中国没有正式互动，但是当时的哈里发帝国在西元七世纪的时候，已经跟唐朝有了外交往来——不是民间的接触，当然我觉得民间接触有一定程度以后，才会有外交往来。这也是对中国穆斯林来讲，是一种很重要的历史记忆，就是从公元七世纪开始，从1400年前，阿拉伯半岛上的先民或者是中亚、西亚的穆斯林先民们已经跟中国有了正式的外交互动。</p>
+<p>更不要说东南沿海有大量的波斯人、阿拉伯商人来到中国。而且今天我们看到这些东南沿海，有重要的伊斯兰教古迹，比如广州的光塔寺，杭州的凤凰寺、泉州的清净寺，历史上来讲，都是一千多年前，穆斯林的先民们来到中国最早建立的宗教场域。</p>
+<p>中国的民族融合有长期的历史积累</p>
+<p>所以我觉得谈中国的民族问题，往好的方面想，它有长期的历史积累，不像我们当代看到的，很多国家出现民族问题是因为人群之间的互动——像美国或者俄罗斯——这种人群互动时间比较短。中国的少数民族先民们跟汉族先民们的互动历史，近的话几百年，长的话上千年，所以如果它是非稳定结构的话，应该成为瓦解中国的一个很重要的驱动力，为什么中国会在历史上逐渐形塑成一个多民族统一国家？这就表示这种互动力量背后有一些正面效益，比如说汉文化不是一种强力，汉文化并不是一种逼你要变成我。对很多少数民族来讲，这也是跟汉族互动的生存手段和互动模式。</p>
+<p>为什么对有些少数民族地区来讲，比如说儒家的思想或者宗教的一些信仰的仪式和内容，与伊斯兰教相比比较不一样？因为它是一种一神教，它在信仰方面，要严格遵守伊斯兰教，与中国本土的信仰比如佛教要保持距离。因为它如果不这样保持距离，一神教的信仰体系就没办法做一个系统发展。但我认为，除了宗教信仰之外，其他在文化部分来讲，回民及其先民们与中国主体民族做到了最大的共生互动模式。</p>
+<p>共生就是大家互相在一个体系当中，举个例子，回族的先民们在中国慢慢形成了一个所谓的“再地化”现象——他的姓氏，甚至于它的社会发展途径。唐朝时候的大诗人李彦生在中国已经是第五辈的阿拉伯人后代，他考取了进士，就是说他也必须要依照当时的社会发展这种社会阶级流动规则、华夏的游戏规则作为他发展、生存适应的机制。明清以来，穆斯林的知识分子，对于所谓的儒家文化，对于所谓的科举功名这种规则，不但没有禁止反而还鼓励。</p>
+<p>元朝：穆斯林在中国生根发展的关键</p>
+<p>新视角：中国西部有些地方原来是信仰其他宗教的，后来转信伊斯兰教，原因是什么？比如历史上新疆是信仰佛教的，后来变成信仰伊斯兰教。</p>
+<p>张中复：这是历史的进程。伊斯兰教是最晚出现的一神教，基本是将非穆斯林改变成穆斯林。阿拉伯半岛上的先民也是如此，伊斯兰教在中国的传播过程中，新疆是一个重要的区块。所以有大陆我很尊重的一位回族学人——宁夏社科院的荣誉院长杨怀忠先生，他在对中国伊斯兰教的分期里面说，伊斯兰教传入中国的第一个时期是11-13世纪，新疆回纥人的后代转信伊斯兰教。因为当时中国历史上记载最早的，中国境内有大量当地人群改信伊斯兰教，是发生在北宋时期，喀喇汗王朝，萨图克·博格拉汗时期有好几十万帐的突厥人改信伊斯兰教。</p>
+<p>伊斯兰教在中国传播时将非穆斯林变成穆斯林，关键是元朝。因为元朝的时候大量信仰伊斯兰教的人群来到中国定居。佛教只是把教义传到中国来，然后让当地人改信，伊斯兰教除了当地人改信之外，有大量穆斯林来到中国，所以伊斯兰教是唯一在中国形成族群化的外来宗教，其他外来宗教在中国没有呈现族群化是因为没有大量的信仰者跑到中国来定居。</p>
+<p>元朝在这方面发挥了积极的效果，包括让这些穆斯林分布在水陆要冲的大城市，所以回民来到中国并不是住在一些比较偏远、比较边疆的地方，而是住在华夏地区的核心地带。至少从元朝时代——虽然说唐宋时期有大量穆斯林来到中国定居的事实——我个人觉得伊斯兰教在中国的生根发展，元朝是个非常重要的关键，有了元朝的关键，才有明清这两个时期的形塑，”回”这个代表中国伊斯兰的概念、信仰和人群才在中国生根。</p>
+<p>新视角：这样形成的族群会不会引起政府的惧怕，担心他们结社？</p>
+<p>张中复：有，清朝就有，当时因为清朝为了防止汉人的反抗力量，所以对于当时的秘密会党、秘密宗教查禁得很严，有些地方官在查禁秘密宗教的时候会把伊斯兰教也视为秘密宗教的一种，最有名的例子就是，康熙年间山东巡抚陈世倌为了查禁罗祖教，把伊斯兰教视为叫邪教，但是当时清朝政府的做法还是比较开明的，认为伊斯兰教不是你们地方官查禁的邪教，所以有比较弹性的一面。</p>
+<p>新视角：那时的官府不担心信仰群众的聚集给政权造成影响么？</p>
+<p>张中复：这就是我很关注为什么清朝的时候，回民起义的事情发生这么频繁。很多因素不一样，而且两个重灾区——一个是西北一个是云南，其实都有不同因素。比如西北回民抗清过程当中，苏菲派哲合忍耶扮演了一定的角色。所谓的门宦，他们从乾隆时期开始就有抗清的轨迹，同治年间，比如我们从小在台湾读教科书，谈到“陕甘回民起义”，当然台湾不用“回民起义”四个字，我们从来不提马化龙的身份，马化龙是同治年间回民抗清的领袖，他是哲合忍耶的第五辈教主，是苏菲派的。而且哲合忍耶在中国的传教过程里面，第一代就是马明心，如果你读张承志的《心灵史》的话，所描述的就是哲合忍耶的抗清和它的早期历史。</p>
+<p>清朝回民起义主因：生存资源的竞争</p>
+<p>新视角：清朝回民起义大致有哪些原因？是不是民族宗教问题？</p>
+<p>张中复：回民起义很多，我觉得还是生存资源的竞争。过去大陆都说清朝是反动的民族政策，不可否认的是，毕竟清朝在宗教上来讲比较接受或者运用的是藏传佛教。<br>（大小和卓之乱的平定标志着清代中国统一战争的完成。此役之后，天山南路重新纳入中国版图，清代中国疆域臻于极盛。）</p>
+<p>还有另外一个原因是清朝二十六年以后，平定了“大小和卓之乱”，用大陆的话来讲，清朝收复了新疆，让讲突厥语的穆斯林正式成为中国境内的一个民族组成成分。过去中国的穆斯林都是讲汉语的回民为主体，当然明朝和清初已经有新疆讲突厥语的穆斯林进入到中国本土，但是乾隆皇帝是把天山南麓打下来，把新疆收归国有的过程里，中国民族成分出现了另外一个区块——就是讲突厥语的穆斯林。而且大小和卓的后代继续跑到浩罕汗国去抗清，所以到了乾隆之后，像道光年间照样有所谓的大小和卓的后裔，去挑战清政府的统治权威。<br>（乾隆期间清朝疆域达1300万余平方公里，动图为平定准噶尔与回疆大小和卓之乱的疆域）</p>
+<p>新视角：满族比较倾向藏传佛教？</p>
+<p>张中复：满洲人的策略是用藏传佛教来统治蒙古和西藏，买一送二。顺治九年的时候，江南地区还有抗清势力，顺治九年的时候，清朝就尽量在争取让达赖五世到北京来朝贡顺治皇帝，而且清朝还册封达赖五世。</p>
+<p>顺治九年的时候布局就布到现在这种程度，是很有远见的。因为满洲人很清楚，满洲人是关外的民族，可他不是真的游牧民族，所以满洲人知道传统中国历史最大的国防威胁，是来自北亚草原游牧民族，是蒙古。所以它当时想结合藏传佛教的力量，藏传佛教从元朝就开始影响到蒙古。明朝末年的时候，黄教格鲁派又再度影响到蒙古社会，所以清朝当然希望能够借由藏传佛教来制约蒙古，所以不但是册封达赖，至少从乾隆开始，驻藏大臣的代表，清朝皇帝将格鲁派的两个转世灵通达赖和班禅的人选金瓶掣签（注：又称为金瓶鉴别，是藏族认定藏传佛教最高等的大活佛转世灵童的方式，是清王朝乾隆五十七年，即1792年正式设立的制度）。</p>
+<p>新视角：跟毛泽东那时候对西藏的做法很像。</p>
+<p>张中复：当然，这就变成后来中央政府对西藏实施主权宣示的一个重要方式，今天一样，北京现在要册封十一世班禅，也是同样的历史脉络。</p>
+<p>【本文为2016年6月在“郑和国际和平论坛”（ID：zhengheluntan）上的采访节选。转载请联系授权。新视角（ID：xinshijiaonpf）欢迎国际政治领域的各种视角文章投稿：xinshijiaonpf@163.com】</p>
+<p>&nbsp;</p>
 
           
         
@@ -1062,16 +1157,16 @@ fmt.Println(key,value)
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://b-gg.com/2017/06/29/Best-practices-for-sysctl/">
+    <link itemprop="mainEntityOfPage" href="http://zhengheforum.org/2016/11/20/2017-e5-b9-b4-e9-83-91-e5-92-8c-e5-9b-bd-e9-99-85-e5-92-8c-e5-b9-b3-e5-a5-96-e6-8f-90-e5-90-8d/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Bo">
+      <meta itemprop="name" content="Haiyun">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Saritai">
+      <meta itemprop="name" content="ZhengheForum.org">
     </span>
 
     
@@ -1081,7 +1176,7 @@ fmt.Println(key,value)
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/06/29/Best-practices-for-sysctl/" itemprop="url">Best practices for sysctl</a></h1>
+                <a class="post-title-link" href="/2016/11/20/2017-e5-b9-b4-e9-83-91-e5-92-8c-e5-9b-bd-e9-99-85-e5-92-8c-e5-b9-b3-e5-a5-96-e6-8f-90-e5-90-8d/" itemprop="url">2017年 “郑和国际和平奖” 提名</a></h1>
         
 
         <div class="post-meta">
@@ -1093,8 +1188,8 @@ fmt.Println(key,value)
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-29T15:10:35+08:00">
-                2017-06-29
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-20T12:21:51+08:00">
+                2016-11-20
               </time>
             
 
@@ -1103,6 +1198,28 @@ fmt.Println(key,value)
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/News-信息/" itemprop="url" rel="index">
+                    <span itemprop="name">News/信息</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -1130,15 +1247,27 @@ fmt.Println(key,value)
       
         
           
-            <h1 id="Sysctl的最佳实践"><a href="#Sysctl的最佳实践" class="headerlink" title="Sysctl的最佳实践"></a>Sysctl的最佳实践</h1><h2 id="Linux-Server的系统优化"><a href="#Linux-Server的系统优化" class="headerlink" title="Linux Server的系统优化"></a>Linux Server的系统优化</h2><p>显而易见，Linux已经成为绝大多数互联网企业首选的服务器操作系统。<br>发行版会默认一些固定的系统设定，但显然这些设定并不适合你的业务。<br>升级内核<br>rpm –import <a href="https://www.elrepo.org/RPM-GPG-KEY-elrepo.org" target="_blank" rel="external">https://www.elrepo.org/RPM-GPG-KEY-elrepo.org</a><br>rpm -Uvh <a href="http://www.elrepo.org/elrepo-release-6-6.el6.elrepo.noarch.rpm" target="_blank" rel="external">http://www.elrepo.org/elrepo-release-6-6.el6.elrepo.noarch.rpm</a><br>yum –enablerepo=elrepo-kernel install kernel-lt -y<br>vim /etc/grub.conf       ‘default 1 更改为default 0’</p>
-<h3 id="第一要点：最大文件数（ulimit-a）"><a href="#第一要点：最大文件数（ulimit-a）" class="headerlink" title="第一要点：最大文件数（ulimit -a）"></a>第一要点：最大文件数（ulimit -a）</h3><p>默认的”open files (-n) 1024 “是Linux操作系统对一个进程打开的文件句柄数量的限制(也包含打开的SOCKET数量，可影响如MySQL的并发连接数目)。<br>“The nproc limit on Linux counts the number of threads within all processes that can exist for a given user.”<br>“ulimit -a”可以查看，修改则需要涉及到这几个文件1、’etc/security/limits.conf’;2、’/etc/security/limits.d/90-nproc.conf’<br>cat /etc/security/limits.conf</p>
-<ul>
-<li>soft nofile 65535</li>
-<li>hard nofile 65535<br>cat /etc/security/limits.d/90-nproc.conf</li>
-<li>soft    nproc     1024<br>root       soft    nproc     unlimite</li>
-</ul>
-<h3 id="etc-sysctl-conf"><a href="#etc-sysctl-conf" class="headerlink" title="/etc/sysctl.conf"></a>/etc/sysctl.conf</h3><p>net.core.rmem_max=16777216<br>net.core.wmem_max=16777216<br>net.ipv4.tcp_rmem=4096 87380 16777216<br>net.ipv4.tcp_wmem=4096 65536 16777216<br>net.ipv4.tcp_fin_timeout = 30<br>net.core.netdev_max_backlog = 30000<br>net.ipv4.tcp_no_metrics_save=1<br>net.core.somaxconn = 262144<br>net.ipv4.tcp_syncookies = 1<br>net.ipv4.tcp_max_orphans = 262144<br>net.ipv4.tcp_max_syn_backlog = 262144<br>net.ipv4.tcp_synack_retries = 2<br>net.ipv4.tcp_syn_retries = 2</p>
-<h2 id="net-ipv4-ip-local-port-range-1024-65535"><a href="#net-ipv4-ip-local-port-range-1024-65535" class="headerlink" title="net.ipv4.ip_local_port_range = 1024 65535 "></a>net.ipv4.ip_local_port_range = 1024 65535 </h2><p>fs.file-max = 1025500<br>net.core.netdev_max_backlog = 30000<br>net.core.somaxconn = 10000<br>net.core.rps_sock_flow_entries = 32768<br>net.ipv4.tcp_max_syn_backlog = 10000<br>net.ipv4.tcp_max_tw_buckets = 10000<br>net.ipv4.tcp_fin_timeout = 10<br>net.ipv4.tcp_timestamps = 0<br>net.ipv4.tcp_tw_recycle = 0<br>net.ipv4.tcp_tw_reuse = 1<br>net.ipv4.tcp_synack_retries = 10<br>net.ipv4.tcp_window_scaling = 1<br>net.ipv4.tcp_keepalive_time = 180<br>net.ipv4.tcp_keepalive_intvl = 30<br>net.ipv4.tcp_keepalive_probes =5<br>net.ipv4.ip_local_port_range = 1024 65536 </p>
+            <p><img src="http://zhengheforum.org/wp-content/uploads/2016/09/image-23-300x300.jpeg" alt="image"></p>
+<p>郑和国际和平基金会由美国、中国、马来西亚和阿联酋研究中国和穆斯林世界关系的学者创立，其宗旨是通过挖掘和分享伊斯兰文化的仁慈（Rahman）价值和儒家文化中的“仁和”思想，来促进华人世界和穆斯林世界之间的持久交流、了解、友谊与和平。两个文明载体的明代伟大航海家郑和 （原名马和），其名（郑“和“）突显了伊斯兰文明及儒家文明 “仁和”之精神，其行践行了两种和平文明的深刻内涵。正是在这种人心相通、文明相敬的氛围下，郑和下西洋的和平践行史无前例地链接了中国和印度洋地区，促进了中国和东南亚、中东以及东非穆斯林国家之间的商品、技术、文化等方方面面的互惠互通，将中国传统的经济文化交流重心从亚洲内陆转移到东南沿海以及印度洋地区，奠定了今日中国海上丝绸之路之历史文化基础。</p>
+<p>今天，中国“海上丝绸之路”倡议再次将华人世界和穆斯林世界历史性地链接在一起，这就更需要两个文明承载者之间的民心交流。郑和国际和平基金会尤其鼓励华人和穆斯林之间的互助友爱，民间交流和民心相通。因为只有华人和穆斯林民心相同的政治经济往来才有健康持续的可能。两大文明载体的心灵相通则要求两大文明之间及其内部的宗教宽容、民族团结和社会和谐。为此，郑和国际和平基金会特设立“郑和国际和平奖，”以此感谢和鼓励在各行各业为华人和穆斯林友好事业做出突出贡献的个人或团体。2016年”郑和国际和平奖“获得者是印度尼西亚华裔柳民源先生（附详细介绍）。</p>
+<p>2017年郑和国际和平奖提名现在开始，到2017年1月31日截止。郑和国际和平基金会欢迎社会各界提名候选人（不分民族、年龄、性别、职业、地域和国籍）。</p>
+<p>提名时须提供（1）被提名人的基本事迹，（2）联络方式（3）与提名者之间的关系。</p>
+<p>郑和国际和平基金会将从候选人中间选出年度获奖者并在2017年8月在哈萨克斯坦的第三届 “郑和论坛 “上颁发奖品。</p>
+<p>联系邮件：<a href="mailto:zhengheforum@gmail.com" target="_blank" rel="external">zhengheforum@gmail.com</a>; 标题注明 “2017年郑和国际和平奖提名“</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>附：2016**</strong>郑和国际和平奖获得者：印度尼西亚华裔柳民源先生**</p>
+<p>郑和基金会决定将本年度的郑和国际和平奖授予柳民源，主要基于如下考虑：</p>
+<p>1. 在印度尼西亚族群冲突时有发生的历史背景下，柳民源先生对华裔和印尼关系的理解和处置并没有采取简单地宗教化。他将印尼社会的政治、经济、社会等问题与冲突根源和世界性的伊斯兰文明做了深刻的思索和鲜明的切割。相反，华人和印尼人的社会冲突反而使他拥抱伊斯兰的核心价值观如和平、公平、正义，并以这些人类的基本价值来保护华人、维护华人利益。这对那些面临民族矛盾和冲突的国际社会极具启发意义，尤其对东南亚华人和所在国主体民族的关系发展提供了成功的经验。</p>
+<p>&nbsp;</p>
+<ol>
+<li>柳民源先生以兼具中华文化和伊斯兰文化身份的郑和作为纽带，慷概捐助建立郑和清真寺，来促进印尼社会华人与华人以及华人与穆斯林之间的融合。柳先生建立的郑和清真寺不仅仅是穆斯林的宗教场所，而且也是穆斯林和非穆斯林教育、体育、文艺、社交的中心。在印尼的特定场景下，柳民源所建的郑和清真寺为所有的华人提供了一个安全庇护所，这在根本上诠释了清真寺的真谛，即清真寺首先是实践和平的地方，是人们的安全庇护所。<br>&nbsp;</li>
+</ol>
+<p>3. 柳先生及海外华人对郑和文化和郑和精神的执着追求和实践不但历史性地链接了中华文化和穆斯林国家的交往纽带，而且实践性地传播和发扬了郑和精神，甚至将郑和精神转化为一种有效的和解模式，来处理华人和穆斯林群体之间产生的矛盾，这种模式不但成功输出和强化了早已熟知的郑和及其代表的中国文化，而且也为当代中国与一带一路穆斯林国家的文化关系发展塑造了成功模式。</p>
+<p>&nbsp;</p>
+<p>鉴于以上原因，郑和国际和平基金会认为，柳民源先生继承和实践了郑和的伟大和平精神，并通过商业互惠和文化互通提升了华人的社会地位，促进了华人和印尼人的友谊。不但如此，柳先生的经济、社会、文化实践不但保存和发扬了中华文化、语言，而且对于促进中印两国关系以及输出中华文化软实力做出了杰出的贡献。郑和国际和平基金会向柳民源先生表示诚挚祝贺，并邀请柳先生夫妇及印尼代表团赴迪拜参加6月4-5日的郑和国际和平会议。届时，伊斯兰合作组织第九任秘书长Ekmeleddin Ihsanoglu先生将在郑和国际和平会议开幕式上为柳民源先生颁奖。</p>
+<p>新闻报道，见<a href="http://v.ifeng.com/news/world/201606/014bdd65-9064-46c5-8e15-f73778fdf9fb.shtml" target="_blank" rel="external">http://v.ifeng.com/news/world/201606/014bdd65-9064-46c5-8e15-f73778fdf9fb.shtml</a></p>
+<p><img src="http://zhengheforum.org/wp-content/uploads/2016/10/507b9d1b031918bf3b910f-300x199.jpg" alt="507b9d1b031918bf3b910f"></p>
 
           
         
@@ -1182,16 +1311,16 @@ fmt.Println(key,value)
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://b-gg.com/2017/06/29/Best-practices-for-sysctlLinux-sysctl/">
+    <link itemprop="mainEntityOfPage" href="http://zhengheforum.org/2016/11/13/e6-b2-99-e6-96-90-e4-bb-aa-e6-95-99-e6-b3-95-e5-ad-a6-e6-b4-be-e7-9a-84-e8-bf-b7-e6-80-9d-e9-83-91-e5-92-8c-e4-b8-8e-e5-8d-b0-e5-ba-a6-e6-b4-8b-e6-b2-bf-e5-b2-b8-e7-9a-84-e4-b8-ad-e5-9b-bd-e4-bc-8a/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Bo">
+      <meta itemprop="name" content="Haiyun">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Saritai">
+      <meta itemprop="name" content="ZhengheForum.org">
     </span>
 
     
@@ -1201,7 +1330,7 @@ fmt.Println(key,value)
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/06/29/Best-practices-for-sysctlLinux-sysctl/" itemprop="url">Best practices for sysctlLinux sysctl</a></h1>
+                <a class="post-title-link" href="/2016/11/13/e6-b2-99-e6-96-90-e4-bb-aa-e6-95-99-e6-b3-95-e5-ad-a6-e6-b4-be-e7-9a-84-e8-bf-b7-e6-80-9d-e9-83-91-e5-92-8c-e4-b8-8e-e5-8d-b0-e5-ba-a6-e6-b4-8b-e6-b2-bf-e5-b2-b8-e7-9a-84-e4-b8-ad-e5-9b-bd-e4-bc-8a/" itemprop="url">沙斐仪教法学派的迷思: 郑和与印度洋沿岸的中国伊斯兰国际都市</a></h1>
         
 
         <div class="post-meta">
@@ -1213,8 +1342,8 @@ fmt.Println(key,value)
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-29T15:10:15+08:00">
-                2017-06-29
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-13T23:31:13+08:00">
+                2016-11-13
               </time>
             
 
@@ -1223,6 +1352,28 @@ fmt.Println(key,value)
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Academic-Research-学术研究-版权所有，违者必究/" itemprop="url" rel="index">
+                    <span itemprop="name">Academic Research/学术研究 (版权所有，违者必究)</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -1250,146 +1401,36 @@ fmt.Println(key,value)
       
         
           
-            
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://b-gg.com/2017/06/29/Computer-English/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Bo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Saritai">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/29/Computer-English/" itemprop="url">Computer-English</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-29T11:59:47+08:00">
-                2017-06-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="计算机英语词汇"><a href="#计算机英语词汇" class="headerlink" title="计算机英语词汇"></a>计算机英语词汇</h1><h2 id="第一部分、计算机算法常用术语中英对照"><a href="#第一部分、计算机算法常用术语中英对照" class="headerlink" title="第一部分、计算机算法常用术语中英对照"></a>第一部分、计算机算法常用术语中英对照</h2><p>Data Structures 基本数据结构<br>Dictionaries 字典<br>Priority Queues 堆<br>Graph Data Structures 图<br>Set Data Structures 集合<br>Kd-Trees 线段树<br>Numerical Problems 数值问题<br>Solving Linear Equations 线性方程组<br>Bandwidth Reduction 带宽压缩<br>Matrix Multiplication 矩阵乘法<br>Determinants and Permanents 行列式<br>Constrained and Unconstrained Optimization 最值问题<br>Linear Programming 线性规划<br>Random Number Generation 随机数生成<br>Factoring and Primality Testing 因子分解/质数判定<br>Arbitrary Precision Arithmetic 高精度计算<br>Knapsack Problem 背包问题<br>Discrete Fourier Transform 离散Fourier变换<br>Combinatorial Problems 组合问题<br>Sorting 排序<br>Searching 查找<br>Median and Selection 中位数<br>Generating Permutations 排列生成<br>Generating Subsets 子集生成<br>Generating Partitions 划分生成<br>Generating Graphs 图的生成<br>Calendrical Calculations 日期<br>Job Scheduling 工程安排<br>Satisfiability 可满足性<br>Graph Problems – polynomial 图论-多项式算法<br>Connected Components 连通分支<br>Topological Sorting 拓扑排序<br>Minimum Spanning Tree 最小生成树<br>Shortest Path 最短路径<br>Transitive Closure and Reduction 传递闭包<br>Matching 匹配<br>Eulerian Cycle / Chinese Postman Euler回路/中国邮路<br>Edge and Vertex Connectivity 割边/割点<br>Network Flow 网络流<br>Drawing Graphs Nicely 图的描绘<br>Drawing Trees 树的描绘<br>Planarity Detection and Embedding 平面性检测和嵌入<br>Graph Problems – hard 图论-NP问题<br>Clique 最大团<br>Independent Set 独立集<br>Vertex Cover 点覆盖<br>Traveling Salesman Problem 旅行商问题<br>Hamiltonian Cycle Hamilton回路<br>Graph Partition 图的划分<br>Vertex Coloring 点染色<br>Edge Coloring 边染色<br>Graph Isomorphism 同构<br>Steiner Tree Steiner树<br>Feedback Edge/Vertex Set 最大无环子图<br>Computational Geometry 计算几何<br>Convex Hull 凸包<br>Triangulation 三角剖分<br>Voronoi Diagrams Voronoi图<br>Nearest Neighbor Search 最近点对查询<br>Range Search 范围查询<br>Point Location 位置查询<br>Intersection Detection 碰撞测试<br>Bin Packing 装箱问题<br>Medial-Axis Transformation 中轴变换<br>Polygon Partitioning 多边形分割<br>Simplifying Polygons 多边形化简<br>Shape Similarity 相似多边形<br>Motion Planning 运动规划<br>Maintaining Line Arrangements 平面分割<br>Minkowski Sum Minkowski和<br>Set and String Problems 集合与串的问题<br>Set Cover 集合覆盖<br>Set Packing 集合配置<br>String Matching 模式匹配<br>Approximate String Matching 模糊匹配<br>Text Compression 压缩<br>Cryptography 密码<br>Finite State Machine Minimization 有穷自动机简化<br>Longest Common Substring 最长公共子串<br>Shortest Common Superstring 最短公共父串<br>DP——Dynamic Programming——动态规划<br>recursion —— 递归 </p>
-<h2 id="第二部分、编程词汇"><a href="#第二部分、编程词汇" class="headerlink" title="第二部分、编程词汇"></a>第二部分、编程词汇</h2><p>A2A integration A2A整合<br>abstract 抽象的<br>abstract base class (ABC)抽象基类<br>abstract class 抽象类<br>abstraction 抽象、抽象物、抽象性<br>access 存取、访问<br>access level访问级别<br>access function 访问函数<br>account 账户<br>action 动作<br>activate 激活<br>active 活动的<br>actual parameter 实参<br>adapter 适配器<br>add-in 插件<br>address 地址<br>address space 地址空间<br>address-of operator 取地址操作符<br>ADL (argument-dependent lookup)<br>ADO(ActiveX Data Object)ActiveX数据对象<br>advanced<br>aggregation 聚合、聚集<br>algorithm 算法<br>alias 别名<br>align 排列、对齐<br>allocate 分配、配置<br>allocator分配器、配置器<br>angle bracket 尖括号<br>annotation 注解、评注<br>API (Application Programming Interface) 应用(程序)编程接口<br>app domain (application domain)应用域<br>application 应用、应用程序<br>application framework 应用程序框架<br>appearance 外观<br>append 附加<br>architecture 架构、体系结构<br>archive file 归档文件、存档文件<br>argument引数(传给函式的值)。参见parameter<br>array 数组<br>arrow operator 箭头操作符<br>ASP(Active Server Page)活动服务器页面<br>ASP.NET worker process ASP.NET工作者进程<br>assembly 装配件、配件<br>assembly language 汇编语言<br>assembly manifest 装配件清单<br>assert(ion) 断言<br>assign 赋值<br>assignment 赋值、分配<br>assignment operator 赋值操作符<br>associated 相关的、相关联的<br>associative container 关联式容器(对应sequential container)<br>asynchronous 异步的<br>atomic 原子的<br>atomic operation 原子操作<br>attribute 特性、属性<br>authentication service 验证服务<br>authorization 授权<br>audio 音频<br>A.I. 人工智能<br>B2B integration B2B整合、B2B集成(business-to-business integration)<br>background 背景、后台(进程)<br>backward compatible 向后兼容、向下兼容<br>backup 备份<br>backup device备份设备<br>backup file 备份文件<br>bandwidth 带宽<br>base class 基类<br>base type 基类型<br>batch 批处理<br>BCL (base class library)基类库<br>binary 二进制<br>binary search 二分查找<br>binary tree 二叉树<br>binary function 双参函数<br>binary large object二进制大对象<br>binary operator 二元操作符<br>binding 绑定<br>bit 位<br>bitmap 位图<br>bitwise 按位…<br>bitwise copy 为单元进行复制；位元逐一复制,按位拷<br>bitwise operation 按位运算<br>block 块、区块、语句块<br>bookkeeping 簿记<br>boolean 布林值(真假值，true或false)<br>border 边框<br>bounds checking 边界检查<br>boxing 装箱、装箱转换<br>brace (curly brace) 大括号、花括号<br>bracket (square brakcet) 中括号、方括号 </p>
-<p>breakpoint 断点<br>browser applications 浏览器应用(程序)<br>browser-accessible application 可经由浏览器访问的应用程序<br>build 编连(专指编译和连接<br>built-in 内建、内置<br>bus 总线<br>business 业务、商务(看场合)<br>business Logic 业务逻辑<br>business rules 业务规则<br>buttons 按钮<br>bug 臭虫<br>by/through 通过<br>byte 位元组(由8 bits组成)<br>cache 高速缓存<br>calendar 日历<br>call 调用<br>callback 回调<br>call-level interface (CLI)调用级接口(CLI)<br>call operator 调用操作符<br>candidate key 候选键 (for database)<br>cascading delete 级联删除 (for database)<br>cascading update 级联更新 (for database)<br>casting 转型、造型转换<br>catalog 目录<br>chain 链(function calls)<br>character 字符<br>character format 字符格式<br>character set 字符集<br>CHECK constraints CHECK约束 (for database)<br>checkpoint 检查点 (for database)<br>check box 复选框<br>check button 复选按钮<br>child class 子类<br>CIL (common intermediate language)通用中间语言、通用中介语言<br>class 类<br>class declaration 类声明<br>class definition 类定义<br>class derivation list 类继承列表<br>class factory 类厂<br>class hierarchy 类层次结构<br>class library 类库<br>class loader 类装载器<br>class template 类模板<br>class template partial specializations 类模板部分特化<br>class template specializations 类模板特化<br>classification 分类<br>clause 子句<br>client application 客户端应用程序<br>client cursor 客户端游标 (for database)<br>code page 代码页<br>cleanup 清理、清除<br>CLI (Common Language Infrastructure) 通用语言基础设施<br>client 客户、客户端<br>client area 客户区<br>client-server 客户机/服务器、客户端/服务器<br>clipboard 剪贴板<br>clone 克隆<br>CLS (common language specification) 通用语言规范<br>code access security 代码访问安全<br>COFF (Common Object File Format) 通用对象文件格式<br>collection 集合<br>COM (Component Object Model) 组件对象模型<br>combo box 组合框<br>command line 命令行<br>comment 注释<br>commit 提交 (for database)<br>communication 通讯<br>compatible 兼容<br>compile time 编译期、编译时<br>compiler 编译器<br>component组件<br>composite index 复合索引、组合索引 (for database)<br>composite key 复合键、组合键 (for database)<br>composition 复合、组合<br>concept 概念<br>concrete具体的<br>concrete class 具体类<br>concurrency 并发、并发机制<br>constraint 约束 (for database)<br>configuration 配置、组态<br>connection 连接 (for database)<br>connection pooling 连接池<br>console 控制台<br>constant 常量<br>construct 构件、成分、概念、构造（for language）<br>constructor (ctor) 构造函数、构造器<br>container 容器<br>containment包容<br>context 环境、上下文<br>control 控件<br>cookie (不译)<br>copy 拷贝<br>CORBA 通用对象请求中介架构(Common Object Request Broker Architecture)<br>cover 覆盖、涵盖<br>create/creation 创建、生成<br>crosstab query 交叉表查询 (for database)<br>CRTP (curiously recurring template pattern)<br>CTS (common type system)通用类型系统<br>cube 多维数据集 (for database)<br>cursor 光标<br>cursor 游标 (for database)<br>custom 定制、自定义<br>data 数据<br>data connection 数据连接 (for database)<br>Data Control Language (DCL) 数据控制语言(DCL) (for database)<br>Data Definition Language (DDL) 数据定义语言(DDL) (for database)<br>data dictionary 数据字典 (for database)<br>data dictionary view 数据字典视图 (for database)<br>data file 数据文件 (for database)<br>data integrity 数据完整性 (for database)<br>data manipulation language (DML)数据操作语言(DML) (for database)<br>data mart 数据集市 (for database)<br>data pump 数据抽取 (for database)<br>data scrubbing 数据清理 (for database)<br>data source 数据源 (for database)<br>Data source name (DSN) 数据源名称(DSN) (for database)<br>data warehouse 数据仓库 (for database)<br>dataset 数据集 (for database)<br>database 数据库 (for database)<br>database catalog 数据库目录 (for database)<br>database diagram 数据关系图 (for database)<br>database file 数据库文件 (for database)<br>database object 数据库对象 (for database)<br>database owner 数据库所有者 (for database)<br>database project 数据库工程 (for database)<br>database role 数据库角色 (for database)<br>database schema 数据库模式、数据库架构 (for database)<br>database scrīpt 数据库脚本 (for database)<br>data-bound 数据绑定 (for database)<br>data-aware control数据感知控件 (for database)<br>data member 数据成员、成员变量<br>dataset 数据集 (for database)<br>data source 数据源 (for database)<br>data structure数据结构<br>data table 数据表 (for database)<br>datagram 数据报文<br>DBMS (database management system)数据库管理系统 (for database)<br>DCOM (distributed COM)分布式COM<br>dead lock 死锁 (for database)<br>deallocate 归还<br>debug 调试<br>debugger 调试器<br>decay 退化<br>decision support 决策支持<br>declaration 声明<br>declarative referential integrity (DRI)声明引用完整性(DRI) (for database)<br>deduction 推导<br>DEFAULT constraint默认约束 (for database)<br>default database 默认数据库 (for database)<br>default instance 默认实例 (for database)<br>default result set 默认结果集 (for database)<br>default 缺省、默认值<br>defer 推迟<br>definition 定义<br>delegate 委托<br>delegation 委托<br>dependent name<br>deploy 部署<br>dereference 解引用<br>dereference operator (提领)运算子<br>derived class 派生类<br>design by contract 契约式设计<br>design pattern 设计模式<br>destroy 销毁<br>destructor(dtor)析构函数、析构器<br>device 设备<br>DHTML (dynamic HyperText Markup Language)动态超文本标记语言<br>dialog 对话框<br>digest 摘要<br>digital 数字的<br>DIME (Direct Internet Message Encapsulation)直接Internet消息封装<br>directive (编译)指示符<br>directory 目录<br>dirty pages脏页 (for database)<br>dirty read 脏读 (for database)<br>disassembler 反汇编器<br>DISCO (Discovery of Web Services)Web Services的查找<br>disk 盘<br>dispatch 调度、分派、派发（我喜欢“调度”）<br>DISPID (Dispatch Identifier)分派标识符<br>distributed computing 分布式计算<br>distributed query 分布式查询 (for database)<br>DNA (Distributed interNet Application) 分布式网间应用程序<br>document 文档<br>DOM (Document Object Model)文档对象模型<br>dot operator (圆)点操作符<br>driver 驱动(程序)<br>DTD (document type definition) 文档类型定义<br>double-byte character set (DBCS)双字节字符集(DBCS)<br>dump 转储<br>dump file 转储文件<br>dynamic cursor 动态游标 (for database)<br>dynamic filter 动态筛选 (for database)<br>dynamic locking 动态锁定 (for database)<br>dynamic recovery 动态恢复 (for database)<br>dynamic snapshot 动态快照 (for database)<br>dynamic SQL statements 动态SQL语句 (for database)<br>dynamic assembly 动态装配件、动态配件<br>dynamic binding 动态绑定<br>EAI (enterprise application integration)企业应用程序集成(整合)<br>EBCO (empty base class optimization) 空基类优化（机制）<br>e-business 电子商务<br>EDI (Dlectronic Data Interchange)电子数据交换<br>efficiency 效率<br>efficient 高效<br>end-to-end authentication 端对端身份验证<br>end user 最终用户<br>engine 引擎<br>entity 实体<br>encapsulation 封装<br>enclosing class 外围类别(与巢状类别 nested class有关)<br>enum (enumeration) 枚举<br>enumerators 枚举成员、枚举器<br>equal 相等<br>equality 相等性<br>equality operator 等号操作符<br>error log 错误日志 (for database)<br>escape code 转义码<br>escape character 转义符、转义字符<br>exclusive lock 排它锁 (for database)<br>explicit transaction 显式事务 (for database)<br>evaluate 评估<br>event 事件<br>event driven 事件驱动的<br>event handler 事件处理器<br>evidence 证据<br>exception 异常<br>exception declaration 异常声明<br>exception handling 异常处理、异常处理机制<br>exception-safe 异常安全的<br>exception specification 异常规范<br>exit 退出<br>explicit 显式<br>explicit specialization 显式特化<br>export 导出<br>expression 表达式<br>facility 设施、设备<br>fat client 胖客户端<br>feature 特性、特征<br>fetch 提取<br>field 字段(java)<br>field 字段 (for database)<br>field length 字段长度 (for database)<br>file 文件<br>filter 筛选 (for database)<br>finalization 终结<br>firewall 防火墙<br>finalizer 终结器<br>firmware 固件<br>flag 标记<br>flash memory 闪存<br>flush 刷新<br>font 字体<br>foreign key (FK) 外键(FK) (for database)<br>form 窗体<br>formal parameter 形参<br>forward declaration 前置声明<br>forward-only 只向前的<br>forward-only cursor 只向前游标 (for database)<br>fragmentation 碎片 (for database)<br>framework 框架<br>full specialization 完全特化<br>function 函数<br>function call operator (即operator ()) 函数调用操作符<br>function object 函数对象<br>function overloaded resolution函数重载决议<br>functionality 功能<br>function template函数模板<br>functor 仿函数<br>GAC (global assembly cache) 全局装配件缓存、全局配件缓存<br>GC (Garbage collection) 垃圾回收(机制)、垃圾收集(机制)<br>game 游戏<br>generate 生成<br>generic 泛化的、一般化的、通用的<br>generic algorithm通用算法<br>genericity 泛型<br>getter (相对于 setter)取值函数<br>global 全局的<br>global object 全局对象<br>global scope resolution operator 全局范围解析操作符<br>grant 授权 (for database)<br>granularity 粒度<br>group 组、群<br>group box 分组框<br>GUI 图形界面<br>GUID (Globally Unique Identifier) 全球唯一标识符<br>hand shaking 握手<br>handle 句柄<br>handler 处理器<br>hard-coded 硬编码的<br>hard-copy 截屏图<br>hard disk 硬盘<br>hardware 硬件<br>hash table 散列表、哈希表<br>header file头文件<br>heap 堆<br>help file 帮助文件<br>hierarchy 层次结构、继承体系<br>hierarchical data 阶层式数据、层次式数据<br>hook 钩子<br>Host (application)宿主(应用程序)<br>hot key 热键<br>hyperlink 超链接<br>HTML (HyperText Markup Language) 超文本标记语言<br>HTTP pipeline HTTP管道<br>HTTP (HyperText Transfer Protocol) 超文本传输协议<br>icon 图标<br>IDE (Integrated Development Environment)集成开发环境<br>IDL (Interface Definition Language) 接口定义语言<br>identifier 标识符<br>idle time 空闲时间<br>if and only if当且仅当<br>IL (Intermediate Language) 中间语言、中介语言<br>image 图象<br>IME 输入法<br>immediate base 直接基类<br>immediate derived 直接派生类<br>immediate updating 即时更新 (for database)<br>implicit transaction隐式事务 (for database)<br>incremental update 增量更新 (for database)<br>index 索引 (for database)<br>implement 实现<br>implementation 实现、实现品<br>implicit 隐式<br>import 导入<br>increment operator 增加操作符<br>infinite loop 无限循环<br>infinite recursive 无限递归<br>information 信息<br>infrastructure 基础设施<br>inheritance 继承、继承机制<br>inline 内联<br>inline expansion 内联展开<br>initialization 初始化<br>initialization list 初始化列表、初始值列表<br>initialize 初始化<br>inner join 内联接 (for database)<br>in-place active 现场激活<br>instance 实例<br>instantiated 具现化、实体化(常应用于template)<br>instantiation 具现体、具现化实体(常应用于template)<br>integrate 集成、整合<br>integrity 完整性、一致性<br>integrity constraint完整性约束 (for database)<br>interprocess communication (IPC)进程间通讯(IPC)<br>interacts 交互<br>interface 接口<br>for GUI 界面<br>interoperability 互操作性、互操作能力<br>interpreter 解释器<br>introspection 自省<br>invariants 不变性<br>invoke 调用<br>isolation level 隔离级别 (for database)<br>iterate 迭代<br>iterative 反复的、迭代的<br>iterator 迭代器<br>iteration 迭代(回圈每次轮回称为一个iteration)<br>item 项、条款、项目<br>JIT compilation JIT编译 即时编译<br>key 键 (for database)<br>key column 键列 (for database)<br>laser 激光<br>late binding 迟绑定<br>left outer join 左向外联接 (for database)<br>level 阶、层例<br>high level 高阶、高层<br>library 库<br>lifetime 生命期、寿命<br>link 连接、链接<br>linkage 连接、链接<br>linker 连接器、链接器<br>literal constant 字面常数<br>list 列表、表、链表<br>list box 列表框<br>livelock 活锁 (for database)<br>load 装载、加载<br>load balancing 负载平衡<br>loader 装载器、载入器<br>local 局部的<br>local object 局部对象<br>lock 锁<br>log 日志<br>login 登录<br>login security mode登录安全模式 (for database)<br>lookup table 查找表 (for database)<br>loop 循环<br>loose coupling 松散耦合<br>lvalue 左值<br>machine code 机器码、机器代码<br>macro 宏<br>maintain 维护<br>managed code 受控代码、托管代码<br>Managed Extensions 受控扩充件、托管扩展<br>managed object 受控对象、托管对象<br>mangled name<br>manifest 清单<br>manipulator 操纵器(iostream预先定义的一种东西)<br>many-to-many relationship 多对多关系 (for database)<br>many-to-one relationship 多对一关系 (for database)<br>marshal 列集<br>member 成员<br>member access operator 成员取用运算子(有dot和arrow两种)<br>member function 成员函数<br>member initialization list成员初始值列表<br>memberwise 以member为单元…、members 逐一…<br>memberwise copy<br>memory 内存<br>memory leak 内存泄漏<br>menu 菜单<br>message 消息<br>message based 基于消息的<br>message loop 消息环<br>message queuing消息队列<br>metadata 元数据<br>metaprogramming元编程<br>method 方法<br>micro 微<br>middleware 中间件<br>middle tier 中间层<br>modeling 建模<br>modeling language 建模语言<br>modifier 修饰字、修饰符<br>modem 调制解调器<br>module 模块<br>most derived class最底层的派生类<br>mouse 鼠标<br>mutable 可变的<br>mutex 互斥元、互斥体<br>multidimensional OLAP (MOLAP) 多维OLAP(MOLAP) (for database)<br>multithreaded server application 多线程服务器应用程序<br>multiuser 多用户<br>multi-tasking 多任务<br>multi-thread 多线程<br>multicast delegate 组播委托、多点委托<br>named parameter 命名参数<br>named pipe 命名管道<br>namespace 名字空间、命名空间<br>native 原生的、本地的<br>native code 本地码、本机码<br>Native Image Generator (NGEN)本地映像生成器<br>nested class 嵌套类<br>nested query 嵌套查询 (for database)<br>nested table 嵌套表 (for database)<br>network 网络<br>network card 网卡<br>nondependent name<br>object 对象<br>object based 基于对象的<br>object file 目标文件<br>object model 对象模型<br>object oriented 面向对象的<br>object pooling 对象池化<br>ODBC data source ODBC数据源 (for database)<br>ODBC driver ODBC驱动程序 (for database)<br>ODR (one-definition rule)<br>OLE Automation objects OLE自动化对象 (for database)<br>OLE Automation server OLE自动化服务器 (for database)<br>OLE DB consumer OLE DB使用者 (for database)<br>OLE DB for OLAP 用于OLAP的OLE DB (for database)<br>OLE DB provider OLE DB提供者 (for database)<br>one-to-many relationship 一对多关系 (for database)<br>one-to-one relationship 一对一关系 (for database)<br>online analytical processing (OLAP) 联机分析处理(OLAP) (for database)<br>online redo log 联机重做日志 (for database)<br>online transaction processing (OLTP) 联机事务处理(OLTP) (for database)<br>Open Data Services (ODS) 开放式数据服务(ODS) (for database)<br>Open Database Connectivity (ODBC) 开放式数据库连接(ODBC) (for database)<br>operand 操作数<br>operating system (OS) 操作系统<br>operation 操作<br>operator 操作符、运算符<br>option 选项<br>optimizer 优化器<br>outer join 外联接 (for database)<br>overflow 上限溢位(相对于underflow)<br>overhead 额外开销<br>overload 重载<br>overload resolution 重载决议<br>overloaded function 重载的函数<br>overloaded operator 被重载的操作符<br>override 覆写、重载、重新定义<br>package 包<br>packaging 打包<br>palette 调色板<br>parallel 并行<br>parameter 参数、形式参数、形参<br>parameter list 参数列表<br>parameterize 参数化<br>parent class 父类<br>parentheses 圆括弧、圆括号<br>parse 解析<br>parser 解析器<br>part 零件、部件<br>partial specialization 局部特化<br>pass by address 传址(函式引数的传递方式)(非正式用语)<br>pass by reference 传地址、按引用传递<br>pass by value 按值传递<br>pattern 模式<br>PDA (personal digital assistant)个人数字助理<br>PE (Portable Executable) file 可移植可执行文件<br>performance 性能<br>persistence 持久性<br>PInvoke (platform invoke service) 平台调用服务<br>pixel 像素<br>placement delete<br>placement new<br>placeholder 占位符<br>platform 平台<br>POD (plain old data (type))<br>POI (point of instantiation)<br>pointer 指针<br>poll 轮询<br>pooling 池化<br>polymorphism 多态<br>pop up 弹出式<br>port 端口<br>postfix 后缀<br>precedence 优先序(通常用于运算子的优先执行次序)<br>prefix 前缀<br>preprocessor 预处理器<br>primary key (PK)主键(PK) (for database)<br>primary table 主表 (for database)<br>primary template原始模板<br>primitive type 原始类型<br>print 打印<br>printer 打印机<br>procedure 过程<br>procedural 过程式的、过程化的<br>process 进程<br>profile 评测<br>profiler 效能(性能)评测器<br>program 程序<br>programmer 程序员<br>programming编程、程序设计<br>progress bar 进度指示器<br>project 项目、工程<br>property 属性<br>protocol 协议<br>pseudo code伪码<br>qualified 经过资格修饰(例如加上scope运算子)<br>qualifiedqualifier 修饰符<br>quality 质量<br>queue 队列<br>race condition 竞争条件（多线程环境常用语）<br>radian 弧度<br>radio button 单选按钮<br>raise 引发(常用来表示发出一个exception)<br>random number 随机数<br>range 范围、区间<br>rank 等级<br>raw 未经处理的<br>readOnly只读<br>record 记录 (for database)<br>recordset 记录集 (for database<br>recursive 递归<br>re-direction 重定向<br>refactoring 重构<br>refer 引用、参考<br>reference 引用、参考<br>reference counting引用计数<br>referential integrity (RI)引用完整性(RI) (for database)<br>register 寄存器<br>reflection 反射<br>refresh data 刷新数据 (for database)<br>regular expression 正则表达式<br>relational database 关系数据库<br>remote 远程<br>remote request 远程请求<br>represent 表述，表现<br>resolve 解析、决议<br>resolution 解析过程<br>result set 结果集 (for database)<br>retrieve data 检索数据<br>return 返回<br>return type 返回类型<br>return value 返回值<br>right outer join 右向外联接 (for database)<br>revoke 撤销<br>robust 健壮<br>robustness 健壮性<br>roll back 回滚 (for database)<br>roll forward 前滚 (for database)<br>routine 例程<br>row 行 (for database)<br>row lock 行锁 (for database)<br>rowset 行集 (for database)<br>RPC (remote procedure call)RPC(远程过程调用)<br>runtime 执行期、运行期、执行时、运行时<br>rvalue 右值<br>save 保存<br>savepoint 保存点 (for database)<br>SAX (Simple API for XML)<br>scalable 可伸缩的、可扩展的<br>schedule 调度<br>scheduler 调度程序<br>schema 模式、纲目结构<br>scroll bar滚动条<br>scope 作用域、生存空间<br>scope operator 生存空间操作符<br>scope resolution operator 生存空间解析操作符<br>screen 屏幕<br>SDK (Software Development Kit)软件开发包<br>sealed class 密封类<br>search 查找<br>semantics 语义<br>semaphore 信号量<br>sequential container序列式容器<br>server 服务器、服务端<br>serial 串行<br>serialization/serialize 序列化<br>server cursor服务端游标、服务器游标 (for database)<br>session 会话 (for database)<br>setter 设值函数<br>shared lock 共享锁 (for database)<br>sibling 同级<br>side effect 副作用<br>signature 签名<br>single-threaded 单线程<br>slider滑块<br>slot 槽<br>smart pointer 智能指针<br>SMTP (Simple Mail Transfer Protocol) 简单邮件传输协议<br>snapshot 截屏图<br>snapshot 快照 (for database)<br>specialization 特化<br>specification 规范、规格<br>splitter 切分窗口<br>SOAP (simple object access protocol) 简单对象访问协议<br>software 软件<br>source code 源码、源代码 </p>
-<p>SQL (Structured Query Language) 结构化查询语言 (for database)<br>stack 栈、堆栈<br>stack unwinding 叠辗转开解(此词用于exception主题)<br>standard library 标准库<br>standard template library 标准模板库<br>stateless 无状态的<br>statement 语句、声明<br>static cursor 静态游标 (for database)<br>static SQL statements 静态SQL语句 (for database)<br>stored procedure 存储过程 (for database)<br>status bar 状态条<br>stream 流<br>string 字符串<br>stub 存根<br>subobject子对象<br>subquery 子查询 (for database)<br>subroutine 子例程<br>subscrīpt operator 下标操作符<br>subset 子集<br>subtype 子类型<br>support 支持<br>suspend 挂起<br>symbol 记号<br>syntax 语法<br>system databases 系统数据库 (for database)<br>system tables 系统表 (for database)<br>table 表 (for database)<br>table lock 表锁 (for database)<br>table-level constraint 表级约束 (for database)<br>tape backup 磁带备份 (for database)<br>target 标的,目标<br>task switch 工作切换<br>TCP (Transport Control Protocol) 传输控制协议<br>template 模板<br>template-id<br>template argument deduction 模板参数推导<br>template explicit specialization 模板显式特化<br>template parameter 模板参数<br>template template parameter<br>temporary object 临时对象<br>temporary table 临时表 (for database)<br>text 文本<br>text file 文本文件<br>thin client 瘦客户端<br>third-party 第三方<br>thread 线程<br>thread-safe 线程安全的<br>throw 抛出、引发(常指发出一个exception)<br>token 符号、标记、令牌（看场合）<br>trace 跟踪<br>transaction 事务 (for database)<br>transaction log 事务日志 (for database)<br>transaction rollback 事务回滚 (for database)<br>transactional replication 事务复制 (for database)<br>translation unit 翻译单元<br>traverse 遍历<br>trigger 触发器 (for database)<br>two-phase commit 两阶段提交 (for database)<br>tuple<br>two-phase lookup 两阶段查找<br>type 类型<br>UDDI(Universary Descrīption, Discovery and Integration)统一描述、查询与集成<br>UML (unified modeling language)统一建模语言<br>unary function 单参函数<br>unary operator 一元操作符<br>unboxing 拆箱、拆箱转换<br>underflow 下限溢位(相对于overflow)<br>Union query 联合查询 (for database)<br>UNIQUE constraints UNIQUE约束 (for database)<br>unique index 唯一索引 (for database)<br>unmanaged code 非受控代码、非托管代码<br>unmarshal 散集<br>unqualified 未经限定的、未经修饰的<br>URI (Uniform Resource identifier) 统一资源标识符<br>URL (Uniform Resource Locator) 统一资源定位器<br>user 用户<br>user interface 用户界面<br>value types 值类型<br>variable 变量<br>vector 向量(一种容器，有点类似array)<br>viable 可行的<br>video 视频<br>view 视图<br>VEE (Virtual Execution Engine)虚拟执行引擎<br>vendor 厂商<br>view 视图 (for database)<br>virtual function 虚函数<br>virtual machine 虚拟机<br>virtual memory 虚拟内存<br>vowel 元音字母<br>Web Services web服务<br>WHERE clause WHERE子句 (for database)<br>wildcard characters 通配符字符 (for database)<br>wildcard search 通配符搜索 (for database)<br>window 窗口<br>window function 窗口函数<br>window procedure 窗口过程<br>Windows authentication Windows身份验证<br>wizard 向导<br>word 单词<br>word processor 字处理器<br>wrapper 包装、包装器<br>write enable 写启用 (for database)<br>write-ahead log 预写日志 (for database)<br>write-only 只写<br>WSDL (Web Service Descrīption Language)Web Service描述语言<br>XML Message Interface (XMI) XML消息接口<br>XML (eXtensible Markup Language) 可扩展标记语言<br>XSD (XML Schema Definition) XML模式定义语言<br>XSL (eXtensible Stylesheet Language) 可扩展样式表语言<br>XSLT (eXtensible Stylesheet Language Transformation)可扩展样式表语言转换<br>xxx based 基于xxx的<br>xxx oriented 面向xxx</p>
-<h2 id="可能有重复，另一个版本"><a href="#可能有重复，另一个版本" class="headerlink" title="可能有重复，另一个版本"></a>可能有重复，另一个版本</h2><p>application 应用程式 应用、应用程序<br>application framework 应用程式框架、应用框架 应用程序框架<br>architecture 架构、系统架构 体系结构<br>argument 引数（传给函式的值）。叁见 parameter 叁数、实质叁数、实叁、自变量<br>array 阵列 数组<br>arrow operator arrow（箭头）运算子 箭头操作符<br>assembly 装配件<br>assembly language 组合语言 汇编语言<br>assert(ion) 断言<br>assign 指派、指定、设值、赋值 赋值<br>assignment 指派、指定 赋值、分配<br>assignment operator 指派（赋值）运算子 = 赋值操作符<br>associated 相应的、相关的 相关的、关联、相应的<br>associative container 关联式容器（对应 sequential container） 关联式容器<br>atomic 不可分割的 原子的<br>attribute 属性 属性、特性<br>audio 音讯 音频<br>A.I. 人工智慧 人工智能<br>background 背景 背景（用於图形着色）<br>後台（用於行程）<br>backward compatible 回溯相容 向下兼容<br>bandwidth 频宽 带宽<br>base class 基础类别 基类<br>base type 基础型别 (等同於 base class)<br>batch 批次（意思是整批作业） 批处理<br>benefit 利益 收益<br>best viable function 最佳可行函式 最佳可行函式<br>（从 viable functions 中挑出的最佳吻合者）<br>binary search 二分搜寻法 二分查找<br>binary tree 二元树 二叉树<br>binary function 二元函式 双叁函数<br>binary operator 二元运算子 二元操作符<br>binding 系结 绑定<br>bit 位元 位<br>bit field 位元栏 位域<br>bitmap 位元图 位图<br>bitwise 以 bit 为单元逐一┅<br>bitwise copy 以 bit 为单元进行复制；位元逐一复制 位拷贝<br>block 区块,区段 块、区块、语句块<br>boolean 布林值（真假值，true 或 false） 布尔值<br>border 边框、框线 边框<br>brace(curly brace) 大括弧、大括号 花括弧、花括号<br>bracket(square brakcet) 中括弧、中括号 方括弧、方括号<br>breakpoint 中断点 断点<br>build 建造、构筑、建置（MS 用语）<br>build－in 内建 内置<br>bus 汇流排 总线<br>business 商务,业务 业务<br>buttons 按钮 按钮<br>byte 位元组（由 8 bits 组成） 字节<br>cache 快取 高速缓存<br>call 呼叫、叫用 调用<br>callback 回呼 回调<br>call operator call（函式呼叫）运算子调用操作符<br>（同 function call operator）<br>candidate function 候选函式 候选函数<br>（在函式多载决议程序中出现的候选函式）<br>chain 串链（例 chain of function calls） 链<br>character 字元 字符<br>check box 核取方块 (i.e. check button) 复选框<br>checked exception 可控式异常(Java)<br>check button 方钮 (i.e. check box) 复选按钮<br>child class 子类别（或称为derived class, subtype） 子类<br>class 类别 类<br>class body 类别本体 类体<br>class declaration 类别宣告、类别宣告式 类声明<br>class definition 类别定义、类别定义式 类定义<br>class derivation list 类别衍化列 类继承列表<br>class head 类别表头 类头<br>class hierarchy 类别继承体系, 类别阶层 类层次体系<br>class library 类别程式库、类别库 类库<br>class template 类别模板、类别范本 类模板<br>class template partial specializations<br>类别模板偏特化 类模板部分特化<br>class template specializations<br>类别模板特化 类模板特化<br>cleanup 清理、善後 清理、清除<br>client 客端、客户端、客户 客户<br>client－server 主从架构 客户/服务器<br>clipboard 剪贴簿 剪贴板<br>clone 复制 克隆<br>collection 群集 集合<br>combo box 复合方块、复合框 组合框<br>command line 命令列 命令行<br>(系统文字模式下的整行执行命令)<br>communication 通讯 通讯<br>compatible 相容 兼容<br>compile time 编译期 编译期、编译时<br>compiler 编译器 编译器<br>component 组件 组件<br>composition 复合、合成、组合 组合<br>computer 电脑、计算机 计算机、电脑<br>concept 概念 概念<br>concrete 具象的 实在的<br>concurrent 并行 并发<br>configuration 组态 配置<br>connection 连接，连线（网络,资料库） 连接<br>constraint 约束（条件）<br>construct 构件 构件<br>container 容器 容器<br>（存放资料的某种结构如 list, vector…）<br>containment 内含 包容<br>context 背景关系、周遭环境、上下脉络 环境、上下文<br>control 控制元件、控件 控件<br>console 主控台 控制台<br>const 常数（constant 的缩写，C++ 关键字）<br>constant 常数（相对於 variable） 常量<br>constructor（ctor） 建构式 构造函数<br>（与class 同名的一种 member functions）<br>copy (v) 复制、拷贝 拷贝<br>copy (n) 复件, 副本<br>cover 涵盖 覆盖<br>create 创建、建立、产生、生成 创建<br>creation 产生、生成 创建<br>cursor 游标 光标<br>custom 订制、自定 定制<br>data 资料 数据<br>database 资料库 数据库<br>database schema 数据库结构纲目<br>data member 资料成员、成员变数 数据成员、成员变量<br>data structure 资料结构 数据结构<br>datagram 资料元 数据报文<br>dead lock 死结 死锁<br>debug 除错 调试<br>debugger 除错器 调试器<br>declaration 宣告、宣告式 声明<br>deduction 推导（例：template argument deduction） 推导、推断<br>default 预设 缺省、默认<br>defer 延缓 推迟<br>define 定义 预定义<br>definition 定义、定义区、定义式 定义<br>delegate 委派、委托、委任 委托<br>delegation （同上）<br>demarshal 反编列 散集<br>dereference 提领（取出指标所指物体的内容） 解叁考<br>dereference operator dereference（提领）运算子 <em> 解叁考操作符<br>derived class 衍生类别 派生类<br>design by contract 契约式设计<br>design pattern 设计范式、设计样式 设计模式<br>※ 最近我比较喜欢「设计范式」一词<br>destroy 摧毁、销毁<br>destructor 解构式 析构函数<br>device 装置、设备 设备<br>dialog 对话窗、对话盒 对话框<br>directive 指令（例：using directive） (编译)指示符<br>directory 目录 目录<br>disk 碟 盘<br>dispatch 分派 分派<br>distributed computing 分布式计算 (分布式电算) 分布式计算<br>分散式计算 (分散式电算)<br>document 文件 文档<br>dot operator dot（句点）运算子 . (圆)点操作符<br>driver 驱动程式 驱动（程序）<br>dynamic binding 动态系结 动态绑定<br>efficiency 效率 效率<br>efficient 高效 高效<br>end user 终端用户<br>entity 物体 实体、物体<br>encapsulation 封装 封装<br>enclosing class 外围类别（与巢状类别 nested class 有关）外围类<br>enum (enumeration) 列举（一种 C++ 资料型别） 枚举<br>enumerators 列举元（enum 型别中的成员） 枚举成员、枚举器<br>equal 相等 相等<br>equality 相等性 相等性<br>equality operator equality（等号）运算子 == 等号操作符<br>equivalence 等价性、等同性、对等性 等价性<br>equivalent 等价、等同、对等 等价<br>escape code 转义码 转义码<br>evaluate 评估、求值、核定 评估<br>event 事件 事件<br>event driven 事件驱动的 事件驱动的<br>exception 异常情况 异常<br>exception declaration 异常宣告（ref. C++ Primer 3/e, 11.3） 异常声明<br>exception handling 异常处理、异常处理机制 异常处理、异常处理机制<br>exception specification 异常规格（ref. C++ Primer 3/e, 11.4） 异常规范<br>exit 退离（指离开函式时的那一个执行点） 退出<br>explicit 明白的、明显的、显式 显式<br>export 汇出 引出、导出<br>expression 运算式、算式 表达式<br>facility 设施、设备 设施、设备<br>feature 特性<br>field 栏位,资料栏（Java） 字段, 值域（Java）<br>file 档案 文件<br>firmware 韧体 固件<br>flag 旗标 标记<br>flash memory 快闪记忆体 闪存<br>flexibility 弹性 灵活性<br>flush 清理、扫清 刷新<br>font 字型 字体<br>form 表单（programming 用语） 窗体<br>formal parameter 形式叁数 形式叁数<br>forward declaration 前置宣告 前置声明<br>forwarding 转呼叫,转发 转发<br>forwarding function 转呼叫函式,转发函式 转发函数<br>fractal 碎形 分形<br>framework 框架 框架<br>full specialization 全特化（ref. partial specialization）<br>function 函式、函数 函数<br>function call operator 同 call operator<br>function object 函式物件（ref. C++ Primer 3/e, 12.3） 函数对象<br>function overloaded resolution<br>函式多载决议程序 函数重载解决（方案）<br>functionality 功能、机能 功能<br>function template 函式模板、函式范本 函数模板<br>functor 仿函式 仿函式、函子<br>game 游戏 游戏<br>generate 生成<br>generic 泛型、一般化的 一般化的、通用的、泛化<br>generic algorithm 泛型演算法 通用算法<br>getter (相对於 setter) 取值函式<br>global 全域的（对应於 local） 全局的<br>global object 全域物件 全局对象<br>global scope resolution operator<br>全域生存空间（范围决议）运算子 :: 全局范围解析操作符<br>group 群组<br>group box 群组方块 分组框<br>guard clause 卫述句 (Refactoring, p250) 卫语句<br>GUI 图形介面 图形界面<br>hand shaking 握手协商<br>handle 识别码、识别号、号码牌、权柄 句柄<br>handler 处理常式 处理函数<br>hard－coded 编死的 硬编码的<br>hard－copy 硬拷图 屏幕截图<br>hard disk 硬碟 硬盘<br>hardware 硬体 硬件<br>hash table 杂凑表 哈希表、散列表<br>header file 表头档、标头档 头文件<br>heap 堆积 堆<br>hierarchy 阶层体系 层次结构（体系）<br>hook 挂钩 钩子<br>hyperlink 超链结 超链接<br>icon 图示、图标 图标<br>IDE 整合开发环境 集成开发环境<br>identifier 识别字、识别符号 标识符<br>if and only if 若且唯若 当且仅当<br>Illinois 伊利诺 伊利诺斯<br>image 影像 图象<br>immediate base 直接的（紧临的）上层 base class。 直接上层基类<br>immediate derived 直接的（紧临的）下层 derived class。 直接下层派生类<br>immutability 不变性<br>immutable 不可变（的）<br>implement 实作、实现 实现<br>implementation 实作品、实作体、实作码、实件 实现<br>implicit 隐喻的、暗自的、隐式 隐式<br>import 汇入 导入<br>increment operator 累加运算子 ++ 增加操作符<br>infinite loop 无穷回圈 无限循环<br>infinite recursive 无穷递回 无限递归<br>information 资讯 信息<br>infrastructure 公共基础建设<br>inheritance 继承、继承机制 继承、继承机制<br>inline 行内 内联<br>inline expansion 行内展开 内联展开<br>initialization 初始化（动作） 初始化<br>initialization list 初值列 初始值列表<br>initialize 初始化 初始化<br>inner class 内隐类别 内嵌类<br>instance 实体 实例<br>（根据某种表述而实际产生的「东西」）<br>instantiated 具现化、实体化（常应用於 template） 实例化<br>instantiation 具现体、具现化实体（常应用於 template） 实例<br>integer (integral) 整数（的） 整型（的）<br>integrate 整合 集成<br>interacts 交谈、互动 交互<br>interface 介面 接口<br>for GUI 介面 界面<br>interpreter 直译器 解释器<br>invariants 恒常性,约束条件 约束条件<br>invoke 唤起 调用<br>iterate 迭代（回圈一个轮回一个轮回地进行） 迭代<br>exception 异常情况 异常<br>exception declaration 异常宣告（ref. C++ Primer 3/e, 11.3） 异常声明<br>exception handling 异常处理、异常处理机制 异常处理、异常处理机制<br>exception specification 异常规格（ref. C++ Primer 3/e, 11.4） 异常规范<br>exit 退离（指离开函式时的那一个执行点） 退出<br>explicit 明白的、明显的、显式 显式<br>export 汇出 引出、导出<br>expression 运算式、算式 表达式<br>facility 设施、设备 设施、设备<br>feature 特性<br>field 栏位,资料栏（Java） 字段, 值域（Java）<br>file 档案 文件<br>firmware 韧体 固件<br>flag 旗标 标记<br>flash memory 快闪记忆体 闪存<br>flexibility 弹性 灵活性<br>flush 清理、扫清 刷新<br>font 字型 字体<br>form 表单（programming 用语） 窗体<br>formal parameter 形式叁数 形式叁数<br>forward declaration 前置宣告 前置声明<br>forwarding 转呼叫,转发 转发<br>forwarding function 转呼叫函式,转发函式 转发函数<br>fractal 碎形 分形<br>framework 框架 框架<br>full specialization 全特化（ref. partial specialization）<br>function 函式、函数 函数<br>function call operator 同 call operator<br>function object 函式物件（ref. C++ Primer 3/e, 12.3） 函数对象<br>function overloaded resolution<br>函式多载决议程序 函数重载解决（方案）<br>functionality 功能、机能 功能<br>function template 函式模板、函式范本 函数模板<br>functor 仿函式 仿函式、函子<br>game 游戏 游戏<br>generate 生成<br>generic 泛型、一般化的 一般化的、通用的、泛化<br>generic algorithm 泛型演算法 通用算法<br>getter (相对於 setter) 取值函式<br>global 全域的（对应於 local） 全局的<br>global object 全域物件 全局对象<br>global scope resolution operator<br>全域生存空间（范围决议）运算子 :: 全局范围解析操作符<br>group 群组<br>group box 群组方块 分组框<br>guard clause 卫述句 (Refactoring, p250) 卫语句<br>GUI 图形介面 图形界面<br>hand shaking 握手协商<br>handle 识别码、识别号、号码牌、权柄 句柄<br>handler 处理常式 处理函数<br>hard－coded 编死的 硬编码的<br>hard－copy 硬拷图 屏幕截图<br>hard disk 硬碟 硬盘<br>hardware 硬体 硬件<br>hash table 杂凑表 哈希表、散列表<br>header file 表头档、标头档 头文件<br>heap 堆积 堆<br>hierarchy 阶层体系 层次结构（体系）<br>hook 挂钩 钩子<br>hyperlink 超链结 超链接<br>icon 图示、图标 图标<br>IDE 整合开发环境 集成开发环境<br>identifier 识别字、识别符号 标识符<br>if and only if 若且唯若 当且仅当<br>Illinois 伊利诺 伊利诺斯<br>image 影像 图象<br>immediate base 直接的（紧临的）上层 base class。 直接上层基类<br>immediate derived 直接的（紧临的）下层 derived class。 直接下层派生类<br>immutability 不变性<br>immutable 不可变（的）<br>implement 实作、实现 实现<br>implementation 实作品、实作体、实作码、实件 实现<br>implicit 隐喻的、暗自的、隐式 隐式<br>import 汇入 导入<br>increment operator 累加运算子 ++ 增加操作符<br>infinite loop 无穷回圈 无限循环<br>infinite recursive 无穷递回 无限递归<br>information 资讯 信息<br>infrastructure 公共基础建设<br>inheritance 继承、继承机制 继承、继承机制<br>inline 行内 内联<br>inline expansion 行内展开 内联展开<br>initialization 初始化（动作） 初始化<br>initialization list 初值列 初始值列表<br>initialize 初始化 初始化<br>inner class 内隐类别 内嵌类<br>instance 实体 实例<br>（根据某种表述而实际产生的「东西」）<br>instantiated 具现化、实体化（常应用於 template） 实例化<br>instantiation 具现体、具现化实体（常应用於 template） 实例<br>integer (integral) 整数（的） 整型（的）<br>integrate 整合 集成<br>interacts 交谈、互动 交互<br>interface 介面 接口<br>for GUI 介面 界面<br>interpreter 直译器 解释器<br>invariants 恒常性,约束条件 约束条件<br>invoke 唤起 调用<br>iterate 迭代（回圈一个轮回一个轮回地进行） 迭代<br>iterative 反覆的，迭代的<br>iterator 迭代器（一种泛型指标） 迭代器<br>iteration 迭代（回圈每次轮回称为一个 iteration） 迭代<br>item 项目、条款 项、条款、项目<br>laser 雷射 激光<br>level 阶 层 (级)<br>例 high level 高阶 高层<br>library 程式库、函式库 库、函数库<br>lifetime 生命期、寿命 生命期、寿命<br>link 联结、连结 连接,链接<br>linker 联结器、连结器 连接器<br>literal constant 字面常数（例 3.14 或 “hi” 这等常数值） 字面常数<br>list 串列（linked－list） 列表、表、链表<br>list box 列表方块、列表框 列表框<br>load 载入 装载<br>loader 载入器 装载器、载入器<br>local 区域的（对应於 global） 局部的<br>local object 区域物件 局部对象<br>lock 机锁<br>loop 回圈 循环<br>lvalue 左值 左值<br>macro 巨集 宏<br>magic number 魔术数字 魔法数<br>maintain 维护 维护<br>manipulator 操纵器（iostream 预先定义的一种东西） 操纵器<br>marshal 编列 列集<br>叁考 demarshal<br>mechanism 机制 机制<br>member 成员 成员<br>member access operator 成员取用运算子（有 dot 和 arrow 两种） 成员存取操作符<br>member function 成员函式 成员函数<br>member initialization list<br>成员初值列 成员初始值列表<br>memberwise 以 member 为单元┅、members 逐一┅ 以成员为单位<br>memberwise copy 以 members 为单元逐一复制<br>memory 记忆体 内存<br>menu 表单、选单 菜单<br>message 讯息 消息<br>message based 以讯息为基础的 基於消息的<br>message loop 讯息回圈 消息环<br>method (java) 方法、行为、函式 方法<br>meta－ 超－ 元－<br>例 meta－programming 超编程 元编程<br>micro 微 微<br>middleware 中介层 中间件<br>modeling 模塑<br>modeling language 塑模语言，建模语言<br>modem 数据机 调制解调器<br>module 模组 模块<br>modifier 饰词 修饰符<br>most derived class 最末层衍生类别 最底层的派生类<br>mouse 滑鼠 鼠标<br>mutable 可变的 可变的<br>multi－tasking 多工 多任务<br>namespace 命名空间 名字空间、命名空间<br>native 原生的 本地的、固有的<br>nested class 巢状类别 嵌套类<br>network 网路 网络<br>network card 网路卡 网卡<br>object 物件 对象<br>object based 以物件为基础的 基於对象的<br>object file 目的档 目标文件<br>object model 物件模型 对象模型<br>object oriented 物件导向的 面向对象的<br>online 线上 在线<br>opaque 不透明的<br>operand 运算元 操作数<br>operating system (OS) 作业系统 操作系统<br>operation 操作、操作行为 操作<br>operator 运算子 操作符、运算符<br>option 选项，可选方案 选项<br>ordinary 常规的 常规的<br>overflow 上限溢位（相对於 underflow） 溢出（underflow:下溢）<br>overhead 额外负担、额外开销 额外开销<br>overload 多载化、多载化、重载 重载<br>overloaded function 多载化函式 重载的函数<br>overloaded operator 多载化运算子 被重载的操作符<br>overloaded set 多载集合 重载集合<br>override 改写、覆写 重载、改写、重新定义<br>（在 derived class 中重新定义虚拟函式<br>package 套件 包<br>pair 对组<br>palette 调色盘、组件盘、工具箱<br>pane 窗格 窗格<br>（有时为嵌板之意，例 Java Content Pane）<br>parallel 平行 并行<br>parameter 叁数（函式叁数列上的变数） 叁数、形式叁数、形叁<br>parameter list 叁数列 叁数列表<br>parent class 父类别（或称 base class） 父类<br>parentheses 小括弧、小括号 圆括弧、圆括号<br>parse 解析 解析<br>part 零件 部件<br>partial specialization 偏特化（ref. C++ Primer 3/e, 16.10） 局部特化<br>（ref. full specialization）<br>pass by address 传址（函式引数的传递方式）（非正式用语）传地址<br>pass by reference 传址（函式引数的一种传递方式） 传地址, 按引用传递<br>pass by value 传值（函式引数的一种传递方式） 按值传递<br>pattern 范式、样式 模式<br>performance 效率、性能兼而有之 性能<br>persistence 永续性 持久性<br>pixel 图素、像素 像素<br>placement delete ref. C++ Primer 3/e, 15.8.2<br>placement new ref. C++ Primer 3/e, 15.8.2<br>platform 平台 平台<br>pointer 指标 指针<br>址位器（和址叁器 reference 形成对映，满好）<br>poll 轮询 轮询<br>polymorphism 多型 多态<br>pop up 冒起式、弹出式 弹出式<br>port 埠 端口<br>postfix 後置式、後序式 後置式<br>precedence 优先序（通常用於运算子的优先执行次序）<br>prefix 前置式、前序式 前置式<br>preprocessor 前处理器 预处理器<br>prime 质数 素数<br>primitive type 基本型别 (不同於 base class,基础类别)<br>print 列印 打印<br>printer 印表机 打印机<br>priority 优先权 (通常用於执行绪获得 CPU 时间的优先次序）<br>procedure 程序 过程<br>procedural 程序性的、程序式的 过程式的、过程化的<br>process 行程 进程<br>profile 评测 评测<br>profiler 效能（效率）评测器 效能（性能）评测器<br>programmer 程式员 程序员<br>programming 编程、程式设计、程式化 编程<br>progress bar 进度指示器 进度指示器<br>project 专案 项目、工程<br>property 属性<br>protocol 协定 协议<br>pseudo code 假码、虚拟码、伪码 伪码<br>qualified 经过资格修饰（例如加上 scope 运算子） 限定<br>qualifier 资格修饰词、饰词 限定修饰词<br>quality 品质 质量<br>queue 伫列 队列<br>radian 径度 弧度<br>radio button 圆钮 单选按钮<br>raise 引发（常用来表示发出一个 exception） 引起、引发<br>random number 随机数、乱数 随机数<br>range 范围、区间（用於 STL 时） 范围、区间<br>rank 等级、分等（ref. C++Primer 3/e 9,15章） 等级<br>raw 生鲜的、未经处理的 未经处理的<br>record 记录 记录<br>recordset 记录集 记录集<br>recursive 递回 递归<br>re－direction 重导向 重定向<br>refactoring 重构、重整 重构<br>refer 取用 叁考<br>refer to 指向、指涉、指代<br>reference （C++ 中类似指标的东西，相当於 “化身”） 引用、叁考<br>址叁器, see pointer<br>register 暂存器 寄存器<br>reflection 反射 反射、映像<br>relational database 关联式资料库 关系数据库<br>represent 表述，表现 表述，表现<br>resolve 决议（为算式中的符号名称寻找 解析<br>对应之宣告式的过程）<br>resolution 决议程序、决议过程 解析过程<br>resolution 解析度 分辨率<br>restriction 局限<br>return 传回、回返 返回<br>return type 回返型别 返回类型<br>return value 回返值 返回值<br>robust 强固、稳健 健壮<br>robustness 强固性、稳健性 健壮性<br>routine 常式 例程<br>runtime 执行期 运行期、运行时<br>common language runtime (CLR) 译为「通用语言执行层」<br>rvalue 右值 右值<br>save 储存 存储<br>schedule 排程 调度<br>scheduler 排程器 调度程序<br>scheme 结构纲目、组织纲目<br>scroll bar 卷轴 滚动条<br>scope 生存空间、生存范围、范畴、作用域 生存空间<br>scope operator 生存空间（范围决议）运算子 :: 生存空间操作符<br>scope resolution operator<br>生存空间决议运算子 生存空间解析操作符<br>（与scope operator同）<br>screen 萤幕 屏幕<br>search 搜寻 查找<br>semantics 语意 语义<br>sequential container 序列式容器 顺序式容器<br>（对应於 associative container）<br>server 伺服器、伺服端 服务器、服务端<br>serial 串行<br>serialization 次第读写,序列化 序列化<br>(serialize)<br>setter (相对於 getter) 设值函式<br>signal 信号<br>signature 标记式、签名式、署名式 签名<br>slider 滚轴 滑块<br>slot 条孔、槽 槽<br>smart pointer 灵巧指标、精灵指标 智能指针<br>snapshot 萤幕快照（图） 屏幕截图<br>specialization 特殊化、特殊化定义、特殊化宣告 特化<br>specification 规格 规格、规范<br>splitter 分裂视窗 切分窗口<br>software 软体 软件<br>solution 解法,解决方案 方案<br>source 原始码 源码、源代码<br>stack 堆叠 栈<br>stack unwinding 堆叠辗转开解（此词用於 exception 主题） 栈辗转开解 </em><br>standard library 标准程式库<br>standard template library 标准模板程式库<br>statement 述句 语句、声明<br>status bar 状态列、状态栏 状态条<br>STL 见 standard template library<br>stream 资料流、串流 流<br>string 字串 字符串<br>subroutine<br>subscript operator 下标运算子 [ ] 下标操作符<br>subtype 子型别 子类型<br>support 支援 支持<br>suspend 虚悬 挂起<br>symbol 符号 记号<br>syntax 语法 语法<br>tag 标签 标记<br>索引标签,页签<br>target 标的（例 target pointer：标的指标） 目标<br>task switch 工作切换 任务切换<br>template 模板、范本 模板<br>template argument deduction<br>模板引数推导 模板叁数推导<br>template explicit specialization<br>模板显式特化（版本） 模板显式特化<br>template parameter 模板叁数 模板叁数<br>temporary object 暂时物件 临时对象<br>text 文字 文本<br>text file 程式本文档（放置程式原始码的档案） 文本文件<br>thread 执行绪 线程<br>thread safe 多绪安全 多线程安全<br>throw 丢掷（常指发出一个 exception） 丢掷、引发<br>token 语汇单元 符号、标记<br>transaction 交易 事务<br>transparent(ly) 透通的(地)<br>traverse 巡访（来回走动） 遍历<br>trigger 触发 触发<br>type 型别 类型<br>UML unified modeling language 统一建模语言<br>unary function 一元函式 单叁函数<br>unary operator 一元运算子 一元操作符<br>underflow 下限溢位（相对於 overflow） 下溢<br>unchecked exception 不可控异常(Java)<br>unqualified 未经资格修饰（而直接取用）<br>unwinding ref. stack unwinding<br>user 使用者、用户 用户<br>user interface 使用者介面、用户介面、人机介面 用户界面<br>variable 变数（相对於常数 const） 变量<br>vector 向量（一种容器，有点类似 array） 向量、矢量<br>viable 可实行的、可行的 可行的<br>viable function 可行函式 可行函数<br>（从 candidate functions 中挑出者）<br>video 视讯 视频<br>view (1) 视图<br>(document/view) 文档/视图<br>view (2) 映件<br>virtual function 虚拟函式 虚函数<br>virtual machine 虚拟机器 虚拟机<br>virtual memory 虚拟记忆体 虚内存, 虚存<br>volatile 易挥发的、易变的<br>vowel 母音 元音字母<br>window 视窗 窗口<br>window function 视窗函式 窗口函数<br>window procedure 视窗函式 窗口过程<br>word 字 单词<br>word processor 文书处理器 字处理器<br>wrapper 外覆、外包 包装absence 缺席<br>access 访问存取通路进入<br>achieve 实现完成<br>acquire 获得<br>adjacency list method 邻接表表示法<br>adjacency matrix method 邻接矩阵表示法<br>algorithm 算法<br>allocate 留下分配<br>analog 推论<br>append 添加<br>archive 档案归档<br>array 数组<br>assign 分配<br>assume 假设<br>assurance 确信信任<br>ATM(asynchronous transfer mode) 异步传输模式<br>b.. real programs kernels 实程序核心程序<br>b.. toy benchmark synthetic benchmark 简单基准程序复合基准程序<br>balance 平衡<br>bandwidth 带宽<br>batch 一批一组<br>benchmark 基准测试程序<br>best-fit algorithm 最佳适应算法<br>BFS(breadth first search) 广度优先搜索法<br>binary 二进制<br>binary relation 二元关系<br>binary tree 二叉树<br>bit series 比特序列<br>black-box white-box 黑盒白盒<br>block miss 块失效<br>blocked 阻塞(等待状态也称阻塞或封锁状态)<br>boundary 界线分界<br>bridge 网桥<br>bubble sort 冒泡排序<br>calculation 计算<br>candidate key 候选键(辅键)<br>capability 能力才能<br>capacity 容量<br>cartesian product 笛卡尔积<br>CASE(com.. aided sof.. engineering) 计算机辅助软件工程<br>CCP(communication control processor) 通信控制处理机<br>cell 信元<br>characteristic 特征特性<br>circuit switching 线路交换<br>circular wait 循环等待<br>CISC(complex instruction set computer) 复杂指令集计算机<br>class 类<br>Client/Server 客户机/服务器<br>clock cycle clock rate 时钟周期时钟频率<br>coaxial cable 同轴电缆<br>cohesion coupling 内聚耦合<br>coincidental logical procedural functional 偶然内聚逻辑内聚过程内聚功能内聚<br>combination 联合配合<br>common 公用的共同的<br>communication 通信<br>complement number 补码<br>component 成分<br>concept 概念观念<br>condition 情况状况<br>conform 符合<br>consist 组成存在<br>constrain 约束<br>contain 包含<br>correspond (corresponding) 相符合(相应的一致的)<br>CPETT 计算机性能评价工具与技术<br>CPI 每条指令需要的周期数<br>CSMA/CD 带冲突检测的载波监听多路访问<br>cursor 游标<br>cyclic redundency check 循环冗余检校<br>database: integrity consistency restory 完整性一致性可恢复性<br>database: security efficiency 数据库设计的目标: 安全性效率<br>deadlock: mutual exclusion 死锁条件: 互斥<br>deadlock: circular wait no preemption 死锁条件: 循环等待狗熊先权<br>decimal 十进位的<br>decision 决定判断<br>decomposition 双重的混合的<br>decrease 减少<br>definition 定义<br>definition phase 定义阶段<br>demonstrate 证明<br>design phase 设计阶段<br>determine 限定<br>development phase 开发阶段<br>DFS(depth first search) 深度优先搜索法<br>diagram 图表<br>Difference Manchester 差分曼彻斯特<br>directed graph undirected graph 有向图无向图<br>distinguish 辩认区别<br>distributed system 分布式系统<br>divide division 分开除除法<br>divide union intersection difference 除并交差<br>document 文件文档<br>DQDB(distributed queue dual bus) 分布队列双总线<br>draw 绘制<br>dual 二元的双的<br>dynamic design process 动态定义过程<br>element 元素要素<br>elevator (scan) algorithm 电梯算法又称扫描算法<br>encapsulation inheritance 封装(压缩) 继承(遗传)<br>encode 译成密码<br>entity 实体<br>entity integrity rule 实体完整性规则<br>equal 相等的<br>equation 方程式等式<br>estimate 估计判断<br>Ethernet 以太网<br>evolution 发展演化<br>exceed 超过<br>exchange sort 交换排序<br>exclusive locks 排它锁(简记为X 锁)<br>execute 实现执行<br>exhibit 表现展示陈列<br>existence 存在发生<br>expertise 专门技术<br>external(internal) fragmentation 外(内)碎片<br>fault page fault 中断过错页中断<br>FDDI(fiber distributed data interface) 光纤分布式数据接口<br>FDM(frequency division multiplexing 频分多路复用<br>fiber optic cable 光缆<br>FIFO replacement policy 先进先出替换算法<br>figure 数字图形<br>final 最后的最终的<br>first normal form 第一范式<br>floppy 活动盘片(软盘)<br>foreign key domain tuple 外来键值域元组<br>form 形状形式<br>formula 公式表达式<br>foundation 基础根据基金<br>frame page frame 帧结构页结构<br>frequency 频率<br>FTP 文件传送服务<br>function 函数<br>functionally dependent 函数依赖<br>gateway 网间连接器<br>gather 聚集采集推测<br>general-purose registers 通用寄存器<br>generate 产生<br>grade 等级标准<br>graph (graphic) 图<br>Gropher 将用户的请求自动转换成<br>FTP<br>guarantee 保证确定<br>hash table hash function collision 哈希表哈希函数(散列函数) 碰撞<br>HDLC 面向比特型数据链路层协议<br>hit rate 命中率<br>host 主计算机<br>host language statement 主语言语句<br>hypertext 超级文本<br>illustrate 举例说明<br>independent 独立的<br>index 索引<br>indirect 间接的<br>influence 有影响的<br>initially 最初开头<br>insertion sort 插入排序<br>instruction format 指令格式<br>instruction set 指令集<br>interface 接口分界面连接体<br>internal 内部的内在的<br>interrupt 中断<br>IPC 工业过程控制<br>ISAM VSAM 索引顺序存取方法虚拟存储存取方法<br>join natural join semijoin 连接自然连接半连接<br>judgment 判断<br>kernel executive supervisor user 核心执行管理用户<br>kernels 核心程序<br>key comparison 键(码)值比较<br>LAN(local area network) 局域网<br>load 负载载入<br>logical functional 逻辑内聚功能内聚<br>longitudinal 水平的<br>loop 圈环状<br>maintain 维护保养供给<br>maintanence phase 维护(保养)阶段<br>MAN(metropclitan area network) 城域网<br>Manchester 曼彻斯特<br>map 地图映射图<br>matrix 矩阵点阵<br>memory reference 存储器参量<br>message switching 报文交换<br>method 方法技巧<br>MFLOP(million floating point operate p s 每秒百万次浮点运算<br>minimum 最小的<br>MIPS(millions of instructions per second 每秒百万条指令<br>module 单位基准<br>monitor (model benchmark physcal) method 监视(模型基准物理)法<br>multilevel data flow chart 分层数据流图<br>multiple 复合的多样的<br>multiple-term formula 多项式<br>multiplexing 多路复用技术<br>multiplication 乘法<br>mutual exclusion 互相排斥<br>non-key attributes 非码属性<br>null 零空<br>Nyquist 奈奎斯特<br>object oriented 对象趋向的使适应的<br>object oriented analysis 面向对象的分析<br>object oriented databases 面向对象数据库<br>object oriented design 面向对象的设计<br>object oriented implementation 面向对象的实现<br>obtain 获得<br>occupy 占有居住于<br>occurrence 事件<br>odd 奇数的<br>one-dimensional array 一维数组<br>OODB(object oriented data base) 面向对象数据库<br>OOM(object oriented method) 面向对象的方法<br>oom: information object message class 信息对象消息类<br>oom: instance method message passing 实例方法消息传递<br>open system 开放系统<br>operand 操作数<br>optimized 尽量充分利用<br>optional 任选的非强制的<br>organize 组织<br>overflow 溢出<br>overlapping register windows 重叠寄存器窗口<br>packet switching 报文分组交换<br>page fault 页面失效<br>page replacement algorithm 页替换算法<br>paged segments 段页式管理<br>PCB(process control block) 进程控制块<br>peer entites 对等实体<br>perform 表演执行<br>period 时期周期<br>permit 许可准许<br>phase 阶段局面状态<br>physical data link network layer 物理层数据链路层网络层<br>pipeline 管道<br>platter track cluster 面磁道簇<br>predicate 谓语<br>preemption 有优先权的<br>prefix (Polish form) 前缀(波兰表达式)<br>preorder inorder postorder 前序中序后序<br>presentation application layer 表示层应用层<br>primary key attributes 主码属性<br>principle 原则方法<br>procedural coincidental 过程内聚偶然内聚<br>process 过程加工处理<br>proficient 精通<br>program debugging 程序排错<br>projection selection join 投影选择连接<br>proposition 主张建议陈述<br>protocal 协议<br>prototype 原型样板<br>prototyping method (model) 原型化周期(模型)<br>pseudo-code 伪码(又称程序设计语言PDL)<br>punctuation 标点<br>purpose 目的意图<br>quality 质量品质<br>queue 队列<br>ready blocked running 就绪阻塞(等待) 运行<br>real page number 实页数<br>real programs 实程序<br>redirected 重定向<br>redundency 冗余<br>reference integrity rule 引用完整性规则<br>referred to as 把…..当作<br>regarde 关于<br>register(registry) 寄存器登记注册挂号<br>regularly 定期的常规的<br>relation 关系<br>relay 中继<br>reliability 可信赖的<br>repeater 中继器<br>replacement 替换<br>represent 代表象征<br>request indication response confirm 请求指示响应确认<br>resource 资源<br>respon 回答响应<br>RISC(reduced instruction set computer) 精简指令集计算机<br>robustness 健壮性<br>router 路由器<br>scheme 计划图表<br>sector head cylinder 扇区磁头柱面<br>selection sort 选择排序<br>semaphores 信号<br>sequence 序列顺序<br>Shanon 香农<br>share locks 共享锁(简记为S 锁)<br>short path critical path 最短路径关键路径<br>signal 信号<br>signal-to-noise ratio 信噪比B/N<br>similar 相似的<br>SISD SIMD MISD MIMD <em> 指令流</em> 数据流<br>SMDS 交换多兆位数据服务<br>software development phase 软件开发阶段<br>software engineering 软件工程<br>software portability 软件可移植性<br>software requirements specification 软件需求说明书<br>solve 解决<br>sort 种类方式分类排序<br>spanning tree 跨越树(生成树)<br>specify 指定说明<br>speedup 加速比<br>SSTF(shortest-seek-time-first) 最短寻道时间优先(磁盘调度算法)<br>stack strategy non-stack strategy 堆栈型非堆栈型<br>starvation 饥饿匮乏<br>statement 陈述<br>storage 贮藏库<br>store procdures 存储过程<br>strategy 战略兵法计划<br>strict 严密的<br>styles 文体风格<br>subgroup 循环的<br>subset 子集子设备<br>superclass subclass abstract class 超类子类抽象类<br>suppose 假定<br>symbolic 象征的符号的<br>synthetic benchmark 复合基准程序<br>system testing 系统测试<br>Systolic 脉动阵列<br>table 表表格桌子<br>TDM(time division multiplexing) 时分多路复用<br>technology 工艺技术<br>terminal 终端<br>testing phase 测试阶段<br>theta select project theta join θ选择投影θ连接<br>time complexity 时间复杂度<br>timestamping 时标技术<br>Token Bus 令牌总线<br>Token Ring 令牌环<br>toy benchmark 简单基准程序<br>transaction 事务记录<br>transmite 传送<br>transport layer session layer 传输层会话层<br>traversal method 遍历方法<br>triggers store procedures 触发器存储过程<br>(ORACLE 系统)<br>underflow 下溢<br>unique 唯一的<br>unit system acceptance testing 单元测试系统测试确认测试<br>universe 宇宙全世界<br>update 更新<br>value [数]值<br>variable 变量<br>vertical 垂直的<br>vertice edge 顶点(结点) 边<br>via 经过<br>virtual memory system 虚拟存储系统<br>WAN(wide area network) 广域网<br>waterfall model 瀑布模型<br>white noise 白噪声<br>write-back(copy-back) 写回法<br>write-through(store-through) 写直达法<br>WWW(world wide web) 万维网</p>
-<h2 id="（IT）词汇"><a href="#（IT）词汇" class="headerlink" title="（IT）词汇"></a>（IT）词汇</h2><h3 id="A"><a href="#A" class="headerlink" title="A"></a>A</h3><p>Active-matrix主动距陈<br>Adapter cards适配卡<br>Advanced application高级应用<br>Analytical graph分析图表<br>Analyze分析<br>Animations动画<br>Application software 应用软件<br>Arithmetic operations算术运算<br>Audio-output device音频输出设备<br>Access time存取时间<br>access存取<br>accuracy准确性<br>ad network cookies广告网络信息记录软件<br>Add-ons附软件<br>Address地址<br>Agents代理<br>Analog signals模拟信号<br>Applets程序<br>Asynchronous communications port异步通信端口<br>Attachment附件</p>
-<h3 id="B"><a href="#B" class="headerlink" title="B"></a>B</h3><p>Bar code条形码<br>Bar code reader条形码读卡器<br>Basic application基础程序<br>Binary coding schemes二进制译码方案<br>Binary system二进制系统<br>Bit比特<br>Browser浏览器<br>Bus line总线<br>Backup tape cartridge units备份磁带盒单元<br>Bandwidth带宽<br>Bluetooth蓝牙<br>Broadband宽带<br>Browser浏览器<br>Business-to-business企业对企业电子商务<br>Business-to-consumer企业对消费者<br>Bus总线</p>
-<h3 id="C"><a href="#C" class="headerlink" title="C"></a>C</h3><p>Cables连线<br>Cell单元箱<br>Chain printer链式打印机<br>Character and recognition device字符标识识别设备<br>Chart图表<br>Chassis支架<br>Chip芯片<br>Clarity清晰度<br>Closed architecture封闭式体系结构<br>Column列<br>Combination key结合键<br>computer competency计算机能力<br>connectivity连接，结点<br>Continuous-speech recognition system连续语言识别系统<br>Control unit操纵单元<br>Cordless or wireless mouse无线鼠标<br>Cable modems有线调制解调器<br>carpal tunnel syndrome腕骨神经综合症<br>CD-ROM可记录光盘<br>CD-RW可重写光盘<br>CD-R可记录压缩光盘<br>Channel信道<br>Chat group谈话群组<br>chlorofluorocarbons(CFCs) ]氯氟甲烷<br>Client客户端<br>Coaxial cable同轴电缆<br>cold site冷战<br>Commerce servers商业服务器<br>Communication channel信道<br>Communication systems信息系统<br>Compact disc rewritable<br>Compact disc光盘<br>computer abuse amendments act of 19941994计算机滥用法案<br>computer crime计算机犯罪<br>computer ethics计算机道德<br>computer fraud and abuse act of 1986计算机欺诈和滥用法案<br>computer matching and privacy protection act of 1988计算机查找和隐私保护法案<br>Computer network计算机网络<br>computer support specialist计算机支持专家<br>computer technician计算机技术人员<br>computer trainer计算机教师<br>Connection device连接设备<br>Connectivity连接<br>Consumer-to-consumer个人对个人<br>cookies-cutter programs信息记录截取程序<br>cookies信息记录程序<br>cracker解密高手<br>cumulative trauma disorder积累性损伤错乱<br>Cybercash电子现金<br>Cyberspace计算机空间<br>cynic愤世嫉俗者</p>
-<h3 id="D"><a href="#D" class="headerlink" title="D"></a>D</h3><p>Database数据库<br>database files数据库文件<br>Database manager数据库管理<br>Data bus数据总线<br>Data projector数码放映机<br>Desktop system unit台式电脑系统单元<br>Destination file目标文件<br>Digital cameras数码照相机<br>Digital notebooks数字笔记本<br>Digital bideo camera数码摄影机<br>Discrete-speech recognition system不连续语言识别系统<br>Document文档<br>document files文档文件<br>Dot-matrix printer点矩阵式打印机<br>Dual-scan monitor双向扫描显示器<br>Dumb terminal非智能终端<br>data security数据安全<br>Data transmission specifications数据传输说明<br>database administrator数据库管理员<br>Dataplay数字播放器<br>Demodulation解调<br>denial of service attack拒绝服务攻击<br>Dial-up service拨号服务<br>Digital cash数字现金<br>Digital signals数字信号<br>Digital subscriber line数字用户线路<br>Digital versatile disc数字化通用磁盘<br>Digital video disc数字化视频光盘<br>Direct access直接存取<br>Directory search目录搜索<br>disaster recovery plan灾难恢复计划<br>Disk caching磁盘驱动器高速缓存<br>Diskette磁盘<br>Disk磁碟<br>Distributed data processing system分部数据处理系统<br>Distributed processing分布处理<br>Domain code域代码<br>Downloading下载<br>DVD 数字化通用磁盘<br>DVD-R 可写DVD<br>DVD-RAM DVD随机存取器<br>DVD-ROM 只读DVD</p>
-<h3 id="E"><a href="#E" class="headerlink" title="E"></a>E</h3><p>e-book电子阅读<br>Expansion cards扩展卡<br>end user终端用户<br>e-cash电子现金<br>e-commerce电子商务<br>electronic cash电子现金<br>electronic commerce电子商务<br>electronic communications privacy act of1986电子通信隐私法案<br>encrypting加密术<br>energy star能源之星<br>Enterprise computing企业计算化<br>environment环境<br>Erasable optical disks可擦除式光盘<br>ergonomics人类工程学<br>ethics道德规范<br>External modem外置调制解调器<br>extranet企业外部网</p>
-<h3 id="F"><a href="#F" class="headerlink" title="F"></a>F</h3><p>Fax machine传真机<br>Field域<br>Find搜索<br>FireWire port port火线端口<br>Firmware固件<br>Flash RAM闪存<br>Flatbed scanner台式扫描器<br>Flat-panel monitor纯平显示器<br>floppy disk软盘<br>Formatting toolbar格式化工具条<br>Formula公式<br>Function函数<br>fair credit reporting act of 1970公平信用报告法案<br>Fiber-optic cable光纤电缆<br>File compression文件压缩<br>File decompression文件解压缩<br>filter过滤<br>firewall防火墙<br>firewall防火墙<br>Fixed disk固定硬盘<br>Flash memory闪存<br>Flexible disk可折叠磁盘<br>Floppies磁盘<br>Floppy disk软盘<br>Floppy-disk cartridge磁盘盒<br>Formatting格式化<br>freedom of information act of 1970信息自由法案<br>frustrated受挫折<br>Full-duplex communication全双通通信</p>
-<h3 id="G"><a href="#G" class="headerlink" title="G"></a>G</h3><p>General-purpose application通用运用程序<br>Gigahertz千兆赫<br>Graphic tablet绘图板<br>green pc绿色个人计算机</p>
-<h3 id="H"><a href="#H" class="headerlink" title="H"></a>H</h3><p>handheld computer手提电脑<br>Hard copy硬拷贝<br>hard disk硬盘<br>hardware硬件<br>Help帮助<br>Host computer主机<br>Home page主页<br>Hyperlink超链接<br>hacker黑客<br>Half-duplex communication半双通通信<br>Hard disk硬盘<br>Hard-disk cartridge硬盘盒<br>Hard-disk pack硬盘组<br>Head crash磁头碰撞<br>header标题<br>help desk specialist帮助办公专家<br>helper applications帮助软件<br>Hierarchical network层次型网络<br>history file历史文件<br>hits匹配记录<br>horizontal portal横向用户<br>hot site热战<br>Hybrid network混合网络<br>hyperlinks超连接</p>
-<h3 id="I"><a href="#I" class="headerlink" title="I"></a>I</h3><p>Image capturing device图像获取设备<br>information technology信息技术<br>Ink-jet printer墨水喷射印刷机<br>Integrated package综合性组件<br>Intelligent terminal智能终端设备<br>Intergrated circuit集成电路<br>Interface cards接口卡<br>Internal modem内部调制解调器<br>internet telephony网络电话<br>internet terminal互联网终端<br>Identification识别<br>i-drive网络硬盘驱动器<br>illusion of anonymity匿名幻想<br>index search索引搜索<br>information pushers信息推送器<br>initializing 初始化<br>instant messaging计时信息<br>internal hard disk内置硬盘<br>Internal modem内部调制解调器<br>Internet hard drive 网络硬盘驱动器<br>intranet企业内部网</p>
-<h3 id="J"><a href="#J" class="headerlink" title="J"></a>J</h3><p>joystick操纵杆</p>
-<h3 id="K"><a href="#K" class="headerlink" title="K"></a>K</h3><p>keyword search关键字搜索</p>
-<h3 id="L"><a href="#L" class="headerlink" title="L"></a>L</h3><p>laser printer激光打印机<br>Layout files版式文件<br>Light pen光笔<br>Locate定位<br>Logical operations逻辑运算<br>Lands凸面<br>Line of sight communication视影通信<br>Low bandwidth低带宽<br>lurking潜伏</p>
-<h3 id="M"><a href="#M" class="headerlink" title="M"></a>M</h3><p>Main board主板<br>Mark sensing标志检测<br>Mechanical mouse机械鼠标<br>Memory内存<br>Menu菜单<br>Menu bar菜单条<br>Microprocessor微处理器<br>Microseconds微秒<br>Modem card调制解调器<br>Monitor显示器<br>Motherboard主板<br>Mouse 鼠标<br>Multifunctional device多功能设备<br>Magnetic tape reels磁带卷<br>Magnetic tape streamers磁带条<br>mailing list邮件列表<br>Medium band媒质带宽<br>metasearch engine整合搜索引擎<br>Microwave微波<br>Modem解调器<br>Modulation解调</p>
-<h3 id="N"><a href="#N" class="headerlink" title="N"></a>N</h3><p>Net PC网络计算机<br>Network adapter card网卡<br>Network personal computer网络个人电脑<br>Network terminal 网络终端<br>Notebook computer笔记本电脑<br>Notebook system unit笔记本系统单元<br>Numeric entry数字输入<br>na?ve天真的人<br>national information infrastructure protection act of1996国际信息保护法案<br>national service provider全国性服务供应商<br>Network architecture网络体系结构<br>Network bridge网桥<br>Network gateway网关<br>network manager网络管理员<br>newsgroup新闻组<br>no electronic theft act of1997无电子盗窃法<br>Node节点<br>Nonvolatile storage非易失性存储</p>
-<h3 id="O"><a href="#O" class="headerlink" title="O"></a>O</h3><p>Object embedding对象嵌入<br>Object linking目标链接<br>Open architecture开放式体系结构<br>Optical disk光盘<br>Optical mouse光电鼠标<br>Optical scanner光电扫描仪<br>Outline大纲<br>off-line browsers离线浏览器<br>Online storage联机存储</p>
-<h3 id="P"><a href="#P" class="headerlink" title="P"></a>P</h3><p>palmtop computer掌上电脑<br>Parallel ports并行端口<br>Passive-matrix被动矩阵<br>PC card个人计算机卡<br>Personal laser printer个人激光打印机<br>Personal video recorder card个人视频记录卡<br>Photo printer照片打印机<br>Pixel像素<br>Platform scanner平版式扫描仪<br>Plotter绘图仪<br>Plug and play即插即用<br>Plug-in boards插件卡<br>Pointer指示器<br>Pointing stick指示棍<br>Port端口<br>Portable scanner便携式扫描仪<br>Presentation files演示文稿<br>Presentation graphics电子文稿程序<br>Primary storage主存<br>Procedures规程<br>Processor处理机<br>Programming control lanugage程序控制语言<br>Packets数据包<br>Parallel data transmission平行数据传输<br>Peer-to-peer network system得等网络系统<br>person-person auction site个人对个人拍卖站点<br>physical security物理安全<br>Pits凹面<br>plug-in插件程序<br>Polling轮询<br>privacy隐私权<br>proactive主动地<br>programmer程序员<br>Protocols协议<br>provider供应商<br>proxy server代理服务<br>pull products推取程序<br>push products推送程序</p>
-<h3 id="R"><a href="#R" class="headerlink" title="R"></a>R</h3><p>RAM cache随机高速缓冲器<br>Range范围<br>Record记录<br>Relational database关系数据库<br>Replace替换<br>Resolution分辨率<br>Row行<br>Read-only只读<br>Reformatting重组<br>regional service provider区域性服务供应商<br>repetitive motion injury反复性动作损伤<br>reverse directory反向目录<br>right to financial privacy act of 1979财产隐私法案</p>
-<h3 id="S"><a href="#S" class="headerlink" title="S"></a>S</h3><p>Scanner扫描器<br>Search查找<br>Secondary storage device助存储设备<br>Semiconductor半导体<br>Serial ports串行端口<br>Server服务器<br>Shared laser printer共享激光打印机<br>Sheet表格<br>Silicon chip硅片<br>Slots插槽<br>Smart card智能卡<br>Soft copy软拷贝<br>Software suite软件协议<br>Sorting排序分类<br>Source file源文件<br>Special-purpose application专用文件<br>Spreadsheet电子数据表<br>Standard toolbar标准工具栏<br>Supercomputer巨型机<br>System cabine 系统箱<br>System clock时钟<br>System software系统软件<br>Satellite/air connection services卫星无线连接服务<br>search engines搜索引擎<br>search providers搜索供应者<br>search services 搜索服务器<br>Sectors扇区<br>security安全<br>Sending and receiving devices发送接收设备<br>Sequential access顺序存取<br>Serial data transmission单向通信<br>signature line签名档<br>snoopware监控软件<br>software copyright act of1980软件版权法案<br>software piracy软件盗版<br>Solid-state storage固态存储器<br>specialized search engine专用搜索引擎<br>spiders网页爬虫<br>spike尖峰电压<br>Star network星型网<br>Strategy方案<br>subject主题<br>subscription address预定地址<br>Superdisk超级磁盘<br>surfing网上冲浪<br>surge protector浪涌保护器<br>systems analyst系统分析师</p>
-<h3 id="T"><a href="#T" class="headerlink" title="T"></a>T</h3><p>Table二维表<br>Telephony电话学<br>Television boards电视扩展卡<br>Terminal 终端<br>Template模板<br>Text entry文本输入<br>Thermal printer 热印刷<br>Thin client瘦客<br>Toggle key触发键<br>Toolbar工具栏<br>Touch screen触摸屏<br>Trackball追踪球<br>TV tuner card电视调谐卡<br>Two-state system双状态系统<br>technical writer技术协作者<br>technostress重压技术<br>telnet远程登录<br>Time-sharing system分时系统<br>Topology拓扑结构<br>Tracks磁道<br>traditional cookies传统的信息记录程序<br>Twisted pair双绞线</p>
-<h3 id="U"><a href="#U" class="headerlink" title="U"></a>U</h3><p>Unicode统一字符标准<br>uploading上传<br>usenet世界性新闻组网络</p>
-<h3 id="V"><a href="#V" class="headerlink" title="V"></a>V</h3><p>Virtual memory虚拟内存<br>Video display screen视频显示屏<br>Voice recognition system声音识别系统<br>vertical portal纵向门户<br>video privacy protection act of 1988视频隐私权保护法案<br>virus checker病毒检测程序<br>virus病毒<br>Voiceband音频带宽<br>Volatile storage易失性存储<br>voltage surge冲击性电压</p>
-<h3 id="W"><a href="#W" class="headerlink" title="W"></a>W</h3><p>Wand reader 条形码读入<br>Web 网络<br>Web appliance 环球网设备<br>Web page网页<br>Web site address网络地址<br>Web terminal环球网终端<br>Webcam摄像头<br>What-if analysis假定分析<br>Wireless revolution无线革命<br>Word字长<br>Word processing文字处理<br>Word wrap自动换行<br>Worksheet file 工作表文件<br>web auctions网上拍卖<br>web broadcasters网络广播<br>web portals门户网站<br>web sites网站<br>web storefront creation packages网上商店创建包<br>web storefronts网上商店<br>web utilities网上应用程序<br>web-downloading utilities网页下载应用程序<br>webmaster web站点管理员<br>web万维网<br>Wireless modems无线调制解调器<br>wireless service provider无线服务供应商<br>world wide web万维网<br>worm蠕虫病毒<br>Write-protect notch写保护口</p>
-<h2 id="其他缩写"><a href="#其他缩写" class="headerlink" title="其他缩写"></a>其他缩写</h2><p>DVD digital bersatile 数字化通用光盘<br>IT ingormation technology信息技术<br>CD compact disc 压缩盘<br>PDA personal digital assistant个人数字助理<br>RAM random access memory随机存储器<br>WWW World Wide Web 万维网<br>DBMS database management system数据库管理系统<br>HTML Hypertext Markup Language超文本标示语言<br>OLE object linking and embedding对象链接潜入<br>SQL structured query language结构化查询语言<br>URL uniform resouice locator统一资源定位器<br>AGP accelerated graphics port加速图形接口<br>ALU arithmetic-logic unit算术逻辑单元<br>CPU central processing unit中央处理器<br>CMOS complementary metal-oxide semiconductor互补金属氧化物半导体<br>CISC complex instruction set computer复杂指令集计算机<br>HPSB high performance serial bus高性能串行总线<br>ISA industry standard architecture工业标准结构体系<br>PCI peripheral component interconnect外部设备互连总线<br>PCMCIA Personal Memory Card International Association个人计算机存储卡国际协会<br>RAM random-access memory随机存储器<br>ROM read-only memory只读存储器<br>USB universal serial bus通用串行总线<br>CRT cathode-ray tube阴极射线管<br>HDTV high-definition television高清晰度电视<br>LCD liquid crystal display monitor液晶显示器<br>MICRmagnetic-ink character recognition磁墨水字符识别器<br>OCR optical-character recognition光电字符识别器<br>OMR optical-mark recognition光标阅读器<br>TFT thin film transistor monitor薄膜晶体管显示器</p>
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>Zip disk压缩磁盘<br>Domain name system（DNS）域名服务器<br>file transfer protocol(FTP)文件传送协议<br>hypertext markup language(HTML)超文本链接标识语言<br>Local area network（LAN）局域网<br>internet relay chat(IRC)互联网多线交谈<br>Metropolitan area network(MAN)城域网<br>Network operation system(NOS)网络操作系统<br>uniform resource locator(URL)统一资源定位器<br>Wide area network(WAN)广域网</p>
+            <p><img src="http://zhengheforum.org/wp-content/uploads/2016/09/image-23-300x300.jpeg" alt="image"></p>
+<p>沙斐仪教法学派的迷思：<br>郑和与印度洋沿岸的中国伊斯兰国际都市</p>
+<p>荷兰莱顿大学历史研究所<br>马哈茂德·考瑞尔</p>
+<p>译者：刘波</p>
+<p>摘要<br>与印度洋世界伊斯兰相关的现有文献倾向于让我们以为，伊斯兰教法中的沙斐仪学派，是历史上印度洋沿岸存在的唯一的学派。我要论证，对教法的这一同质化认识是错的，因为我们有大量证据不断显示，16世纪之前，在印度次大陆和马来群岛，存在许多其他伊斯兰教法学派。这方面的主要史料来源之一是马欢的记述，他是15世纪早期郑和航行的参与者。马欢和郑和都不仅遵行哈乃斐学派，而且在他们拜访和短暂停留的一些地方，建立了新的哈乃斐学派中心。在对明朝这些著名航海活动方兴未艾的研究中，这个情况目前被完全忽略了。他们不仅建立了新的哈乃斐学派中心，而且向我们揭示了爪哇、苏门答腊、孟加拉和马拉巴尔的许多其他该学派中心的情况，这些中心的主要定居者是中国穆斯林商人、学者、定居者和短暂停留者。这构成了一个“中国伊斯兰国际都市群”，与得到广泛研究的阿拉伯-波斯伊斯兰国际都市群并存。这些记录促使我们质疑现有的观念，即沙斐仪学派在该地区占首要位置。因为郑和的远航毕竟是一场外交使命，非常强调开启有“国际”法律效力的条约，所以，学派的不同在海事语境下意味着什么？伊斯兰法及其一个特定学派对这些航行有何意义，能在多大程度上帮助我们理解印度洋世界现有史学研究中的一些小错谬？我在这篇论文中探讨这些问题时，主要依据马欢的旅行记录《瀛涯胜览》、《明实录》，以及14世纪末15世纪初印度洋沿岸一些其他的中文、阿拉伯文、爪哇文、马来文、Malayalam文文本与铭文。</p>
+<p>导语<br>与印度洋世界伊斯兰相关的现有文献倾向于让我们以为，伊斯兰教法中的沙斐仪学派，是历史上印度洋沿岸存在的唯一的学派。许多学者论称，早在16世纪之前，沙斐仪学派从也门等阿拉伯半岛南部地区，通过一个名为Ḥaḍramīs的特殊的也门移民群体，传到了东亚、南亚、东南亚和东非沿海地区，并取得了主导地位。但声称沙斐仪学派主导了印度洋沿岸的人，都从来没有说清楚这是在什么时候、以什么方式发生的，原因是什么。例如，研究南亚和东南亚史的历史学家Andre Wink，在讲述7-10世纪的历史著作Al-Hind的第一卷里，做出了一个与历史事实不符的说法，认为沙斐仪学派是马拉巴尔沿海地区和东南亚的主要伊斯兰教法学派。值得注意的是，他从来没有说明，证实这一说法的主要根据是什么。的确，马拉巴尔、马巴尔（Maʿbar）、古吉拉特、爪哇、苏门答腊、斯瓦希里等印度洋沿海地区，与沙斐仪派主导的地区，如埃及、波斯、也门，存在着海上商贸联系。但这并不意味着，来自这些中东地区的这一个教法思想与实践学派，早在16世纪之前就主宰了穆斯林法律思想与实践。我要论称，对教法的这一同质化认识是错的，因为我们有大量证据不断显示，16世纪之前，在印度次大陆和马来群岛，存在许多其他伊斯兰教法学派。</p>
+<p>这方面的主要史料来源之一是马欢的记述，他是15世纪早期郑和航行的参与者。我在这篇论文中探讨这些问题时，主要依据马欢的旅行记录《瀛涯胜览》、《明实录》，以及一些阿拉伯文、爪哇文、马来文和Malayalam 文资料。</p>
+<p>错综复杂的教法图景：沙斐仪派和其他教法学派</p>
+<p>在这个论坛上，郑和和马欢都不需要介绍。不过简单来说，郑和是一位来自云南的中国穆斯林，1381年他十岁时，明军占领云南，他受阉割成为宦官。最终他在明朝掌握权力，1405-1433年间领导了七次跨印度洋远航，在第三次航行时拥有多达48搜舰船和3万部下。这支舰队在从印度支那到东非的广阔印度洋海域中航行，缔结外交与商业同盟，甚至对在外国土地与海域遇到的不顺从居民及海盗实施惩罚。马欢作为官方译员，参与了三次远航，分别是1414-1415年的第四次、1421-1422年的第六次和1431-1433年的第七次。他留下的旅行记录至今尚存一份。他也是一名中国穆斯林，来自浙江省的会稽。在记录中，他描述了自己游历的约20个国家的地理、社会、政治与物质生活状况。</p>
+<p>马欢和郑和都不仅遵行哈乃斐学派，而且在他们拜访和短暂停留的一些地方，建立了新的哈乃斐学派中心。在对明朝这些著名航海活动方兴未艾的研究中，这个情况目前被完全忽略了。他们不仅建立了新的哈乃斐学派中心，而且向我们揭示了爪哇、苏门答腊、孟加拉和马拉巴尔的许多其他该学派中心的情况，这些中心的主要定居者是中国穆斯林商人、学者、定居者和短暂停留者。这构成了一个“中国伊斯兰国际都市群”，与得到广泛研究的阿拉伯-波斯伊斯兰国际都市群并存。这个“中国穆斯林国际都市群”由“唐人”组成，他们通常来自广东、漳州、泉州等中国大陆地区。马欢在很多地方把他们与阿拉伯-波斯国际都市群明确区别开来，例如关于爪哇的这一段（译者注：此处据英文译为现代汉语）：</p>
+<p>“这个国家包含三个阶层的人。一个阶层由穆斯林组成。他们来自西方所有的外邦，作为商人迁居到此。在服饰和饮食各方面，所有人都很干净、得体。</p>
+<p>另一个阶层由唐人组成。他们来自广东、漳州、泉州等地，逃离本土，迁居此国。这些人的食物也是精选的、洁净的。很多人遵行穆斯林的宗教，忏悔，把斋。”</p>
+<p>在爪哇，直到16世纪中叶之前，主导的教法学派都是哈乃斐派。15世纪早期，中国派驻满者伯夷（Majapahit）朝廷的使节吴宾（也被称为“朝圣者吴宾公”），对在爪哇增进中国穆斯林群体的地位起了重要作用。他也遵行哈乃斐学派，可以说是三宝垄（Sembung）中国穆斯林的奠基人。根据中国史书中对塔兰（Talang）的记述，1408-1415年吴宾出使爪哇期间，在三宝垄、沙林迪尔（Sarindil）和塔兰建立了一个中国哈乃斐派社群。根据《三宝垄华人编年史》，在井里汶（Cirebon）、图班（Tuban）和Molokertor都有兴盛的中国穆斯林社群，他们在这三个地方都修建了清真寺。吴宾还在井里汶附近的Jati山顶上修建了一座灯塔。现在Wali Sungo、 Sunan Ngampel（译注：均为印尼穆斯林派别）的所有人，据说最初都来自于“一个哈乃斐派主导的地区”，因此一直是哈乃斐派的追随者。Slametmuljana写道，从一般意义上而言，是中国人把哈乃斐派带到了爪哇。在第四次远航中，郑和与马欢在爪哇停留了一个多月，吴宾帮助他们与当地中国穆斯林及满者伯夷朝廷交流沟通。</p>
+<p>淡目（Demak）的统治者也奉行哈乃斐派。根据《三宝垄华人编年史》，淡目军队的司令官奉Tung Ka Lo苏丹（也称Trenggana苏丹）之命，率军前往巽他格拉巴（Sunda Kalapa），途中拜访了三宝垄中国穆斯林的首领Tan Eng Hoat。Hoat热情欢迎他们，这位对款待感到满意的司令官代表苏丹，赐给他“哈乃斐派毛拉”（Maulana Ifdil Ḥanafī）的称号。此事也说明，哈乃斐派在该地区有广泛的吸引力。直到1546年淡目灭亡之前，该教派在印尼群岛一直在一定程度上流行。淡目灭亡后兴起的帕姜（Pajang）苏丹国奉行神秘派谢赫Siti Jenar传的什叶派伊斯兰教。我们目前还不知道，在什叶派教法学派的两大支中，它具体属于哪一支。很久之后，罕百里教法学派也在该地区赢得了一些遵行者。</p>
+<p>1419年，在第五次航行中，郑和在占婆（今天的柬埔寨）任命彭德庆为中国海军司令。此前彭德庆是淡目的海外华人领袖，郑和在之前的几次航行中见过他。彭德庆曾是云南哈乃斐派社群的首领，精通伊斯兰学。在担任新职务后，彭德庆利用这个机会传播伊斯兰理念，将来自中国大陆的新穆斯林商人，任命为马来世界里已有的中国穆斯林社群的领袖，因为他也负责在东南亚拓展贸易。1423年彭德庆任命来自云南的穆斯林领袖商人颜英裕为“爪哇、巨港与加里曼丹华人的长官”。最终，颜英裕成为中国驻爪哇总领事，得到了满者伯夷朝廷、尤其是Radia Su King Ta女王的认可。尤其在图班，他被称为“图班港的首领”（Kepala Pelabuhan Pula de Tuban）。</p>
+<p>巨港曾是苏门答腊的三佛齐王国的首府之一。三佛齐曾在13世纪崛起为一个强盛的海上帝国，拥有控制印尼群岛内部及周边商业活动的能力。在巨港，也有很多奉行哈乃斐派的人。这些人主要是来自广东和福建的中国穆斯林，马欢记录了关于他们的一些细节。施进卿既是宗教领袖，也是巨港的主宰者，他从三佛齐国王那里得到了“巨港帕提”（ Pati Palembang）的头衔。施进卿曾在1407年帮助郑和捕获了臭名昭著的中国海盗陈祖义，此人曾在广东罪行累累，逃离广州后一直在马六甲海峡劫掠船只。</p>
+<p>三宝垄是另一个有许多哈乃斐派中国穆斯林的地区。1413年，郑和在那里抛锚修补舰船。据《三宝垄华人编年史》记载，停留期间，郑和经常与两位译员马欢、费信去那里的华人清真寺。他们三人都遵行哈乃斐派。</p>
+<p>在印度洋沿岸尤其是马拉巴尔沿海地区，也有很多来自地中海南部地区的马立克派商人/学者。Carl Petry曾记述一些这样的学者，他们在14世纪从摩洛哥等地前往印度次大陆，担任不同的司法与学术职务。还有另一位著名的摩洛哥人伊本·白图泰（去世于1377年）。他不仅是一位旅行家，也是一位马立克派学者，曾在印度次大陆上的德里与海上的马尔代夫担任许多司法与宗教职位。马欢也记述了，在卡利卡特有两派穆斯林，其领袖均由当地的扎莫林王室任命，分别负责各自的社区。不过我们不能确定，两派是指当地的Mappila穆斯林和外来穆斯林（葡萄牙官员杜阿尔特·巴博萨在16世纪初将后者称为paradesis），还是指外来穆斯林中的两派，如阿拉伯-波斯穆斯林和中国穆斯林。</p>
+<p>14-15世纪，哈乃斐派在古吉拉特沿海地区很强势。在德里的突厥苏丹国于1303-1304年征服该地区后，那里的繁荣的海上贸易城镇就受到了伊斯兰的社会与政治影响，使哈乃斐派在那里以及整个印度北部逐渐兴起。这也影响了马拉巴尔沿海地区。在那里，每周五的主麻聚礼，会提到德里苏丹的名字。</p>
+<p>Al-Masʿūdī曾在他的Muruj al-Ḏahab中写道，印度西海岸的穆斯林与来自希拉夫（Siraf）、阿曼和哈德拉毛的商人积极交流。除了做贸易外，他们还分享彼此的宗教、法律与意识形态想法。因此，希拉夫、哈德拉毛等地的教法学派对印度西部地区产生了很大影响。1001-1192年突厥人征服印度北部省份，1206年在德里建立苏丹国，这最终促进了哈乃斐及其他已有教派的传播。</p>
+<p>在很大程度上，哈乃斐派传到南亚与东亚，与丝绸之路有关。就像我们已经说过的，德里的突厥苏丹国在印度次大陆传播哈乃斐派一样，蒙古人也对哈乃斐派的传播起了明显作用。这主要是在亚洲内陆，部分是在中国沿海地区。忽必烈1279年摧毁宋朝、征服中国后，他允许大部分蒙古军人娶哈乃斐派的突厥妇女。他还允许中亚穆斯林进入中国，任命其中很多人为像总督这样的高官，著名的如赛典赤·赡思丁及其子纳速拉丁相继担任云南平章政事，马合木·牙剌瓦赤成为大都（今天的北京）的市政长官。许多中亚穆斯林都奉行并传播哈乃斐派，最终该派成为中国穆斯林中最大的学派。1385年，洪武皇帝命令穆斯林离开广东，否则格杀勿论，于是许多中国哈乃斐派穆斯林迁移到了马来群岛等邻近地区，这自然使哈乃斐派传到该地区。可以作为佐证的是，爪哇和苏门答腊对哈乃斐派的记载是从15世纪开始的，之前没有。</p>
+<p>本文观点的含义</p>
+<p>因为郑和的远航毕竟是一场外交使命，非常强调开启有“国际”法律效力的条约，所以，学派的不同在海事语境下意味着什么？伊斯兰法及其一个特定学派对这些航行有何意义，能在多大程度上帮助我们理解印度洋世界现有史学研究中的一些小错谬？换言之，难道沙斐仪学派不是存在于印度洋世界吗？</p>
+<p>在这个伊斯兰教法学派彼此交错的世界上，接下来的问题在于，沙斐仪学派被错误地认定为印度洋世界唯一的教法学派。难道沙斐仪学派不存在于印度洋的西岸与东岸吗？当然，正如史料证明的，它一直存在，作为多学派中的一个存在。在下文中我将讲述沙斐仪学派在南亚、东南亚和东亚的存在，然后论证，外部的社会政治、经济与文化环境和内部的思想变化，最终使其在16世纪成为印度洋沿岸的主要学派。前述的沙斐仪学派13世纪末之前在埃及的兴起，对印度洋世界产生了影响，在此过程中，学者-商人网络是传播该学派的主要媒介。</p>
+<p>大多数关于除中东外的印度洋沿海地区沙斐仪学派的记述，都始自14世纪。就中国的情况而言，伊本·白图泰写道，每个地区的穆斯林都有一个伊斯兰教长（shaykh al-Islam）和一个法官（qāḍī）。他们的所有事务都会提到教长面前，如果发生纠纷，则由法官裁决。白图泰甚至提到了他遇到的一些伊斯兰权威人士，如在泉州，法官是Taj al-Dīn al-Ardavilī，教长是Kamāl al-Dīn ‘Abd Allāh al-Iṣfahānī，在福州，教长是Dhahir al-Dīn al-Qurlanī，在杭州，法官是Fakhr al-Din。白图泰还提到了一位名为al-Bushrī的穆斯林律师（faqīh）。在白图泰困难的一些时候，al-Bushrī给了他很大安慰。al-Bushrī从钱江府（杭州）出发与白图泰一起旅行，到了一个名为Baiwam Qutlu的小镇，那是al-Bushrī的出生地。白图泰在那里与al-Bushrī的家人呆了三天。遗憾的是他没有提到他们所属的学派。不过，一些在蒙古人手下干活、随其迁移的中亚的花拉子模人是沙斐仪派。据游历新疆的欧洲探险家说，回族人（他们称为“中国的穆罕默德教教徒”）是沙斐仪派。据说回族人的祖先是跟随蒙古人来中国的，有中国、波斯和突厥混合血统。无论这一说法是真是假，现在新疆所有穆斯林都只奉行哈乃斐派或什叶派。所以这些史料只能说明沙斐仪派曾名义上存在于新疆。</p>
+<p>就南亚的情况而言，伊本·白图泰提到了很多穆斯林法官、律师和教法学者，其中很多是沙斐仪派。在马拉巴尔，他遇到了Shihāb al-Dīn Husain、Ahmad bin Hamid Allah等学者，他们有的精于律师业务，有的精于学术。从他列出的学者的全名里，我们可以轻易地发现遵行沙斐仪教法学派的人。15世纪，波斯派赴毗奢耶那伽罗王朝朝廷的使臣Abdur Razak经过卡利卡特，提到沙斐仪是当地穆斯林的主流学派。同样在15世纪，马欢也提到沙斐仪派在马拉巴尔沿海地区影响很大。这说明，阿拉伯/穆斯林商人与南亚地区的外交与商业交流，已经使得南亚的主要港口城市出现了独立的伊斯兰教法法庭。同时还说明，该地区存在着包括沙斐仪在内的各个教法学派。大宦官郑和率领的第一次远航从福建的漳州出发，抵达卡利卡特，像提到爪哇的哈乃斐派一样，他也提到了那里的沙斐仪派。</p>
+<p>在前往中国的途中，伊本·白图泰曾到达苏门答腊沿海地区，觐见苏木都剌帕塞苏丹国苏丹马利克·查希尔（al-Malik al-Zahir）二世（去世于1349年）。他对当地遵行、研究、教导和传播的沙斐仪学派做了详细记述。白图泰说，这位苏丹是一个沙斐仪派，喜欢法基赫（fuqahā）。他的臣民也是沙斐仪派，喜欢吉哈德。白图泰写道：</p>
+<p>“我去了清真寺，与他（苏丹）的卫士Qairan做了主麻礼拜。然后我去觐见苏丹。在那里我看到了法官埃米尔·萨义德（Amir Sayyid）和他的学生，分列苏丹的左右两边。他握我的手，我向他致敬，然后他恳请我坐在他的左边，询问我有关穆罕默德苏丹（去世于1351年的德里苏丹Tughluq）和我旅行的事，我都一一对答。然后他重新开始讨论伊玛目沙斐仪开创的伊斯兰教法学派。他讨论这个一直到哺礼时刻。在哺礼后，他进入一个房间，脱下衣服。这是法基赫穿的那种袍子，是他在周五主麻赴清真寺时穿的。然后他换上御袍，是丝绸和棉织成的大衣……（当他从清真寺回到皇宫时），学者会站在他的右边……在宫廷里，大臣、埃米尔、教士/学者（kuttāb）、贵族和军官都排成多列集合在一起。第一列是大臣和教士。他有四位大臣……第二列是埃米尔……然后是贵族和法基赫……”</p>
+<p>这段话清晰地证明，沙斐仪派在14世纪的苏木都剌帕塞苏丹国很有影响力。白图泰在印度洋和地中海沿岸长途旅行过程中，在抵达北非时，也回忆起马利克·查希尔二世对沙斐仪派的讨论。摩洛哥马里尼德王朝苏丹阿布·伊南·法里斯（Abu Inan Faris）（去世于1358年）在每天的晨礼后，都主持并参与马立克学派教法学习与讨论。这让白图泰想起了那位每次主麻后主持沙斐仪派教法学习的苏门答腊君主。他写道，如此珍视学术的君主并不多。这些都表明，在印度洋沿岸的其他社会中，沙斐仪派的地位并不明显。在一开始，沙斐仪派是各派中的一支，只有名义上的存在。所以问题是，沙斐仪派如何以及为什么成为了印度洋沿岸的主要教法学派？换言之，为什么沙斐仪派成为了“海上”学派？首先，这主要是16世纪发生的事，所以我将在第四章详细讨论它。目前我只要说，15世纪末之后，各种外部社会、政治与经济环境，以及一些内部思想变化，促使沙斐仪派成为后来印度洋世界的主要教法学派。</p>
+<p>就外部因素而言，也门的Rasūlid王朝、苏门答腊的Malik al-Salih王朝，以及很明显的埃及的马穆鲁克王朝，这些政治实体实行的各种政策，都引发了缓慢的社会变化，使沙斐仪派学者和著作获得了比其他派别更多的支持。而这一时期里，其他教法学派仍是在没有得到任何政治力量直接支持的情况下，通过各种社会与经济组织运行的，就像16世纪之前的沙斐仪派一样。1347年埃及发生毁灭性的黑死病，动摇了埃及的人口基础和农业生产，也对沙斐仪派学术界与学术中心产生了影响。到14世纪末，沙斐仪派利用从开罗到麦加的网络复兴自身，扩展到更广大的印度洋与东地中海世界。沙斐仪派在得到各国掌权者持续支持后，得以大力传播其著作、机构与理念，最终使自己取得主导地位。随着时间的推移，沙斐仪派成为印度洋沿岸识字的伊斯兰居民共同接受的首要学派，形成了一套通行的教法准则，促进了该地区穆斯林沿海社区在意识形态和行政方面的发展。</p>
 
           
         
@@ -1433,16 +1474,16 @@ fmt.Println(key,value)
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://b-gg.com/2017/06/28/Laravel-dingo-jwt-auth/">
+    <link itemprop="mainEntityOfPage" href="http://zhengheforum.org/2016/11/12/2017-e5-b9-b4-e7-ac-ac-e4-b8-89-e5-b1-8a-e9-83-91-e5-92-8c-e8-ae-ba-e5-9d-9b-e7-ad-b9-e5-a4-87-e4-bc-9a-e8-ae-ae-e5-b0-86-e5-9c-a8-e5-93-88-e8-90-a8-e5-85-8b-e6-96-af-e5-9d-a6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Bo">
+      <meta itemprop="name" content="Haiyun">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Saritai">
+      <meta itemprop="name" content="ZhengheForum.org">
     </span>
 
     
@@ -1452,7 +1493,7 @@ fmt.Println(key,value)
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/06/28/Laravel-dingo-jwt-auth/" itemprop="url">Laravel-dingo-jwt-auth</a></h1>
+                <a class="post-title-link" href="/2016/11/12/2017-e5-b9-b4-e7-ac-ac-e4-b8-89-e5-b1-8a-e9-83-91-e5-92-8c-e8-ae-ba-e5-9d-9b-e7-ad-b9-e5-a4-87-e4-bc-9a-e8-ae-ae-e5-b0-86-e5-9c-a8-e5-93-88-e8-90-a8-e5-85-8b-e6-96-af-e5-9d-a6/" itemprop="url">2017年第三届“郑和论坛”筹备会议将在哈萨克斯坦召开</a></h1>
         
 
         <div class="post-meta">
@@ -1464,8 +1505,8 @@ fmt.Println(key,value)
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-28T20:37:29+08:00">
-                2017-06-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-12T00:20:19+08:00">
+                2016-11-12
               </time>
             
 
@@ -1474,6 +1515,28 @@ fmt.Println(key,value)
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/News-信息/" itemprop="url" rel="index">
+                    <span itemprop="name">News/信息</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -1501,9 +1564,157 @@ fmt.Println(key,value)
       
         
           
-            <h1 id="Laravel5-amp-dingo-amp-Jwt-auth组合开启API时代"><a href="#Laravel5-amp-dingo-amp-Jwt-auth组合开启API时代" class="headerlink" title="Laravel5&amp;dingo&amp;Jwt-auth组合开启API时代"></a>Laravel5&amp;dingo&amp;Jwt-auth组合开启API时代</h1><h2 id="前面的话"><a href="#前面的话" class="headerlink" title="前面的话"></a>前面的话</h2><p>如同运维日志处理方面的ELK黄金组合一样，如今API大道其行，LDJ也是RESTful-API的绝佳组合。</p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="composer安装Laravel"><a href="#composer安装Laravel" class="headerlink" title="composer安装Laravel"></a>composer安装Laravel</h3><p>composer是当下PHP包管理利器，其安装就不在此占用篇幅了。<br>composer create-project laravel/laravel  myapi</p>
-<h3 id="集成Dingo-JWT-auth"><a href="#集成Dingo-JWT-auth" class="headerlink" title="集成Dingo JWT-auth"></a>集成Dingo JWT-auth</h3>
+            <p><img src="http://zhengheforum.org/wp-content/uploads/2016/09/image-23-300x300.jpeg" alt="image"></p>
+<p>2017年“郑和论坛”（郑和国际和平会议）筹备会议将在阿拉木图召开</p>
+<p>第三届“郑和论坛”将于2017年8月初在哈萨克斯坦阿拉木图市的法拉比大学召开。为此，郑和国际和平基金会代表将在2016年12月到2017年1月在阿拉木图召开筹备会议，和哈萨克斯坦法拉比大学、哈萨克斯坦东干协会等单位协调和落实会议议程和细节。此次会议主题将聚焦中国和中亚的历史文化交流以及当代中国“一带一路” 倡议和中亚各国经济社会文化发展的相关问题。此外，此次会议将有特别专题，讨论包括清真拉面、中医等在内的中国物质文化在中亚的发展及其国际化问题。会议将邀请中亚五国、东南亚国家、欧美、日韩、大陆、港台等地区的专家学者参加。<br>为了最大限度地促进中国和中亚各族人民的文化交流和民心相同，除了学术会议之外，此次“郑和论坛”将组织中国和中亚各国艺术家进行交流展演并参访哈萨克斯坦、吉尔吉斯斯坦等中亚国家的中国历史文化遗存。<br>2017年郑和论坛会议征文将在2016年12月底发布，敬请关注。<br>郑和国际和平基金会：<br>网址：www.zhengheforum.org<br>微信公众号：郑和论坛<br>邮件：zhengheforum@gmail.com</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://zhengheforum.org/2016/11/11/e5-9b-9e-e6-97-8f-e7-a9-86-e6-96-af-e6-9e-97-e7-9a-84-e6-88-90-e6-9e-9c-e4-b9-8b-e9-81-93-ef-bc-9a-e5-90-8c-e5-8c-96-e8-bf-98-e6-98-af-e5-b9-b3-e6-9d-83/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Haiyun">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZhengheForum.org">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/11/11/e5-9b-9e-e6-97-8f-e7-a9-86-e6-96-af-e6-9e-97-e7-9a-84-e6-88-90-e6-9e-9c-e4-b9-8b-e9-81-93-ef-bc-9a-e5-90-8c-e5-8c-96-e8-bf-98-e6-98-af-e5-b9-b3-e6-9d-83/" itemprop="url">回族穆斯林的成功之道：同化还是平权</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-11T09:06:27+08:00">
+                2016-11-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Academic-Research-学术研究-版权所有，违者必究/" itemprop="url" rel="index">
+                    <span itemprop="name">Academic Research/学术研究 (版权所有，违者必究)</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="http://zhengheforum.org/wp-content/uploads/2016/11/IMG_6081-169x300.jpg" alt="IMG_6081"></p>
+<p>With the increased international media attention on the plight of the Uyghur Muslim minority in Xinjiang, Western news magazines such as The Economist and Foreign Policy have started to also focus on the Hui, or Chinese-speaking Muslims. The Economist article, “China’s Other Muslims” (October 8, 2016) depicts the Hui’s success as owing to their assimilation into Han Chinese culture and society. The article states that the Hui are counted as an ethnic minority only “because it says so on their hukou (household registration).” This imagined conception of the Hui leads to other fantastical representations: Hui are “rarely to be victims of Islamophobia,” can “negotiate around the grey areas of China’s political system,” serve as “middlemen between China’s state enterprises and firms in China Asia and the Gulf,” and are even able to “practice Islamic law (sharia) to a limited extent.”</p>
+<p>Unlike the Uyghurs’ recent incorporation into the Chinese state around 1750s, the Hui have resided and intermarried in China since the Tang dynasty (618-907). The historic Hui presence generates hybridity in their race, language, religion, and literature; as a result, modern Western scholars often deploy hyphenated terms such as “Sino-Muslim,” “Confucian Muslims,” and more recently, “Muslim Chinese” to refer to them. It is possibly because of this phenomenon that the Hui have been portrayed as the best example of civilizational dialogue between (neo) Confucianism and Islam, and thus promoted by contemporary Confucian scholar Tu Weiming and his Islamic counterpart Seyyed Hossein Nasr.[1]</p>
+<p>It is ahistorical to attribute the success of the Hui to their cultural assimilation.<br>Compared to the Uyghurs, the Hui have to some degree been Sinicized simply because they have had a long history of interaction with the Han. However, it is ahistorical to attribute the success of the Hui to their cultural assimilation. Historically, it was the political and legal status of the Hui (i.e., making the Hui into Chinese political subject or min) that provided them with equal access to Confucian exams and civilian posts. Having been, to some degree, enculturated, the Hui nonetheless were victims of Hui-phobia by the Han majority — long before the Uyghur were included into China and long before Islamophobia came to be known to the West.</p>
+<p>Anti-Hui political, social and literary discourses were so widespread during the Ming-Qing transition, and especially during the early eighteenth century, that they came to the attention of the Kangxi, Yongzheng, and Qianlong’s imperial courts about Hui-phobia. The Hui literary practices at this time, or so-called Han kitab (or Chinese books) genre, was a direct response to Han’s Hui-phobia. Even worse was the Han officials’ proposed legal discrimination against the Hui in the eighteenth century on collective violence. In contrast, the newly included Uyghurs during the Qing period enjoyed Uyghur cultural and Islamic legal autonomy under local beg headmen.</p>
+<p>One key indicator of difference between the Hui and the Uyghur is the use of the term min, or political subject. The Hui have been politically and legally identified as Hui min, equal to Han min, on an individual basis since the Ming dynasty; today, they are collectively identified as an ethnic group. In fact, the Hui were among the earliest Chinese political subjects to constitute a hyphenated category (i.e., as Hui-min, combining (ethnic) Hui with (legal) min). The success of the Hui (as well as other non-Han groups) lies in their combination of being Hui and being min — China’s political subjects under regular governance and equal treatment.Today, there is a relative difference between the Uyghurs and the Hui in terms of access to social resources and cultural interaction. But that is not the point.</p>
+<p>The key to the Hui’s success is the fact that they have resided in interior regions and under regular governance, making it harder to openly discriminate against them.<br>The key to the Hui’s success is the fact that they have resided in interior regions and under regular governance, making it harder to openly discriminate against them. Despite Chinese political, territorial, and military expansion in Xinjiang dating back to the mid-eighteenth century, the Uyghur region has lacked interior-land and regular governance since the Republican period. Amidst international turmoil and politics in Central Asia (ranging from the 19th-century “Great Game” to the collapse of the Soviet and the formation of Central Asian republics to the United States post-9/11 “anti-terror” war in neighboring Afghanistan), Xinjiang warlords, military units, and security apparatus alike have exploited security and sovereignty issues to “irregularize” the “frontier” region and sensationalize the Uyghur issue.</p>
+<p>The Uyghurs, however, were administered by the Qing only since the 1750s, under local autonomy. The political-legal status of min was not granted to individual Uyghurs before or after; not until the early twentieth century was Uyghur regarded as an ethnicity. Lacking min, Uyghurs had no individual political and legal status. Deprived of min and thus not treated equally, Uyghurs became aggrieved. Meanwhile, for the same reason — Uyghurs not having been accorded min — state officials became increasingly concerned about Uyghur ethnic nationalism.</p>
+<p>The recent Chinese discourses on second-generation theories of ethnicity that highlight individual citizen rights while diluting ethnic collective identity and rights attempt to trade collective ethnic culture and identity for individual political-legal rights. However, as the Hui min case indicates, to be Hui and to be min is not contradictory but complementary. Hui ethnic-religious culture and the legal status min can be hyphenated: Hui-min. By extension, other peoples, be they Han or Uyghur, can combine their ethnic-cultural identity as a specific group (or zu) with state identification as equal political subject (min). This combination will nicely balance the relationships among individual ethnic members, the collective ethnic group, and the state. Thus, the current Chinese ethnic paradigm needs a return to the Qing population politics in interior regions that designated a subject population as a unified subject group (min) while respecting its cultural-ethnic affiliation — as in the case of the Hui. The latter’s success lies not in cultural assimilation, but in a healthy and balanced relationship between the Hui and the state. The Uyghur and other non-Han groups would have succeeded, too, had such a relational approach been extended into the “New Territory” or Xinjiang.</p>
+<p>[1] For a dialogue between Tu Weiming and Seyyed Hossein Nasr, see Ali Vural Ak Center for Global Islamic Studies, George Mason University, June 6, 2010, <a href="http://islamicstudiescenter.gmu.edu/research/conferences-and-workshops/confucian-islamic-dialogue" target="_blank" rel="external">http://islamicstudiescenter.gmu.edu/research/conferences-and-workshops/confucian-islamic-dialogue</a>.</p>
+<hr>
+<blockquote>
+<p><a href="http://www.mei.edu/content/map/success-china-s-hui-muslims-assimilation-or-hyphenation" target="_blank" rel="external">http://www.mei.edu/content/map/success-china-s-hui-muslims-assimilation-or-hyphenation</a></p>
+</blockquote>
+
           
         
       
@@ -1541,7 +1752,7 @@ fmt.Println(key,value)
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1575,10 +1786,10 @@ fmt.Println(key,value)
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
-               alt="Bo" />
-          <p class="site-author-name" itemprop="name">Bo</p>
+               alt="Haiyun" />
+          <p class="site-author-name" itemprop="name">Haiyun</p>
            
-              <p class="site-description motion-element" itemprop="description">Welcome to Saritai!</p>
+              <p class="site-description motion-element" itemprop="description">Welcome to Zhenghe!</p>
           
         </div>
         <nav class="site-state motion-element">
@@ -1586,23 +1797,23 @@ fmt.Println(key,value)
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">51</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
           
 
           
-
-          
             
             
-            <div class="site-state-item site-state-tags">
+            <div class="site-state-item site-state-categories">
               
-                <span class="site-state-item-count">2</span>
-                <span class="site-state-item-name">标签</span>
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">分类</span>
               
             </div>
+          
+
           
 
         </nav>
@@ -1645,7 +1856,7 @@ fmt.Println(key,value)
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Bo</span>
+  <span class="author" itemprop="copyrightHolder">Haiyun</span>
 </div>
 
 
