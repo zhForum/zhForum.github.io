@@ -13,6 +13,9 @@ menu:
     url: /
   archives:
     url: /archives
+  wechat:
+    url: /weChat
+    target: _blank
   tags:
     url: /tags
   th-list:
