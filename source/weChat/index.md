@@ -1,7 +1,7 @@
-title: weChat
+title: Wechat
 date: 2017-11-28 17:59:28
 layout: page      
-description: 微信文章精选
+description: 微信公众号文章
 comments: false     # 禁用评论，可选，默认开启
 reward: false       # 禁用打赏，可选，默认开启
 -------
