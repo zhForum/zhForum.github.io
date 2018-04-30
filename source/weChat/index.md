@@ -5,6 +5,7 @@ description: 微信公众号文章
 comments: false     # 禁用评论，可选，默认开启
 reward: false       # 禁用打赏，可选，默认开启
 -------
+### [发掘和分享环印度洋郑和文化遗产：印度玛鼎学院深度参与“郑和论坛”](https://mp.weixin.qq.com/s?__biz=MzI5MTQ0NDQxOQ==&mid=2247484365&idx=1&sn=8c69dba2182bd77a7b5aceff76c7bd7f&chksm=ec11c061db66497772c353ffeadb9dd1d47f47f34e7a4f8afe70dc840e3f1f9aa840e6b45d24&scene=38#wechat_redirect)
 ### [伊斯兰教、中国与印度洋：历史联系与世界史背景](https://mp.weixin.qq.com/s/b6KsY7i2XzAnhHQaIU0cbQ)
 ### [2018年“郑和论坛”召开期间将成立“郑和国际联盟”](https://mp.weixin.qq.com/s?__biz=MzI5MTQ0NDQxOQ==&mid=2247484348&idx=1&sn=0afbc0bfdb4749b06f06a8fabbeea9cb&chksm=ec11c010db664906396a2e96a24716a8ae9ab99f86b061b4bdcdf510bac3baa49c073fd58e6e&scene=38#wechat_redirect)
 ### [2018年“郑和国际和平论坛”将于8月14-16日在伊斯兰堡召开](https://mp.weixin.qq.com/s/B9BEDBgVfJyuz4KyQFrqbw)
