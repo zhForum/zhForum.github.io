@@ -1,0 +1,44 @@
+{"name":"hexo","hostname":"bogon","pid":69897,"level":20,"msg":"Hexo version: \u001b[35m3.3.7\u001b[39m","time":"2018-07-03T07:37:02.209Z","v":0}
+{"name":"hexo","hostname":"bogon","pid":69897,"level":20,"msg":"Working directory: \u001b[35m~/Documents/b-gg/zhForum.github.io/\u001b[39m","time":"2018-07-03T07:37:02.212Z","v":0}
+{"name":"hexo","hostname":"bogon","pid":69897,"level":20,"msg":"Config loaded: \u001b[35m~/Documents/b-gg/zhForum.github.io/_config.yml\u001b[39m","time":"2018-07-03T07:37:02.288Z","v":0}
+{"name":"hexo","hostname":"bogon","pid":69897,"level":20,"msg":"Script loaded: \u001b[35mthemes/indigo/scripts/plugins.js\u001b[39m","time":"2018-07-03T07:37:02.298Z","v":0}
+{"name":"hexo","hostname":"bogon","pid":69897,"level":20,"msg":"Plugin loaded: \u001b[35mhexo-deployer-git\u001b[39m","time":"2018-07-03T07:37:02.309Z","v":0}
+{"name":"hexo","hostname":"bogon","pid":69897,"level":20,"msg":"Plugin loaded: \u001b[35mhexo-generator-archive\u001b[39m","time":"2018-07-03T07:37:02.310Z","v":0}
+{"name":"hexo","hostname":"bogon","pid":69897,"level":20,"msg":"Plugin loaded: \u001b[35mhexo-generator-category\u001b[39m","time":"2018-07-03T07:37:02.311Z","v":0}
+{"name":"hexo","hostname":"bogon","pid":69897,"level":20,"msg":"Plugin loaded: \u001b[35mhexo-generator-index\u001b[39m","time":"2018-07-03T07:37:02.313Z","v":0}
+{"name":"hexo","hostname":"bogon","pid":69897,"level":20,"msg":"Plugin loaded: \u001b[35mhexo-generator-json-content\u001b[39m","time":"2018-07-03T07:37:02.365Z","v":0}
+{"name":"hexo","hostname":"bogon","pid":69897,"level":20,"msg":"Plugin loaded: \u001b[35mhexo-generator-tag\u001b[39m","time":"2018-07-03T07:37:02.367Z","v":0}
+{"name":"hexo","hostname":"bogon","pid":69897,"level":20,"msg":"Plugin loaded: \u001b[35mhexo-migrator-wordpress\u001b[39m","time":"2018-07-03T07:37:02.496Z","v":0}
+{"name":"hexo","hostname":"bogon","pid":69897,"level":20,"msg":"Plugin loaded: \u001b[35mhexo-renderer-ejs\u001b[39m","time":"2018-07-03T07:37:02.497Z","v":0}
+{"name":"hexo","hostname":"bogon","pid":69897,"level":20,"msg":"Plugin loaded: \u001b[35mhexo-renderer-marked\u001b[39m","time":"2018-07-03T07:37:02.501Z","v":0}
+{"name":"hexo","hostname":"bogon","pid":69897,"level":20,"msg":"Plugin loaded: \u001b[35mhexo-renderer-less\u001b[39m","time":"2018-07-03T07:37:02.565Z","v":0}
+{"name":"hexo","hostname":"bogon","pid":69897,"level":20,"msg":"Plugin loaded: \u001b[35mhexo-renderer-stylus\u001b[39m","time":"2018-07-03T07:37:02.566Z","v":0}
+{"name":"hexo","hostname":"bogon","pid":69897,"level":20,"msg":"Plugin loaded: \u001b[35mhexo-server\u001b[39m","time":"2018-07-03T07:37:02.608Z","v":0}
+{"name":"hexo","hostname":"bogon","pid":69897,"level":30,"msg":"Deploying: \u001b[35mgit\u001b[39m","time":"2018-07-03T07:37:02.610Z","v":0}
+{"name":"hexo","hostname":"bogon","pid":69897,"level":30,"msg":"Clearing .deploy_git folder...","time":"2018-07-03T07:37:02.614Z","v":0}
+{"name":"hexo","hostname":"bogon","pid":69897,"level":30,"msg":"Copying files from public folder...","time":"2018-07-03T07:37:02.760Z","v":0}
+{"name":"hexo","hostname":"bogon","pid":69897,"level":30,"msg":"Copying files from extend dirs...","time":"2018-07-03T07:37:03.089Z","v":0}
+{"name":"hexo","hostname":"bogon","pid":69897,"level":30,"msg":"See you again","time":"2018-07-03T07:37:48.877Z","v":0}
+{"name":"hexo","hostname":"bogon","pid":69897,"level":20,"msg":"Database saved","time":"2018-07-03T07:37:48.880Z","v":0}
+{"name":"hexo","hostname":"bogon","pid":69915,"level":20,"msg":"Hexo version: \u001b[35m3.3.7\u001b[39m","time":"2018-07-03T07:38:35.370Z","v":0}
+{"name":"hexo","hostname":"bogon","pid":69915,"level":20,"msg":"Working directory: \u001b[35m~/Documents/b-gg/zhForum.github.io/\u001b[39m","time":"2018-07-03T07:38:35.371Z","v":0}
+{"name":"hexo","hostname":"bogon","pid":69915,"level":20,"msg":"Config loaded: \u001b[35m~/Documents/b-gg/zhForum.github.io/_config.yml\u001b[39m","time":"2018-07-03T07:38:35.473Z","v":0}
+{"name":"hexo","hostname":"bogon","pid":69915,"level":20,"msg":"Script loaded: \u001b[35mthemes/indigo/scripts/plugins.js\u001b[39m","time":"2018-07-03T07:38:35.484Z","v":0}
+{"name":"hexo","hostname":"bogon","pid":69915,"level":20,"msg":"Plugin loaded: \u001b[35mhexo-deployer-git\u001b[39m","time":"2018-07-03T07:38:35.505Z","v":0}
+{"name":"hexo","hostname":"bogon","pid":69915,"level":20,"msg":"Plugin loaded: \u001b[35mhexo-generator-archive\u001b[39m","time":"2018-07-03T07:38:35.516Z","v":0}
+{"name":"hexo","hostname":"bogon","pid":69915,"level":20,"msg":"Plugin loaded: \u001b[35mhexo-generator-category\u001b[39m","time":"2018-07-03T07:38:35.519Z","v":0}
+{"name":"hexo","hostname":"bogon","pid":69915,"level":20,"msg":"Plugin loaded: \u001b[35mhexo-generator-index\u001b[39m","time":"2018-07-03T07:38:35.520Z","v":0}
+{"name":"hexo","hostname":"bogon","pid":69915,"level":20,"msg":"Plugin loaded: \u001b[35mhexo-generator-json-content\u001b[39m","time":"2018-07-03T07:38:35.629Z","v":0}
+{"name":"hexo","hostname":"bogon","pid":69915,"level":20,"msg":"Plugin loaded: \u001b[35mhexo-generator-tag\u001b[39m","time":"2018-07-03T07:38:35.630Z","v":0}
+{"name":"hexo","hostname":"bogon","pid":69915,"level":20,"msg":"Plugin loaded: \u001b[35mhexo-migrator-wordpress\u001b[39m","time":"2018-07-03T07:38:35.881Z","v":0}
+{"name":"hexo","hostname":"bogon","pid":69915,"level":20,"msg":"Plugin loaded: \u001b[35mhexo-renderer-ejs\u001b[39m","time":"2018-07-03T07:38:35.885Z","v":0}
+{"name":"hexo","hostname":"bogon","pid":69915,"level":20,"msg":"Plugin loaded: \u001b[35mhexo-renderer-less\u001b[39m","time":"2018-07-03T07:38:35.933Z","v":0}
+{"name":"hexo","hostname":"bogon","pid":69915,"level":20,"msg":"Plugin loaded: \u001b[35mhexo-renderer-marked\u001b[39m","time":"2018-07-03T07:38:35.939Z","v":0}
+{"name":"hexo","hostname":"bogon","pid":69915,"level":20,"msg":"Plugin loaded: \u001b[35mhexo-renderer-stylus\u001b[39m","time":"2018-07-03T07:38:35.944Z","v":0}
+{"name":"hexo","hostname":"bogon","pid":69915,"level":20,"msg":"Plugin loaded: \u001b[35mhexo-server\u001b[39m","time":"2018-07-03T07:38:36.045Z","v":0}
+{"name":"hexo","hostname":"bogon","pid":69915,"level":30,"msg":"Deploying: \u001b[35mgit\u001b[39m","time":"2018-07-03T07:38:36.047Z","v":0}
+{"name":"hexo","hostname":"bogon","pid":69915,"level":30,"msg":"Clearing .deploy_git folder...","time":"2018-07-03T07:38:36.062Z","v":0}
+{"name":"hexo","hostname":"bogon","pid":69915,"level":30,"msg":"Copying files from public folder...","time":"2018-07-03T07:38:36.353Z","v":0}
+{"name":"hexo","hostname":"bogon","pid":69915,"level":30,"msg":"Copying files from extend dirs...","time":"2018-07-03T07:38:36.908Z","v":0}
+{"name":"hexo","hostname":"bogon","pid":69915,"level":30,"msg":"Good bye","time":"2018-07-03T07:39:08.746Z","v":0}
+{"name":"hexo","hostname":"bogon","pid":69915,"level":20,"msg":"Database saved","time":"2018-07-03T07:39:08.751Z","v":0}
